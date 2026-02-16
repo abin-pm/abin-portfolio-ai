@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+* {
+  @apply border-vscode-surface;
+}
+
+html,
+body {
+  overflow-x: hidden;
+}
+
+body {
+  @apply bg-vscode-bg font-mono text-vscode-text antialiased;
+  background-image: radial-gradient(circle at top right, rgba(86, 156, 214, 0.08), transparent 35%),
+    radial-gradient(circle at bottom left, rgba(197, 134, 192, 0.08), transparent 40%),
+    linear-gradient(transparent 95%, rgba(255, 255, 255, 0.015) 100%);
+  background-size: auto, auto, 100% 28px;
+}
+
+::selection {
+  @apply bg-vscode-blue text-vscode-bg;
+}
+
+.section-shell {
+  @apply mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-24;
+}
+
+.code-panel {
+  @apply rounded-xl border border-white/10 bg-vscode-surface/80 p-6 shadow-glow;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
