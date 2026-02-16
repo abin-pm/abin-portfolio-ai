@@ -4,7 +4,7 @@ import { FadeIn } from '@/components/FadeIn';
 import { Navbar } from '@/components/Navbar';
 import { ScrollProgress } from '@/components/ScrollProgress';
 import { TypingRole } from '@/components/TypingRole';
-import { aboutCode, personalInfo, projects, skillMetrics } from '@/lib/data';
+import { aboutCode, experiences, personalInfo, projects, skillMetrics } from '@/lib/data';
 
 const rolePhrases = [
   'Senior Full Stack Software Engineer',
@@ -100,6 +100,32 @@ export default function HomePage() {
                       </p>
                     ))}
                   </div>
+                </div>
+              </FadeIn>
+            </section>
+
+
+
+            <section id="experience" className="section-shell min-h-[520px] md:min-h-[640px] scroll-mt-28">
+              <FadeIn className="space-y-5">
+                <p className="text-xs uppercase tracking-[0.25em] text-vscode-green">experience.log</p>
+                <div className="grid gap-4 md:grid-cols-2">
+                  {experiences.map((item) => (
+                    <article key={`${item.company}-${item.role}`} className="code-panel space-y-3">
+                      <p className="text-xs text-vscode-blue">{item.duration}</p>
+                      <h3 className="text-base font-semibold text-vscode-purple">{item.role}</h3>
+                      <p className="text-sm text-vscode-text/75">{item.company}</p>
+                      <ul className="space-y-2 text-xs text-vscode-text/80">
+                        {item.highlights.map((point) => (
+                          <li key={point} className="flex gap-2">
+                            <span className="text-vscode-green">▹</span>
+                            <span>{point}</span>
+                          </li>
+                        ))}
+                      </ul>
+                      <p className="text-[11px] text-vscode-text/60">{item.tech.join(' · ')}</p>
+                    </article>
+                  ))}
                 </div>
               </FadeIn>
             </section>

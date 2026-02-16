@@ -8,6 +8,7 @@ A production-ready developer portfolio built with **Next.js App Router**, **Type
 - Scrollable editor area with section rhythm:
   - Hero: 720px
   - About: 640px
+  - Experience: 640px
   - Skills: 560px
   - Projects: 720px
   - Contact: 520px
@@ -36,6 +37,7 @@ A production-ready developer portfolio built with **Next.js App Router**, **Type
 - Sticky navbar with active section highlight.
 - Hero typing role animation.
 - About section with line numbers + syntax-style biography.
+- Experience cards highlighting role impact and technology ownership.
 - Skills terminal with stacked progress bars.
 - Projects area with tabs-style row and preview cards.
 - Contact terminal panel + validated contact form endpoint.

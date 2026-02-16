@@ -14,6 +14,14 @@ export type ProjectItem = {
   tech: string[];
 };
 
+export type ExperienceItem = {
+  role: string;
+  company: string;
+  duration: string;
+  highlights: string[];
+  tech: string[];
+};
+
 export const personalInfo = {
   name: 'Abin P M',
   title: 'Senior Full Stack Software Engineer',
@@ -72,5 +80,28 @@ export const projects: ProjectItem[] = [
       'Created personalized recommendation pipelines and progress UX patterns tailored to user behavior.',
     impact: 'Improved retention and recurring engagement across key cohorts.',
     tech: ['Next.js', 'MongoDB', 'Node.js']
+  }
+];
+
+export const experiences: ExperienceItem[] = [
+  {
+    role: 'Senior Full Stack Software Engineer',
+    company: 'Briq',
+    duration: 'May 2024 — Present',
+    highlights: [
+      'Built AI-assisted proposal workflows that improved consistency and reduced turnaround effort.',
+      'Implemented secure document processing with role-based access and stronger observability.'
+    ],
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'AWS']
+  },
+  {
+    role: 'Senior Software Engineer',
+    company: 'QBurst',
+    duration: 'May 2020 — May 2024',
+    highlights: [
+      'Delivered analytics-heavy product features for enterprise clients in automotive and fintech domains.',
+      'Improved performance and release predictability through API optimization and CI/CD improvements.'
+    ],
+    tech: ['React', 'Node.js', 'NestJS', 'PostgreSQL']
   }
 ];
