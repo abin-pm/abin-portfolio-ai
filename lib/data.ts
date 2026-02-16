@@ -1,107 +1,112 @@
-export type SkillItem = {
-  label: string;
-  level: number;
-  color: 'blue' | 'green' | 'purple';
-};
-
-export type ProjectItem = {
-  title: string;
-  category: 'Platform' | 'Analytics' | 'Product';
-  summary: string;
-  problem: string;
-  solution: string;
-  impact: string;
-  tech: string[];
-};
-
 export type ExperienceItem = {
   role: string;
   company: string;
   duration: string;
-  highlights: string[];
+  achievements: string[];
+  technologies: string[];
+};
+
+export type ProjectItem = {
+  title: string;
+  problem: string;
+  solution: string;
+  impact: string;
   tech: string[];
+  github?: string;
+  live?: string;
 };
 
 export const personalInfo = {
   name: 'Abin P M',
-  title: 'Senior Full Stack Software Engineer',
+  role: 'Senior Full Stack Software Engineer',
   location: 'Kerala, India',
   email: 'abinpm@gmail.com',
   linkedin: 'https://www.linkedin.com/in/abin-p-m-/',
   github: 'https://github.com/abinpm',
-  intro:
-    'Senior full-stack engineer focused on building scalable, user-centric products that convert technical complexity into business advantage.'
+  summary:
+    'I design and ship scalable web platforms that improve revenue workflows, streamline operations, and elevate customer experience. My focus is high-quality architecture, measurable outcomes, and resilient delivery.'
 };
 
-export const aboutCode = [
-  'const engineer = new Developer({',
-  "  mindset: 'product + platform',",
-  "  strengths: ['architecture', 'delivery', 'collaboration'],",
-  "  focus: 'resilient systems and thoughtful UX',",
-  "  principle: 'clarity, speed, and measurable impact'",
-  '});'
+export const strengths = [
+  'End-to-end ownership across frontend, backend, and cloud delivery',
+  'API and microservice architecture for high-throughput systems',
+  'Performance optimization and reliable CI/CD for fast release cycles',
+  'Collaborative leadership, mentoring, and stakeholder alignment'
 ];
 
-export const skillMetrics: SkillItem[] = [
-  { label: 'Next.js / React', level: 92, color: 'blue' },
-  { label: 'TypeScript / Node.js', level: 90, color: 'green' },
-  { label: 'Cloud & DevOps', level: 82, color: 'purple' },
-  { label: 'System Design', level: 86, color: 'blue' },
-  { label: 'Performance Optimization', level: 88, color: 'green' }
-];
-
-export const projects: ProjectItem[] = [
-  {
-    title: 'Automotive Market Intelligence Platform',
-    category: 'Analytics',
-    summary: 'Real-time used-vehicle insights for pricing and inventory decisions.',
-    problem: 'Teams lacked fast, reliable visibility into regional inventory and market movement.',
-    solution:
-      'Built a high-performance analytics interface and API layer with dynamic filters, trend views, and actionable drill-downs.',
-    impact: 'Enabled faster pricing decisions and improved confidence in commercial planning.',
-    tech: ['React', 'Node.js', 'PostgreSQL', 'Redis']
-  },
-  {
-    title: 'AI-Assisted Proposal Workflow',
-    category: 'Platform',
-    summary: 'Automation layer for proposal drafting and document intelligence.',
-    problem: 'Proposal creation was slow, repetitive, and difficult to standardize across teams.',
-    solution:
-      'Delivered a secure AI-assisted workflow with structured templates, role-based access, and observability hooks.',
-    impact: 'Reduced manual effort and improved consistency of high-value submissions.',
-    tech: ['Next.js', 'TypeScript', 'Node.js', 'AWS']
-  },
-  {
-    title: 'Personalized Growth Guidance Product',
-    category: 'Product',
-    summary: 'Behavior-driven wellness recommendations and progress tracking.',
-    problem: 'Users struggled with sustained engagement due to generic guidance.',
-    solution:
-      'Created personalized recommendation pipelines and progress UX patterns tailored to user behavior.',
-    impact: 'Improved retention and recurring engagement across key cohorts.',
-    tech: ['Next.js', 'MongoDB', 'Node.js']
-  }
-];
+export const techStack = {
+  frontend: ['React', 'Next.js', 'TypeScript', 'Tailwind CSS', 'Redux'],
+  backend: ['Node.js', 'Express', 'NestJS', 'Spring Boot', 'GraphQL'],
+  dataCloud: ['PostgreSQL', 'MongoDB', 'Redis', 'AWS (EC2, S3, Lambda)'],
+  tooling: ['Docker', 'GitHub Actions', 'Jenkins', 'Jest', 'Cypress']
+};
 
 export const experiences: ExperienceItem[] = [
   {
     role: 'Senior Full Stack Software Engineer',
     company: 'Briq',
     duration: 'May 2024 — Present',
-    highlights: [
-      'Built AI-assisted proposal workflows that improved consistency and reduced turnaround effort.',
-      'Implemented secure document processing with role-based access and stronger observability.'
+    achievements: [
+      'Architected AI-assisted workflows for RFP and proposal automation, reducing manual turnaround and improving bid response quality.',
+      'Built secure document processing pipelines with role-based access and audit-ready controls for enterprise usage.',
+      'Delivered robust integrations and observability improvements that increased system reliability in production.'
     ],
-    tech: ['Next.js', 'TypeScript', 'Node.js', 'AWS']
+    technologies: ['Next.js', 'TypeScript', 'Node.js', 'AWS', 'PostgreSQL']
   },
   {
     role: 'Senior Software Engineer',
-    company: 'QBurst',
+    company: 'Qburst Technologies',
     duration: 'May 2020 — May 2024',
-    highlights: [
-      'Delivered analytics-heavy product features for enterprise clients in automotive and fintech domains.',
-      'Improved performance and release predictability through API optimization and CI/CD improvements.'
+    achievements: [
+      'Led full-stack product delivery for fintech and media projects using React, Node.js, and microservice-first architecture.',
+      'Improved application performance through bundle optimization and API tuning, resulting in faster page load times and better engagement.',
+      'Implemented scalable backend services and deployment pipelines supporting continuous releases with minimal downtime.'
     ],
-    tech: ['React', 'Node.js', 'NestJS', 'PostgreSQL']
+    technologies: ['React', 'Node.js', 'NestJS', 'Redis', 'MongoDB', 'Docker']
+  },
+  {
+    role: 'Software Engineer',
+    company: 'Luminovaa Software Pvt Ltd',
+    duration: 'Jan 2018 — Apr 2020',
+    achievements: [
+      'Developed customer-facing web modules and REST APIs for internal business tools.',
+      'Collaborated cross-functionally to convert business requirements into maintainable production features.',
+      'Contributed to quality improvements through testing, code reviews, and release hardening.'
+    ],
+    technologies: ['Angular', 'Node.js', 'MySQL', 'AWS']
+  }
+];
+
+export const projects: ProjectItem[] = [
+  {
+    title: 'Automotive Market Intelligence Platform',
+    problem:
+      'Analysts needed a faster way to monitor used-vehicle market shifts and inventory changes across regions.',
+    solution:
+      'Engineered a data-rich analytics platform with real-time dashboards, trend filters, and high-performance APIs.',
+    impact:
+      'Enabled faster, evidence-based pricing decisions and improved operational response time for downstream teams.',
+    tech: ['React', 'Node.js', 'PostgreSQL', 'Redis', 'Charting Libraries']
+  },
+  {
+    title: 'Personalized Growth Guidance Platform',
+    problem:
+      'Users lacked personalized clarity around daily progress in health and lifestyle goals.',
+    solution:
+      'Built recommendation workflows, progress tracking modules, and a content engine tailored to behavior signals.',
+    impact:
+      'Increased user retention and recurring engagement through more relevant and actionable daily experiences.',
+    tech: ['Next.js', 'TypeScript', 'Node.js', 'MongoDB']
+  },
+  {
+    title: 'Energy Trading Management Suite',
+    problem:
+      'Energy teams needed transparent forecasting and streamlined operations for wholesale market activity.',
+    solution:
+      'Delivered a modular platform for forecasting insights, transaction workflows, and reporting automation.',
+    impact:
+      'Reduced operational friction and improved confidence in planning through centralized, auditable tooling.',
+    tech: ['React', 'Spring Boot', 'GraphQL', 'PostgreSQL'],
+    live: 'https://example.com'
   }
 ];

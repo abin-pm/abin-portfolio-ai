@@ -6,13 +6,13 @@ const links = [
   { id: 'home', label: 'Home' },
   { id: 'about', label: 'About' },
   { id: 'experience', label: 'Experience' },
-  { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'contact', label: 'Contact' }
 ];
 
 export function Navbar() {
   const [active, setActive] = useState('home');
+
   const ids = useMemo(() => links.map((item) => item.id), []);
 
   useEffect(() => {
@@ -30,16 +30,17 @@ export function Navbar() {
           setActive(visible[0].target.id);
         }
       },
-      { rootMargin: '-45% 0px -45% 0px', threshold: [0.15, 0.4, 0.7] }
+      { rootMargin: '-40% 0px -50% 0px', threshold: [0.1, 0.25, 0.5, 0.75] }
     );
 
     sections.forEach((section) => observer.observe(section));
+
     return () => observer.disconnect();
   }, [ids]);
 
   return (
     <nav className="sticky top-0 z-40 border-b border-white/10 bg-vscode-bg/90 backdrop-blur">
-      <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
+      <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-4 md:px-8">
         <a className="text-sm font-semibold tracking-wide text-vscode-blue" href="#home">
           abin.pm
         </a>

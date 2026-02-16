@@ -8,12 +8,11 @@ export const metadata: Metadata = {
     template: '%s | Abin P M'
   },
   description:
-    'Developer portfolio of Abin P M — senior full stack software engineer building scalable web platforms with Next.js, TypeScript, Node.js, and cloud architecture.',
-  keywords: ['Abin PM', 'Senior Full Stack Engineer', 'Next.js', 'TypeScript', 'Node.js', 'Portfolio'],
-  applicationName: 'Abin Portfolio',
+    'Portfolio of Abin P M — senior full stack engineer building high-performance web platforms with Next.js, TypeScript, Node.js, and cloud-native architectures.',
   openGraph: {
     title: 'Abin P M | Senior Full Stack Software Engineer',
-    description: 'Recruiter-focused portfolio featuring impact-led experience, projects, and engineering capabilities.',
+    description:
+      'Recruiter-focused portfolio featuring impact-led experience, projects, and modern full-stack engineering expertise.',
     type: 'website',
     url: 'https://abinpm.dev'
   },

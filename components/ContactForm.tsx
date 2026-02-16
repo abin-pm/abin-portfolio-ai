@@ -2,66 +2,33 @@
 
 import { FormEvent, useState } from 'react';
 
-type FormState = {
-  status: 'idle' | 'loading' | 'success' | 'error';
-  message: string;
-};
-
-const initialState: FormState = {
-  status: 'idle',
-  message: ''
-};
-
 export function ContactForm() {
-  const [formState, setFormState] = useState<FormState>(initialState);
+  const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = async (event: FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-
     const form = event.currentTarget;
     const data = new FormData(form);
+    const name = data.get('name')?.toString().trim();
+    const email = data.get('email')?.toString().trim();
+    const message = data.get('message')?.toString().trim();
 
-    const payload = {
-      name: data.get('name')?.toString().trim() ?? '',
-      email: data.get('email')?.toString().trim() ?? '',
-      message: data.get('message')?.toString().trim() ?? ''
-    };
+    const body = encodeURIComponent(
+      `Hi Abin,%0D%0A%0D%0AName: ${name ?? ''}%0D%0AEmail: ${email ?? ''}%0D%0A%0D%0A${message ?? ''}`
+    );
 
-    setFormState({ status: 'loading', message: 'Sending your message...' });
-
-    try {
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(payload)
-      });
-
-      const json = (await response.json()) as { message: string };
-
-      if (!response.ok) {
-        setFormState({ status: 'error', message: json.message || 'Something went wrong. Please try again.' });
-        return;
-      }
-
-      setFormState({ status: 'success', message: json.message });
-      form.reset();
-    } catch {
-      setFormState({ status: 'error', message: 'Unable to send right now. Please email directly at abinpm@gmail.com.' });
-    }
+    window.location.href = `mailto:abinpm@gmail.com?subject=Portfolio%20Inquiry&body=${body}`;
+    setSubmitted(true);
+    form.reset();
   };
 
   return (
-    <form
-      className="space-y-4 rounded-xl border border-white/10 bg-vscode-surface/70 p-5"
-      onSubmit={handleSubmit}
-      aria-label="Contact form"
-    >
+    <form className="space-y-4 rounded-xl border border-white/10 bg-vscode-surface/70 p-5" onSubmit={handleSubmit}>
       <label className="block text-sm">
         <span className="mb-1 block text-vscode-text/80">Name</span>
         <input
           name="name"
           required
-          autoComplete="name"
           className="w-full rounded-md border border-white/10 bg-vscode-bg px-3 py-2 text-vscode-text outline-none ring-vscode-blue focus:ring"
         />
       </label>
@@ -71,7 +38,6 @@ export function ContactForm() {
           type="email"
           name="email"
           required
-          autoComplete="email"
           className="w-full rounded-md border border-white/10 bg-vscode-bg px-3 py-2 text-vscode-text outline-none ring-vscode-blue focus:ring"
         />
       </label>
@@ -86,19 +52,11 @@ export function ContactForm() {
       </label>
       <button
         type="submit"
-        disabled={formState.status === 'loading'}
-        className="rounded-md bg-vscode-blue px-4 py-2 text-sm font-medium text-vscode-bg transition hover:brightness-110 disabled:cursor-not-allowed disabled:opacity-60"
+        className="rounded-md bg-vscode-blue px-4 py-2 text-sm font-medium text-vscode-bg transition hover:brightness-110"
       >
-        {formState.status === 'loading' ? 'Sending...' : 'Send message'}
+        Send message
       </button>
-      {formState.status !== 'idle' ? (
-        <p
-          className={`text-xs ${formState.status === 'success' ? 'text-vscode-green' : formState.status === 'error' ? 'text-red-400' : 'text-vscode-text/70'}`}
-          role="status"
-        >
-          {formState.message}
-        </p>
-      ) : null}
+      {submitted ? <p className="text-xs text-vscode-green">Thanks! Your default email client should open now.</p> : null}
     </form>
   );
 }
