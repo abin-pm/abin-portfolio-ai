@@ -1,6 +1,6 @@
 # Abin P M — VS Code Inspired Developer Portfolio
 
-A modern recruiter-focused portfolio built with **Next.js App Router**, **Tailwind CSS**, and **Framer Motion**, inspired by the Visual Studio Code interface.
+A recruiter-focused portfolio built with **Next.js App Router**, **Tailwind CSS**, and **Framer Motion**, designed to feel like a polished Visual Studio Code workspace.
 
 ## Tech Stack
 - Next.js 14 (App Router)
@@ -9,14 +9,14 @@ A modern recruiter-focused portfolio built with **Next.js App Router**, **Tailwi
 - Framer Motion
 - Lucide Icons
 
-## Experience Design
+## UI/UX Concept
 - VS Code-style explorer sidebar
-- Top tabs for section switching
+- Top tabs for section navigation
 - Editor-like content panels
-- Status bar with quick context and theme toggle
-- Dark/Light mode with smooth transition
+- Status bar footer with quick status + theme toggle
+- Dark/Light mode with smooth theme transitions
 
-## Sections
+## Portfolio Sections
 - Home
 - About
 - Skills
@@ -44,17 +44,19 @@ A modern recruiter-focused portfolio built with **Next.js App Router**, **Tailwi
 ├── .github/workflows
 │   ├── ci.yml
 │   └── cd-vercel.yml
-└── next.config.mjs
+├── next.config.mjs
+├── package.json
+└── package-lock.json
 ```
 
 ## Local Development
 ```bash
-npm install
+npm ci
 npm run dev
 ```
 Open `http://localhost:3000`.
 
-## Production Build
+## Production Checks
 ```bash
 npm run lint
 npm run build
@@ -62,15 +64,15 @@ npm run start
 ```
 
 ## CI/CD
-### CI
+### CI (GitHub Actions)
 - Workflow: `.github/workflows/ci.yml`
-- Runs on PR + push to `main`
+- Triggers: pull requests + pushes to `main`
 - Steps: `npm ci`, `npm run lint`, `npm run build`
 
 ### CD (Vercel)
 - Workflow: `.github/workflows/cd-vercel.yml`
-- Runs on push to `main`
-- Deploys with Vercel CLI
+- Trigger: pushes to `main`
+- Deploys using Vercel CLI (`vercel pull`, `vercel build`, `vercel deploy`)
 
 Required GitHub Secrets:
 - `VERCEL_TOKEN`
