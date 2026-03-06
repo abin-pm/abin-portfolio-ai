@@ -71,8 +71,9 @@ npm run start
 
 ### CD (Vercel)
 - Workflow: `.github/workflows/cd-vercel.yml`
-- Trigger: pushes to `main`
+- Triggers: pushes to `main` + manual `workflow_dispatch`
 - Deploys using Vercel CLI (`vercel pull`, `vercel build`, `vercel deploy`)
+- Uses workflow concurrency (`vercel-production`) to avoid overlapping production deploys
 
 Required GitHub Secrets:
 - `VERCEL_TOKEN`
