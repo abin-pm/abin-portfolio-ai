@@ -1,15 +1,30 @@
-# Abin P M — Portfolio Website
+# Abin P M — VS Code Inspired Developer Portfolio
 
-Production-ready portfolio built with **Next.js App Router**, **TypeScript**, and **Tailwind CSS** using a **Visual Studio Code Dark Theme** design language.
+A recruiter-focused portfolio built with **Next.js App Router**, **Tailwind CSS**, and **Framer Motion**, designed to feel like a polished Visual Studio Code workspace.
 
 ## Tech Stack
 - Next.js 14 (App Router)
-- TypeScript (strict mode)
+- TypeScript
 - Tailwind CSS
-- Lucide React icons
+- Framer Motion
+- Lucide Icons
 
-## Folder Structure
+## UI/UX Concept
+- VS Code-style explorer sidebar
+- Top tabs for section navigation
+- Editor-like content panels
+- Status bar footer with quick status + theme toggle
+- Dark/Light mode with smooth theme transitions
 
+## Portfolio Sections
+- Home
+- About
+- Skills
+- Projects
+- Experience
+- Contact
+
+## Project Structure
 ```text
 .
 ├── app
@@ -17,59 +32,44 @@ Production-ready portfolio built with **Next.js App Router**, **TypeScript**, an
 │   ├── layout.tsx
 │   └── page.tsx
 ├── components
-│   ├── ContactForm.tsx
-│   ├── Navbar.tsx
-│   ├── ScrollProgress.tsx
-│   ├── SectionTitle.tsx
-│   └── TypingRole.tsx
+│   ├── portfolio
+│   │   ├── PortfolioIDE.tsx
+│   │   ├── Sidebar.tsx
+│   │   ├── TopTabs.tsx
+│   │   ├── StatusBar.tsx
+│   │   └── sections
+│   └── ui
 ├── lib
 │   └── data.ts
 ├── next.config.mjs
 ├── package.json
-├── postcss.config.js
-├── tailwind.config.ts
-└── tsconfig.json
+└── package-lock.json
 ```
 
-## Key Features
-- Sticky navigation with active section highlight
-- Smooth scrolling and scroll progress indicator
-- Typing animation in hero section
-- Recruiter-focused content hierarchy
-- Responsive layout (mobile-first)
-- Accessible semantics and labels
-- SEO metadata configured in `app/layout.tsx`
-
-## Design Tokens (VS Code Dark Theme)
-- Background: `#1E1E1E`
-- Surface: `#252526`
-- Text: `#D4D4D4`
-- Accent Blue: `#569CD6`
-- Accent Green: `#6A9955`
-- Accent Purple: `#C586C0`
-
-## Run Locally
-
+## Local Development
 ```bash
-npm install
+npm ci
 npm run dev
 ```
-
 Open `http://localhost:3000`.
 
-## Build for Production
-
+## Production Checks
 ```bash
+npm run lint
 npm run build
 npm run start
 ```
 
-## Deployment (Vercel)
-1. Push this repository to GitHub.
-2. Go to [vercel.com](https://vercel.com) and import the repo.
-3. Framework preset: **Next.js** (auto-detected).
-4. Keep default build command: `next build`.
-5. Deploy.
+## CI/CD
+### CI (GitHub Actions)
+- Workflow: `.github/workflows/ci.yml`
+- Triggers: pull requests + pushes to `main`
+- Steps: `npm ci`, `npm run lint`, `npm run build`
+
+### CD (Vercel)
+- Workflow: `.github/workflows/cd-vercel.yml`
+- Trigger: pushes to `main`
+- Deploys using Vercel CLI (`vercel pull`, `vercel build`, `vercel deploy`)
 
 
 ## CI/CD Pipeline (GitHub Actions + Vercel)

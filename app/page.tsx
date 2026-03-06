@@ -1,16 +1,4 @@
-import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
-import { ContactForm } from '@/components/ContactForm';
-import { Navbar } from '@/components/Navbar';
-import { ScrollProgress } from '@/components/ScrollProgress';
-import { SectionTitle } from '@/components/SectionTitle';
-import { TypingRole } from '@/components/TypingRole';
-import { experiences, personalInfo, projects, strengths, techStack } from '@/lib/data';
-
-const rolePhrases = [
-  'Senior Full Stack Software Engineer',
-  'Product-Minded Platform Builder',
-  'Scalable Systems & UX Enthusiast'
-];
+import { PortfolioIDE } from '@/components/portfolio/PortfolioIDE';
 
 export default function HomePage() {
   return (
