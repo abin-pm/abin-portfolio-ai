@@ -21,7 +21,7 @@ export default function HomePage() {
         <section id="home" className="section-shell min-h-[80vh] scroll-mt-24 flex items-center">
           <div className="grid gap-10 md:grid-cols-[1.3fr_1fr] md:items-center">
             <div className="space-y-6">
-              <p className="text-sm uppercase tracking-[0.3em] text-vscode-green">console.log('hello, recruiter')</p>
+              <p className="text-sm uppercase tracking-[0.3em] text-vscode-green">console.log(&apos;hello, recruiter&apos;)</p>
               <h1 className="text-4xl font-bold leading-tight text-vscode-text md:text-6xl">{personalInfo.name}</h1>
               <TypingRole phrases={rolePhrases} />
               <p className="max-w-2xl text-sm text-vscode-text/80 md:text-base">{personalInfo.summary}</p>
@@ -69,7 +69,7 @@ export default function HomePage() {
 
         <section className="section-shell space-y-8" aria-labelledby="about">
           <SectionTitle id="about" title="About" eyebrow="Who I Am">
-            I bring a builder's mindset to product engineering—balancing architecture, UX, and delivery to create systems teams trust and users enjoy.
+            I bring a builder&apos;s mindset to product engineering—balancing architecture, UX, and delivery to create systems teams trust and users enjoy.
           </SectionTitle>
           <div className="grid gap-6 md:grid-cols-2">
             <article className="code-panel space-y-3">
@@ -186,7 +186,7 @@ export default function HomePage() {
               <a href={personalInfo.github} className="block text-sm text-vscode-blue hover:underline" target="_blank" rel="noreferrer">
                 GitHub Profile
               </a>
-              <p className="text-sm text-vscode-text/70">If you're hiring for impactful full-stack roles, I'd love to connect.</p>
+              <p className="text-sm text-vscode-text/70">If you&apos;re hiring for impactful full-stack roles, I&apos;d love to connect.</p>
             </article>
             <ContactForm />
           </div>

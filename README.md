@@ -24,7 +24,7 @@ Production-ready portfolio built with **Next.js App Router**, **TypeScript**, an
 │   └── TypingRole.tsx
 ├── lib
 │   └── data.ts
-├── next.config.ts
+├── next.config.mjs
 ├── package.json
 ├── postcss.config.js
 ├── tailwind.config.ts
@@ -70,6 +70,25 @@ npm run start
 3. Framework preset: **Next.js** (auto-detected).
 4. Keep default build command: `next build`.
 5. Deploy.
+
+
+## CI/CD Pipeline (GitHub Actions + Vercel)
+
+This repo now includes:
+- **CI** workflow at `.github/workflows/ci.yml`
+  - Runs on pull requests and pushes to `main`
+  - Executes `npm ci`, `npm run lint`, and `npm run build`
+- **CD** workflow at `.github/workflows/cd-vercel.yml`
+  - Runs on pushes to `main`
+  - Builds and deploys to Vercel using the Vercel CLI
+
+### Required GitHub Secrets
+Add these repository secrets in **GitHub → Settings → Secrets and variables → Actions**:
+- `VERCEL_TOKEN`
+- `VERCEL_ORG_ID`
+- `VERCEL_PROJECT_ID`
+
+You can get these values from your Vercel account/project settings.
 
 ## Accessibility Notes
 - Uses semantic sectioning (`section`, `header`, `article`, `nav`).
