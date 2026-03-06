@@ -40,11 +40,12 @@ A modern recruiter-focused portfolio built with **Next.js App Router**, **Tailwi
 │   │   └── sections
 │   └── ui
 ├── lib
-│   └── portfolio-content.ts
-├── .github/workflows
-│   ├── ci.yml
-│   └── cd-vercel.yml
-└── next.config.mjs
+│   └── data.ts
+├── next.config.mjs
+├── package.json
+├── postcss.config.js
+├── tailwind.config.ts
+└── tsconfig.json
 ```
 
 ## Local Development
@@ -72,7 +73,28 @@ npm run start
 - Runs on push to `main`
 - Deploys with Vercel CLI
 
-Required GitHub Secrets:
+
+## CI/CD Pipeline (GitHub Actions + Vercel)
+
+This repo now includes:
+- **CI** workflow at `.github/workflows/ci.yml`
+  - Runs on pull requests and pushes to `main`
+  - Executes `npm ci`, `npm run lint`, and `npm run build`
+- **CD** workflow at `.github/workflows/cd-vercel.yml`
+  - Runs on pushes to `main`
+  - Builds and deploys to Vercel using the Vercel CLI
+
+### Required GitHub Secrets
+Add these repository secrets in **GitHub → Settings → Secrets and variables → Actions**:
 - `VERCEL_TOKEN`
 - `VERCEL_ORG_ID`
 - `VERCEL_PROJECT_ID`
+
+You can get these values from your Vercel account/project settings.
+
+## Accessibility Notes
+- Uses semantic sectioning (`section`, `header`, `article`, `nav`).
+- Form fields are properly labeled.
+- High-contrast dark theme with readable text.
+- `aria-current` used for active navigation state.
+- Typing role uses `aria-live` for screen reader updates.
