@@ -61,8 +61,13 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:32px 40px
 }
 
 @media (max-width:768px){
-  nav{padding:16px 20px}
-  .nav-links{display:none}
+  nav{padding:14px 16px;flex-wrap:wrap;align-items:flex-start}
+  .nav-logo{font-size:1rem}
+  .nav-links{display:flex;gap:10px;flex:1 0 100%;overflow-x:auto;padding-bottom:4px;scrollbar-width:none;-webkit-overflow-scrolling:touch}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links li{flex:0 0 auto}
+  .nav-links a{font-size:.68rem;white-space:nowrap}
+  .nav-cta{padding:7px 14px}
   section{padding:70px 20px}
   .hero{padding:100px 20px 60px}
   .hero-name{font-size:clamp(2.5rem,14vw,4.5rem)}
