@@ -1,33 +1,50 @@
 'use client';
 
+import Image from 'next/image';
 import { motion } from 'framer-motion';
-import { ExternalLink, Github } from 'lucide-react';
-import type { Project } from '@/lib/portfolio-content';
 
-export function ProjectCard({ project }: { project: Project }) {
+type ProjectLike = {
+  title: string;
+  description?: string;
+  problem?: string;
+  solution?: string;
+  tech?: string[];
+  technologies?: string[];
+  image?: string;
+  github?: string;
+  live?: string;
+};
+
+export function ProjectCard({ project }: { project: ProjectLike }) {
+  const description = project.description ?? `${project.problem ?? ''} ${project.solution ?? ''}`.trim();
+
   return (
     <motion.article
-      whileHover={{ y: -6, scale: 1.01 }}
-      transition={{ type: 'spring', stiffness: 220, damping: 20 }}
-      className="group rounded-lg border border-panel-border bg-panel p-5"
+      whileHover={{ y: -6 }}
+      transition={{ duration: 0.2 }}
+      className="overflow-hidden rounded-2xl border border-slate-800 bg-slate-900/70"
     >
-      <h3 className="text-lg font-semibold text-accent">{project.title}</h3>
-      <p className="mt-2 text-sm text-secondary">{project.summary}</p>
-      <p className="mt-2 text-xs text-primary/80">{project.impact}</p>
-      <div className="mt-3 flex flex-wrap gap-2">
-        {project.stack.map((item) => (
-          <span key={item} className="rounded bg-background px-2 py-1 text-xs text-muted">
-            {item}
-          </span>
-        ))}
-      </div>
-      <div className="mt-4 flex gap-4 text-sm">
-        <a href={project.github} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:text-accent">
-          <Github size={14} /> GitHub
-        </a>
-        <a href={project.live} target="_blank" rel="noreferrer" className="inline-flex items-center gap-1 hover:text-accent">
-          <ExternalLink size={14} /> Live Demo
-        </a>
+      {project.image ? (
+        <div className="relative h-48 w-full">
+          <Image src={project.image} alt={project.title} fill className="object-cover" sizes="(max-width: 768px) 100vw, 50vw" />
+        </div>
+      ) : null}
+      <div className="p-6">
+        <h3 className="text-xl font-semibold text-slate-100">{project.title}</h3>
+        <p className="mt-3 text-sm text-slate-300">{description}</p>
+        <p className="mt-3 text-xs text-slate-400">{(project.tech ?? project.technologies ?? []).join(' • ')}</p>
+        <div className="mt-5 flex gap-4 text-sm">
+          {project.github ? (
+            <a href={project.github} target="_blank" rel="noreferrer" className="text-sky-400 hover:text-sky-300">
+              GitHub
+            </a>
+          ) : null}
+          {project.live ? (
+            <a href={project.live} target="_blank" rel="noreferrer" className="text-indigo-400 hover:text-indigo-300">
+              Live Demo
+            </a>
+          ) : null}
+        </div>
       </div>
     </motion.article>
   );
