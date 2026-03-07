@@ -32,19 +32,12 @@ A recruiter-focused portfolio built with **Next.js App Router**, **Tailwind CSS*
 │   ├── layout.tsx
 │   └── page.tsx
 ├── components
-│   ├── portfolio
-│   │   ├── PortfolioIDE.tsx
-│   │   ├── Sidebar.tsx
-│   │   ├── TopTabs.tsx
-│   │   ├── StatusBar.tsx
-│   │   └── sections
-│   └── ui
 ├── lib
+│   ├── data.ts
 │   └── portfolio-content.ts
 ├── .github/workflows
 │   ├── ci.yml
 │   └── cd-vercel.yml
-│   └── data.ts
 ├── next.config.mjs
 ├── package.json
 └── package-lock.json
@@ -75,29 +68,9 @@ npm run start
 - Triggers: pushes to `main` + manual `workflow_dispatch`
 - Deploys using Vercel CLI (`vercel pull`, `vercel build`, `vercel deploy`)
 - Uses workflow concurrency (`vercel-production`) to avoid overlapping production deploys
-- Trigger: pushes to `main`
-- Deploys using Vercel CLI (`vercel pull`, `vercel build`, `vercel deploy`)
-
-
-## CI/CD Pipeline (GitHub Actions + Vercel)
-
-This repo now includes:
-- **CI** workflow at `.github/workflows/ci.yml`
-  - Runs on pull requests and pushes to `main`
-  - Executes `npm ci`, `npm run lint`, and `npm run build`
-- **CD** workflow at `.github/workflows/cd-vercel.yml`
-  - Runs on pushes to `main`
-  - Builds and deploys to Vercel using the Vercel CLI
 
 ### Required GitHub Secrets
 Add these repository secrets in **GitHub → Settings → Secrets and variables → Actions**:
-- `VERCEL_TOKEN`
-- `VERCEL_ORG_ID`
-- `VERCEL_PROJECT_ID`
-
-You can get these values from your Vercel account/project settings.
-
-Required GitHub Secrets:
 - `VERCEL_TOKEN`
 - `VERCEL_ORG_ID`
 - `VERCEL_PROJECT_ID`

@@ -1,4 +1,11 @@
-import { PortfolioIDE } from '@/components/portfolio/PortfolioIDE';
+import { ContactForm } from '@/components/ContactForm';
+import { Navbar } from '@/components/Navbar';
+import { ScrollProgress } from '@/components/ScrollProgress';
+import { SectionTitle } from '@/components/SectionTitle';
+import { TypingRole } from '@/components/TypingRole';
+import { personalInfo, strengths, techStack, experiences, projects } from '@/lib/data';
+import { heroPhrases as rolePhrases } from '@/lib/portfolio-content';
+import { Github, Linkedin, Mail, MapPin } from 'lucide-react';
 
 export default function HomePage() {
   return (
