@@ -46,6 +46,8 @@ const personSchema = {
   description:
     'Senior Full Stack Developer with 9+ years experience in React.js, Next.js, Node.js, MERN Stack, Microservices, and AI-assisted development.',
   url: 'https://abinpm.dev',
+  image: 'https://abinpm.dev/logo.svg',
+  logo: 'https://abinpm.dev/logo.svg',
   email: 'abinpm92@gmail.com',
   telephone: '+91-9895661651',
   address: {
@@ -68,6 +70,24 @@ const personSchema = {
     'MongoDB',
     'PostgreSQL',
   ],
+};
+
+
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Abin PM Portfolio',
+  url: 'https://abinpm.dev/',
+  description:
+    'Senior Full Stack Developer portfolio showcasing React, Next.js, Node.js, and AI-powered engineering work.',
+  publisher: {
+    '@type': 'Person',
+    name: 'Abin PM',
+    logo: {
+      '@type': 'ImageObject',
+      url: 'https://abinpm.dev/logo.svg',
+    },
+  },
 };
 
 export default function HomePage() {
@@ -127,6 +147,7 @@ export default function HomePage() {
       <footer><div className="footer-copy">© 2026 Abin PM · Senior Full Stack Developer · Kochi, Kerala, India</div><div className="footer-seo-links"><a href="#skills">React.js Developer</a><a href="#skills">MERN Stack Expert</a><a href="#skills">Node.js Developer</a><a href="#hire">Freelance Developer</a><a href="#projects">Full Stack Portfolio</a></div></footer>
 
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
     </>
   );
 }
