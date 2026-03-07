@@ -24,14 +24,14 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Abin PM' }],
   robots: { index: true, follow: true },
-  alternates: { canonical: 'https://abinpm.dev/' },
+  alternates: { canonical: 'https://www.abinaiengineer.com/' },
   openGraph: {
     type: 'website',
     title: 'Abin PM | Senior Full Stack Developer — React, Node.js, MERN, AI',
     description:
       '9+ years building scalable enterprise web apps. React.js, Next.js, Node.js, Microservices, AWS. Available for freelance.',
-    url: 'https://abinpm.dev/',
-    images: ['https://abinpm.dev/og-image.jpg'],
+    url: 'https://www.abinaiengineer.com/',
+    images: ['https://www.abinaiengineer.com/og-image.jpg'],
   },
   twitter: {
     card: 'summary_large_image',
@@ -47,9 +47,9 @@ const personSchema = {
   jobTitle: 'Senior Full Stack Software Engineer',
   description:
     'Senior Full Stack Developer with 9+ years experience in React.js, Next.js, Node.js, MERN Stack, Microservices, and AI-assisted development.',
-  url: 'https://abinpm.dev',
-  image: 'https://abinpm.dev/logo.svg',
-  logo: 'https://abinpm.dev/logo.svg',
+  url: 'https://www.abinaiengineer.com',
+  image: 'https://www.abinaiengineer.com/logo.svg',
+  logo: 'https://www.abinaiengineer.com/logo.svg',
   email: 'abinpm92@gmail.com',
   telephone: '+91-9895661651',
   address: {
@@ -79,7 +79,7 @@ const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: 'Abin PM Portfolio',
-  url: 'https://abinpm.dev/',
+  url: 'https://www.abinaiengineer.com/',
   description:
     'Senior Full Stack Developer portfolio showcasing React, Next.js, Node.js, and AI-powered engineering work.',
   publisher: {
@@ -87,7 +87,7 @@ const websiteSchema = {
     name: 'Abin PM',
     logo: {
       '@type': 'ImageObject',
-      url: 'https://abinpm.dev/logo.svg',
+      url: 'https://www.abinaiengineer.com/logo.svg',
     },
   },
 };

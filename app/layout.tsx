@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://abinpm.dev'),
+  metadataBase: new URL('https://www.abinaiengineer.com'),
   title: 'Senior Full Stack AI Developer | MERN Stack Developer | Abin P M',
   description:
     'Abin PM is a Senior Full Stack Developer building scalable React, Next.js, Node.js, and AI-powered applications for startups and enterprise teams.',
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
     title: 'Senior Full Stack AI & MERN Developer | Abin P M',
     description:
       'Freelance Full Stack Developer specializing in AI web application development with Next.js, React, Node.js, and TypeScript.',
-    url: 'https://abinpm.dev',
+    url: 'https://www.abinaiengineer.com',
     type: 'website',
     siteName: 'Abin P M Portfolio',
     images: [{ url: '/logo.svg', width: 512, height: 512, alt: 'Abin PM logo' }],
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
       'React, Next.js, Node.js, TypeScript, and AI-powered product engineering for web platforms.',
     images: ['/logo.svg'],
   },
-  alternates: { canonical: 'https://abinpm.dev' },
+  alternates: { canonical: 'https://www.abinaiengineer.com' },
   manifest: '/site.webmanifest',
   icons: {
     icon: [
