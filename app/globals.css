@@ -2,86 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: 245 246 248;
-  --panel: 255 255 255;
-  --panel-border: 224 224 226;
-  --text-primary: 24 24 27;
-  --text-secondary: 63 63 70;
-  --text-muted: 113 113 122;
-  --accent: 37 99 235;
-  --success: 22 163 74;
-}
+@import '../styles/utilities.css';
 
-.dark {
-  --bg: 30 30 30;
-  --panel: 37 37 38;
-  --panel-border: 58 58 61;
-  --text-primary: 220 220 220;
-  --text-secondary: 177 177 178;
-  --text-muted: 137 137 138;
-  --accent: 86 156 214;
-  --success: 106 153 85;
+:root {
+  color-scheme: dark;
 }
 
 body {
-  background: rgb(var(--bg));
-  color: rgb(var(--text-primary));
-  transition: background-color 220ms ease, color 220ms ease;
-}
-
-@layer utilities {
-  .bg-background {
-    background-color: rgb(var(--bg));
-  }
-
-  .bg-panel {
-    background-color: rgb(var(--panel));
-  }
-
-  .text-primary {
-    color: rgb(var(--text-primary));
-  }
-
-  .text-secondary {
-    color: rgb(var(--text-secondary));
-  }
-
-  .text-muted {
-    color: rgb(var(--text-muted));
-  }
-
-  .text-accent {
-    color: rgb(var(--accent));
-  }
-
-  .text-success {
-    color: rgb(var(--success));
-  }
-
-  .border-panel-border {
-    border-color: rgb(var(--panel-border));
-  }
-
-  .bg-accent {
-    background-color: rgb(var(--accent));
-  }
-}
-
-@layer components {
-  .ide-shell {
-    @apply grid overflow-hidden rounded-lg border border-panel-border bg-panel shadow-2xl md:grid-cols-[260px_1fr];
-  }
-
-  .panel-card {
-    @apply rounded-lg border border-panel-border bg-panel p-5;
-  }
-
-  .panel-title {
-    @apply text-base font-semibold text-accent;
-  }
-
-  .panel-copy {
-    @apply mt-2 text-sm text-secondary;
-  }
+  background-color: #0f172a;
+  color: #e2e8f0;
+  text-rendering: optimizeLegibility;
 }
