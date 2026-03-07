@@ -3,7 +3,7 @@ export const personSchema = {
   '@type': 'Person',
   name: 'Abin P M',
   jobTitle: 'Senior Full Stack AI & MERN Developer',
-  url: 'https://abinpm.dev',
+  url: 'https://www.abinaiengineer.com',
   sameAs: [
     'https://www.linkedin.com/in/abin-p-m-/',
     'https://github.com/abinpm',
