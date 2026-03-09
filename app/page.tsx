@@ -31,12 +31,13 @@ export const metadata: Metadata = {
     description:
       '9+ years building scalable enterprise web apps. React.js, Next.js, Node.js, Microservices, AWS. Available for freelance.',
     url: 'https://www.abinaiengineer.com/',
-    images: ['https://www.abinaiengineer.com/og-image.jpg'],
+    images: [{ url: 'https://www.abinaiengineer.com/opengraph-image', width: 1200, height: 630, alt: 'Abin PM — Senior Full Stack Developer' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Abin PM | Senior Full Stack Developer',
     description: '9+ years React.js, Node.js, MERN Stack, Microservices, AWS. Open for freelance work.',
+    images: ['https://www.abinaiengineer.com/opengraph-image'],
   },
 };
 
