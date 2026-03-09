@@ -11,7 +11,7 @@ const navLinks = [
 ];
 
 export function ClientNav() {
-  const [active, setActive] = useState('skills');
+  const [active, setActive] = useState('');
 
   const sectionIds = useMemo(() => navLinks.map((link) => link.id), []);
 

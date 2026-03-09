@@ -21,17 +21,16 @@ export const metadata: Metadata = {
     url: 'https://www.abinaiengineer.com',
     type: 'website',
     siteName: 'Abin P M Portfolio',
-    images: [{ url: '/logo.svg', width: 512, height: 512, alt: 'Abin PM logo' }],
+    images: [{ url: 'https://www.abinaiengineer.com/opengraph-image', width: 1200, height: 630, alt: 'Abin PM — Senior Full Stack Developer' }],
   },
   twitter: {
     card: 'summary_large_image',
     title: 'Abin PM | Senior Full Stack AI & MERN Developer',
     description:
       'React, Next.js, Node.js, TypeScript, and AI-powered product engineering for web platforms.',
-    images: ['/logo.svg'],
+    images: ['https://www.abinaiengineer.com/opengraph-image'],
   },
-  alternates: { canonical: 'https://www.abinaiengineer.com' },
-  manifest: '/site.webmanifest',
+  alternates: { canonical: 'https://www.abinaiengineer.com/' },
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
