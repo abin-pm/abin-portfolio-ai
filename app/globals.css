@@ -172,6 +172,45 @@ body {
     animation: ai-pulse 3s ease-in-out infinite;
   }
 
+  /* Violet-on-hover — looks identical to .card at rest, goes violet on hover */
+  /* Used for AI-Native skill card: no odd permanent purple tint */
+  .card-violet-hover {
+    background: rgba(99, 102, 241, 0.04);
+    border-color: rgba(99, 102, 241, 0.12);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease,
+                transform 0.35s ease, background 0.35s ease;
+  }
+
+  .card-violet-hover::after {
+    background: linear-gradient(
+      108deg,
+      transparent 38%,
+      rgba(167, 139, 250, 0.08) 50%,
+      transparent 62%
+    );
+    background-size: 220% 100%;
+    background-position: 220% center;
+  }
+
+  .card-violet-hover:hover {
+    background: rgba(167, 139, 250, 0.05);
+    border-color: rgba(167, 139, 250, 0.48);
+    box-shadow:
+      0 0 0 1px rgba(167, 139, 250, 0.12),
+      0 0 40px rgba(167, 139, 250, 0.22),
+      0 10px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+    animation: ai-pulse 3s ease-in-out infinite;
+  }
+
+  /* Also flip the tag pills to violet tint on card hover */
+  .card-violet-hover:hover .tag-pill {
+    background: rgba(167, 139, 250, 0.08);
+    border-color: rgba(167, 139, 250, 0.25);
+    color: #a78bfa;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+  }
+
   /* Cyan variant — impact/result cards */
   .card-cyan {
     background: rgba(34, 211, 238, 0.03);

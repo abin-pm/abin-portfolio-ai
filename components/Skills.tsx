@@ -24,10 +24,10 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06, duration: 0.5 }}
-              className={`card p-7 ${group.highlight ? 'card-violet' : ''}`}
+              className={`card p-7 ${group.highlight ? 'card-violet-hover' : ''}`}
             >
               {group.highlightLabel && (
-                <span className="absolute right-4 top-4 z-10 rounded-full border border-[rgba(167,139,250,0.3)] bg-[rgba(167,139,250,0.12)] px-2.5 py-0.5 font-mono text-[10px] text-[#a78bfa]">
+                <span className="absolute right-4 top-4 z-10 rounded-full border border-[rgba(167,139,250,0.3)] bg-[rgba(167,139,250,0.1)] px-2.5 py-0.5 font-mono text-[10px] text-[#a78bfa]">
                   {group.highlightLabel}
                 </span>
               )}
@@ -38,10 +38,7 @@ export function Skills() {
                 </h3>
                 <div className="flex flex-wrap gap-2">
                   {group.items.map((item) => (
-                    <span
-                      key={item}
-                      className={`tag-pill ${group.highlight ? 'tag-pill-violet' : ''}`}
-                    >
+                    <span key={item} className="tag-pill">
                       {item}
                     </span>
                   ))}
