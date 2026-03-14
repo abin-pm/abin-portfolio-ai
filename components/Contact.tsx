@@ -69,15 +69,15 @@ export function Contact() {
                     target={item.external ? '_blank' : undefined}
                     rel={item.external ? 'noopener noreferrer' : undefined}
                     aria-label={item.aria}
-                    className="card inline-flex w-full items-center gap-3 px-5 py-3.5 no-underline"
+                    className="card group inline-flex w-full items-center gap-3 px-5 py-3.5 no-underline"
                   >
                     <span className="relative z-10 flex w-full items-center gap-3">
                       <span className="text-lg">{item.icon}</span>
-                      <span className="font-mono text-sm text-[#94a3b8] group-hover:text-[#f1f5f9]">
+                      <span className="font-mono text-sm text-[#94a3b8] transition-colors group-hover:text-[#f1f5f9]">
                         {item.label}
                       </span>
                       {item.external && (
-                        <span className="ml-auto font-mono text-[10px] text-[#475569]">↗</span>
+                        <span className="ml-auto font-mono text-[10px] text-[#475569] transition-colors group-hover:text-[#94a3b8]">↗</span>
                       )}
                     </span>
                   </a>
