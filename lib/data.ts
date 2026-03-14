@@ -148,6 +148,7 @@ export type Assignment = {
 };
 
 export type ExperienceItem = {
+  slug: string;
   period: string;
   company: string;
   role: string;
@@ -161,6 +162,7 @@ export type ExperienceItem = {
 
 export const experience: ExperienceItem[] = [
   {
+    slug: 'ibm',
     period: 'Sep 2024 — Present',
     company: 'IBM India Pvt Ltd',
     role: 'Senior Application Developer (Full Stack & Cloud)',
@@ -192,6 +194,7 @@ export const experience: ExperienceItem[] = [
     },
   },
   {
+    slug: 'emvigo',
     period: 'Sep 2020 — Sep 2024',
     company: 'Emvigo Technologies Pvt Ltd',
     role: 'Team Lead / Senior Software Engineer',
@@ -206,6 +209,7 @@ export const experience: ExperienceItem[] = [
     ],
   },
   {
+    slug: 'luminescent',
     period: 'Jan 2018 — Sep 2020',
     company: 'Luminescent Software Pvt Ltd',
     role: 'Software Engineer (Full Stack)',
@@ -219,6 +223,7 @@ export const experience: ExperienceItem[] = [
     ],
   },
   {
+    slug: 'ocuiz',
     period: 'May 2016 — Dec 2017',
     company: 'Ocuiz Technologies',
     role: 'Software Engineer',

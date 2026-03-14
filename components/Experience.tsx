@@ -1,5 +1,6 @@
 'use client';
 
+import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { experience, education } from '@/lib/data';
 import { SectionWrapper } from '@/components/SectionWrapper';
@@ -77,6 +78,14 @@ export function Experience() {
                 ))}
               </ul>
 
+              {/* View detail link */}
+              <Link
+                href={`/experience/${job.slug}`}
+                className="mb-4 inline-flex items-center gap-1.5 rounded-lg border border-[rgba(99,102,241,0.2)] px-4 py-1.5 font-mono text-xs text-[#6366f1] no-underline transition hover:border-[rgba(99,102,241,0.5)] hover:bg-[rgba(99,102,241,0.06)]"
+              >
+                Full role details →
+              </Link>
+
               {/* AI tools strip */}
               {job.aiRole && (
                 <div className="mb-4 flex flex-wrap items-center gap-2 font-mono text-xs text-[#a78bfa]">
@@ -109,6 +118,14 @@ export function Experience() {
                       </li>
                     ))}
                   </ul>
+                  <div className="mt-4">
+                    <Link
+                      href="/projects/national-grid"
+                      className="inline-flex items-center gap-1.5 rounded-lg border border-[rgba(167,139,250,0.25)] px-4 py-1.5 font-mono text-xs text-[#a78bfa] no-underline transition hover:border-[rgba(167,139,250,0.5)]"
+                    >
+                      View case study →
+                    </Link>
+                  </div>
                 </motion.div>
               )}
             </motion.div>

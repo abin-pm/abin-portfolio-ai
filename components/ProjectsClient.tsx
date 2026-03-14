@@ -66,7 +66,7 @@ export function ProjectsClient() {
           {filtered.map((project) => (
             <article
               key={project.id}
-              className="relative rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-8 transition hover:border-[rgba(34,211,238,0.25)] hover:shadow-[0_0_30px_rgba(34,211,238,0.06)]"
+              className="relative flex flex-col rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-8 transition hover:border-[rgba(34,211,238,0.25)] hover:shadow-[0_0_30px_rgba(34,211,238,0.06)]"
             >
               {project.aiAssisted && (
                 <span className="absolute right-4 top-4 rounded-full border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.1)] px-3 py-1 font-mono text-[10px] text-[#a78bfa]">
@@ -93,10 +93,18 @@ export function ProjectsClient() {
               {project.aiNote && (
                 <p className="mb-4 font-mono text-xs text-[#a78bfa]">{project.aiNote}</p>
               )}
-              <div className="flex flex-wrap gap-2">
+              <div className="mb-6 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span key={tag} className="tag-pill">{tag}</span>
                 ))}
+              </div>
+              <div className="mt-auto">
+                <Link
+                  href={`/projects/${project.id}`}
+                  className="inline-flex items-center gap-1.5 rounded-lg border border-[rgba(99,102,241,0.2)] px-4 py-2 font-mono text-xs text-[#6366f1] no-underline transition hover:border-[rgba(99,102,241,0.5)] hover:bg-[rgba(99,102,241,0.06)]"
+                >
+                  View case study →
+                </Link>
               </div>
             </article>
           ))}
