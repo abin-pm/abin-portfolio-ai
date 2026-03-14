@@ -2,24 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Neural Dark — design system base */
 :root {
   --neural-bg: #080810;
   --neural-surface: rgba(99, 102, 241, 0.04);
   --neural-border: rgba(99, 102, 241, 0.12);
-  --neural-border-hover: rgba(99, 102, 241, 0.35);
   --indigo: #6366f1;
   --cyan: #22d3ee;
   --violet: #a78bfa;
   --text-primary: #f1f5f9;
   --text-muted: #94a3b8;
   --text-subtle: #475569;
-  --glow-indigo: 0 0 40px rgba(99, 102, 241, 0.15);
-  --glow-cyan: 0 0 30px rgba(34, 211, 238, 0.12);
-  --glow-ai: 0 0 40px rgba(167, 139, 250, 0.2);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -27,29 +24,251 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {
   background: var(--neural-bg);
   color: var(--text-primary);
-  line-height: 1.6;
   overflow-x: hidden;
-}
-
-/* Optional: subtle noise overlay (can be toggled) */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-gradient {
+    background: linear-gradient(90deg, #6366f1, #a78bfa, #22d3ee);
+    background-size: 300% 300%;
+    animation: gradient 6s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
+
+  .glass {
+    background: rgba(99, 102, 241, 0.04);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-violet {
+    background: rgba(167, 139, 250, 0.04);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 0.7rem;
+    color: #94a3b8;
+    white-space: nowrap;
+  }
+
+  .tag-pill-violet {
+    background: rgba(167, 139, 250, 0.08);
+    border-color: rgba(167, 139, 250, 0.25);
+    color: #a78bfa;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #6366f1;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: #6366f1;
+    flex-shrink: 0;
+  }
+
+  /* ── Universal card system ───────────────────────────────────────── */
+
+  /* Base card — indigo glass + shimmer sweep on hover */
+  .card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(99, 102, 241, 0.04);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  }
+
+  /* Shimmer sweep pseudo-element */
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      108deg,
+      transparent 0%,
+      transparent 38%,
+      rgba(255, 255, 255, 0.055) 50%,
+      transparent 62%,
+      transparent 100%
+    );
+    background-size: 220% 100%;
+    background-position: 220% center;
+    transition: background-position 0.75s ease;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+  }
+
+  .card:hover::after {
+    background-position: -100% center;
+  }
+
+  .card:hover {
+    border-color: rgba(99, 102, 241, 0.42);
+    box-shadow:
+      0 0 0 1px rgba(99, 102, 241, 0.1),
+      0 0 32px rgba(99, 102, 241, 0.15),
+      0 10px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+  }
+
+  /* Violet variant — AI sections */
+  .card-violet {
+    background: rgba(167, 139, 250, 0.05);
+    border-color: rgba(167, 139, 250, 0.18);
+  }
+
+  .card-violet::after {
+    background: linear-gradient(
+      108deg,
+      transparent 38%,
+      rgba(167, 139, 250, 0.1) 50%,
+      transparent 62%
+    );
+    background-size: 220% 100%;
+    background-position: 220% center;
+  }
+
+  .card-violet:hover {
+    border-color: rgba(167, 139, 250, 0.48);
+    box-shadow:
+      0 0 0 1px rgba(167, 139, 250, 0.12),
+      0 0 40px rgba(167, 139, 250, 0.22),
+      0 10px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+    animation: ai-pulse 3s ease-in-out infinite;
+  }
+
+  /* Violet-on-hover — looks identical to .card at rest, goes violet on hover */
+  /* Used for AI-Native skill card: no odd permanent purple tint */
+  .card-violet-hover {
+    background: rgba(99, 102, 241, 0.04);
+    border-color: rgba(99, 102, 241, 0.12);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease,
+                transform 0.35s ease, background 0.35s ease;
+  }
+
+  .card-violet-hover::after {
+    background: linear-gradient(
+      108deg,
+      transparent 38%,
+      rgba(167, 139, 250, 0.08) 50%,
+      transparent 62%
+    );
+    background-size: 220% 100%;
+    background-position: 220% center;
+  }
+
+  .card-violet-hover:hover {
+    background: rgba(167, 139, 250, 0.05);
+    border-color: rgba(167, 139, 250, 0.48);
+    box-shadow:
+      0 0 0 1px rgba(167, 139, 250, 0.12),
+      0 0 40px rgba(167, 139, 250, 0.22),
+      0 10px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+    animation: ai-pulse 3s ease-in-out infinite;
+  }
+
+  /* Also flip the tag pills to violet tint on card hover */
+  .card-violet-hover:hover .tag-pill {
+    background: rgba(167, 139, 250, 0.08);
+    border-color: rgba(167, 139, 250, 0.25);
+    color: #a78bfa;
+    transition: background 0.3s, border-color 0.3s, color 0.3s;
+  }
+
+  /* Cyan variant — impact/result cards */
+  .card-cyan {
+    background: rgba(34, 211, 238, 0.03);
+    border-color: rgba(34, 211, 238, 0.12);
+  }
+
+  .card-cyan::after {
+    background: linear-gradient(
+      108deg,
+      transparent 38%,
+      rgba(34, 211, 238, 0.07) 50%,
+      transparent 62%
+    );
+    background-size: 220% 100%;
+    background-position: 220% center;
+  }
+
+  .card-cyan:hover {
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 0.1),
+      0 0 30px rgba(34, 211, 238, 0.15),
+      0 10px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+  }
+
+  /* Stat card — no lift, just glow */
+  .card-stat {
+    position: relative;
+    overflow: hidden;
+    background: rgba(99, 102, 241, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.14);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(14px);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .card-stat:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 28px rgba(99, 102, 241, 0.18);
+  }
+
+  /* ── Pulse glow for active/current badges ──────────────────────── */
+  .glow-indigo {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+  }
+
+  .glow-violet {
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.35);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.35);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #080810; }
+  ::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.3); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(99,102,241,0.55); }
 }

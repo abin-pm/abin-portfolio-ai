@@ -1,13 +1,8 @@
 import type { MetadataRoute } from 'next';
 
-const SITE_URL = 'https://www.abinaiengineer.com';
-
 export default function robots(): MetadataRoute.Robots {
   return {
-    rules: {
-      userAgent: '*',
-      allow: '/',
-    },
-    sitemap: `${SITE_URL}/sitemap.xml`,
+    rules: { userAgent: '*', allow: '/' },
+    sitemap: 'https://abinaiengineer.com/sitemap.xml',
   };
 }

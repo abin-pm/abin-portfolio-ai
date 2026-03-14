@@ -5,8 +5,7 @@ const SITE_URL = 'https://abinaiengineer.com';
 export const defaultMetadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default:
-      'Hire Abin PM | Senior React Developer & AI-Native Engineer India',
+    default: 'Hire Abin PM | Senior React Developer & AI-Native Engineer India',
     template: '%s | Abin PM — Full Stack & AI Engineer',
   },
   description:
@@ -25,15 +24,16 @@ export const defaultMetadata: Metadata = {
     'AI Engineer full stack',
     'enterprise React developer freelance',
   ],
-  authors: [{ name: 'Abin PM', url: 'https://abinaiengineer.com' }],
+  authors: [{ name: 'Abin PM', url: SITE_URL }],
   openGraph: {
     type: 'website',
     url: SITE_URL,
     title: 'Hire Abin PM | React Developer & AI-Native Engineer India',
     description:
-      '9+ years enterprise full stack + AI-accelerated development with Cursor AI, GitHub Copilot & Claude. Worked with IBM, Abercrombie & Fitch, National Grid. Available for freelance & remote.',
+      '9+ years enterprise full stack + AI-accelerated development with Cursor AI, GitHub Copilot & Claude. IBM, Abercrombie & Fitch, National Grid. Freelance & remote.',
     images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
   robots: { index: true, follow: true },
+  alternates: { canonical: SITE_URL },
 };

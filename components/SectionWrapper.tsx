@@ -2,13 +2,13 @@
 
 import { motion } from 'framer-motion';
 
-type SectionWrapperProps = {
+type Props = {
   children: React.ReactNode;
-  className?: string;
   id?: string;
+  className?: string;
 };
 
-export function SectionWrapper({ children, className = '', id }: SectionWrapperProps) {
+export function SectionWrapper({ children, id, className = '' }: Props) {
   return (
     <motion.section
       id={id}
@@ -16,7 +16,7 @@ export function SectionWrapper({ children, className = '', id }: SectionWrapperP
       initial={{ opacity: 0, y: 24 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.5, ease: 'easeOut' }}
+      transition={{ duration: 0.6, ease: 'easeOut' }}
     >
       {children}
     </motion.section>
