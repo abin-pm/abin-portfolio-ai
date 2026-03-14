@@ -157,6 +157,8 @@ export type ExperienceItem = {
   aiRole?: boolean;
   techStack: string[];
   bullets: string[];
+  keyOutcome?: string;
+  caseStudySlug?: string;
   assignment?: Assignment;
 };
 
@@ -169,14 +171,16 @@ export const experience: ExperienceItem[] = [
     location: 'Kochi, India',
     current: true,
     aiRole: true,
+    keyOutcome: 'Stabilized GenAI-generated code to Fortune 500 production standard for National Grid USA',
+    caseStudySlug: 'national-grid',
     techStack: ['React JS', 'Node JS', 'PG SQL', 'Azure', 'Cursor AI', 'GitHub Copilot', 'Claude'],
     bullets: [
-      'Modernized enterprise frontend systems by migrating legacy applications to React.js Micro-Frontend architecture, improving scalability and modular deployments',
-      'Leveraged Cursor AI, GitHub Copilot, and Claude to accelerate code generation, debugging, and refactoring across React and Node.js services',
-      'Stabilized and productionized GenAI-generated application components — enhanced and corrected AI-generated code to align with business requirements, enterprise coding standards, and microservices architecture best practices',
-      'Optimized React.js frontend UI/UX by addressing performance bottlenecks and ensuring responsiveness across multiple devices',
-      'Optimized .NET Core API backend for smooth data flow, scalability, and robust frontend integration',
-      'Collaborated with US-based stakeholders in Agile/Scrum teams to deliver high-value enterprise features',
+      'Migrated legacy enterprise apps to **React.js Micro-Frontend** architecture — improved scalability and independent deployments',
+      'Used **Cursor AI, GitHub Copilot & Claude** daily to accelerate code generation and refactoring across React + Node.js services',
+      'Stabilized and productionized **GenAI-generated code** to align with Fortune 500 coding standards and microservices architecture',
+      'Eliminated frontend performance bottlenecks — **responsive across all device sizes**',
+      'Optimized **.NET Core API** backend for smooth data flow and scalable frontend integration',
+      'Collaborated with **US-based stakeholders** (Agile/Scrum) on high-value enterprise feature delivery',
     ],
     assignment: {
       client: 'National Grid USA Inc',
@@ -199,13 +203,15 @@ export const experience: ExperienceItem[] = [
     company: 'Emvigo Technologies Pvt Ltd',
     role: 'Team Lead / Senior Software Engineer',
     location: 'Kochi, India',
+    keyOutcome: 'Cut Paragon Energy operational turnaround from 96 hours to 2 hours — 200k+ smart meters',
+    caseStudySlug: 'paragon',
     techStack: ['React JS', 'Next JS', 'Redux', 'Node JS', 'Microservice', 'GraphQL', 'AWS', 'GCP'],
     bullets: [
-      'Led end-to-end full stack development using React.js, Next.js, Node.js, and microservices-based architectures',
-      'Built data-intensive platforms integrating PostgreSQL, MySQL, MongoDB, Firestore, REST & GraphQL APIs',
-      'Delivered cloud-ready systems on AWS and GCP with CI/CD pipelines and production monitoring',
-      'Mentored junior engineers and collaborated with UK & international clients on solution architecture',
-      'Led dynamic frontend teams of 3, overseeing code reviews and task delegation',
+      'Led full stack delivery across **React.js, Next.js, Node.js** and microservices — 4 years, multiple production platforms',
+      'Built data-intensive systems integrating **PostgreSQL, MySQL, MongoDB, GraphQL & REST APIs**',
+      'Delivered cloud-ready platforms on **AWS and GCP** with CI/CD pipelines and production monitoring',
+      'Led a **frontend team of 3 engineers**, mentoring juniors and owning architecture decisions',
+      'Collaborated with **UK & international clients** on solution design and end-to-end delivery',
     ],
   },
   {
@@ -214,12 +220,13 @@ export const experience: ExperienceItem[] = [
     company: 'Luminescent Software Pvt Ltd',
     role: 'Software Engineer (Full Stack)',
     location: 'Thiruvananthapuram, India',
+    keyOutcome: 'Delivered real-time community platform with Socket.IO and Elasticsearch at production scale',
     techStack: ['React JS', 'Redux', 'Node JS', 'Express JS', 'MongoDB', 'Socket.IO'],
     bullets: [
-      'Developed responsive SPAs using React.js, Redux, and Next.js with Node.js/Express backends',
-      'Implemented chat push notification functionality using Socket.IO for real-time communication',
-      'Integrated Elasticsearch for location-based issue search functionality',
-      'Improved production stability through systematic debugging, performance tuning, and feature delivery',
+      'Built responsive **React.js SPAs** with Redux state management and Node.js/Express backends',
+      'Implemented **real-time chat and push notifications** via Socket.IO',
+      'Integrated **Elasticsearch** for location-based search functionality',
+      'Improved production stability through systematic debugging and performance tuning',
     ],
   },
   {
@@ -228,11 +235,12 @@ export const experience: ExperienceItem[] = [
     company: 'Ocuiz Technologies',
     role: 'Software Engineer',
     location: 'Thrissur, India',
+    keyOutcome: 'Foundations in full-stack MVC development with C#, ASP.NET, and SQL',
     techStack: ['.NET MVC', 'ASP.NET', 'C#', 'SQL'],
     bullets: [
-      'Supported full stack development across frontend, backend, and database layers',
-      'Developed MVC-based web applications using C# and ASP.NET',
-      'Improved system reliability by resolving bugs and optimizing legacy code alongside senior engineers',
+      'Built full stack **MVC web applications** using C# and ASP.NET',
+      'Covered **frontend, backend, and database** layers from day one',
+      'Improved system reliability through bug resolution and legacy code optimization',
     ],
   },
 ];
