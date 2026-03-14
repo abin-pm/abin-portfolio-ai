@@ -1,7 +1,4 @@
-'use client';
-
 import Link from 'next/link';
-import { identity } from '@/lib/data';
 
 const seoLinks = [
   { label: 'React.js Developer India', href: '/#skills' },
@@ -12,27 +9,28 @@ const seoLinks = [
   { label: 'Hire React Developer', href: '/hire-me' },
   { label: 'AI Engineer for Hire', href: '/ai-engineer' },
   { label: 'GenAI Developer India', href: '/ai-engineer' },
+  { label: 'Node.js Developer Kochi', href: '/#skills' },
 ];
 
 export function Footer() {
   return (
-    <footer className="border-t border-neural-border bg-neural-bg px-6 py-8 md:px-10">
-      <div className="mx-auto flex max-w-[1100px] flex-wrap items-center justify-between gap-6">
-        <div className="font-mono text-sm text-[#475569]">
-          © {new Date().getFullYear()} Abin PM · Senior Full Stack Developer & AI-Native Engineer ·
-          Kochi, Kerala, India
-        </div>
-        <div className="flex flex-wrap justify-center gap-4 font-mono text-xs text-[#475569]">
+    <footer className="border-t border-[rgba(99,102,241,0.12)] bg-[#080810] px-6 py-10 md:px-10">
+      <div className="mx-auto max-w-[1100px]">
+        <div className="mb-6 flex flex-wrap justify-center gap-3">
           {seoLinks.map((link) => (
             <Link
               key={link.label}
               href={link.href}
-              className="text-[#475569] no-underline transition hover:text-indigo"
+              className="font-mono text-xs text-[#475569] no-underline transition hover:text-[#6366f1]"
             >
               {link.label}
             </Link>
           ))}
         </div>
+        <p className="text-center font-mono text-xs text-[#475569]">
+          © {new Date().getFullYear()} Abin PM · Senior Full Stack Developer & AI-Native Engineer ·
+          Kochi, Kerala, India
+        </p>
       </div>
     </footer>
   );

@@ -5,69 +5,99 @@ import { motion } from 'framer-motion';
 import { projects } from '@/lib/data';
 import { SectionWrapper } from '@/components/SectionWrapper';
 
-export function Projects() {
+function ProjectCard({
+  project,
+  large = false,
+  index = 0,
+}: {
+  project: (typeof projects)[0];
+  large?: boolean;
+  index?: number;
+}) {
   return (
-    <SectionWrapper id="projects" className="bg-neural-bg px-6 py-24 md:px-10">
+    <motion.article
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.08, duration: 0.5 }}
+      className={`relative rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.08)] ${
+        large ? 'p-8' : 'p-6'
+      }`}
+    >
+      {project.aiAssisted && (
+        <span className="absolute right-4 top-4 rounded-full border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.1)] px-3 py-1 font-mono text-[10px] text-[#a78bfa]">
+          🤖 AI-Assisted
+        </span>
+      )}
+      <div className="mb-3 flex flex-wrap items-center gap-2">
+        <span className="text-xl">{project.flag}</span>
+        <span className="font-mono text-xs text-[#6366f1]">{project.client}</span>
+        <span className="rounded bg-[rgba(99,102,241,0.1)] px-2 py-0.5 font-mono text-[10px] text-[#475569]">
+          {project.category}
+        </span>
+      </div>
+      <h3 className={`mb-3 font-sans font-bold text-[#f1f5f9] ${large ? 'text-xl' : 'text-base'}`}>
+        {project.title}
+      </h3>
+      <p className={`mb-4 text-[#94a3b8] ${large ? 'text-sm' : 'line-clamp-3 text-sm'}`}>
+        {project.description}
+      </p>
+      <ul className="mb-4 space-y-1">
+        {project.impact.map((item) => (
+          <li key={item} className="flex items-start gap-2 text-xs text-[#22d3ee]">
+            <span className="mt-px shrink-0">✓</span>
+            {item}
+          </li>
+        ))}
+      </ul>
+      {project.aiNote && (
+        <p className="mb-3 font-mono text-xs text-[#a78bfa]">{project.aiNote}</p>
+      )}
+      <div className="flex flex-wrap gap-2">
+        {project.tags.map((tag) => (
+          <span key={tag} className="tag-pill">{tag}</span>
+        ))}
+      </div>
+    </motion.article>
+  );
+}
+
+export function Projects() {
+  const featured = projects.filter((p) => p.featured);
+  const rest = projects.filter((p) => !p.featured);
+
+  return (
+    <SectionWrapper id="projects" className="px-6 py-32 md:px-10">
       <div className="mx-auto max-w-[1100px]">
-        <div className="mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-indigo">
-          <span className="h-px w-6 bg-indigo" />
-          Selected Work
-        </div>
-        <h2 className="mb-4 font-sans text-3xl font-800 tracking-tight md:text-4xl">
-          Key Projects
+        <div className="section-label mb-4">Selected Work</div>
+        <h2 className="mb-3 font-sans text-3xl font-bold tracking-tight text-[#f1f5f9] md:text-4xl">
+          Enterprise Projects Delivered Globally
         </h2>
-        <p className="mb-14 max-w-[480px] font-light text-[#94a3b8]">
-          Enterprise-scale platforms shipped for global clients across retail, energy, and SaaS.
+        <p className="mb-16 max-w-xl text-[#94a3b8]">
+          6 production platforms across retail, energy, events, and civic tech.
         </p>
 
-        <div className="grid gap-5 md:grid-cols-2">
-          {projects.map((project, i) => (
-            <motion.article
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.08 }}
-              className="relative rounded-xl border border-neural-border bg-neural-surface p-8 transition hover:-translate-y-1 hover:border-indigo/35"
-            >
-              {project.aiAssisted && (
-                <span className="absolute right-4 top-4 rounded-full border border-violet/40 bg-violet/10 px-3 py-1 font-mono text-xs text-violet">
-                  🤖 AI-Assisted
-                </span>
-              )}
-              <div className="mb-2 font-mono text-xs uppercase tracking-widest text-indigo">
-                {project.flag} {project.client}
-              </div>
-              <h3 className="mb-3 font-sans text-xl font-700 text-[#f1f5f9]">{project.title}</h3>
-              <p className="mb-4 text-sm text-[#94a3b8]">{project.description}</p>
-              <ul className="mb-4 list-inside list-disc text-sm text-indigo">
-                {project.impact.map((item) => (
-                  <li key={item}>{item}</li>
-                ))}
-              </ul>
-              {project.aiNote && (
-                <p className="mb-3 font-mono text-xs text-violet">{project.aiNote}</p>
-              )}
-              <div className="flex flex-wrap gap-2">
-                {project.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded bg-[rgba(99,102,241,0.08)] px-2 py-0.5 font-mono text-xs text-[#94a3b8]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-            </motion.article>
+        {/* Featured — larger cards */}
+        <div className="mb-6 grid gap-5 md:grid-cols-2">
+          {featured.map((project, i) => (
+            <ProjectCard key={project.id} project={project} large index={i} />
+          ))}
+        </div>
+
+        {/* More projects */}
+        <h3 className="mb-6 mt-12 font-sans text-lg font-semibold text-[#94a3b8]">More Projects</h3>
+        <div className="grid gap-4 md:grid-cols-3">
+          {rest.map((project, i) => (
+            <ProjectCard key={project.id} project={project} index={i} />
           ))}
         </div>
 
         <div className="mt-12 text-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 rounded-md bg-indigo px-6 py-3 font-sans font-600 text-white transition hover:opacity-90"
+            className="inline-flex items-center gap-2 rounded-md border border-[rgba(99,102,241,0.35)] bg-transparent px-6 py-3 font-mono text-sm text-[#94a3b8] transition hover:border-[rgba(99,102,241,0.6)] hover:text-[#f1f5f9]"
           >
-            View all projects →
+            View all 6 projects in detail →
           </Link>
         </div>
       </div>

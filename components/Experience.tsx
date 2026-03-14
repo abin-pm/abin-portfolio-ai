@@ -1,68 +1,138 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { experience } from '@/lib/data';
+import { experience, education } from '@/lib/data';
 import { SectionWrapper } from '@/components/SectionWrapper';
 
 export function Experience() {
   return (
-    <SectionWrapper id="experience" className="bg-neural-bg px-6 py-24 md:px-10">
+    <SectionWrapper id="experience" className="px-6 py-32 md:px-10">
       <div className="mx-auto max-w-[1100px]">
-        <div className="mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.2em] text-indigo">
-          <span className="h-px w-6 bg-indigo" />
-          Career Timeline
-        </div>
-        <h2 className="mb-4 font-sans text-3xl font-800 tracking-tight md:text-4xl">
-          Work Experience
+        <div className="section-label mb-4">Career Timeline</div>
+        <h2 className="mb-3 font-sans text-3xl font-bold tracking-tight text-[#f1f5f9] md:text-4xl">
+          9+ Years of Enterprise Development
         </h2>
-        <p className="mb-14 max-w-[480px] font-light text-[#94a3b8]">
-          9+ years across startups, agencies, and enterprise tech giants.
+        <p className="mb-16 max-w-xl text-[#94a3b8]">
+          From early-stage startups to Fortune 500 enterprises — building production software that scales.
         </p>
 
-        <div className="relative pl-6">
-          {/* Vertical line */}
-          <div
-            className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-indigo/50 to-transparent"
+        <div className="relative pl-8">
+          {/* Animated vertical line */}
+          <motion.div
+            initial={{ scaleY: 0 }}
+            whileInView={{ scaleY: 1 }}
+            viewport={{ once: true }}
+            transition={{ duration: 1.2, ease: 'easeOut' }}
             style={{ transformOrigin: 'top' }}
+            className="absolute left-0 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-[rgba(99,102,241,0.5)] to-transparent"
           />
 
           {experience.map((job, i) => (
             <motion.div
               key={job.company}
-              initial={{ opacity: 0, x: -12 }}
+              initial={{ opacity: 0, x: -16 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="relative pb-14 last:pb-0"
+              transition={{ delay: i * 0.1, duration: 0.5 }}
+              className="relative mb-14 last:mb-0"
             >
+              {/* Dot */}
               <span
-                className={`absolute -left-[29px] top-1.5 h-3 w-3 rounded-full border-2 border-indigo ${
-                  job.current ? 'bg-indigo shadow-[0_0_12px_#6366f1]' : 'bg-neural-bg'
+                className={`absolute -left-[33px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-[#6366f1] ${
+                  job.current ? 'bg-[#6366f1] shadow-[0_0_12px_#6366f1]' : 'bg-[#080810]'
                 }`}
               />
-              <div className="font-mono text-xs text-indigo">{job.period}</div>
-              <h3 className="mt-2 font-sans text-xl font-700 text-[#f1f5f9]">{job.company}</h3>
-              <div className="text-sm text-[#94a3b8]">
+
+              {/* Header */}
+              <div className="mb-1 font-mono text-xs text-[#6366f1]">{job.period}</div>
+              <h3
+                className={`font-sans text-xl font-bold ${
+                  job.current ? 'text-gradient' : 'text-[#f1f5f9]'
+                }`}
+              >
+                {job.company}
+                {job.current && (
+                  <span className="ml-3 inline-flex animate-pulse items-center rounded-full bg-[rgba(34,211,238,0.1)] px-2.5 py-0.5 font-mono text-[10px] font-medium text-[#22d3ee]">
+                    CURRENT
+                  </span>
+                )}
+              </h3>
+              <div className="mb-4 text-sm text-[#94a3b8]">
                 {job.role} · {job.location}
               </div>
-              <ul className="mt-4 list-none space-y-2">
-                {job.bullets.map((bullet, j) => (
-                  <li
-                    key={j}
-                    className="relative pl-5 text-sm text-[#94a3b8] before:absolute before:left-0 before:content-['▸'] before:text-indigo"
-                  >
-                    {bullet}
+
+              {/* Tech stack pills */}
+              <div className="mb-4 flex flex-wrap gap-2">
+                {job.techStack.map((t) => (
+                  <span key={t} className="tag-pill">{t}</span>
+                ))}
+              </div>
+
+              {/* Bullets */}
+              <ul className="mb-4 space-y-2">
+                {job.bullets.map((b, j) => (
+                  <li key={j} className="relative pl-5 text-sm text-[#94a3b8] before:absolute before:left-0 before:text-[#6366f1] before:content-['▸']">
+                    {b}
                   </li>
                 ))}
               </ul>
+
+              {/* AI tools strip */}
               {job.aiRole && (
-                <div className="mt-4 flex flex-wrap items-center gap-2 font-mono text-xs text-violet">
-                  <span>AI tools used:</span>
+                <div className="mb-4 flex flex-wrap items-center gap-2 font-mono text-xs text-[#a78bfa]">
+                  <span className="text-[#475569]">AI tools:</span>
                   <span>Cursor AI · GitHub Copilot · Claude</span>
                 </div>
               )}
+
+              {/* IBM assignment nested card */}
+              {job.assignment && (
+                <motion.div
+                  initial={{ opacity: 0, y: 12 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.2 }}
+                  className="ml-4 mt-4 rounded-xl border-l-2 border-[#a78bfa] bg-[rgba(167,139,250,0.04)] p-6"
+                >
+                  <div className="mb-1 font-mono text-[10px] text-[#a78bfa]">ASSIGNMENT</div>
+                  <div className="mb-0.5 font-sans font-semibold text-[#f1f5f9]">
+                    {job.assignment.client}
+                  </div>
+                  <div className="mb-3 font-mono text-xs text-[#94a3b8]">
+                    {job.assignment.project} · {job.assignment.period}
+                  </div>
+                  <p className="mb-4 text-sm text-[#94a3b8]">{job.assignment.description}</p>
+                  <ul className="space-y-1.5">
+                    {job.assignment.contributions.map((c, k) => (
+                      <li key={k} className="relative pl-5 text-sm text-[#94a3b8] before:absolute before:left-0 before:text-[#a78bfa] before:content-['▸']">
+                        {c}
+                      </li>
+                    ))}
+                  </ul>
+                </motion.div>
+              )}
             </motion.div>
           ))}
+
+          {/* Education */}
+          <motion.div
+            initial={{ opacity: 0, x: -16 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.1 }}
+            className="relative mt-16"
+          >
+            <span className="absolute -left-[33px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-[rgba(99,102,241,0.5)] bg-[#080810]" />
+            <div className="glass rounded-xl p-6">
+              <div className="mb-1 font-mono text-xs text-[#6366f1]">2013</div>
+              <div className="mb-0.5 flex items-center gap-2 font-sans text-lg font-bold text-[#f1f5f9]">
+                🎓 {education.degree}
+              </div>
+              <div className="font-sans text-sm text-[#94a3b8]">
+                {education.field} · {education.university}
+              </div>
+            </div>
+          </motion.div>
         </div>
       </div>
     </SectionWrapper>

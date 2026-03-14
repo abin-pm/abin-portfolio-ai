@@ -2,24 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Neural Dark — design system base */
 :root {
   --neural-bg: #080810;
   --neural-surface: rgba(99, 102, 241, 0.04);
   --neural-border: rgba(99, 102, 241, 0.12);
-  --neural-border-hover: rgba(99, 102, 241, 0.35);
   --indigo: #6366f1;
   --cyan: #22d3ee;
   --violet: #a78bfa;
   --text-primary: #f1f5f9;
   --text-muted: #94a3b8;
   --text-subtle: #475569;
-  --glow-indigo: 0 0 40px rgba(99, 102, 241, 0.15);
-  --glow-cyan: 0 0 30px rgba(34, 211, 238, 0.12);
-  --glow-ai: 0 0 40px rgba(167, 139, 250, 0.2);
 }
 
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -27,29 +24,76 @@
 
 html {
   scroll-behavior: smooth;
-  font-size: 16px;
 }
 
 body {
   background: var(--neural-bg);
   color: var(--text-primary);
-  line-height: 1.6;
   overflow-x: hidden;
-}
-
-/* Optional: subtle noise overlay (can be toggled) */
-body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 @layer utilities {
-  .text-balance {
-    text-wrap: balance;
+  .text-gradient {
+    background: linear-gradient(90deg, #6366f1, #a78bfa, #22d3ee);
+    background-size: 300% 300%;
+    animation: gradient 6s ease infinite;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass {
+    background: rgba(99, 102, 241, 0.04);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .glass-violet {
+    background: rgba(167, 139, 250, 0.04);
+    border: 1px solid rgba(167, 139, 250, 0.15);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .tag-pill {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.25rem 0.75rem;
+    border-radius: 9999px;
+    background: rgba(99, 102, 241, 0.08);
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 0.7rem;
+    color: #94a3b8;
+    white-space: nowrap;
+  }
+
+  .tag-pill-violet {
+    background: rgba(167, 139, 250, 0.08);
+    border-color: rgba(167, 139, 250, 0.25);
+    color: #a78bfa;
+  }
+
+  .section-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: var(--font-geist-mono), monospace;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: #6366f1;
+  }
+
+  .section-label::before {
+    content: '';
+    display: block;
+    width: 1.5rem;
+    height: 1px;
+    background: #6366f1;
+    flex-shrink: 0;
   }
 }

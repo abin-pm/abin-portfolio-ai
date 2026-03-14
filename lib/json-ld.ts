@@ -8,7 +8,7 @@ export function getPersonSchema() {
     jobTitle: identity.title,
     url: identity.site,
     email: identity.email,
-    telephone: identity.phone.replace(/\s/g, ''),
+    telephone: '+919895661651',
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Kochi',
@@ -17,20 +17,20 @@ export function getPersonSchema() {
     },
     sameAs: [identity.linkedin, identity.github],
     knowsAbout: [
-      'React.js',
-      'Next.js',
-      'Node.js',
-      'MERN Stack',
-      'Microservices',
-      'AWS',
-      'TypeScript',
-      'AI-Assisted Development',
-      'Cursor AI',
-      'LLM Integration',
-      'GenAI Engineering',
-      'Full Stack Development',
-      'Cloud Architecture',
+      'React.js', 'Next.js', 'Node.js', 'MERN Stack', 'Microservices',
+      'AWS', 'TypeScript', 'AI-Assisted Development', 'Cursor AI',
+      'LLM Integration', 'GenAI Engineering', 'Full Stack Development',
     ],
+    alumniOf: {
+      '@type': 'CollegeOrUniversity',
+      name: 'Anna University',
+    },
+    hasCredential: {
+      '@type': 'EducationalOccupationalCredential',
+      credentialCategory: 'Bachelor of Engineering',
+      educationalLevel: 'Bachelor',
+      about: 'Electronics and Communication Engineering',
+    },
   };
 }
 
@@ -44,6 +44,10 @@ export function getProfessionalServiceSchema() {
     url: identity.site,
     areaServed: 'Worldwide',
     availableLanguage: 'English',
+    provider: {
+      '@type': 'Person',
+      name: identity.name,
+    },
   };
 }
 
@@ -54,10 +58,7 @@ export function getFAQPageSchema() {
     mainEntity: faq.map((item) => ({
       '@type': 'Question',
       name: item.q,
-      acceptedAnswer: {
-        '@type': 'Answer',
-        text: item.a,
-      },
+      acceptedAnswer: { '@type': 'Answer', text: item.a },
     })),
   };
 }
