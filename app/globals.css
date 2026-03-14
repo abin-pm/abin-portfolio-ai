@@ -96,4 +96,23 @@ body {
     background: #6366f1;
     flex-shrink: 0;
   }
+
+  /* Pulse glow for active/current badges */
+  .glow-indigo {
+    box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
+  }
+
+  .glow-violet {
+    box-shadow: 0 0 20px rgba(167, 139, 250, 0.35);
+  }
+
+  .glow-cyan {
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.35);
+  }
+
+  /* Scrollbar */
+  ::-webkit-scrollbar { width: 6px; }
+  ::-webkit-scrollbar-track { background: #080810; }
+  ::-webkit-scrollbar-thumb { background: rgba(99,102,241,0.3); border-radius: 3px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgba(99,102,241,0.55); }
 }
