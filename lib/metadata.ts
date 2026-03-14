@@ -1,0 +1,39 @@
+import type { Metadata } from 'next';
+
+const SITE_URL = 'https://abinaiengineer.com';
+
+export const defaultMetadata: Metadata = {
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default:
+      'Hire Abin PM | Senior React Developer & AI-Native Engineer India',
+    template: '%s | Abin PM — Full Stack & AI Engineer',
+  },
+  description:
+    'Hire Abin PM — Senior Full Stack Developer & AI-Native Engineer from India. 9+ years. React, Next.js, Node.js, Cursor AI, LLM integration. Freelance & remote.',
+  keywords: [
+    'hire React developer India',
+    'freelance full stack developer India',
+    'MERN stack developer for hire',
+    'React Next.js developer remote',
+    'AI-assisted full stack developer',
+    'AI-native developer India',
+    'LLM integration developer',
+    'GenAI developer for hire',
+    'developer with Cursor AI experience',
+    'Node.js developer Kochi',
+    'AI Engineer full stack',
+    'enterprise React developer freelance',
+  ],
+  authors: [{ name: 'Abin PM', url: 'https://abinaiengineer.com' }],
+  openGraph: {
+    type: 'website',
+    url: SITE_URL,
+    title: 'Hire Abin PM | React Developer & AI-Native Engineer India',
+    description:
+      '9+ years enterprise full stack + AI-accelerated development with Cursor AI, GitHub Copilot & Claude. Worked with IBM, Abercrombie & Fitch, National Grid. Available for freelance & remote.',
+    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+  },
+  twitter: { card: 'summary_large_image' },
+  robots: { index: true, follow: true },
+};
