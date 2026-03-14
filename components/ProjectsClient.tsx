@@ -102,8 +102,9 @@ export function ProjectsClient() {
                 <Link
                   href={`/projects/${project.id}`}
                   className="inline-flex items-center gap-1.5 rounded-lg border border-[rgba(99,102,241,0.2)] px-4 py-2 font-mono text-xs text-[#6366f1] no-underline transition hover:border-[rgba(99,102,241,0.5)] hover:bg-[rgba(99,102,241,0.06)]"
+                  aria-label={`See ${project.client} case study — ${project.title}`}
                 >
-                  View case study →
+                  See {project.client} case study →
                 </Link>
               </div>
             </article>
