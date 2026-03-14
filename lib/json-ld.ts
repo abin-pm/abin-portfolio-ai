@@ -1,5 +1,71 @@
 import { identity, faq } from './data';
 
+export function getBreadcrumbSchema(items: { name: string; url: string }[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BreadcrumbList',
+    itemListElement: items.map((item, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      name: item.name,
+      item: item.url,
+    })),
+  };
+}
+
+export function getArticleSchema(post: {
+  title: string;
+  excerpt: string;
+  date: string;
+  slug: string;
+}) {
+  const url = `${identity.site}/blog/${post.slug}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    headline: post.title,
+    description: post.excerpt,
+    datePublished: post.date,
+    dateModified: post.date,
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    author: {
+      '@type': 'Person',
+      name: identity.name,
+      url: identity.site,
+    },
+    publisher: {
+      '@type': 'Person',
+      name: identity.name,
+      url: identity.site,
+    },
+  };
+}
+
+export function getCaseStudySchema(project: {
+  id: string;
+  title: string;
+  client: string;
+  description: string;
+  tags: string[];
+}) {
+  const url = `${identity.site}/projects/${project.id}`;
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CreativeWork',
+    name: `${project.title} — ${project.client}`,
+    description: project.description,
+    author: { '@type': 'Person', name: identity.name, url: identity.site },
+    url,
+    keywords: project.tags.join(', '),
+    about: {
+      '@type': 'SoftwareApplication',
+      name: project.title,
+      applicationCategory: 'WebApplication',
+    },
+  };
+}
+
 export function getPersonSchema() {
   return {
     '@context': 'https://schema.org',

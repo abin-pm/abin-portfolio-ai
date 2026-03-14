@@ -7,6 +7,8 @@ const seoLinks = [
   { label: 'LLM Integration Developer', href: '/ai-engineer' },
   { label: 'Freelance Full Stack Developer', href: '/hire-me' },
   { label: 'Hire React Developer', href: '/hire-me' },
+  { label: 'Remote MERN Stack Developer', href: '/remote-mern-developer' },
+  { label: 'AI MERN Stack Developer', href: '/ai-mern-stack-developer' },
   { label: 'AI Engineer for Hire', href: '/ai-engineer' },
   { label: 'GenAI Developer India', href: '/ai-engineer' },
   { label: 'Node.js Developer Kochi', href: '/#skills' },

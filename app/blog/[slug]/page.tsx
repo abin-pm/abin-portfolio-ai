@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import { blogPosts } from '@/lib/data';
+import { getArticleSchema, getBreadcrumbSchema } from '@/lib/json-ld';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { BlogPostLayout } from '@/components/BlogPostLayout';
@@ -18,26 +19,13 @@ export function generateMetadata({ params }: Props): Metadata {
   if (!post) return {};
 
   const url = `${SITE_URL}/blog/${post.slug}`;
-  const title = `${post.title} | Abin PM — Full Stack & AI Engineer`;
+  const title = `${post.title} | Abin PM`;
   const description = post.excerpt;
-
-  const articleSchema = {
-    '@context': 'https://schema.org',
-    '@type': 'Article',
-    headline: post.title,
-    datePublished: post.date,
-    author: {
-      '@type': 'Person',
-      name: 'Abin PM',
-      url: SITE_URL,
-    },
-    url,
-    description,
-  };
 
   return {
     title,
     description,
+    keywords: post.tags,
     alternates: { canonical: url },
     openGraph: {
       type: 'article',
@@ -46,10 +34,9 @@ export function generateMetadata({ params }: Props): Metadata {
       description,
       publishedTime: post.date,
       authors: ['Abin PM'],
+      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
     },
-    other: {
-      'application/ld+json': JSON.stringify(articleSchema),
-    },
+    twitter: { card: 'summary_large_image', title, description },
   };
 }
 
@@ -59,8 +46,17 @@ export default function BlogPostPage({ params }: Props) {
 
   const related = blogPosts.filter((p) => p.slug !== post.slug).slice(0, 2);
 
+  const articleSchema = getArticleSchema(post);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: SITE_URL },
+    { name: 'Blog', url: `${SITE_URL}/blog` },
+    { name: post.title, url: `${SITE_URL}/blog/${post.slug}` },
+  ]);
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
       <main className="bg-[#080810]">
         <div className="pt-16">

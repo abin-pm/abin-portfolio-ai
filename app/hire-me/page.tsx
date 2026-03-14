@@ -1,6 +1,9 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
-import { identity } from '@/lib/data';
+import { identity, faq } from '@/lib/data';
+import { getFAQPageSchema, getBreadcrumbSchema } from '@/lib/json-ld';
+
+const SITE_URL = 'https://abinaiengineer.com';
 
 export const metadata: Metadata = {
   title: 'Hire a Senior React & AI-Native Developer from India | Abin PM',
@@ -33,131 +36,160 @@ const services = [
 ];
 
 export default function HireMePage() {
+  const faqSchema = getFAQPageSchema();
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: SITE_URL },
+    { name: 'Hire a React Developer from India', url: `${SITE_URL}/hire-me` },
+  ]);
+
   return (
-    <div className="min-h-screen bg-white text-[#0f172a]">
-      {/* Light nav */}
-      <nav className="sticky top-0 z-50 flex items-center justify-between border-b border-[#e2e8f0] bg-white/95 px-6 py-4 backdrop-blur-md md:px-10">
-        <Link href="/" className="font-sans text-lg font-bold text-[#0f172a] no-underline">
-          abin<span className="text-[#6366f1]">.</span>dev
-        </Link>
-        <Link href="/" className="font-mono text-sm text-[#64748b] no-underline hover:text-[#6366f1]">
-          ← Back to site
-        </Link>
-      </nav>
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
+      <div className="min-h-screen bg-white text-[#0f172a]">
+        {/* Light nav */}
+        <nav className="sticky top-0 z-50 flex items-center justify-between border-b border-[#e2e8f0] bg-white/95 px-6 py-4 backdrop-blur-md md:px-10">
+          <Link href="/" className="font-sans text-lg font-bold text-[#0f172a] no-underline">
+            abin<span className="text-[#6366f1]">.</span>dev
+          </Link>
+          <Link href="/" className="font-mono text-sm text-[#64748b] no-underline hover:text-[#6366f1]">
+            ← Back to site
+          </Link>
+        </nav>
 
-      <main className="mx-auto max-w-[1100px] px-6 py-20 md:px-10">
-        {/* H1 */}
-        <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#f1f5f9] px-4 py-1.5 font-mono text-xs text-[#64748b]">
-          <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
-          Currently Available
-        </div>
-        <h1 className="mb-6 font-sans text-4xl font-bold leading-tight tracking-tight md:text-5xl">
-          Hire a Senior React Developer<br />
-          <span className="text-[#6366f1]">&amp; AI-Native Engineer from India</span>
-        </h1>
-        <p className="mb-10 max-w-2xl text-lg text-[#64748b]">
-          9+ years enterprise full stack development with React, Next.js & Node.js. AI-native since
-          2024 using Cursor AI, GitHub Copilot & Claude in production at IBM.
-        </p>
-
-        {/* Trust strip */}
-        <div className="mb-16 flex flex-wrap gap-4 border-y border-[#e2e8f0] py-6">
-          {['IBM', 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy'].map((c) => (
-            <span key={c} className="rounded-full bg-[#f1f5f9] px-4 py-1.5 font-mono text-sm font-medium text-[#0f172a]">
-              {c}
-            </span>
-          ))}
-        </div>
-
-        {/* Why hire */}
-        <h2 className="mb-8 font-sans text-2xl font-bold">Why hire Abin?</h2>
-        <div className="mb-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-          {whyHire.map((item) => (
-            <div key={item.title} className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-6">
-              <div className="mb-3 text-2xl">{item.icon}</div>
-              <h3 className="mb-1 font-sans font-semibold text-[#0f172a]">{item.title}</h3>
-              <p className="text-sm text-[#64748b]">{item.desc}</p>
-            </div>
-          ))}
-        </div>
-
-        {/* Comparison */}
-        <h2 className="mb-6 font-sans text-2xl font-bold">AI-accelerated development</h2>
-        <div className="mb-16 grid gap-4 md:grid-cols-2">
-          <div className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-6">
-            <h3 className="mb-4 font-mono text-sm text-[#64748b]">Traditional development</h3>
-            <ul className="space-y-2">
-              {comparison.map((r) => (
-                <li key={r.traditional} className="flex items-center gap-2 text-sm text-[#475569]">
-                  <span className="text-[#cbd5e1]">—</span>
-                  {r.traditional}
-                </li>
-              ))}
-            </ul>
+        <main className="mx-auto max-w-[1100px] px-6 py-20 md:px-10">
+          {/* H1 */}
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full bg-[#f1f5f9] px-4 py-1.5 font-mono text-xs text-[#64748b]">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
+            Currently Available
           </div>
-          <div className="rounded-xl border border-[#6366f1]/30 bg-[#6366f1]/5 p-6">
-            <h3 className="mb-4 font-mono text-sm text-[#6366f1]">AI-Native dev (Abin)</h3>
-            <ul className="space-y-2">
-              {comparison.map((r) => (
-                <li key={r.ai} className="flex items-center gap-2 text-sm font-medium text-[#0f172a]">
-                  <span className="text-[#6366f1]">✓</span>
-                  {r.ai}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-
-        {/* Services */}
-        <h2 className="mb-6 font-sans text-2xl font-bold">Services</h2>
-        <div className="mb-16 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-          {services.map((s) => (
-            <div key={s} className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4 font-sans font-medium text-[#0f172a]">
-              {s}
-            </div>
-          ))}
-        </div>
-
-        {/* Engagement models */}
-        <h2 className="mb-4 font-sans text-2xl font-bold">Engagement models</h2>
-        <div className="mb-8 flex flex-wrap gap-4 text-[#64748b]">
-          <span className="rounded-lg border border-[#e2e8f0] px-4 py-2">📋 Freelance Contract</span>
-          <span className="rounded-lg border border-[#e2e8f0] px-4 py-2">🕐 Part-Time Remote</span>
-          <span className="rounded-lg border border-[#e2e8f0] px-4 py-2">💼 Full-Time Remote</span>
-        </div>
-
-        {/* Process */}
-        <h2 className="mb-6 font-sans text-2xl font-bold">Process</h2>
-        <div className="mb-16 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
-          {['Enquire', 'Scope & Quote', 'Build', 'Ship & Support'].map((step, i) => (
-            <div key={step} className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-5 text-center">
-              <div className="mb-2 font-sans text-2xl font-bold text-[#6366f1]">{i + 1}</div>
-              <div className="font-sans font-semibold text-[#0f172a]">{step}</div>
-            </div>
-          ))}
-        </div>
-
-        {/* CTA */}
-        <div className="rounded-2xl border border-[#6366f1]/20 bg-[#6366f1]/5 p-10 text-center">
-          <h2 className="mb-3 font-sans text-2xl font-bold text-[#0f172a]">
-            Ready to hire a senior React developer & AI-native engineer from India?
-          </h2>
-          <p className="mb-8 text-[#64748b]">
-            Reach out directly — Abin responds within 24 hours.
+          <h1 className="mb-6 font-sans text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+            Hire a Senior React Developer<br />
+            <span className="text-[#6366f1]">&amp; AI-Native Engineer from India</span>
+          </h1>
+          <p className="mb-10 max-w-2xl text-lg text-[#64748b]">
+            9+ years enterprise full stack development with React, Next.js & Node.js. AI-native since
+            2024 using Cursor AI, GitHub Copilot & Claude in production at IBM.
           </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a href={`mailto:${identity.email}`} className="inline-flex rounded-xl bg-[#6366f1] px-7 py-3.5 font-sans font-semibold text-white no-underline transition hover:opacity-90">
-              Email Abin
-            </a>
-            <a href={identity.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-xl border border-[#e2e8f0] bg-white px-7 py-3.5 font-sans font-semibold text-[#0f172a] no-underline transition hover:border-[#6366f1]">
-              LinkedIn ↗
-            </a>
-            <Link href="/projects" className="inline-flex rounded-xl border border-[#e2e8f0] bg-white px-7 py-3.5 font-sans font-semibold text-[#0f172a] no-underline transition hover:border-[#6366f1]">
-              View Projects
-            </Link>
+
+          {/* Trust strip */}
+          <div className="mb-16 flex flex-wrap gap-4 border-y border-[#e2e8f0] py-6">
+            {['IBM', 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy'].map((c) => (
+              <span key={c} className="rounded-full bg-[#f1f5f9] px-4 py-1.5 font-mono text-sm font-medium text-[#0f172a]">
+                {c}
+              </span>
+            ))}
           </div>
-        </div>
-      </main>
-    </div>
+
+          {/* Why hire */}
+          <h2 className="mb-8 font-sans text-2xl font-bold">
+            Why Hire a Senior React Developer from India?
+          </h2>
+          <div className="mb-16 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            {whyHire.map((item) => (
+              <div key={item.title} className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-6">
+                <div className="mb-3 text-2xl">{item.icon}</div>
+                <h3 className="mb-1 font-sans font-semibold text-[#0f172a]">{item.title}</h3>
+                <p className="text-sm text-[#64748b]">{item.desc}</p>
+              </div>
+            ))}
+          </div>
+
+          {/* Comparison */}
+          <h2 className="mb-6 font-sans text-2xl font-bold">AI-Accelerated React & Node.js Development</h2>
+          <div className="mb-16 grid gap-4 md:grid-cols-2">
+            <div className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-6">
+              <h3 className="mb-4 font-mono text-sm text-[#64748b]">Traditional development</h3>
+              <ul className="space-y-2">
+                {comparison.map((r) => (
+                  <li key={r.traditional} className="flex items-center gap-2 text-sm text-[#475569]">
+                    <span className="text-[#cbd5e1]">—</span>
+                    {r.traditional}
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className="rounded-xl border border-[#6366f1]/30 bg-[#6366f1]/5 p-6">
+              <h3 className="mb-4 font-mono text-sm text-[#6366f1]">AI-Native dev (Abin)</h3>
+              <ul className="space-y-2">
+                {comparison.map((r) => (
+                  <li key={r.ai} className="flex items-center gap-2 text-sm font-medium text-[#0f172a]">
+                    <span className="text-[#6366f1]">✓</span>
+                    {r.ai}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Services */}
+          <h2 className="mb-6 font-sans text-2xl font-bold">React.js, Node.js & MERN Stack Services</h2>
+          <div className="mb-16 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            {services.map((s) => (
+              <div key={s} className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] px-5 py-4 font-sans font-medium text-[#0f172a]">
+                {s}
+              </div>
+            ))}
+          </div>
+
+          {/* Engagement models */}
+          <h2 className="mb-4 font-sans text-2xl font-bold">Freelance, Part-Time & Full-Time Remote Engagement</h2>
+          <div className="mb-8 flex flex-wrap gap-4 text-[#64748b]">
+            <span className="rounded-lg border border-[#e2e8f0] px-4 py-2">📋 Freelance Contract</span>
+            <span className="rounded-lg border border-[#e2e8f0] px-4 py-2">🕐 Part-Time Remote</span>
+            <span className="rounded-lg border border-[#e2e8f0] px-4 py-2">💼 Full-Time Remote</span>
+          </div>
+          <p className="mb-16 text-sm text-[#64748b]">
+            Proven track record with US & UK clients (IBM, Abercrombie & Fitch, National Grid, Paragon Energy). Async-first, timezone-flexible. Starting from a few hours per week to full-time commitment.
+          </p>
+
+          {/* Process */}
+          <h2 className="mb-6 font-sans text-2xl font-bold">How to Hire — Simple 4-Step Process</h2>
+          <div className="mb-16 grid gap-4 sm:grid-cols-2 md:grid-cols-4">
+            {['Enquire', 'Scope & Quote', 'Build', 'Ship & Support'].map((step, i) => (
+              <div key={step} className="rounded-xl border border-[#e2e8f0] bg-[#f8fafc] p-5 text-center">
+                <div className="mb-2 font-sans text-2xl font-bold text-[#6366f1]">{i + 1}</div>
+                <div className="font-sans font-semibold text-[#0f172a]">{step}</div>
+              </div>
+            ))}
+          </div>
+
+          {/* FAQ section */}
+          <h2 className="mb-8 font-sans text-2xl font-bold">Frequently Asked Questions</h2>
+          <div className="mb-16 space-y-4">
+            {faq.map((item) => (
+              <details key={item.q} className="group rounded-xl border border-[#e2e8f0] bg-[#f8fafc]">
+                <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-4 font-sans font-semibold text-[#0f172a]">
+                  {item.q}
+                  <span className="ml-4 shrink-0 text-[#6366f1] transition group-open:rotate-45">+</span>
+                </summary>
+                <p className="px-6 pb-5 text-sm leading-relaxed text-[#64748b]">{item.a}</p>
+              </details>
+            ))}
+          </div>
+
+          {/* CTA */}
+          <div className="rounded-2xl border border-[#6366f1]/20 bg-[#6366f1]/5 p-10 text-center">
+            <h2 className="mb-3 font-sans text-2xl font-bold text-[#0f172a]">
+              Ready to hire a senior React developer & AI-native engineer from India?
+            </h2>
+            <p className="mb-8 text-[#64748b]">
+              Reach out directly — Abin responds within 24 hours.
+            </p>
+            <div className="flex flex-wrap justify-center gap-4">
+              <a href={`mailto:${identity.email}`} className="inline-flex rounded-xl bg-[#6366f1] px-7 py-3.5 font-sans font-semibold text-white no-underline transition hover:opacity-90">
+                Email Abin
+              </a>
+              <a href={identity.linkedin} target="_blank" rel="noopener noreferrer" className="inline-flex rounded-xl border border-[#e2e8f0] bg-white px-7 py-3.5 font-sans font-semibold text-[#0f172a] no-underline transition hover:border-[#6366f1]">
+                LinkedIn ↗
+              </a>
+              <Link href="/projects" className="inline-flex rounded-xl border border-[#e2e8f0] bg-white px-7 py-3.5 font-sans font-semibold text-[#0f172a] no-underline transition hover:border-[#6366f1]">
+                View Projects
+              </Link>
+            </div>
+          </div>
+        </main>
+      </div>
+    </>
   );
 }

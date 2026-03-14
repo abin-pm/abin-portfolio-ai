@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { projects, experience } from '@/lib/data';
+import { getCaseStudySchema, getBreadcrumbSchema } from '@/lib/json-ld';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
@@ -75,30 +76,36 @@ const caseStudyContent: Record<string, { challenge: string; approach: string; ou
   },
 };
 
+// Keyword-rich H1 overrides for specific projects
+const seoTitles: Record<string, string> = {
+  abercrombie: 'React Micro-Frontend Migration: Abercrombie & Fitch Case Study',
+  'national-grid': 'SAS to React Modernization: National Grid USA — GenAI Case Study',
+  paragon: 'Smart Meter Asset Management Platform: 96hrs → 2hrs — Paragon Energy',
+};
+
 export function generateMetadata({ params }: Props): Metadata {
   const project = projects.find((p) => p.id === params.slug);
   if (!project) return {};
 
   const url = `${SITE_URL}/projects/${project.id}`;
-  const title = `${project.title} — ${project.client} | Abin PM`;
+  const seoTitle = seoTitles[project.id];
+  const title = seoTitle
+    ? `${seoTitle} | Abin PM`
+    : `${project.title} — ${project.client} | Abin PM`;
   const description = project.description;
-
-  const caseStudySchema = {
-    '@context': 'https://schema.org',
-    '@type': 'CreativeWork',
-    name: project.title,
-    description,
-    author: { '@type': 'Person', name: 'Abin PM', url: SITE_URL },
-    url,
-    keywords: project.tags.join(', '),
-  };
 
   return {
     title,
     description,
+    keywords: project.tags,
     alternates: { canonical: url },
-    openGraph: { title, description, url },
-    other: { 'application/ld+json': JSON.stringify(caseStudySchema) },
+    openGraph: {
+      title,
+      description,
+      url,
+      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    },
+    twitter: { card: 'summary_large_image', title, description },
   };
 }
 
@@ -113,8 +120,20 @@ export default function ProjectDetailPage({ params }: Props) {
   ).slice(0, 2);
   const content = caseStudyContent[project.id];
 
+  const caseStudySchema = getCaseStudySchema(project);
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: SITE_URL },
+    { name: 'Projects', url: `${SITE_URL}/projects` },
+    { name: project.client, url: `${SITE_URL}/projects/${project.id}` },
+  ]);
+
+  // Use keyword-rich H1 for key projects
+  const h1 = seoTitles[project.id] ?? project.title;
+
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(caseStudySchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
       <main className="min-h-screen bg-[#080810] pt-28">
         <div className="mx-auto max-w-[860px] px-6 pb-32 md:px-10">
@@ -141,7 +160,7 @@ export default function ProjectDetailPage({ params }: Props) {
               )}
             </div>
             <h1 className="font-sans text-4xl font-bold tracking-tight text-[#f1f5f9] md:text-5xl">
-              {project.title}
+              {h1}
             </h1>
             {project.aiNote && (
               <p className="mt-3 font-mono text-sm text-[#a78bfa]">{project.aiNote}</p>
