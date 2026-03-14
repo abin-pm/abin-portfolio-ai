@@ -13,12 +13,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }));
 
   return [
-    { url: `${BASE}/`,            lastModified: date, changeFrequency: 'weekly',  priority: 1 },
+    { url: `${BASE}/`,            lastModified: date, changeFrequency: 'weekly',  priority: 1.0  },
     { url: `${BASE}/hire-me`,     lastModified: date, changeFrequency: 'monthly', priority: 0.95 },
-    { url: `${BASE}/ai-engineer`, lastModified: date, changeFrequency: 'monthly', priority: 0.9 },
+    { url: `${BASE}/ai-engineer`, lastModified: date, changeFrequency: 'monthly', priority: 0.9  },
     { url: `${BASE}/about`,       lastModified: date, changeFrequency: 'monthly', priority: 0.85 },
-    { url: `${BASE}/projects`,    lastModified: date, changeFrequency: 'monthly', priority: 0.8 },
-    { url: `${BASE}/blog`,        lastModified: date, changeFrequency: 'weekly',  priority: 0.8 },
+    { url: `${BASE}/skills`,      lastModified: date, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/experience`,  lastModified: date, changeFrequency: 'monthly', priority: 0.85 },
+    { url: `${BASE}/projects`,    lastModified: date, changeFrequency: 'monthly', priority: 0.8  },
+    { url: `${BASE}/blog`,        lastModified: date, changeFrequency: 'weekly',  priority: 0.8  },
     ...blogRoutes,
   ];
 }
