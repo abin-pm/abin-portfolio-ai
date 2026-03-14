@@ -24,30 +24,28 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: i * 0.06, duration: 0.5 }}
-              className={`relative rounded-xl p-7 transition-all duration-300 ${
-                group.highlight
-                  ? 'glass-violet hover:shadow-[0_0_40px_rgba(167,139,250,0.12)] hover:animate-ai-pulse'
-                  : 'glass hover:border-[rgba(99,102,241,0.35)]'
-              }`}
+              className={`card p-7 ${group.highlight ? 'card-violet' : ''}`}
             >
               {group.highlightLabel && (
-                <span className="absolute right-4 top-4 rounded-full border border-[rgba(167,139,250,0.3)] bg-[rgba(167,139,250,0.1)] px-2.5 py-0.5 font-mono text-[10px] text-[#a78bfa]">
+                <span className="absolute right-4 top-4 z-10 rounded-full border border-[rgba(167,139,250,0.3)] bg-[rgba(167,139,250,0.12)] px-2.5 py-0.5 font-mono text-[10px] text-[#a78bfa]">
                   {group.highlightLabel}
                 </span>
               )}
-              <div className="mb-3 text-2xl">{group.icon}</div>
-              <h3 className="mb-5 font-sans text-sm font-semibold uppercase tracking-wider text-[#94a3b8]">
-                {group.title}
-              </h3>
-              <div className="flex flex-wrap gap-2">
-                {group.items.map((item) => (
-                  <span
-                    key={item}
-                    className={`tag-pill ${group.highlight ? 'tag-pill-violet' : ''}`}
-                  >
-                    {item}
-                  </span>
-                ))}
+              <div className="relative z-10">
+                <div className="mb-3 text-2xl">{group.icon}</div>
+                <h3 className="mb-5 font-sans text-sm font-semibold uppercase tracking-wider text-[#94a3b8]">
+                  {group.title}
+                </h3>
+                <div className="flex flex-wrap gap-2">
+                  {group.items.map((item) => (
+                    <span
+                      key={item}
+                      className={`tag-pill ${group.highlight ? 'tag-pill-violet' : ''}`}
+                    >
+                      {item}
+                    </span>
+                  ))}
+                </div>
               </div>
             </motion.div>
           ))}

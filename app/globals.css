@@ -97,7 +97,124 @@ body {
     flex-shrink: 0;
   }
 
-  /* Pulse glow for active/current badges */
+  /* ── Universal card system ───────────────────────────────────────── */
+
+  /* Base card — indigo glass + shimmer sweep on hover */
+  .card {
+    position: relative;
+    overflow: hidden;
+    background: rgba(99, 102, 241, 0.04);
+    border: 1px solid rgba(99, 102, 241, 0.12);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    transition: border-color 0.35s ease, box-shadow 0.35s ease, transform 0.35s ease;
+  }
+
+  /* Shimmer sweep pseudo-element */
+  .card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      108deg,
+      transparent 0%,
+      transparent 38%,
+      rgba(255, 255, 255, 0.055) 50%,
+      transparent 62%,
+      transparent 100%
+    );
+    background-size: 220% 100%;
+    background-position: 220% center;
+    transition: background-position 0.75s ease;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: inherit;
+  }
+
+  .card:hover::after {
+    background-position: -100% center;
+  }
+
+  .card:hover {
+    border-color: rgba(99, 102, 241, 0.42);
+    box-shadow:
+      0 0 0 1px rgba(99, 102, 241, 0.1),
+      0 0 32px rgba(99, 102, 241, 0.15),
+      0 10px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+  }
+
+  /* Violet variant — AI sections */
+  .card-violet {
+    background: rgba(167, 139, 250, 0.05);
+    border-color: rgba(167, 139, 250, 0.18);
+  }
+
+  .card-violet::after {
+    background: linear-gradient(
+      108deg,
+      transparent 38%,
+      rgba(167, 139, 250, 0.1) 50%,
+      transparent 62%
+    );
+    background-size: 220% 100%;
+    background-position: 220% center;
+  }
+
+  .card-violet:hover {
+    border-color: rgba(167, 139, 250, 0.48);
+    box-shadow:
+      0 0 0 1px rgba(167, 139, 250, 0.12),
+      0 0 40px rgba(167, 139, 250, 0.22),
+      0 10px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+    animation: ai-pulse 3s ease-in-out infinite;
+  }
+
+  /* Cyan variant — impact/result cards */
+  .card-cyan {
+    background: rgba(34, 211, 238, 0.03);
+    border-color: rgba(34, 211, 238, 0.12);
+  }
+
+  .card-cyan::after {
+    background: linear-gradient(
+      108deg,
+      transparent 38%,
+      rgba(34, 211, 238, 0.07) 50%,
+      transparent 62%
+    );
+    background-size: 220% 100%;
+    background-position: 220% center;
+  }
+
+  .card-cyan:hover {
+    border-color: rgba(34, 211, 238, 0.4);
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 0.1),
+      0 0 30px rgba(34, 211, 238, 0.15),
+      0 10px 40px rgba(0, 0, 0, 0.35);
+    transform: translateY(-3px);
+  }
+
+  /* Stat card — no lift, just glow */
+  .card-stat {
+    position: relative;
+    overflow: hidden;
+    background: rgba(99, 102, 241, 0.05);
+    border: 1px solid rgba(99, 102, 241, 0.14);
+    border-radius: 0.75rem;
+    backdrop-filter: blur(14px);
+    transition: border-color 0.3s, box-shadow 0.3s;
+  }
+
+  .card-stat:hover {
+    border-color: rgba(99, 102, 241, 0.4);
+    box-shadow: 0 0 28px rgba(99, 102, 241, 0.18);
+  }
+
+  /* ── Pulse glow for active/current badges ──────────────────────── */
   .glow-indigo {
     box-shadow: 0 0 20px rgba(99, 102, 241, 0.35);
   }

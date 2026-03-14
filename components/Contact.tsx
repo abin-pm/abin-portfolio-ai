@@ -32,9 +32,9 @@ export function Contact() {
               href={item.href}
               target={item.external ? '_blank' : undefined}
               rel={item.external ? 'noopener noreferrer' : undefined}
-              className="rounded-xl border border-[rgba(99,102,241,0.15)] bg-[rgba(99,102,241,0.04)] px-6 py-3.5 font-mono text-sm text-[#94a3b8] no-underline transition hover:border-[rgba(99,102,241,0.4)] hover:text-[#f1f5f9]"
+              className="card px-6 py-3.5 font-mono text-sm text-[#94a3b8] no-underline"
             >
-              {item.label}
+              <span className="relative z-10">{item.label}</span>
             </a>
           ))}
         </div>

@@ -20,15 +20,14 @@ function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08, duration: 0.5 }}
-      className={`relative rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(34,211,238,0.3)] hover:shadow-[0_0_30px_rgba(34,211,238,0.08)] ${
-        large ? 'p-8' : 'p-6'
-      }`}
+      className={`card relative ${project.aiAssisted ? 'card-violet' : ''} ${large ? 'p-8' : 'p-6'}`}
     >
       {project.aiAssisted && (
-        <span className="absolute right-4 top-4 rounded-full border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.1)] px-3 py-1 font-mono text-[10px] text-[#a78bfa]">
+        <span className="absolute right-4 top-4 z-10 rounded-full border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.1)] px-3 py-1 font-mono text-[10px] text-[#a78bfa]">
           🤖 AI-Assisted
         </span>
       )}
+      <div className="relative z-10">
       <div className="mb-3 flex flex-wrap items-center gap-2">
         <span className="text-xl">{project.flag}</span>
         <span className="font-mono text-xs text-[#6366f1]">{project.client}</span>
@@ -58,6 +57,7 @@ function ProjectCard({
           <span key={tag} className="tag-pill">{tag}</span>
         ))}
       </div>
+      </div>{/* end z-10 */}
     </motion.article>
   );
 }

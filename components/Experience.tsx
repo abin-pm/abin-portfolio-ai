@@ -101,8 +101,9 @@ export function Experience() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
-                  className="ml-4 mt-4 rounded-xl border-l-2 border-[#a78bfa] bg-[rgba(167,139,250,0.04)] p-6"
+                  className="card card-violet ml-4 mt-4 border-l-4 border-l-[#a78bfa] p-6"
                 >
+                  <div className="relative z-10">
                   <div className="mb-1 font-mono text-[10px] text-[#a78bfa]">ASSIGNMENT</div>
                   <div className="mb-0.5 font-sans font-semibold text-[#f1f5f9]">
                     {job.assignment.client}
@@ -126,6 +127,7 @@ export function Experience() {
                       View case study →
                     </Link>
                   </div>
+                  </div>{/* end z-10 */}
                 </motion.div>
               )}
             </motion.div>
@@ -140,7 +142,8 @@ export function Experience() {
             className="relative mt-16"
           >
             <span className="absolute -left-[33px] top-1.5 h-3.5 w-3.5 rounded-full border-2 border-[rgba(99,102,241,0.5)] bg-[#080810]" />
-            <div className="glass rounded-xl p-6">
+            <div className="card p-6">
+              <div className="relative z-10">
               <div className="mb-1 font-mono text-xs text-[#6366f1]">2013</div>
               <div className="mb-0.5 flex items-center gap-2 font-sans text-lg font-bold text-[#f1f5f9]">
                 🎓 {education.degree}
@@ -148,6 +151,7 @@ export function Experience() {
               <div className="font-sans text-sm text-[#94a3b8]">
                 {education.field} · {education.university}
               </div>
+              </div>{/* end z-10 */}
             </div>
           </motion.div>
         </div>

@@ -66,7 +66,7 @@ export function ProjectsClient() {
           {filtered.map((project) => (
             <article
               key={project.id}
-              className="relative flex flex-col rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-8 transition hover:border-[rgba(34,211,238,0.25)] hover:shadow-[0_0_30px_rgba(34,211,238,0.06)]"
+              className={`card relative flex flex-col p-8 ${project.aiAssisted ? 'card-violet' : ''}`}
             >
               {project.aiAssisted && (
                 <span className="absolute right-4 top-4 rounded-full border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.1)] px-3 py-1 font-mono text-[10px] text-[#a78bfa]">

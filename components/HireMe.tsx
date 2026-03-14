@@ -40,17 +40,19 @@ export function HireMe() {
           {platforms.map((p) => (
             <div
               key={p.name}
-              className="glass rounded-xl p-6 text-center transition hover:border-[rgba(99,102,241,0.35)] hover:-translate-y-0.5"
+              className="card p-6 text-center"
             >
-              <div className="mb-3 text-2xl">{p.icon}</div>
-              <div className="font-sans font-semibold text-[#f1f5f9]">{p.name}</div>
-              {p.href ? (
-                <a href={p.href} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm text-[#94a3b8] no-underline hover:text-[#6366f1]">
-                  {p.desc}
-                </a>
-              ) : (
-                <div className="mt-1 text-sm text-[#94a3b8]">{p.desc}</div>
-              )}
+              <div className="relative z-10">
+                <div className="mb-3 text-2xl">{p.icon}</div>
+                <div className="font-sans font-semibold text-[#f1f5f9]">{p.name}</div>
+                {p.href ? (
+                  <a href={p.href} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm text-[#94a3b8] no-underline hover:text-[#6366f1]">
+                    {p.desc}
+                  </a>
+                ) : (
+                  <div className="mt-1 text-sm text-[#94a3b8]">{p.desc}</div>
+                )}
+              </div>
             </div>
           ))}
         </div>

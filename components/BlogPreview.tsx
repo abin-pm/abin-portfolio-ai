@@ -29,25 +29,27 @@ export function BlogPreview() {
             <Link
               key={post.slug}
               href={`/blog/${post.slug}`}
-              className="group flex flex-col rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-7 no-underline transition hover:border-[rgba(99,102,241,0.35)] hover:-translate-y-1"
+              className="card group flex flex-col p-7 no-underline"
             >
-              <div className="mb-4 flex items-center gap-3">
-                <span className="rounded-full bg-[rgba(99,102,241,0.1)] px-3 py-1 font-mono text-[10px] text-[#6366f1]">
-                  {post.category}
-                </span>
-                <span className="font-mono text-[10px] text-[#475569]">{post.readTime}</span>
-              </div>
-              <h3 className="mb-3 font-sans text-base font-semibold leading-snug text-[#f1f5f9] transition group-hover:text-[#6366f1]">
-                {post.title}
-              </h3>
-              <p className="mb-5 flex-1 text-sm leading-relaxed text-[#94a3b8] line-clamp-3">
-                {post.excerpt}
-              </p>
-              <div className="flex items-center justify-between">
-                <span className="font-mono text-[10px] text-[#475569]">{formatDate(post.date)}</span>
-                <span className="font-mono text-xs text-[#6366f1] transition group-hover:translate-x-0.5">
-                  Read article →
-                </span>
+              <div className="relative z-10 flex flex-1 flex-col">
+                <div className="mb-4 flex items-center gap-3">
+                  <span className="rounded-full bg-[rgba(99,102,241,0.1)] px-3 py-1 font-mono text-[10px] text-[#6366f1]">
+                    {post.category}
+                  </span>
+                  <span className="font-mono text-[10px] text-[#475569]">{post.readTime}</span>
+                </div>
+                <h3 className="mb-3 font-sans text-base font-semibold leading-snug text-[#f1f5f9] transition group-hover:text-[#6366f1]">
+                  {post.title}
+                </h3>
+                <p className="mb-5 flex-1 text-sm leading-relaxed text-[#94a3b8] line-clamp-3">
+                  {post.excerpt}
+                </p>
+                <div className="flex items-center justify-between">
+                  <span className="font-mono text-[10px] text-[#475569]">{formatDate(post.date)}</span>
+                  <span className="font-mono text-xs text-[#6366f1] transition group-hover:translate-x-0.5">
+                    Read article →
+                  </span>
+                </div>
               </div>
             </Link>
           ))}

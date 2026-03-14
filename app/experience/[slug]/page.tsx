@@ -136,7 +136,7 @@ export default function ExperienceDetailPage({ params }: Props) {
 
           {/* AI tools */}
           {job.aiRole && (
-            <div className="mb-10 rounded-xl border border-[rgba(167,139,250,0.2)] bg-[rgba(167,139,250,0.04)] px-7 py-6">
+            <div className="mb-10 card card-violet px-7 py-6">
               <div className="mb-3 font-mono text-xs uppercase tracking-widest text-[#a78bfa]">AI Tools Used Daily</div>
               <div className="flex flex-wrap gap-2">
                 {['Cursor AI', 'GitHub Copilot', 'Claude', 'OpenAI Codex'].map((t) => (
@@ -190,7 +190,7 @@ export default function ExperienceDetailPage({ params }: Props) {
                   <Link
                     key={p.id}
                     href={`/projects/${p.id}`}
-                    className="group rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-6 no-underline transition hover:border-[rgba(99,102,241,0.35)] hover:-translate-y-0.5"
+                    className="card group p-6 no-underline"
                   >
                     <div className="mb-2 flex items-center gap-2">
                       <span className="text-lg">{p.flag}</span>
@@ -222,7 +222,7 @@ export default function ExperienceDetailPage({ params }: Props) {
                 <Link
                   key={j.slug}
                   href={`/experience/${j.slug}`}
-                  className="group flex flex-col rounded-xl border border-[rgba(99,102,241,0.08)] bg-transparent p-5 no-underline transition hover:border-[rgba(99,102,241,0.25)] hover:bg-[rgba(99,102,241,0.03)]"
+                  className="card group flex flex-col p-5 no-underline"
                 >
                   <span className="font-sans text-sm font-semibold text-[#f1f5f9] transition group-hover:text-[#6366f1]">
                     {j.company}
@@ -234,7 +234,7 @@ export default function ExperienceDetailPage({ params }: Props) {
           </div>
 
           {/* Education */}
-          <div className="mb-14 rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-7">
+          <div className="card mb-14 p-7">
             <div className="mb-2 font-mono text-xs text-[#6366f1]">2013</div>
             <div className="flex items-center gap-2 font-sans text-lg font-bold text-[#f1f5f9]">
               🎓 {education.degree}
@@ -245,7 +245,7 @@ export default function ExperienceDetailPage({ params }: Props) {
           </div>
 
           {/* CTA */}
-          <div className="rounded-xl border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.04)] p-8 text-center">
+          <div className="card p-8 text-center">
             <p className="mb-2 font-sans text-xl font-semibold text-[#f1f5f9]">
               Looking to hire a senior full stack developer?
             </p>

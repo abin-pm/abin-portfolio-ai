@@ -153,7 +153,7 @@ export default function ProjectDetailPage({ params }: Props) {
             {project.impact.map((item) => (
               <div
                 key={item}
-                className="flex items-start gap-3 rounded-xl border border-[rgba(34,211,238,0.12)] bg-[rgba(34,211,238,0.03)] px-5 py-4"
+                className="card card-cyan flex items-start gap-3 px-5 py-4"
               >
                 <span className="mt-0.5 shrink-0 text-[#22d3ee]">✓</span>
                 <span className="text-sm font-medium text-[#f1f5f9]">{item}</span>
@@ -176,19 +176,19 @@ export default function ProjectDetailPage({ params }: Props) {
             <>
               <div className="mb-8">
                 <div className="mb-3 font-mono text-xs uppercase tracking-widest text-[#475569]">The Challenge</div>
-                <div className="rounded-xl border border-[rgba(99,102,241,0.1)] bg-[rgba(99,102,241,0.03)] px-7 py-6">
+                <div className="card px-7 py-6">
                   <p className="text-sm leading-relaxed text-[#94a3b8]">{content.challenge}</p>
                 </div>
               </div>
               <div className="mb-8">
                 <div className="mb-3 font-mono text-xs uppercase tracking-widest text-[#475569]">The Approach</div>
-                <div className="rounded-xl border border-[rgba(99,102,241,0.1)] bg-[rgba(99,102,241,0.03)] px-7 py-6">
+                <div className="card px-7 py-6">
                   <p className="text-sm leading-relaxed text-[#94a3b8]">{content.approach}</p>
                 </div>
               </div>
               <div className="mb-10">
                 <div className="mb-3 font-mono text-xs uppercase tracking-widest text-[#475569]">The Outcome</div>
-                <div className="rounded-xl border border-[rgba(34,211,238,0.1)] bg-[rgba(34,211,238,0.02)] px-7 py-6">
+                <div className="card card-cyan px-7 py-6">
                   <p className="text-sm leading-relaxed text-[#94a3b8]">{content.outcome}</p>
                 </div>
               </div>
@@ -207,7 +207,7 @@ export default function ProjectDetailPage({ params }: Props) {
               <div className="mb-3 font-mono text-xs uppercase tracking-widest text-[#475569]">Delivered At</div>
               <Link
                 href={`/experience/${company.slug}`}
-                className="group flex items-center justify-between rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] px-7 py-5 no-underline transition hover:border-[rgba(99,102,241,0.35)]"
+                className="card group flex items-center justify-between px-7 py-5 no-underline"
               >
                 <div>
                   <div className="font-sans font-semibold text-[#f1f5f9] transition group-hover:text-[#6366f1]">
@@ -231,7 +231,7 @@ export default function ProjectDetailPage({ params }: Props) {
                   <Link
                     key={p.id}
                     href={`/projects/${p.id}`}
-                    className="group rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-6 no-underline transition hover:border-[rgba(99,102,241,0.35)] hover:-translate-y-0.5"
+                    className="card group p-6 no-underline"
                   >
                     <div className="mb-2 flex items-center gap-2">
                       <span className="text-lg">{p.flag}</span>
@@ -248,7 +248,7 @@ export default function ProjectDetailPage({ params }: Props) {
           )}
 
           {/* CTA */}
-          <div className="rounded-xl border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.04)] p-8 text-center">
+          <div className="card p-8 text-center">
             <p className="mb-2 font-sans text-xl font-semibold text-[#f1f5f9]">
               Need something similar built?
             </p>
