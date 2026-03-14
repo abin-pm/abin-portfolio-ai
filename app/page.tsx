@@ -7,6 +7,7 @@ import { Experience }    from '@/components/Experience';
 import { Projects }      from '@/components/Projects';
 import { TrustBar }      from '@/components/TrustBar';
 import { HireMe }        from '@/components/HireMe';
+import { BlogPreview }   from '@/components/BlogPreview';
 import { FAQ }           from '@/components/FAQ';
 import { Contact }       from '@/components/Contact';
 import { Footer }        from '@/components/Footer';
@@ -24,6 +25,7 @@ export default function HomePage() {
         <Projects />
         <TrustBar />
         <HireMe />
+        <BlogPreview />
         <FAQ />
         <Contact />
       </main>

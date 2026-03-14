@@ -396,6 +396,81 @@ export const faq: FAQItem[] = [
   },
 ];
 
+// ─── Blog Posts ───────────────────────────────────────────────────────────────
+
+export type BlogPost = {
+  slug: string;
+  title: string;
+  date: string;
+  readTime: string;
+  category: string;
+  tags: string[];
+  excerpt: string;
+};
+
+export const blogPosts: BlogPost[] = [
+  {
+    slug: 'how-to-hire-react-developer-india',
+    title: 'How to Hire a Senior React Developer from India Without Guesswork',
+    date: '2026-02-10',
+    readTime: '6 min read',
+    category: 'Hiring',
+    tags: ['React', 'Hiring'],
+    excerpt:
+      'Most companies hiring React developers from India get burned by the same 3 mistakes. Here is what to actually look for — from someone who has worked with IBM, Abercrombie & Fitch, and National Grid.',
+  },
+  {
+    slug: 'ai-native-workflow-cursor-copilot-claude',
+    title: 'Inside an AI-Native Workflow: Cursor AI, Copilot & Claude at IBM',
+    date: '2026-01-28',
+    readTime: '8 min read',
+    category: 'AI-Native',
+    tags: ['AI-Native', 'Cursor AI', 'GitHub Copilot'],
+    excerpt:
+      'What does it actually look like to use Cursor AI, GitHub Copilot, and Claude in enterprise production? Not demos — real daily workflow at IBM building React and Node.js systems.',
+  },
+  {
+    slug: 'sas-to-react-national-grid-modernization',
+    title: "From SAS to React: How We Modernized National Grid's EPO Tracking Application",
+    date: '2026-01-15',
+    readTime: '10 min read',
+    category: 'Case Study',
+    tags: ['Case Study', 'React', 'Legacy Modernization'],
+    excerpt:
+      'A real case study of migrating a legacy SAS desktop system to a React.js + .NET Core web platform using GenAI-assisted code generation — and what it actually takes to make AI-generated code production-ready.',
+  },
+  {
+    slug: 'genai-code-stabilization-enterprise',
+    title: 'When (and When Not) to Use GenAI for Production Code',
+    date: '2025-12-20',
+    readTime: '7 min read',
+    category: 'AI-Native',
+    tags: ['GenAI', 'AI-Native', 'Enterprise'],
+    excerpt:
+      "GenAI can write code fast. But fast is not the same as production-ready. Here is the stabilization process I use at IBM to take AI-generated code from 'works on my machine' to enterprise-grade reliability.",
+  },
+  {
+    slug: 'llm-integration-existing-react-app',
+    title: 'Integrating LLMs into an Existing React + Node.js Application',
+    date: '2025-12-05',
+    readTime: '9 min read',
+    category: 'LLMs',
+    tags: ['LLMs', 'React', 'Node.js', 'OpenAI'],
+    excerpt:
+      'A practical, no-hype guide to adding LLM capabilities to a React frontend and Node.js backend without rebuilding your entire architecture — based on real integration patterns from production systems.',
+  },
+  {
+    slug: 'micro-frontend-architecture-react',
+    title: "Micro-Frontend Architecture with React: Lessons from Abercrombie & Fitch",
+    date: '2025-11-18',
+    readTime: '11 min read',
+    category: 'React',
+    tags: ['React', 'Micro-Frontend', 'Architecture'],
+    excerpt:
+      "How we migrated a legacy Java frontend to React Micro-Frontends for one of the world's largest fashion retailers — what worked, what did not, and the architecture decisions that made parallel deployments finally possible.",
+  },
+];
+
 // ─── Identity ─────────────────────────────────────────────────────────────────
 
 export const identity = {
