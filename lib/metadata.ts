@@ -31,11 +31,11 @@ export const defaultMetadata: Metadata = {
     title: 'Hire Abin PM | React Developer & AI-Native Engineer India',
     description:
       '9+ years enterprise full stack + AI-accelerated development with Cursor AI, GitHub Copilot & Claude. IBM, Abercrombie & Fitch, National Grid. Freelance & remote.',
-    images: [{ url: `${SITE_URL}/opengraph-image`, width: 1200, height: 630, alt: 'Abin PM — Senior Full Stack Developer' }],
+    images: [{ url: `${SITE_URL}/og-image.png`, width: 1200, height: 630, alt: 'Abin PM — Senior Full Stack Developer' }],
   },
   twitter: {
     card: 'summary_large_image',
-    images: [`${SITE_URL}/opengraph-image`],
+    images: [`${SITE_URL}/og-image.png`],
   },
   icons: {
     icon: '/favicon.png',
