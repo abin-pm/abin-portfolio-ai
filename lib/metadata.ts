@@ -31,9 +31,13 @@ export const defaultMetadata: Metadata = {
     title: 'Hire Abin PM | React Developer & AI-Native Engineer India',
     description:
       '9+ years enterprise full stack + AI-accelerated development with Cursor AI, GitHub Copilot & Claude. IBM, Abercrombie & Fitch, National Grid. Freelance & remote.',
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
+  icons: {
+    icon: '/favicon.svg',
+    shortcut: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
   robots: { index: true, follow: true },
   alternates: { canonical: SITE_URL },
 };
