@@ -34,9 +34,9 @@ export const defaultMetadata: Metadata = {
   },
   twitter: { card: 'summary_large_image' },
   icons: {
-    icon: '/favicon.svg',
-    shortcut: '/favicon.svg',
-    apple: '/favicon.svg',
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
   },
   robots: { index: true, follow: true },
   alternates: { canonical: SITE_URL },
