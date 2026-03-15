@@ -6,7 +6,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { BlogPostLayout } from '@/components/BlogPostLayout';
 
-const SITE_URL = 'https://abinaiengineer.com';
+const SITE_URL = 'https://www.abinaiengineer.com';
 
 export function generateStaticParams() {
   return blogPosts.map((p) => ({ slug: p.slug }));

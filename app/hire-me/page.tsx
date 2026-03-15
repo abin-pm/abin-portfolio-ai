@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { identity, faq } from '@/lib/data';
 import { getFAQPageSchema, getBreadcrumbSchema } from '@/lib/json-ld';
 
-const SITE_URL = 'https://abinaiengineer.com';
+const SITE_URL = 'https://www.abinaiengineer.com';
 
 export const metadata: Metadata = {
   title: 'Hire a Senior React & AI-Native Developer from India | Abin PM',

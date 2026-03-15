@@ -10,7 +10,7 @@ type Props = {
 export function ShareButtons({ title, slug }: Props) {
   const [copied, setCopied] = useState(false);
 
-  const url = `https://abinaiengineer.com/blog/${slug}`;
+  const url = `https://www.abinaiengineer.com/blog/${slug}`;
   const encodedUrl = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
 

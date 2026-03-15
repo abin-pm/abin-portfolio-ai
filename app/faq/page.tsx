@@ -6,7 +6,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { FAQ } from '@/components/FAQ';
 
-const SITE_URL = 'https://abinaiengineer.com';
+const SITE_URL = 'https://www.abinaiengineer.com';
 
 export const metadata: Metadata = {
   title: 'FAQ | Hiring a Senior React & MERN Stack Developer | Abin PM',

@@ -6,7 +6,7 @@ import { getCaseStudySchema, getBreadcrumbSchema } from '@/lib/json-ld';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
-const SITE_URL = 'https://abinaiengineer.com';
+const SITE_URL = 'https://www.abinaiengineer.com';
 
 export function generateStaticParams() {
   return projects.map((p) => ({ slug: p.id }));
