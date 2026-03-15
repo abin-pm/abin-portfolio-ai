@@ -17,13 +17,13 @@ export const metadata: Metadata = {
     'LLM integration developer',
   ],
   alternates: {
-    canonical: 'https://abinaiengineer.com/skills',
+    canonical: 'https://www.abinaiengineer.com/skills',
   },
   openGraph: {
     title: 'Technical Skills | Abin PM — Senior MERN Stack & AI-Native Engineer',
     description:
       'React, Next.js, Node.js, TypeScript, AWS, GCP, Cursor AI, LLM Integration, GenAI — full spectrum stack by Abin PM, Senior Full Stack Developer from India.',
-    url: 'https://abinaiengineer.com/skills',
+    url: 'https://www.abinaiengineer.com/skills',
   },
 };
 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 import { identity, faq } from '@/lib/data';
 import { getPersonSchema, getBreadcrumbSchema } from '@/lib/json-ld';
 
-const SITE_URL = 'https://abinaiengineer.com';
+const SITE_URL = 'https://www.abinaiengineer.com';
 
 export const metadata: Metadata = {
   title: 'Remote MERN Stack Developer for Hire | React, Node.js, MongoDB | Abin PM',

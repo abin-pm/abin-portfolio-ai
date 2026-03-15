@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next';
 import { blogPosts, experience, projects } from '@/lib/data';
 
-const BASE = 'https://abinaiengineer.com';
+const BASE = 'https://www.abinaiengineer.com';
 const date = new Date().toISOString().slice(0, 10);
 
 export default function sitemap(): MetadataRoute.Sitemap {

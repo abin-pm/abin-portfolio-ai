@@ -494,6 +494,6 @@ export const identity = {
   phone: '+91 9895 661 651',
   linkedin: 'https://www.linkedin.com/in/abin-p-m-/',
   github: 'https://github.com/abin-pm',
-  site: 'https://abinaiengineer.com',
+  site: 'https://www.abinaiengineer.com',
   status: 'Available for Freelance & Remote Full-Time',
 };

@@ -5,7 +5,7 @@ import { experience, projects, education } from '@/lib/data';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
-const SITE_URL = 'https://abinaiengineer.com';
+const SITE_URL = 'https://www.abinaiengineer.com';
 
 export function generateStaticParams() {
   return experience.map((e) => ({ slug: e.slug }));

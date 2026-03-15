@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     'MERN stack developer career',
   ],
   alternates: {
-    canonical: 'https://abinaiengineer.com/experience',
+    canonical: 'https://www.abinaiengineer.com/experience',
   },
   openGraph: {
     title: 'Work Experience | Abin PM — Enterprise React & Full Stack Developer',
     description:
       'IBM India (current) · Emvigo Technologies · Luminescent Software · 9+ years enterprise full stack development. Available for freelance & remote roles.',
-    url: 'https://abinaiengineer.com/experience',
+    url: 'https://www.abinaiengineer.com/experience',
   },
 };
 
