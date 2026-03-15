@@ -30,7 +30,7 @@ export const defaultMetadata: Metadata = {
     url: SITE_URL,
     title: 'Hire Abin PM | React Developer & AI-Native Engineer India',
     description:
-      '9+ years enterprise full stack + AI-accelerated development with Cursor AI, GitHub Copilot & Claude. IBM, Abercrombie & Fitch, National Grid. Freelance & remote.',
+      '9+ years enterprise full stack + AI-accelerated dev with Cursor AI, GitHub Copilot & Claude. IBM, Abercrombie & Fitch, National Grid. Hire me →',
     images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630, alt: 'Abin PM — Senior Full Stack Developer' }],
   },
   twitter: {
