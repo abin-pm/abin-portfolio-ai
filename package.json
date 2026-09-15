@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "check:merge-conflicts": "bash -lc \"if rg -n '^(<<<<<<<|=======|>>>>>>>)' --glob '!node_modules/**' --glob '!.git/**' .; then echo Merge conflict markers detected; exit 1; else echo No merge conflict markers found; fi\""
   },
   "dependencies": {
     "framer-motion": "^11.3.18",

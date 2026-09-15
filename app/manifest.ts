@@ -12,6 +12,9 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: '#0ea5e9',
     icons: [
       {
+<<<<<<< ours
+<<<<<<< ours
+<<<<<<< ours
         src: '/favicon.png',
         sizes: '192x192',
         type: 'image/png',
@@ -20,6 +23,26 @@ export default function manifest(): MetadataRoute.Manifest {
         src: '/favicon.png',
         sizes: '512x512',
         type: 'image/png',
+=======
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+        src: '/favicon.svg',
+        sizes: 'any',
+        type: 'image/svg+xml',
+      },
+      {
+        src: '/logo.svg',
+        sizes: '512x512',
+        type: 'image/svg+xml',
+<<<<<<< ours
+<<<<<<< ours
+>>>>>>> theirs
+=======
+>>>>>>> theirs
+=======
+>>>>>>> theirs
         purpose: 'any',
       },
     ],
