@@ -106,7 +106,7 @@ export function getProfessionalServiceSchema() {
     '@type': 'ProfessionalService',
     name: 'Abin PM — Full Stack Developer & AI Engineer',
     description:
-      'Senior freelance React, MERN stack, and AI-native developer available for hire from India. 9+ years enterprise experience. AI-accelerated delivery.',
+      'Senior freelance React, MERN stack, and AI-native developer available for hire from India. 10+ years enterprise experience. AI-accelerated delivery.',
     url: identity.site,
     areaServed: 'Worldwide',
     availableLanguage: 'English',

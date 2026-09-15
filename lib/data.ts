@@ -1,7 +1,7 @@
 // ─── Stats ──────────────────────────────────────────────────────────────────
 
 export const stats = [
-  { value: '9+',  label: 'Years Experience' },
+  { value: '10+', label: 'Years Experience' },
   { value: '15+', label: 'Projects Delivered' },
   { value: '4',   label: 'Companies' },
   { value: '3',   label: 'Cloud Platforms' },
@@ -397,7 +397,7 @@ export const faq: FAQItem[] = [
   },
   {
     q: 'What makes Abin PM different from other MERN developers?',
-    a: 'Two things: 9+ years of hands-on enterprise experience AND genuine AI-native skills used daily at IBM. He stabilizes GenAI-generated code for enterprise production — a rare skill. The result is enterprise-grade output delivered faster than traditional development cycles.',
+    a: 'Two things: 10+ years of hands-on enterprise experience AND genuine AI-native skills used daily at IBM. He stabilizes GenAI-generated code for enterprise production — a rare skill. The result is enterprise-grade output delivered faster than traditional development cycles.',
   },
   {
     q: 'Can Abin PM integrate AI or LLM features into my product?',

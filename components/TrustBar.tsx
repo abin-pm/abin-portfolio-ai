@@ -5,7 +5,7 @@ import { SectionWrapper } from '@/components/SectionWrapper';
 const clients = ['IBM', 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy', 'Go Lyv', 'Refinu'];
 
 const props = [
-  'Enterprise-Proven — 9+ years Fortune 500',
+  'Enterprise-Proven — 10+ years Fortune 500',
   'AI-Native — Cursor AI, Copilot & Claude daily',
   'Remote-Ready — US/UK timezone flexible',
   'Full Stack — React to cloud backend',

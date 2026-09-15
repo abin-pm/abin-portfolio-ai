@@ -9,7 +9,7 @@ export const defaultMetadata: Metadata = {
     template: '%s | Abin PM — Full Stack & AI Engineer',
   },
   description:
-    'Hire Abin PM — Senior Full Stack Developer & AI-Native Engineer from India. 9+ years. React, Next.js, Node.js, Cursor AI, LLM integration. Freelance & remote.',
+    'Hire Abin PM — Senior Full Stack Developer & AI-Native Engineer from India. 10+ years. React, Next.js, Node.js, Cursor AI, LLM integration. Freelance & remote.',
   keywords: [
     'hire React developer India',
     'freelance full stack developer India',
@@ -30,7 +30,7 @@ export const defaultMetadata: Metadata = {
     url: SITE_URL,
     title: 'Hire Abin PM | React Developer & AI-Native Engineer India',
     description:
-      '9+ years enterprise full stack + AI-accelerated dev with Cursor AI, GitHub Copilot & Claude. IBM, Abercrombie & Fitch, National Grid. Hire me →',
+      '10+ years enterprise full stack + AI-accelerated dev with Cursor AI, GitHub Copilot & Claude. IBM, Abercrombie & Fitch, National Grid. Hire me →',
     images: [{ url: `${SITE_URL}/og-image.jpg`, width: 1200, height: 630, alt: 'Abin PM — Senior Full Stack Developer' }],
   },
   twitter: {

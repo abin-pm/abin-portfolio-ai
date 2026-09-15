@@ -1,6 +1,7 @@
 'use client';
 
 import dynamic from 'next/dynamic';
+import Image from 'next/image';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import { stats } from '@/lib/data';
@@ -22,11 +23,40 @@ const KPI_STRIP = [
   { metric: '3–5×',      label: 'Faster delivery with AI-native workflow' },
 ];
 
+function HeroPortrait({ className = '' }: { className?: string }) {
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.94, x: 24 }}
+      animate={{ opacity: 1, scale: 1, x: 0 }}
+      transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
+      className={`relative mx-auto w-full max-w-[360px] sm:max-w-[420px] xl:max-w-[460px] ${className}`}
+    >
+      <div className="absolute inset-[8%] rounded-full bg-indigo-500/25 blur-3xl" aria-hidden />
+      <div className="relative overflow-hidden rounded-[2.5rem] border border-indigo-400/20 bg-slate-950/30 shadow-[0_0_70px_rgba(99,102,241,0.28)]">
+        <Image
+          src="/images/abin-hero.png"
+          alt="Abin P M, software developer"
+          width={1254}
+          height={1254}
+          priority
+          className="h-auto w-full"
+        />
+      </div>
+      <div className="absolute -bottom-4 -left-3 rounded-xl border border-cyan-300/20 bg-slate-950/80 px-4 py-3 font-mono text-xs text-cyan-300 shadow-xl backdrop-blur sm:-left-5">
+        <span className="mr-2 inline-block h-2 w-2 rounded-full bg-emerald-400" />
+        Building with AI
+      </div>
+    </motion.div>
+  );
+}
+
 export function Hero() {
   return (
     <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-24 pb-20 md:px-10">
       <NeuralBackground />
-      <div className="relative z-10 mx-auto w-full max-w-[1100px]">
+      <div className="relative z-10 mx-auto w-full max-w-[1180px]">
+        <div className="grid gap-12 xl:grid-cols-[minmax(0,1.15fr)_minmax(360px,0.85fr)] xl:items-start">
+        <div>
 
         {/* Availability badges */}
         <motion.div {...fadeUp(0)} className="mb-7 flex flex-wrap items-center gap-3">
@@ -55,10 +85,12 @@ export function Hero() {
           {...fadeUp(0.15)}
           className="mb-8 max-w-2xl text-base leading-relaxed text-[#94a3b8] md:text-lg"
         >
-          Freelance Full Stack Developer from India — 9+ years building enterprise-grade React,
+          Freelance Full Stack Developer from India — 10+ years building enterprise-grade React,
           Next.js &amp; Node.js platforms for IBM, Abercrombie &amp; Fitch, and National Grid.
           Using Cursor AI, GitHub Copilot &amp; Claude daily to ship faster without sacrificing quality.
         </motion.p>
+
+        <HeroPortrait className="mb-12 xl:hidden" />
 
         {/* ── Primary CTA + secondary ── */}
         <motion.div {...fadeUp(0.25)} className="mb-10 flex flex-wrap items-center gap-4">
@@ -91,41 +123,46 @@ export function Hero() {
           </Link>
         </motion.div>
 
-        {/* ── KPI outcome strip ── */}
-        <motion.div
-          {...fadeUp(0.32)}
-          className="mb-10 grid gap-3 sm:grid-cols-3"
-          aria-label="Key outcomes"
-        >
-          {KPI_STRIP.map((k) => (
-            <div
-              key={k.metric}
-              className="flex items-start gap-3 rounded-lg border border-[rgba(99,102,241,0.1)] bg-[rgba(99,102,241,0.04)] px-4 py-3"
-            >
-              <span className="mt-0.5 shrink-0 font-sans text-lg font-bold text-[#6366f1]">
-                {k.metric}
-              </span>
-              <span className="font-mono text-[11px] leading-relaxed text-[#475569]">
-                {k.label}
-              </span>
-            </div>
-          ))}
-        </motion.div>
+        </div>
 
-        {/* ── Stats ── */}
-        <motion.div
-          {...fadeUp(0.4)}
-          className="grid grid-cols-2 gap-4 border-t border-[rgba(99,102,241,0.1)] pt-8 md:grid-cols-4"
-        >
-          {stats.map((stat) => (
-            <div key={stat.label} className="card-stat rounded-xl p-5">
-              <div className="font-sans text-3xl font-bold text-[#f1f5f9]">{stat.value}</div>
-              <div className="mt-1 font-mono text-xs uppercase tracking-widest text-[#475569]">
-                {stat.label}
+        <HeroPortrait className="hidden xl:block" />
+        </div>
+
+        <section className="mt-14 border-t border-[rgba(99,102,241,0.14)] pt-8 md:mt-16 md:pt-10" aria-label="Professional outcomes">
+          <motion.div
+            {...fadeUp(0.32)}
+            className="grid gap-3 md:grid-cols-3"
+            aria-label="Key outcomes"
+          >
+            {KPI_STRIP.map((k) => (
+              <div
+                key={k.metric}
+                className="flex min-h-[88px] items-center gap-4 rounded-xl border border-[rgba(99,102,241,0.1)] bg-[rgba(99,102,241,0.04)] px-5 py-4"
+              >
+                <span className="shrink-0 font-sans text-xl font-bold text-[#6366f1]">
+                  {k.metric}
+                </span>
+                <span className="font-mono text-xs leading-relaxed text-[#94a3b8]">
+                  {k.label}
+                </span>
               </div>
-            </div>
-          ))}
-        </motion.div>
+            ))}
+          </motion.div>
+
+          <motion.div
+            {...fadeUp(0.4)}
+            className="mt-6 grid grid-cols-2 gap-4 md:grid-cols-4"
+          >
+            {stats.map((stat) => (
+              <div key={stat.label} className="card-stat flex min-h-[132px] flex-col justify-center rounded-xl p-5 md:p-6">
+                <div className="font-sans text-3xl font-bold text-[#f1f5f9]">{stat.value}</div>
+                <div className="mt-2 font-mono text-xs uppercase tracking-widest text-[#475569]">
+                  {stat.label}
+                </div>
+              </div>
+            ))}
+          </motion.div>
+        </section>
 
       </div>
     </section>
