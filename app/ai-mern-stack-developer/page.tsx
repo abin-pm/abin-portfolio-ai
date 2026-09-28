@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 import { identity } from '@/lib/data';
 import { getPersonSchema, getBreadcrumbSchema } from '@/lib/json-ld';
 
@@ -8,7 +10,7 @@ const SITE_URL = 'https://www.abinaiengineer.com';
 export const metadata: Metadata = {
   title: 'AI-Powered MERN Stack Developer | React, Node.js & LLM Integration | Abin PM',
   description:
-    'Senior AI-native MERN stack developer — React, Node.js, MongoDB + Cursor AI, GitHub Copilot & Claude in production. LLM integration, GenAI-assisted development, 9+ years enterprise experience.',
+    'Senior AI-native MERN stack developer — React, Node.js, MongoDB + Cursor AI, GitHub Copilot & Claude in production. LLM integration, GenAI-assisted development, 10+ years enterprise experience.',
   keywords: [
     'AI MERN stack developer',
     'AI-powered React developer',
@@ -24,9 +26,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'AI-Powered MERN Stack Developer | Abin PM',
     description:
-      'MERN stack + AI-native workflow. Cursor AI, Copilot & Claude in production at IBM. LLM integration, GenAI stabilization, React, Node.js. 9+ years enterprise.',
+      'MERN stack + AI-native workflow. Cursor AI, Copilot & Claude in production at IBM. LLM integration, GenAI stabilization, React, Node.js. 10+ years enterprise.',
     url: `${SITE_URL}/ai-mern-stack-developer`,
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -82,112 +84,99 @@ export default function AiMernStackDeveloperPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <div className="min-h-screen bg-[#080810] text-[#f1f5f9]">
-        {/* Nav */}
-        <nav className="sticky top-0 z-50 flex items-center justify-between border-b border-[rgba(99,102,241,0.1)] bg-[#080810]/95 px-6 py-4 backdrop-blur-md md:px-10">
-          <Link href="/" className="font-sans text-lg font-bold text-[#f1f5f9] no-underline">
-            abin<span className="text-[#6366f1]">.</span>dev
-          </Link>
-          <div className="flex items-center gap-6">
-            <Link href="/hire-me" className="font-mono text-sm text-[#94a3b8] no-underline hover:text-[#6366f1]">
-              Hire Me
-            </Link>
-            <Link href="/ai-engineer" className="font-mono text-sm text-[#94a3b8] no-underline hover:text-[#6366f1]">
-              AI Engineer
-            </Link>
-          </div>
-        </nav>
+      <div className="min-h-screen bg-cream text-ink">
+        <Navbar />
 
-        <main className="mx-auto max-w-[1060px] px-6 py-20 md:px-10">
+        <main className="mx-auto max-w-[1060px] px-6 pt-32 pb-20 md:px-10">
 
           {/* Hero */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(167,139,250,0.3)] bg-[rgba(167,139,250,0.08)] px-4 py-1.5">
-            <span className="font-mono text-xs text-[#a78bfa]">🤖 AI-Native since 2024</span>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border-strong bg-sage-light px-4 py-1.5">
+            <span className="text-xs text-sage-dark">🤖 AI-Native since 2024</span>
           </div>
 
-          <h1 className="mb-6 font-sans text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+          <h1 className="mb-6 text-4xl leading-tight md:text-5xl">
             AI-Powered MERN Stack Developer<br />
-            <span className="text-[#a78bfa]">React, Node.js &amp; LLM Integration</span>
+            <span className="text-sage-dark">React, Node.js &amp; LLM Integration</span>
           </h1>
 
-          <p className="mb-8 max-w-2xl text-lg text-[#94a3b8]">
+          <p className="mb-8 max-w-2xl text-lg text-muted">
             Senior MERN stack developer with a genuine AI-native workflow — Cursor AI, GitHub Copilot
-            and Claude used daily in enterprise production at IBM since 2024. 9+ years full-stack
+            and Claude used daily in enterprise production at IBM since 2024. 10+ years full-stack
             experience. Available for AI feature builds, GenAI stabilization, and LLM integrations.
           </p>
 
           <div className="mb-12 flex flex-wrap gap-4">
             <a
               href={`mailto:${identity.email}`}
-              className="inline-flex rounded-xl bg-[#a78bfa] px-7 py-3.5 font-sans font-semibold text-[#080810] no-underline transition hover:opacity-90"
+              className="btn-primary"
             >
               Hire for AI project →
             </a>
             <Link
               href="/ai-engineer"
-              className="inline-flex rounded-xl border border-[rgba(167,139,250,0.3)] px-7 py-3.5 font-sans font-semibold text-[#f1f5f9] no-underline transition hover:border-[rgba(167,139,250,0.6)]"
+              className="btn-secondary"
             >
               AI Engineer page →
             </Link>
           </div>
 
           {/* Client logos */}
-          <div className="mb-20 flex flex-wrap gap-3 border-y border-[rgba(99,102,241,0.1)] py-6">
+          <div className="mb-20 flex flex-wrap gap-3 border-y border-border py-6">
             {['IBM', 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy'].map((c) => (
-              <span key={c} className="rounded-full bg-[rgba(99,102,241,0.06)] px-4 py-1.5 font-mono text-sm font-medium text-[#94a3b8]">
+              <span key={c} className="rounded-full bg-surface px-4 py-1.5 text-sm font-medium text-muted">
                 {c}
               </span>
             ))}
           </div>
 
           {/* AI Tools */}
-          <h2 className="mb-8 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <h2 className="mb-8 text-2xl text-ink">
             AI Tools Used Daily in Enterprise Production
           </h2>
           <div className="mb-20 grid gap-5 sm:grid-cols-2">
             {aiTools.map((tool) => (
-              <div key={tool.name} className="rounded-xl border border-[rgba(167,139,250,0.15)] bg-[rgba(167,139,250,0.05)] p-6">
+              <div key={tool.name} className="rounded-xl border border-border bg-surface p-6">
                 <div className="mb-1 flex items-center gap-3">
-                  <span className="font-sans font-bold text-[#a78bfa]">{tool.name}</span>
-                  <span className="rounded-full bg-[rgba(167,139,250,0.1)] px-2.5 py-0.5 font-mono text-[10px] text-[#a78bfa]">{tool.role}</span>
+                  <span className="font-sans font-bold text-sage-dark">{tool.name}</span>
+                  <span className="rounded-full bg-sage-light px-2.5 py-0.5 text-[10px] text-sage-dark">{tool.role}</span>
                 </div>
-                <p className="text-sm leading-relaxed text-[#94a3b8]">{tool.desc}</p>
+                <p className="text-sm leading-relaxed text-muted">{tool.desc}</p>
               </div>
             ))}
           </div>
 
           {/* Capabilities */}
-          <h2 className="mb-8 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <h2 className="mb-8 text-2xl text-ink">
             AI + MERN Stack Capabilities
           </h2>
           <div className="mb-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {aiCapabilities.map((cap) => (
-              <div key={cap.label} className="rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-6">
-                <h3 className="mb-2 font-sans font-semibold text-[#f1f5f9]">{cap.label}</h3>
-                <p className="text-sm leading-relaxed text-[#94a3b8]">{cap.desc}</p>
+              <div key={cap.label} className="rounded-xl border border-border bg-surface p-6">
+                <h3 className="mb-2 text-ink">{cap.label}</h3>
+                <p className="text-sm leading-relaxed text-muted">{cap.desc}</p>
               </div>
             ))}
           </div>
 
           {/* Comparison */}
-          <h2 className="mb-8 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <h2 className="mb-8 text-2xl text-ink">
             AI-Native vs Traditional MERN Development
           </h2>
-          <div className="mb-20 overflow-x-auto rounded-xl border border-[rgba(99,102,241,0.12)]">
+          <div className="mb-20 overflow-x-auto rounded-xl border border-border">
             <table className="w-full text-sm">
               <thead>
-                <tr className="border-b border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.06)]">
-                  <th className="px-6 py-4 text-left font-mono text-xs uppercase tracking-widest text-[#475569]">Dimension</th>
-                  <th className="px-6 py-4 text-left font-mono text-xs uppercase tracking-widest text-[#475569]">Traditional developer</th>
-                  <th className="px-6 py-4 text-left font-mono text-xs uppercase tracking-widest text-[#a78bfa]">AI-native (Abin)</th>
+                <tr className="border-b border-border bg-surface">
+                  <th className="px-6 py-4 text-left text-xs uppercase tracking-widest text-subtle">Dimension</th>
+                  <th className="px-6 py-4 text-left text-xs uppercase tracking-widest text-subtle">Traditional developer</th>
+                  <th className="px-6 py-4 text-left text-xs uppercase tracking-widest text-sage-dark">AI-native (Abin)</th>
                 </tr>
               </thead>
-              <tbody className="divide-y divide-[rgba(99,102,241,0.08)]">
+              <tbody className="divide-y divide-border">
                 {comparison.map((row) => (
-                  <tr key={row.label} className="bg-[rgba(99,102,241,0.02)]">
-                    <td className="px-6 py-4 font-sans font-semibold text-[#f1f5f9]">{row.label}</td>
-                    <td className="px-6 py-4 text-[#64748b]">{row.traditional}</td>
-                    <td className="px-6 py-4 font-medium text-[#a78bfa]">{row.ai}</td>
+                  <tr key={row.label} className="bg-surface">
+                    <td className="px-6 py-4 font-sans font-semibold text-ink">{row.label}</td>
+                    <td className="px-6 py-4 text-muted">{row.traditional}</td>
+                    <td className="px-6 py-4 font-medium text-sage-dark">{row.ai}</td>
                   </tr>
                 ))}
               </tbody>
@@ -195,7 +184,7 @@ export default function AiMernStackDeveloperPage() {
           </div>
 
           {/* Blog links */}
-          <h2 className="mb-6 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <h2 className="mb-6 text-2xl text-ink">
             Read: AI Engineering in Practice
           </h2>
           <div className="mb-20 grid gap-4 sm:grid-cols-2">
@@ -208,10 +197,10 @@ export default function AiMernStackDeveloperPage() {
               <Link
                 key={post.href}
                 href={post.href}
-                className="group rounded-xl border border-[rgba(167,139,250,0.12)] bg-[rgba(167,139,250,0.04)] p-5 no-underline transition hover:border-[rgba(167,139,250,0.35)]"
+                className="group rounded-xl border border-border bg-surface p-5 no-underline transition hover:border-border-strong"
               >
-                <div className="mb-2 font-mono text-[10px] text-[#a78bfa]">{post.cat}</div>
-                <div className="font-sans text-sm font-semibold leading-snug text-[#f1f5f9] transition group-hover:text-[#a78bfa]">
+                <div className="mb-2 text-[10px] text-sage-dark">{post.cat}</div>
+                <div className="font-sans text-sm font-semibold leading-snug text-ink transition group-hover:text-sage-dark">
                   {post.title}
                 </div>
               </Link>
@@ -219,20 +208,20 @@ export default function AiMernStackDeveloperPage() {
           </div>
 
           {/* CTA */}
-          <div className="rounded-2xl border border-[rgba(167,139,250,0.2)] bg-[rgba(167,139,250,0.04)] p-10 text-center">
-            <h2 className="mb-3 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <div className="rounded-2xl border border-border bg-surface p-10 text-center">
+            <h2 className="mb-3 text-2xl text-ink">
               Hire an AI-Powered MERN Stack Developer
             </h2>
-            <p className="mb-2 text-[#94a3b8]">
+            <p className="mb-2 text-muted">
               React, Node.js, MongoDB — accelerated by Cursor AI, Copilot &amp; Claude.
             </p>
-            <p className="mb-8 font-mono text-sm text-[#475569]">
+            <p className="mb-8 text-sm text-subtle">
               Available remote. Kochi, India. Responds within 24 hours.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={`mailto:${identity.email}`}
-                className="inline-flex rounded-xl bg-[#a78bfa] px-7 py-3.5 font-sans font-semibold text-[#080810] no-underline transition hover:opacity-90"
+                className="btn-primary"
               >
                 Email Abin
               </a>
@@ -240,13 +229,13 @@ export default function AiMernStackDeveloperPage() {
                 href={identity.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-xl border border-[rgba(167,139,250,0.3)] px-7 py-3.5 font-sans font-semibold text-[#f1f5f9] no-underline transition hover:border-[rgba(167,139,250,0.6)]"
+                className="btn-secondary"
               >
                 LinkedIn ↗
               </a>
               <Link
                 href="/hire-me"
-                className="inline-flex rounded-xl border border-[rgba(167,139,250,0.3)] px-7 py-3.5 font-sans font-semibold text-[#f1f5f9] no-underline transition hover:border-[rgba(167,139,250,0.6)]"
+                className="btn-secondary"
               >
                 Full hire page →
               </Link>
@@ -254,14 +243,15 @@ export default function AiMernStackDeveloperPage() {
           </div>
 
           {/* Footer links */}
-          <div className="mt-16 flex flex-wrap gap-6 border-t border-[rgba(99,102,241,0.1)] pt-10 font-mono text-sm">
-            <Link href="/remote-mern-developer" className="text-[#475569] no-underline hover:text-[#94a3b8]">Remote MERN Developer →</Link>
-            <Link href="/skills" className="text-[#475569] no-underline hover:text-[#94a3b8]">Full Tech Stack →</Link>
-            <Link href="/projects" className="text-[#475569] no-underline hover:text-[#94a3b8]">Case Studies →</Link>
-            <Link href="/blog" className="text-[#475569] no-underline hover:text-[#94a3b8]">Engineering Blog →</Link>
+          <div className="mt-16 flex flex-wrap gap-6 border-t border-border pt-10 text-sm">
+            <Link href="/remote-mern-developer" className="text-subtle no-underline hover:text-muted">Remote MERN Developer →</Link>
+            <Link href="/skills" className="text-subtle no-underline hover:text-muted">Full Tech Stack →</Link>
+            <Link href="/projects" className="text-subtle no-underline hover:text-muted">Case Studies →</Link>
+            <Link href="/blog" className="text-subtle no-underline hover:text-muted">Engineering Blog →</Link>
           </div>
 
         </main>
+        <Footer />
       </div>
     </>
   );

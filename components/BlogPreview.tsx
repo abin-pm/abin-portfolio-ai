@@ -17,10 +17,10 @@ export function BlogPreview() {
     <SectionWrapper id="blog" className="px-6 py-32 md:px-10">
       <div className="mx-auto max-w-[1100px]">
         <div className="section-label mb-4">From the Blog</div>
-        <h2 className="mb-3 font-sans text-3xl font-bold tracking-tight text-[#f1f5f9] md:text-4xl">
+        <h2 className="mb-3 text-3xl text-ink md:text-4xl">
           Latest from the Blog
         </h2>
-        <p className="mb-16 max-w-xl text-[#94a3b8]">
+        <p className="mb-16 max-w-xl text-muted">
           Insights on React, Next.js, AI-native development, and building enterprise-grade systems.
         </p>
 
@@ -33,20 +33,20 @@ export function BlogPreview() {
             >
               <div className="relative z-10 flex flex-1 flex-col">
                 <div className="mb-4 flex items-center gap-3">
-                  <span className="rounded-full bg-[rgba(99,102,241,0.1)] px-3 py-1 font-mono text-[10px] text-[#6366f1]">
+                  <span className="rounded-full bg-sage-light px-3 py-1 text-[10px] text-sage-dark">
                     {post.category}
                   </span>
-                  <span className="font-mono text-[10px] text-[#475569]">{post.readTime}</span>
+                  <span className="text-[10px] text-subtle">{post.readTime}</span>
                 </div>
-                <h3 className="mb-3 font-sans text-base font-semibold leading-snug text-[#f1f5f9] transition group-hover:text-[#6366f1]">
+                <h3 className="mb-3 text-base leading-snug text-ink transition group-hover:text-sage-dark">
                   {post.title}
                 </h3>
-                <p className="mb-5 flex-1 text-sm leading-relaxed text-[#94a3b8] line-clamp-3">
+                <p className="mb-5 flex-1 text-sm leading-relaxed text-muted line-clamp-3">
                   {post.excerpt}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-[#475569]">{formatDate(post.date)}</span>
-                  <span className="font-mono text-xs text-[#6366f1] transition group-hover:translate-x-0.5">
+                  <span className="text-[10px] text-subtle">{formatDate(post.date)}</span>
+                  <span className="text-xs text-sage-dark transition group-hover:translate-x-0.5">
                     Read article →
                   </span>
                 </div>
@@ -58,7 +58,7 @@ export function BlogPreview() {
         <div className="mt-10 text-center">
           <Link
             href="/blog"
-            className="inline-flex items-center gap-2 rounded-xl border border-[rgba(99,102,241,0.25)] px-6 py-3 font-mono text-sm text-[#94a3b8] no-underline transition hover:border-[rgba(99,102,241,0.5)] hover:text-[#f1f5f9]"
+            className="btn-secondary"
           >
             View all articles →
           </Link>

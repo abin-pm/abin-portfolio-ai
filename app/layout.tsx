@@ -1,42 +1,53 @@
 import type { Metadata } from 'next';
+import { Newsreader } from 'next/font/google';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import { defaultMetadata } from '@/lib/metadata';
 import { getPersonSchema, getProfessionalServiceSchema, getFAQPageSchema } from '@/lib/json-ld';
-import { GlobalBackground } from '@/components/GlobalBackground';
+import { identity } from '@/lib/data';
 import './globals.css';
 
+const newsreader = Newsreader({
+  subsets: ['latin'],
+  weight: ['400', '500', '600'],
+  style: ['normal', 'italic'],
+  variable: '--font-newsreader',
+  display: 'swap',
+  // next/font ships no fallback metrics for Newsreader; use Georgia as-is.
+  adjustFontFallback: false,
+  fallback: ['Georgia', 'serif'],
+});
+
 export const metadata: Metadata = {
-  metadataBase: new URL('https://abinpm.dev'),
-  title: 'Senior Full Stack AI Developer | MERN Stack Developer | Abin P M',
+  metadataBase: new URL(identity.site),
+  title: 'Abin PM – Senior Full Stack & AI Developer (React, Node.js)',
   description:
-    'Abin PM is a Senior Full Stack Developer building scalable React, Next.js, Node.js, and AI-powered applications for startups and enterprise teams.',
-  applicationName: 'Abin P M Portfolio',
+    'Senior Full Stack Engineer with 10+ years building React, Next.js, Node.js and AI-assisted enterprise platforms for L’Oréal, Abercrombie & Fitch and National Grid.',
+  applicationName: 'Abin PM Portfolio',
   keywords: [
-    'Senior Full Stack AI Developer',
-    'MERN Stack Developer',
-    'AI Web Application Developer',
-    'React Node.js Developer',
-    'Freelance Full Stack Developer',
+    'Senior Full Stack Developer',
+    'React Developer',
+    'Node.js Developer',
+    'AI-assisted development',
+    'Freelance Full Stack Developer India',
   ],
   openGraph: {
-    title: 'Senior Full Stack AI & MERN Developer | Abin P M',
+    title: 'Abin PM – Senior Full Stack & AI Developer',
     description:
-      'Freelance Full Stack Developer specializing in AI web application development with Next.js, React, Node.js, and TypeScript.',
-    url: 'https://abinpm.dev',
+      'React, Next.js, Node.js and AI-assisted engineering for enterprise and startup web platforms.',
+    url: '/',
     type: 'website',
-    siteName: 'Abin P M Portfolio',
-    images: [{ url: '/logo.svg', width: 512, height: 512, alt: 'Abin PM logo' }],
+    siteName: 'Abin PM Portfolio',
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630, alt: 'Abin PM – Senior Full Stack & AI Developer' }],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Abin PM | Senior Full Stack AI & MERN Developer',
+    title: 'Abin PM – Senior Full Stack & AI Developer',
     description:
-      'React, Next.js, Node.js, TypeScript, and AI-powered product engineering for web platforms.',
-    images: ['/logo.svg'],
+      'React, Next.js, Node.js and AI-assisted engineering for enterprise and startup web platforms.',
+    images: ['/og-image.jpg'],
   },
-  alternates: { canonical: 'https://abinpm.dev' },
-  manifest: '/site.webmanifest',
+  alternates: { canonical: '/' },
+  manifest: '/manifest.webmanifest',
   icons: {
     icon: [
       { url: '/favicon.svg', type: 'image/svg+xml' },
@@ -51,13 +62,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${GeistSans.variable} ${GeistMono.variable}`}
+      className={`${GeistSans.variable} ${GeistMono.variable} ${newsreader.variable}`}
     >
-      <body className="min-h-screen bg-neural-bg font-sans text-[#f1f5f9] antialiased">
-        <GlobalBackground />
-        <div className="relative z-10">
-          {children}
-        </div>
+      <body className="min-h-screen bg-cream font-sans text-ink antialiased">
+        {children}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getPersonSchema()) }}

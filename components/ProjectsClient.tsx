@@ -22,16 +22,13 @@ export function ProjectsClient() {
   const filtered = projects.filter((p) => matches(p.category, p.flag, filter));
 
   return (
-    <section className="mx-auto max-w-[1100px] px-6 py-20 md:px-10">
-      <div className="mb-4 flex items-center gap-3 font-mono text-xs uppercase tracking-[0.15em] text-[#6366f1]">
-        <span className="h-px w-6 bg-[#6366f1]" />
-        Portfolio
-      </div>
-      <h1 className="mb-4 font-sans text-4xl font-bold tracking-tight text-[#f1f5f9] md:text-5xl">
+    <section className="mx-auto max-w-[1100px] px-6 pt-32 pb-20 md:px-10">
+      <div className="section-label mb-4">Portfolio</div>
+      <h1 className="mb-4 text-4xl text-ink md:text-5xl">
         Projects
       </h1>
-      <p className="mb-10 max-w-xl text-[#94a3b8]">
-        6 production platforms across retail, energy, events, civic tech, and SaaS — shipped for
+      <p className="mb-10 max-w-xl text-muted">
+        {projects.length} production platforms across retail, energy, events, civic tech, and SaaS — shipped for
         clients in the USA, UK, and India.
       </p>
 
@@ -43,10 +40,10 @@ export function ProjectsClient() {
             role="tab"
             aria-selected={filter === f}
             onClick={() => setFilter(f)}
-            className={`rounded-full border px-4 py-1.5 font-mono text-xs transition ${
+            className={`rounded-full border px-4 py-1.5 text-xs transition ${
               filter === f
-                ? 'border-[#6366f1] bg-[rgba(99,102,241,0.12)] text-[#6366f1]'
-                : 'border-[rgba(99,102,241,0.15)] text-[#94a3b8] hover:border-[rgba(99,102,241,0.35)] hover:text-[#f1f5f9]'
+                ? 'border-sage bg-sage-light text-sage-dark'
+                : 'border-border text-muted hover:border-border-strong hover:text-ink'
             }`}
           >
             {f}
@@ -66,46 +63,56 @@ export function ProjectsClient() {
           {filtered.map((project) => (
             <article
               key={project.id}
-              className={`card relative flex flex-col p-8 ${project.aiAssisted ? 'card-violet' : ''}`}
+              className={`card relative flex flex-col ${project.aiAssisted ? 'card-violet' : ''}`}
             >
-              {project.aiAssisted && (
-                <span className="absolute right-4 top-4 rounded-full border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.1)] px-3 py-1 font-mono text-[10px] text-[#a78bfa]">
-                  🤖 AI-Assisted
-                </span>
-              )}
-              <div className="mb-3 flex flex-wrap items-center gap-2">
-                <span className="text-xl">{project.flag}</span>
-                <span className="font-mono text-xs text-[#6366f1]">{project.client}</span>
-                <span className="rounded bg-[rgba(99,102,241,0.1)] px-2 py-0.5 font-mono text-[10px] text-[#475569]">
-                  {project.category}
-                </span>
+              {/* Flat cover block — stands in for a project screenshot */}
+              <div className="flex h-40 flex-col justify-between border-b border-border bg-sage-light p-6">
+                <div className="flex items-start justify-between gap-3">
+                  <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-sage-dark">
+                    {project.category}
+                  </span>
+                  {project.aiAssisted && (
+                    <span className="rounded-full border border-sage-border bg-surface px-3 py-1 text-[10px] text-sage-dark">
+                      🤖 AI-Assisted
+                    </span>
+                  )}
+                </div>
+                <div className="flex items-end justify-between gap-3">
+                  <span className="font-serif text-3xl text-ink">{project.client}</span>
+                  <span className="text-2xl" aria-hidden>{project.flag}</span>
+                </div>
               </div>
-              <h2 className="mb-3 font-sans text-xl font-bold text-[#f1f5f9]">{project.title}</h2>
-              <p className="mb-5 text-sm leading-relaxed text-[#94a3b8]">{project.description}</p>
+              <div className="flex flex-1 flex-col p-7">
+              {(project.period || project.company) && (
+                <p className="mb-2 text-[11px] uppercase tracking-[0.14em] text-subtle">
+                  {[project.company, project.period].filter(Boolean).join(' · ')}
+                </p>
+              )}
+              <h2 className="mb-3 text-2xl text-ink">{project.title}</h2>
+              <p className="mb-5 text-sm leading-relaxed text-muted">{project.description}</p>
               <ul className="mb-5 space-y-1.5">
                 {project.impact.map((item) => (
-                  <li key={item} className="flex items-start gap-2 text-sm text-[#22d3ee]">
+                  <li key={item} className="flex items-start gap-2 text-sm text-sage-dark">
                     <span className="mt-px shrink-0">✓</span>
                     {item}
                   </li>
                 ))}
               </ul>
               {project.aiNote && (
-                <p className="mb-4 font-mono text-xs text-[#a78bfa]">{project.aiNote}</p>
+                <p className="mb-4 text-xs text-sage-dark">{project.aiNote}</p>
               )}
               <div className="mb-6 flex flex-wrap gap-2">
                 {project.tags.map((tag) => (
                   <span key={tag} className="tag-pill">{tag}</span>
                 ))}
               </div>
-              <div className="mt-auto">
-                <Link
-                  href={`/projects/${project.id}`}
-                  className="inline-flex items-center gap-1.5 rounded-lg border border-[rgba(99,102,241,0.2)] px-4 py-2 font-mono text-xs text-[#6366f1] no-underline transition hover:border-[rgba(99,102,241,0.5)] hover:bg-[rgba(99,102,241,0.06)]"
-                  aria-label={`See ${project.client} case study — ${project.title}`}
-                >
-                  See {project.client} case study →
-                </Link>
+              <Link
+                href={`/projects/${project.id}`}
+                className="mt-auto flex items-center justify-between border-t border-border pt-4 text-xs font-semibold uppercase tracking-[0.12em] text-ink no-underline transition hover:text-sage-dark"
+                aria-label={`See ${project.client} case study — ${project.title}`}
+              >
+                See {project.client} case study <span aria-hidden>→</span>
+              </Link>
               </div>
             </article>
           ))}
@@ -115,7 +122,7 @@ export function ProjectsClient() {
       <div className="mt-16 text-center">
         <Link
           href="/#contact"
-          className="inline-flex rounded-xl bg-[#6366f1] px-8 py-4 font-sans font-semibold text-white no-underline shadow-[0_0_30px_rgba(99,102,241,0.25)] transition hover:opacity-90"
+          className="btn-primary"
         >
           Discuss a project →
         </Link>

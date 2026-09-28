@@ -34,7 +34,7 @@ export function generateMetadata({ params }: Props): Metadata {
       description,
       publishedTime: post.date,
       authors: ['Abin PM'],
-      images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+      images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     },
     twitter: { card: 'summary_large_image', title, description },
   };
@@ -58,7 +58,7 @@ export default function BlogPostPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
-      <main className="bg-[#080810]">
+      <main className="bg-cream">
         <div className="pt-16">
           <BlogPostLayout post={post} relatedPosts={related} />
         </div>

@@ -11,3 +11,10 @@ pnpm-debug.log*
 .env
 .env.local
 .env.*.local
+
+# Personal documents (kept local; see .cursor/.cursorignore)
+.cursor/Abin_PM_Resume.md
+.cursor/abin_pm_full_project_details.md
+
+# TypeScript incremental build info
+tsconfig.tsbuildinfo

@@ -1,0 +1,7 @@
+# Keep Cursor's AI features and indexing away from personal documents in this folder.
+# Note: Cursor only reads nested .cursorignore files when the
+# "Hierarchical Cursor Ignore" setting is enabled (Settings → Features → Codebase Indexing).
+
+# Personal resume and project details (contact details, employment history)
+Abin_PM_Resume.md
+abin_pm_full_project_details.md

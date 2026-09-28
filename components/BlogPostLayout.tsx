@@ -98,7 +98,7 @@ const articleBodies: Record<string, React.ReactNode> = {
       </p>
       <p>
         If you&apos;re actively evaluating candidates,{' '}
-        <a href="/hire-me" className="text-[#6366f1] hover:underline">see what a senior React developer from India with enterprise + AI credentials looks like</a>
+        <a href="/hire-me" className="text-sage-dark hover:underline">see what a senior React developer from India with enterprise + AI credentials looks like</a>
         {' '}before making your decision.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
@@ -161,7 +161,7 @@ const articleBodies: Record<string, React.ReactNode> = {
       </p>
       <p>
         Looking for an engineer who uses these tools in real production?{' '}
-        <a href="/hire-me" className="text-[#6366f1] hover:underline">See what an AI-native React &amp; Node.js developer from India delivers</a>.
+        <a href="/hire-me" className="text-sage-dark hover:underline">See what an AI-native React &amp; Node.js developer from India delivers</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
@@ -185,7 +185,7 @@ const articleBodies: Record<string, React.ReactNode> = {
         The National Grid MDS Consolidation EPO Tracking Application was built on SAS — a
         legacy desktop system that had served its purpose but no longer met the scalability,
         accessibility, or user experience requirements of a modern enterprise. The project
-        goal was to migrate it to a React.js + .NET Core web platform. What made this
+        goal was to migrate it to a React.js + Node.js web platform backed by PostgreSQL. What made this
         different from a typical modernization was the use of GenAI-assisted code generation
         as the initial development baseline.
       </p>
@@ -208,7 +208,7 @@ const articleBodies: Record<string, React.ReactNode> = {
       </p>
       <h3>Phase 3 — Integration and deployment</h3>
       <p>
-        The React.js frontend was integrated with the .NET Core API backend and deployed
+        The React.js frontend was integrated with the Node.js/Express API backend and deployed
         to Azure. Cross-functional collaboration with US-based National Grid stakeholders
         ensured the final product met user needs and performance standards.
       </p>
@@ -221,7 +221,7 @@ const articleBodies: Record<string, React.ReactNode> = {
       </p>
       <p>
         Need a similar legacy modernization for your enterprise?{' '}
-        <a href="/hire-me" className="text-[#6366f1] hover:underline">Hire a senior React developer who combines AI acceleration with enterprise engineering standards</a>.
+        <a href="/hire-me" className="text-sage-dark hover:underline">Hire a senior React developer who combines AI acceleration with enterprise engineering standards</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
@@ -279,7 +279,7 @@ const articleBodies: Record<string, React.ReactNode> = {
       </p>
       <p>
         Need an engineer who has done this at enterprise scale (IBM, Fortune 500)?{' '}
-        <a href="/hire-me" className="text-[#6366f1] hover:underline">Hire Abin PM — AI-native full stack developer from India</a>.
+        <a href="/hire-me" className="text-sage-dark hover:underline">Hire Abin PM — AI-native full stack developer from India</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
@@ -336,7 +336,7 @@ const articleBodies: Record<string, React.ReactNode> = {
       </p>
       <p>
         Want this built into your product?{' '}
-        <a href="/hire-me" className="text-[#6366f1] hover:underline">Hire a full stack React &amp; Node.js developer with hands-on LLM integration experience</a>.
+        <a href="/hire-me" className="text-sage-dark hover:underline">Hire a full stack React &amp; Node.js developer with hands-on LLM integration experience</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
@@ -385,7 +385,7 @@ const articleBodies: Record<string, React.ReactNode> = {
         each team could ship independently without coordination meetings or release windows.
         The Global Configuration Hub migration to PrimeReact gave us a single source of
         truth for shared UI patterns. See the full{' '}
-        <a href="/projects/abercrombie" className="text-[#6366f1] hover:underline">Abercrombie &amp; Fitch case study</a>
+        <a href="/projects/abercrombie" className="text-sage-dark hover:underline">Abercrombie &amp; Fitch case study</a>
         {' '}for more detail on the architecture choices.
       </p>
       <h2 id="what-did-not-work-initially">What Did Not Work (Initially)</h2>
@@ -396,7 +396,7 @@ const articleBodies: Record<string, React.ReactNode> = {
       </p>
       <p>
         Planning a micro-frontend migration?{' '}
-        <a href="/hire-me" className="text-[#6366f1] hover:underline">Hire a senior React developer who has shipped this in production at Fortune 500 scale</a>.
+        <a href="/hire-me" className="text-sage-dark hover:underline">Hire a senior React developer who has shipped this in production at Fortune 500 scale</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
@@ -426,13 +426,13 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
   const toc = tocItems[post.slug];
 
   return (
-    <div className="min-h-screen bg-[#080810]">
+    <div className="min-h-screen bg-cream">
       <div className="mx-auto max-w-[1200px] px-6 py-20 md:px-10 xl:flex xl:gap-16">
         {/* Sticky ToC — desktop only */}
         {toc && toc.length > 0 && (
           <aside className="hidden xl:block xl:w-56 xl:shrink-0">
             <div className="sticky top-28">
-              <div className="mb-3 font-mono text-[10px] uppercase tracking-widest text-[#475569]">
+              <div className="mb-3 text-[10px] uppercase tracking-widest text-subtle">
                 Contents
               </div>
               <nav className="space-y-1">
@@ -440,19 +440,19 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
                   <a
                     key={heading}
                     href={`#${headingToId(heading)}`}
-                    className="block font-mono text-xs leading-relaxed text-[#475569] no-underline transition hover:text-[#94a3b8]"
+                    className="block text-xs leading-relaxed text-subtle no-underline transition hover:text-muted"
                   >
                     {heading}
                   </a>
                 ))}
               </nav>
-              <div className="mt-8 rounded-xl border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.04)] p-5">
-                <p className="mb-3 font-mono text-xs text-[#94a3b8]">
+              <div className="mt-8 rounded-xl border border-border bg-surface p-5">
+                <p className="mb-3 text-xs text-muted">
                   Evaluating React developers from India?
                 </p>
                 <a
                   href="/hire-me"
-                  className="block rounded-lg bg-[#6366f1] px-4 py-2.5 text-center font-mono text-xs font-semibold text-white no-underline transition hover:opacity-90"
+                  className="block rounded-lg bg-sage px-4 py-2.5 text-center text-xs font-semibold text-white no-underline transition hover:opacity-90"
                 >
                   Hire Abin →
                 </a>
@@ -465,30 +465,30 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
           {/* Header */}
           <div className="mb-8">
             <div className="mb-4 flex flex-wrap items-center gap-3">
-              <span className="rounded-full bg-[rgba(99,102,241,0.1)] px-3 py-1 font-mono text-xs text-[#6366f1]">
+              <span className="rounded-full bg-sage-light px-3 py-1 text-xs text-sage-dark">
                 {post.category}
               </span>
-              <span className="font-mono text-xs text-[#475569]">{post.readTime}</span>
+              <span className="text-xs text-subtle">{post.readTime}</span>
             </div>
-            <h1 className="mb-4 font-sans text-3xl font-bold leading-tight tracking-tight text-[#f1f5f9] md:text-4xl">
+            <h1 className="mb-4 text-3xl leading-tight text-ink md:text-4xl">
               {post.title}
             </h1>
-            <div className="mb-6 font-mono text-sm text-[#475569]">
+            <div className="mb-6 text-sm text-subtle">
               {new Date(post.date).toLocaleDateString('en-US', {
                 year: 'numeric', month: 'long', day: 'numeric',
               })}
             </div>
-            <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] px-5 py-4">
+            <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-border bg-surface px-5 py-4">
               <div className="flex items-center gap-4">
                 <div>
-                  <div className="font-sans text-sm font-semibold text-[#f1f5f9]">{identity.name}</div>
-                  <div className="font-mono text-xs text-[#94a3b8]">{identity.title}</div>
+                  <div className="font-sans text-sm font-semibold text-ink">{identity.name}</div>
+                  <div className="text-xs text-muted">{identity.title}</div>
                 </div>
                 <a
                   href={identity.linkedin}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="font-mono text-xs text-[#6366f1] no-underline hover:underline"
+                  className="text-xs text-sage-dark no-underline hover:underline"
                 >
                   LinkedIn ↗
                 </a>
@@ -500,15 +500,15 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
           {/* Mobile ToC */}
           {toc && toc.length > 0 && (
             <details className="mb-8 xl:hidden">
-              <summary className="cursor-pointer list-none rounded-xl border border-[rgba(99,102,241,0.15)] bg-[rgba(99,102,241,0.04)] px-5 py-3 font-mono text-xs text-[#6366f1]">
+              <summary className="cursor-pointer list-none rounded-xl border border-border bg-surface px-5 py-3 text-xs text-sage-dark">
                 Table of contents ▾
               </summary>
-              <nav className="mt-3 space-y-2 rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] px-5 py-4">
+              <nav className="mt-3 space-y-2 rounded-xl border border-border bg-surface px-5 py-4">
                 {toc.map((heading) => (
                   <a
                     key={heading}
                     href={`#${headingToId(heading)}`}
-                    className="block font-mono text-xs text-[#94a3b8] no-underline hover:text-[#6366f1]"
+                    className="block text-xs text-muted no-underline hover:text-sage-dark"
                   >
                     {heading}
                   </a>
@@ -528,39 +528,39 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
           <div
             className={[
               'prose-neural',
-              '[&>h2]:mb-4 [&>h2]:mt-10 [&>h2]:font-sans [&>h2]:text-2xl [&>h2]:font-bold [&>h2]:text-[#f1f5f9]',
-              '[&>h3]:mb-3 [&>h3]:mt-6 [&>h3]:font-sans [&>h3]:text-lg [&>h3]:font-semibold [&>h3]:text-[#a78bfa]',
-              '[&>p]:mb-5 [&>p]:text-[1.05rem] [&>p]:leading-[1.8] [&>p]:text-[#94a3b8]',
+              '[&>h2]:mb-4 [&>h2]:mt-10 [&>h2]:font-serif [&>h2]:text-[1.85rem] [&>h2]:font-medium [&>h2]:text-ink',
+              '[&>h3]:mb-3 [&>h3]:mt-6 [&>h3]:font-serif [&>h3]:text-xl [&>h3]:font-medium [&>h3]:text-sage-dark',
+              '[&>p]:mb-5 [&>p]:text-[1.05rem] [&>p]:leading-[1.8] [&>p]:text-muted',
               '[&>ul]:mb-5 [&>ul]:space-y-2 [&>ul]:pl-0',
-              '[&>ul>li]:relative [&>ul>li]:pl-5 [&>ul>li]:text-[0.95rem] [&>ul>li]:leading-relaxed [&>ul>li]:text-[#94a3b8]',
-              '[&>ul>li::before]:absolute [&>ul>li::before]:left-0 [&>ul>li::before]:text-[#6366f1] [&>ul>li::before]:content-["▸"]',
+              '[&>ul>li]:relative [&>ul>li]:pl-5 [&>ul>li]:text-[0.95rem] [&>ul>li]:leading-relaxed [&>ul>li]:text-muted',
+              '[&>ul>li::before]:absolute [&>ul>li::before]:left-0 [&>ul>li::before]:text-sage-dark [&>ul>li::before]:content-["▸"]',
             ].join(' ')}
           >
             {body ?? (
-              <p className="text-[#94a3b8]">
+              <p className="text-muted">
                 Full article coming soon. Subscribe or follow on LinkedIn for updates.
               </p>
             )}
           </div>
 
           {/* End CTA */}
-          <div className="mt-16 rounded-xl border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.04)] p-8 text-center">
-            <p className="mb-4 font-sans text-lg font-semibold text-[#f1f5f9]">
+          <div className="mt-16 rounded-xl border border-border bg-surface p-8 text-center">
+            <p className="mb-4 font-serif text-2xl text-ink">
               Working on something similar?
             </p>
-            <p className="mb-6 text-sm text-[#94a3b8]">
+            <p className="mb-6 text-sm text-muted">
               Let&apos;s talk about your project — React, Node.js, cloud architecture, or AI integration.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <a
                 href="/hire-me"
-                className="inline-flex rounded-xl bg-[#6366f1] px-7 py-3.5 font-sans font-semibold text-white no-underline transition hover:opacity-90"
+                className="btn-primary"
               >
                 Let&apos;s talk →
               </a>
               <Link
                 href="/projects"
-                className="inline-flex rounded-xl border border-[rgba(99,102,241,0.35)] px-7 py-3.5 font-sans font-semibold text-[#f1f5f9] no-underline transition hover:border-[rgba(99,102,241,0.6)]"
+                className="btn-secondary"
               >
                 View case studies →
               </Link>
@@ -568,8 +568,8 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
           </div>
 
           {/* Share footer */}
-          <div className="mt-10 flex items-center justify-between border-t border-[rgba(99,102,241,0.1)] pt-6">
-            <Link href="/blog" className="font-mono text-xs text-[#475569] no-underline hover:text-[#94a3b8]">
+          <div className="mt-10 flex items-center justify-between border-t border-border pt-6">
+            <Link href="/blog" className="text-xs text-subtle no-underline hover:text-muted">
               ← All articles
             </Link>
             <ShareButtons title={post.title} slug={post.slug} />
@@ -578,19 +578,19 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
           {/* Related posts */}
           {relatedPosts.length > 0 && (
             <div className="mt-16">
-              <h2 className="mb-6 font-sans text-xl font-bold text-[#f1f5f9]">Related articles</h2>
+              <h2 className="mb-6 text-xl text-ink">Related articles</h2>
               <div className="grid gap-4 md:grid-cols-2">
                 {relatedPosts.map((rp) => (
                   <a
                     key={rp.slug}
                     href={`/blog/${rp.slug}`}
-                    className="group rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-6 no-underline transition hover:border-[rgba(99,102,241,0.35)]"
+                    className="group rounded-xl border border-border bg-surface p-6 no-underline transition hover:border-border-strong"
                   >
-                    <div className="mb-2 font-mono text-[10px] text-[#6366f1]">{rp.category}</div>
-                    <div className="font-sans text-sm font-semibold leading-snug text-[#f1f5f9] transition group-hover:text-[#6366f1]">
+                    <div className="mb-2 text-[10px] text-sage-dark">{rp.category}</div>
+                    <div className="font-sans text-sm font-semibold leading-snug text-ink transition group-hover:text-sage-dark">
                       {rp.title}
                     </div>
-                    <div className="mt-2 font-mono text-[10px] text-[#475569]">{rp.readTime}</div>
+                    <div className="mt-2 text-[10px] text-subtle">{rp.readTime}</div>
                   </a>
                 ))}
               </div>

@@ -8,6 +8,7 @@ export const metadata: Metadata = {
   title: 'Blog & Case Studies | React, Next.js & AI-Native Development | Abin PM',
   description:
     'Insights on React, Next.js, Node.js, cloud, AI-native development, LLM integration, and GenAI stabilization from real enterprise work at IBM, National Grid, Abercrombie & Fitch.',
+  alternates: { canonical: '/blog' },
 };
 
 type Category = 'All' | 'React' | 'AI-Native' | 'LLMs' | 'Case Study' | 'Hiring';
@@ -26,17 +27,17 @@ export default function BlogPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#080810] pt-28">
+      <main className="min-h-screen bg-cream pt-28">
         <section className="mx-auto max-w-[1100px] px-6 pb-32 md:px-10">
           {/* Header */}
           <div className="mb-16 max-w-2xl">
-            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.06)] px-4 py-1.5">
-              <span className="font-mono text-xs text-[#6366f1]">Blog & Case Studies</span>
+            <div className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5">
+              <span className="text-xs text-sage-dark">Blog & Case Studies</span>
             </div>
-            <h1 className="mb-4 font-sans text-3xl font-bold leading-tight tracking-tight text-[#f1f5f9] md:text-4xl">
+            <h1 className="mb-4 text-3xl leading-tight text-ink md:text-4xl">
               Blog & Case Studies on React, Next.js &amp; AI-Native Development
             </h1>
-            <p className="leading-relaxed text-[#94a3b8]">
+            <p className="leading-relaxed text-muted">
               These posts are written for founders, product leaders, and engineering managers who
               want to understand how to hire, work with, and get the most from a senior React and
               AI-native full stack developer. Topics span React architecture, Next.js patterns,
@@ -51,10 +52,10 @@ export default function BlogPage() {
             {CATEGORIES.map((cat) => (
               <span
                 key={cat}
-                className={`cursor-default rounded-full border px-4 py-1.5 font-mono text-xs transition ${
+                className={`cursor-default rounded-full border px-4 py-1.5 text-xs transition ${
                   cat === 'All'
-                    ? 'border-[rgba(99,102,241,0.5)] bg-[rgba(99,102,241,0.12)] text-[#6366f1]'
-                    : 'border-[rgba(99,102,241,0.15)] bg-transparent text-[#475569] hover:border-[rgba(99,102,241,0.35)] hover:text-[#94a3b8]'
+                    ? 'border-sage bg-sage-light text-sage-dark'
+                    : 'border-border bg-transparent text-subtle hover:border-border-strong hover:text-muted'
                 }`}
               >
                 {cat}
@@ -68,23 +69,23 @@ export default function BlogPage() {
               <Link
                 key={post.slug}
                 href={`/blog/${post.slug}`}
-                className="group flex flex-col rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-8 no-underline transition hover:border-[rgba(99,102,241,0.35)] hover:-translate-y-1"
+                className="group flex flex-col rounded-xl border border-border bg-surface p-8 no-underline transition hover:border-border-strong hover:-translate-y-1"
               >
                 <div className="mb-3 flex flex-wrap items-center gap-3">
-                  <span className="rounded-full bg-[rgba(99,102,241,0.1)] px-3 py-1 font-mono text-[10px] text-[#6366f1]">
+                  <span className="rounded-full bg-sage-light px-3 py-1 text-[10px] text-sage-dark">
                     {post.category}
                   </span>
-                  <span className="font-mono text-[10px] text-[#475569]">{post.readTime}</span>
+                  <span className="text-[10px] text-subtle">{post.readTime}</span>
                 </div>
-                <h2 className="mb-3 font-sans text-lg font-bold leading-snug text-[#f1f5f9] transition group-hover:text-[#6366f1]">
+                <h2 className="mb-3 text-lg leading-snug text-ink transition group-hover:text-sage-dark">
                   {post.title}
                 </h2>
-                <p className="mb-5 flex-1 text-sm leading-relaxed text-[#94a3b8]">
+                <p className="mb-5 flex-1 text-sm leading-relaxed text-muted">
                   {post.excerpt}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="font-mono text-[10px] text-[#475569]">{formatDate(post.date)}</span>
-                  <span className="font-mono text-xs text-[#6366f1] transition group-hover:translate-x-0.5">
+                  <span className="text-[10px] text-subtle">{formatDate(post.date)}</span>
+                  <span className="text-xs text-sage-dark transition group-hover:translate-x-0.5">
                     Read article →
                   </span>
                 </div>
