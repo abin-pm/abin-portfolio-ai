@@ -124,7 +124,7 @@ const articleBodies: Record<string, React.ReactNode> = {
         The term &ldquo;AI-assisted development&rdquo; gets thrown around a lot in 2024–2025.
         What it actually looks like in enterprise production is rarely described in detail.
         This is a first-person account of using Cursor AI, GitHub Copilot, and Claude daily
-        at IBM while working on production React and Node.js systems for a Fortune 500 client
+        at IBM while working on production React and Node.js systems for a major US utility client
         in the US.
       </p>
       <h2 id="how-each-tool-fits-into-the-workflow">How Each Tool Fits into the Workflow</h2>
@@ -278,7 +278,7 @@ const articleBodies: Record<string, React.ReactNode> = {
         the happy path only.
       </p>
       <p>
-        Need an engineer who has done this at enterprise scale (IBM, Fortune 500)?{' '}
+        Need an engineer who has done this at enterprise scale (IBM, global enterprise clients)?{' '}
         <a href="/hire-me" className="text-sage-dark hover:underline">Hire Abin PM — AI-native full stack developer from India</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
@@ -396,7 +396,7 @@ const articleBodies: Record<string, React.ReactNode> = {
       </p>
       <p>
         Planning a micro-frontend migration?{' '}
-        <a href="/hire-me" className="text-sage-dark hover:underline">Hire a senior React developer who has shipped this in production at Fortune 500 scale</a>.
+        <a href="/hire-me" className="text-sage-dark hover:underline">Hire a senior React developer who has shipped this in production at enterprise scale</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>

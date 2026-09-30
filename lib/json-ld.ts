@@ -73,8 +73,10 @@ export function getPersonSchema() {
     name: identity.name,
     jobTitle: identity.title,
     url: identity.site,
+    image: `${identity.site}/images/abin-hero.png`,
     email: identity.email,
     telephone: '+919895661651',
+    worksFor: { '@type': 'Organization', name: 'IBM' },
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Kochi',
@@ -83,8 +85,9 @@ export function getPersonSchema() {
     },
     sameAs: [identity.linkedin, identity.github],
     knowsAbout: [
-      'React.js', 'Next.js', 'Node.js', 'MERN Stack', 'Microservices',
-      'AWS', 'TypeScript', 'AI-Assisted Development', 'Cursor AI',
+      'React.js', 'Next.js', 'Node.js', 'NestJS', 'TypeScript', 'GraphQL',
+      'Micro Frontends', 'Microservices', 'MERN Stack', 'PostgreSQL', 'MongoDB',
+      'AWS', 'Google Cloud', 'Azure', 'AI-Assisted Development', 'Cursor AI',
       'LLM Integration', 'GenAI Engineering', 'Full Stack Development',
     ],
     alumniOf: {

@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.abinaiengineer.com/skills',
   },
   openGraph: {
+    // Pages that set openGraph drop the root file-based image, so reference it explicitly.
+    images: ['/opengraph-image'],
     title: 'Technical Skills | Abin PM — Senior MERN Stack & AI-Native Engineer',
     description:
       'React, Next.js, Node.js, TypeScript, AWS, GCP, Cursor AI, LLM Integration, GenAI — full spectrum stack by Abin PM, Senior Full Stack Developer from India.',

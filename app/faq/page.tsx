@@ -21,11 +21,12 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/faq` },
   openGraph: {
+    // Pages that set openGraph drop the root file-based image, so reference it explicitly.
+    images: ['/opengraph-image'],
     title: 'FAQ — Hiring Abin PM | Senior React & MERN Stack Developer',
     description:
       'Common questions about hiring a senior React, Node.js & MERN stack developer from India — rates, remote availability, AI workflow, and engagement models.',
     url: `${SITE_URL}/faq`,
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };

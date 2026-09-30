@@ -13,9 +13,9 @@ const fadeUp = (delay = 0) => ({
 });
 
 const KPI_STRIP = [
-  { metric: '96h → 2h',  label: 'Ops cycle cut for Paragon Energy (200k+ smart meters)' },
-  { metric: 'Fortune 500', label: 'IBM, Abercrombie & Fitch, National Grid' },
-  { metric: '3–5×',      label: 'Faster delivery with AI-native workflow' },
+  { metric: '96h → 2h',    label: 'Ops cycle cut for Paragon Energy (200k+ smart meters)' },
+  { metric: 'Global brands', label: "L'Oréal, Abercrombie & Fitch, National Grid" },
+  { metric: '1000s',       label: "of L'Oréal retail users on analytics I build" },
 ];
 
 // Fade the photo's outer edge into the page: image optimisation shifts its
@@ -39,7 +39,7 @@ function HeroPortrait({ className = '' }: { className?: string }) {
       {/* The photo carries its own sage disc and line-art on a cream ground, so no frame. */}
       <Image
         src="/images/abin-hero.png"
-        alt="Abin P M, senior full stack developer"
+        alt="Abin PM, senior full stack and AI developer in Kochi, Kerala"
         width={1254}
         height={1254}
         priority
@@ -65,7 +65,7 @@ export function Hero() {
             Available now — open to new projects
           </span>
           <span className="inline-flex items-center gap-2 rounded-full border border-sage-border bg-sage-light px-4 py-1.5 text-xs font-medium text-sage-dark">
-            🤖 AI-Native Engineer
+            📍 Kochi, Kerala · Remote worldwide
           </span>
         </motion.div>
 
@@ -74,8 +74,8 @@ export function Hero() {
           {...fadeUp(0.1)}
           className="mb-6 text-4xl leading-[1.08] text-ink sm:text-5xl md:text-6xl xl:text-[3.4rem]"
         >
-          Senior React Developer &amp;<br />
-          AI-Native Engineer for Hire
+          Senior Full Stack &amp;<br />
+          AI Developer for Hire
         </motion.h1>
 
         {/* Subheading */}
@@ -83,12 +83,10 @@ export function Hero() {
           {...fadeUp(0.15)}
           className="mb-8 max-w-2xl text-base leading-relaxed text-muted md:text-lg"
         >
-          Freelance Full Stack Developer from India — 10+ years building enterprise-grade React,
-          Next.js &amp; Node.js platforms for IBM, Abercrombie &amp; Fitch, and National Grid.
-          Using Cursor AI, GitHub Copilot &amp; Claude daily to ship faster without sacrificing quality.
+          Freelance React, Next.js &amp; Node.js developer with 10+ years building enterprise
+          platforms for L&apos;Oréal, Abercrombie &amp; Fitch and National Grid — now at IBM.
+          AI-assisted delivery, production-grade engineering.
         </motion.p>
-
-        <HeroPortrait className="mb-12 xl:hidden" />
 
         {/* ── Primary CTA + secondary ── */}
         <motion.div {...fadeUp(0.25)} className="mb-10 flex flex-wrap items-center gap-4">
@@ -107,6 +105,8 @@ export function Hero() {
             AI Engineer page ↗
           </Link>
         </motion.div>
+
+        <HeroPortrait className="mb-4 xl:hidden" />
 
         </div>
 

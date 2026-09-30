@@ -10,7 +10,7 @@ const SITE_URL = 'https://www.abinaiengineer.com';
 export const metadata: Metadata = {
   title: 'Hire a Senior React & AI-Native Developer from India | Abin PM',
   description:
-    'Hire Abin PM — senior React developer & AI-native engineer from India. 10+ years enterprise full stack + Cursor AI, Copilot, Claude. React, Node.js, MERN, freelance & remote available now.',
+    'Hire Abin PM, a senior full stack & AI developer in Kochi, Kerala. 10+ years building React, Next.js and Node.js platforms for L’Oréal, Abercrombie & Fitch and National Grid. Freelance & remote.',
   alternates: { canonical: '/hire-me' },
 };
 
@@ -25,7 +25,7 @@ const whyHire = [
 const comparison = [
   { traditional: 'Weeks per feature', ai: 'Days per feature' },
   { traditional: 'Manual debugging', ai: 'AI-assisted root cause analysis' },
-  { traditional: 'Standard output', ai: '3–5× velocity' },
+  { traditional: 'Standard output', ai: 'Faster delivery on routine work' },
   { traditional: 'One skill set', ai: 'Full stack + AI + Cloud' },
 ];
 

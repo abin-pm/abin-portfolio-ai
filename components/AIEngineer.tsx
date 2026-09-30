@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { aiTools, aiStats } from '@/lib/data';
+import { aiTools } from '@/lib/data';
 import { SectionWrapper } from '@/components/SectionWrapper';
 
 export function AIEngineer() {
@@ -32,7 +32,7 @@ export function AIEngineer() {
             },
             {
               title: 'The Rare Skill: GenAI Stabilization',
-              body: 'On the National Grid MDS Consolidation project at IBM, I took a GenAI-generated codebase — full of discrepancies, architectural drift, and reliability gaps — and hardened it to Fortune 500 production standards. Reviewing AI output critically, correcting misaligned logic, enforcing enterprise coding standards, and ensuring every component is maintainable and production-reliable.',
+              body: 'On the National Grid MDS Consolidation project at IBM, I took a GenAI-generated codebase — full of discrepancies, architectural drift, and reliability gaps — and hardened it to enterprise production standards. Reviewing AI output critically, correcting misaligned logic, enforcing enterprise coding standards, and ensuring every component is maintainable and production-reliable.',
             },
             {
               title: 'What This Means for Your Project',
@@ -78,29 +78,12 @@ export function AIEngineer() {
           ))}
         </div>
 
-        {/* AI Stats */}
-        <div className="mb-16 grid grid-cols-2 gap-5 md:grid-cols-4">
-          {aiStats.map((stat, i) => (
-            <motion.div
-              key={stat.label}
-              initial={{ opacity: 0, scale: 0.9 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.06, duration: 0.4 }}
-              className="card-stat p-6 text-center"
-            >
-              <div className="mb-1 font-serif text-4xl text-sage-dark">{stat.value}</div>
-              <div className="text-xs uppercase tracking-widest text-muted">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
-
         {/* What I can build */}
         <h3 className="mb-6 text-xl text-ink">What I can build for you</h3>
         <div className="mb-12 grid gap-5 md:grid-cols-3">
           {[
             { icon: '🔗', title: 'AI-Powered Features', desc: 'LLM APIs, semantic search, chatbots, and AI-driven UX built directly into your product.' },
-            { icon: '⚙️', title: 'AI-Accelerated Delivery', desc: 'Ship your project 3–5× faster using AI tooling — without cutting corners on quality or reliability.' },
+            { icon: '⚙️', title: 'AI-Accelerated Delivery', desc: 'Shorter delivery cycles with AI-assisted development — every change still reviewed, tested and production-ready.' },
             { icon: '🛡️', title: 'GenAI Code Stabilization', desc: 'Review and harden AI-generated codebases to production standards — architecture, logic, and edge cases included.' },
           ].map((item, i) => (
             <motion.div
