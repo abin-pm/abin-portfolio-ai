@@ -23,10 +23,26 @@ function BulletText({ text }: { text: string }) {
   );
 }
 
-export function Experience() {
+const COMPACT_TAGS = 5;
+
+/**
+ * Career timeline. `compact` (homepage) shows each role's headline facts only;
+ * the full bullets and the IBM assignment live on /experience.
+ */
+export function Experience({ compact = false }: { compact?: boolean }) {
   return (
-    <SectionWrapper id="experience" className="px-6 py-20 md:px-10">
+    <SectionWrapper id="experience" className={`px-6 md:px-10 ${compact ? 'py-32' : 'py-20'}`}>
       <div className="mx-auto max-w-[1100px]">
+        {compact && (
+          <>
+            <div className="section-label mb-4">Experience</div>
+            <h2 className="mb-3 text-3xl text-ink md:text-4xl">10+ Years of Enterprise Delivery</h2>
+            <p className="mb-14 max-w-xl text-muted">
+              From team lead to senior engineer at IBM — building and modernizing platforms for
+              global retail, e-commerce and energy clients.
+            </p>
+          </>
+        )}
 
         <div className="relative pl-8">
           {/* Animated vertical line */}
@@ -86,12 +102,13 @@ export function Experience() {
 
               {/* Tech stack pills */}
               <div className="mb-4 flex flex-wrap gap-2">
-                {job.techStack.map((t) => (
+                {(compact ? job.techStack.slice(0, COMPACT_TAGS) : job.techStack).map((t) => (
                   <span key={t} className="tag-pill">{t}</span>
                 ))}
               </div>
 
               {/* Bullets — concise, metric-forward */}
+              {!compact && (
               <ul className="mb-4 space-y-2">
                 {job.bullets.map((b, j) => (
                   <li
@@ -102,9 +119,10 @@ export function Experience() {
                   </li>
                 ))}
               </ul>
+              )}
 
               {/* AI tools strip */}
-              {job.aiRole && (
+              {!compact && job.aiRole && (
                 <div className="mb-4 flex flex-wrap items-center gap-2 text-xs">
                   <span className="text-subtle">AI stack:</span>
                   {['Cursor AI', 'GitHub Copilot', 'Claude'].map((t) => (
@@ -125,7 +143,9 @@ export function Experience() {
                   className="inline-flex items-center gap-1.5 rounded-lg border border-border px-4 py-1.5 text-xs text-sage-dark no-underline transition hover:border-sage hover:bg-surface"
                   aria-label={`Full role details and outcomes for ${job.company}`}
                 >
-                  {job.slug === 'ibm'
+                  {compact
+                    ? 'Full role details →'
+                    : job.slug === 'ibm'
                     ? 'IBM role — GenAI stabilization & enterprise delivery →'
                     : job.slug === 'emvigo'
                     ? 'Emvigo role — Paragon, Go Lyv, UK clients →'
@@ -135,7 +155,7 @@ export function Experience() {
                 </Link>
 
                 {/* Case study shortcut where available */}
-                {job.caseStudySlug && (
+                {!compact && job.caseStudySlug && (
                   <Link
                     href={`/projects/${job.caseStudySlug}`}
                     className="inline-flex items-center gap-1.5 rounded-lg border border-border px-4 py-1.5 text-xs text-sage-dark no-underline transition hover:border-sage hover:bg-surface"
@@ -147,7 +167,7 @@ export function Experience() {
               </div>
 
               {/* IBM assignment nested card */}
-              {job.assignment && (
+              {!compact && job.assignment && (
                 <motion.div
                   initial={{ opacity: 0, y: 12 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -209,6 +229,14 @@ export function Experience() {
             </div>
           </motion.div>
         </div>
+
+        {compact && (
+          <div className="mt-12">
+            <Link href="/experience" className="btn-secondary">
+              View full career timeline →
+            </Link>
+          </div>
+        )}
       </div>
     </SectionWrapper>
   );

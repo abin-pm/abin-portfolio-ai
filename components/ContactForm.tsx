@@ -26,6 +26,7 @@ export function ContactForm() {
     const name    = (form.elements.namedItem('name')    as HTMLInputElement).value;
     const email   = (form.elements.namedItem('email')   as HTMLInputElement).value;
     const message = (form.elements.namedItem('message') as HTMLTextAreaElement).value;
+    const website = (form.elements.namedItem('website') as HTMLInputElement).value;
 
     const errs = validate(name, email, message);
     if (Object.keys(errs).length) { setFieldErrors(errs); return; }
@@ -36,7 +37,7 @@ export function ContactForm() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email, message }),
+        body: JSON.stringify({ name, email, message, website }),
       });
       if (!res.ok) {
         const data = (await res.json()) as { message?: string };
@@ -89,6 +90,12 @@ export function ContactForm() {
       aria-label="Contact form"
       className="flex flex-col gap-4"
     >
+      {/* Honeypot — hidden from people and screen readers; bots that fill it are ignored */}
+      <div aria-hidden="true" className="absolute -left-[9999px] h-px w-px overflow-hidden">
+        <label htmlFor={`${id}-website`}>Website</label>
+        <input id={`${id}-website`} name="website" type="text" tabIndex={-1} autoComplete="off" />
+      </div>
+
       {/* Name */}
       <div>
         <label
@@ -108,7 +115,7 @@ export function ContactForm() {
           className={fieldErrors.name ? inputError : inputNormal}
         />
         {fieldErrors.name && (
-          <p id={`${id}-name-error`} role="alert" className="mt-1 text-[10px] text-red-700">
+          <p id={`${id}-name-error`} role="alert" className="mt-1 text-[10px] text-red-700 dark:text-red-100">
             {fieldErrors.name}
           </p>
         )}
@@ -133,7 +140,7 @@ export function ContactForm() {
           className={fieldErrors.email ? inputError : inputNormal}
         />
         {fieldErrors.email && (
-          <p id={`${id}-email-error`} role="alert" className="mt-1 text-[10px] text-red-700">
+          <p id={`${id}-email-error`} role="alert" className="mt-1 text-[10px] text-red-700 dark:text-red-100">
             {fieldErrors.email}
           </p>
         )}
@@ -157,7 +164,7 @@ export function ContactForm() {
           className={`resize-none ${fieldErrors.message ? inputError : inputNormal}`}
         />
         {fieldErrors.message && (
-          <p id={`${id}-message-error`} role="alert" className="mt-1 text-[10px] text-red-700">
+          <p id={`${id}-message-error`} role="alert" className="mt-1 text-[10px] text-red-700 dark:text-red-100">
             {fieldErrors.message}
           </p>
         )}
@@ -165,7 +172,7 @@ export function ContactForm() {
 
       {/* API error */}
       {state === 'error' && (
-        <p role="alert" className="rounded-lg border border-[rgba(239,68,68,0.3)] bg-[rgba(239,68,68,0.05)] px-4 py-3 text-xs text-red-700">
+        <p role="alert" className="rounded-lg border border-[rgba(239,68,68,0.3)] bg-[rgba(239,68,68,0.05)] px-4 py-3 text-xs text-red-700 dark:text-red-100">
           {errorMsg}
         </p>
       )}

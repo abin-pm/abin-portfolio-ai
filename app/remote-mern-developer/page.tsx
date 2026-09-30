@@ -23,11 +23,12 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/remote-mern-developer` },
   openGraph: {
+    // Pages that set openGraph drop the root file-based image, so reference it explicitly.
+    images: ['/opengraph-image'],
     title: 'Remote MERN Stack Developer for Hire | Abin PM',
     description:
       '10+ years MERN stack development. IBM, Abercrombie & Fitch, National Grid, Paragon Energy. Async-first, US/UK timezone overlap. React, Node.js, MongoDB, AWS.',
     url: `${SITE_URL}/remote-mern-developer`,
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -45,7 +46,7 @@ const remoteSignals = [
   { icon: '🕐', title: 'Flexible timezone', desc: 'Based in Kochi, India (IST). Regular US EST/PST overlap available. UK BST morning sync included.' },
   { icon: '⚡', title: 'AI-accelerated delivery', desc: 'Cursor AI + GitHub Copilot + Claude used daily — output per sprint is materially higher than a traditional developer working the same hours.' },
   { icon: '💬', title: 'Communication-first', desc: 'Proactive updates, detailed PRs, stakeholder-friendly English. No radio silence until the PR is merged.' },
-  { icon: '🔒', title: 'Enterprise reliability', desc: 'Every deployment meets the same standards as Fortune 500 production — not portfolio-grade code.' },
+  { icon: '🔒', title: 'Enterprise reliability', desc: 'Every deployment meets the same standards as enterprise production — not portfolio-grade code.' },
 ];
 
 const hireFaq = faq.filter((_, i) => i < 4);

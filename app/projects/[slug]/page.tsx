@@ -57,7 +57,7 @@ const caseStudyContent: Record<string, { challenge: string; approach: string; ou
     approach:
       'Migrated the legacy frontend to a React.js Micro-Frontend architecture using Module Federation, enabling independent deployments per product domain. Standardized component library by migrating the Global Configuration Hub to PrimeReact. Delivered Catalog, Product Details, Checkout and My List (Wishlist) micro-frontends across Abercrombie & Fitch, Hollister and Abercrombie Kids, integrated through a GraphQL Backend-for-Frontend (BFF) and containerized with Docker. Added analytics tracking, WCAG accessibility, A/B testing, Jest unit tests and Playwright end-to-end tests.',
     outcome:
-      'Enabled parallel deployments across independent product teams — eliminating the release coordination overhead of a monolithic frontend. Significantly reduced release friction, improved UI scalability and consistency across the enterprise e-commerce platform in a production Fortune 500 environment.',
+      'Enabled parallel deployments across independent product teams — eliminating the release coordination overhead of a monolithic frontend. Significantly reduced release friction, improved UI scalability and consistency across the enterprise e-commerce platform in a production enterprise environment.',
   },
   paragon: {
     challenge:
@@ -117,10 +117,11 @@ export function generateMetadata({ params }: Props): Metadata {
     keywords: project.tags,
     alternates: { canonical: url },
     openGraph: {
+      // Pages that set openGraph drop the root file-based image, so reference it explicitly.
+      images: ['/opengraph-image'],
       title,
       description,
       url,
-      images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     },
     twitter: { card: 'summary_large_image', title, description },
   };

@@ -21,6 +21,8 @@ export const metadata: Metadata = {
     canonical: 'https://www.abinaiengineer.com/experience',
   },
   openGraph: {
+    // Pages that set openGraph drop the root file-based image, so reference it explicitly.
+    images: ['/opengraph-image'],
     title: 'Work Experience | Abin PM — Enterprise React & Full Stack Developer',
     description:
       'IBM India (current) · Emvigo Technologies · Luminescent Software · 10+ years enterprise full stack development. Available for freelance & remote roles.',
@@ -46,9 +48,9 @@ const PROOF_CARDS = [
     accent: 'violet' as const,
   },
   {
-    metric: 'Fortune 500',
+    metric: 'Global brands',
     label: 'Enterprise clients delivered',
-    context: 'IBM · Abercrombie & Fitch · National Grid · micro-frontend scale',
+    context: "L'Oréal · Abercrombie & Fitch · National Grid · Paragon Energy",
     href: '/projects',
     cta: 'View all case studies →',
     accent: 'cyan' as const,
@@ -120,7 +122,7 @@ export default function ExperiencePage() {
           </div>
 
           <p className="mb-3 max-w-2xl text-lg text-muted">
-            From early-stage startups to Fortune 500 enterprises — enterprise React developer
+            From early-stage startups to global enterprise brands — enterprise React developer
             and MERN stack engineer with a proven track record across IBM, Abercrombie &amp; Fitch,
             National Grid, and Paragon Energy. Freelance &amp; remote available.
           </p>
@@ -172,7 +174,7 @@ export default function ExperiencePage() {
                   Looking for an enterprise React developer?
                 </p>
                 <p className="mb-6 text-muted">
-                  10+ years building production systems for Fortune 500 companies. Available for
+                  10+ years building production systems for global brands like L&apos;Oréal and Abercrombie &amp; Fitch. Available for
                   freelance contracts and remote full-time roles globally — can start within days.
                 </p>
                 <div className="flex flex-wrap gap-3">

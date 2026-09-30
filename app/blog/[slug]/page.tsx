@@ -28,13 +28,14 @@ export function generateMetadata({ params }: Props): Metadata {
     keywords: post.tags,
     alternates: { canonical: url },
     openGraph: {
+      // Pages that set openGraph drop the root file-based image, so reference it explicitly.
+      images: ['/opengraph-image'],
       type: 'article',
       url,
       title,
       description,
       publishedTime: post.date,
       authors: ['Abin PM'],
-      images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
     },
     twitter: { card: 'summary_large_image', title, description },
   };

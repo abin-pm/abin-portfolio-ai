@@ -7,23 +7,6 @@ export const stats = [
   { value: '3',   label: 'Cloud Platforms' },
 ];
 
-// ─── Tech Ticker ────────────────────────────────────────────────────────────
-
-export const techTicker = [
-  'React.js', 'Next.js', 'Node.js', 'TypeScript',
-  'Cursor AI', 'GitHub Copilot', 'Claude',
-  'Microservices', 'AWS', 'GraphQL', 'MongoDB',
-  'Docker', 'Kubernetes', 'LLM Integration',
-  'GenAI', 'PostgreSQL', 'GCP', 'Tailwind CSS',
-  'Redis', 'Elasticsearch', 'NestJS', 'CI/CD',
-  'Socket.IO', 'RabbitMQ', 'Kafka',
-];
-
-export const aiTickerRow = [
-  'Cursor AI', 'GitHub Copilot', 'Claude',
-  'OpenAI Codex', 'LLM Integration', 'GenAI',
-];
-
 // ─── Skills ─────────────────────────────────────────────────────────────────
 
 export type SkillGroup = {
@@ -136,13 +119,6 @@ export const aiTools: AITool[] = [
   },
 ];
 
-export const aiStats = [
-  { value: '3–5×', label: 'Faster delivery' },
-  { value: '2024', label: 'AI-native since' },
-  { value: 'IBM',  label: 'Enterprise context' },
-  { value: '100%', label: 'Production-grade' },
-];
-
 // ─── Experience ───────────────────────────────────────────────────────────────
 
 export type Assignment = {
@@ -177,7 +153,7 @@ export const experience: ExperienceItem[] = [
     location: 'Kochi, India',
     current: true,
     aiRole: true,
-    keyOutcome: 'Stabilized GenAI-generated code to Fortune 500 production standard for National Grid USA',
+    keyOutcome: 'Stabilized GenAI-generated code to enterprise production standard for National Grid USA',
     caseStudySlug: 'national-grid',
     techStack: ['React JS', 'Next JS', 'TypeScript', 'Node JS', 'GraphQL', 'PG SQL', 'Azure', 'GCP', 'Cursor AI', 'GitHub Copilot', 'Claude'],
     bullets: [
@@ -186,7 +162,7 @@ export const experience: ExperienceItem[] = [
       'Designed **GraphQL Backend-for-Frontend (BFF)** services, REST APIs and reusable React/Next.js components with TypeScript',
       'Contributed to engineering standards for **AI-assisted development** — validation, refactoring, testing and production readiness of generated code',
       'Used **Cursor AI, GitHub Copilot & Claude** daily to accelerate code generation and refactoring across React + Node.js services',
-      'Stabilized and productionized **GenAI-generated code** to align with Fortune 500 coding standards and microservices architecture',
+      'Stabilized and productionized **GenAI-generated code** to align with enterprise coding standards and microservices architecture',
       'Eliminated frontend performance bottlenecks — **responsive across all device sizes**',
       'Built and optimized **Node.js/Express APIs** over PostgreSQL for smooth data flow and scalable frontend integration',
       'Collaborated with **US-based stakeholders** (Agile/Scrum) on high-value enterprise feature delivery',
@@ -450,7 +426,7 @@ export const faq: FAQItem[] = [
   },
   {
     q: 'What is an AI-native developer and why does it matter?',
-    a: 'An AI-native developer deeply integrates tools like Cursor AI, GitHub Copilot, and Claude into every stage of development — not as a shortcut, but as a force multiplier. Abin has used these tools in enterprise production at IBM since 2024, stabilizing GenAI-generated code to meet Fortune 500 reliability standards.',
+    a: 'An AI-native developer deeply integrates tools like Cursor AI, GitHub Copilot, and Claude into every stage of development — not as a shortcut, but as a force multiplier. Abin has used these tools in enterprise production at IBM since 2024, stabilizing GenAI-generated code to meet enterprise reliability standards.',
   },
   {
     q: 'How much does it cost to hire a React developer from India?',

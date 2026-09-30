@@ -74,7 +74,7 @@ export default function AIEngineerPage() {
             production. Since 2024, he has used Cursor AI, GitHub Copilot, and Claude as core
             instruments in his daily workflow at IBM India, delivering React and Node.js systems
             for National Grid faster than traditional development cycles allow. He doesn&apos;t just
-            use AI — he stabilizes AI-generated code for Fortune 500 production standards.
+            use AI — he stabilizes AI-generated code for enterprise production standards.
           </p>
 
           <h2 className="mb-8 text-2xl text-ink">What AI-native means in practice</h2>

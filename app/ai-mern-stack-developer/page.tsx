@@ -24,11 +24,12 @@ export const metadata: Metadata = {
   ],
   alternates: { canonical: `${SITE_URL}/ai-mern-stack-developer` },
   openGraph: {
+    // Pages that set openGraph drop the root file-based image, so reference it explicitly.
+    images: ['/opengraph-image'],
     title: 'AI-Powered MERN Stack Developer | Abin PM',
     description:
       'MERN stack + AI-native workflow. Cursor AI, Copilot & Claude in production at IBM. LLM integration, GenAI stabilization, React, Node.js. 10+ years enterprise.',
     url: `${SITE_URL}/ai-mern-stack-developer`,
-    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -57,7 +58,7 @@ const aiTools = [
 ];
 
 const aiCapabilities = [
-  { label: 'AI-Accelerated MERN Development', desc: '3–5× faster delivery using Cursor AI + Copilot without sacrificing production-grade quality.' },
+  { label: 'AI-Accelerated MERN Development', desc: 'Faster delivery with Cursor AI + Copilot on routine work — up to 3–5× on boilerplate and scaffolding — without sacrificing production-grade quality.' },
   { label: 'GenAI Code Stabilization', desc: 'Takes AI-generated code baselines and hardens them to enterprise architecture standards — the skill most AI tools skip.' },
   { label: 'LLM Feature Integration', desc: 'Adds OpenAI, Anthropic, or open-source LLM capabilities to existing React + Node.js products incrementally.' },
   { label: 'Prompt Engineering & RAG', desc: 'Context-aware prompting, retrieval-augmented generation, and AI workflow design for production-grade reliability.' },
@@ -66,7 +67,7 @@ const aiCapabilities = [
 ];
 
 const comparison = [
-  { label: 'Delivery speed', traditional: 'Standard sprint velocity', ai: '3–5× faster with AI tooling' },
+  { label: 'Delivery speed', traditional: 'Standard sprint velocity', ai: 'Faster sprints with AI tooling' },
   { label: 'Code quality', traditional: 'Depends on discipline', ai: 'AI-reviewed before every PR' },
   { label: 'AI features', traditional: 'Separate specialist needed', ai: 'Built-in — React + Node.js + LLM' },
   { label: 'GenAI code', traditional: 'Ships as-is or not at all', ai: 'Stabilized to enterprise standard' },

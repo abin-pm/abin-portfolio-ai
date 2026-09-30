@@ -1,82 +1,67 @@
 'use client';
 
 import Link from 'next/link';
+import { ArrowRight } from 'lucide-react';
 import { SectionWrapper } from '@/components/SectionWrapper';
 import { identity } from '@/lib/data';
 
-const platforms = [
-  { icon: '💼', name: 'Upwork', desc: 'Full Stack · MERN · React · Node.js' },
-  { icon: '🎯', name: 'Fiverr', desc: 'React/Next.js · API Development · Cloud' },
-  { icon: '🤝', name: 'LinkedIn', desc: 'Remote Full-Time & Contract', href: identity.linkedin },
-  { icon: '📧', name: 'Direct', desc: identity.email, href: `mailto:${identity.email}` },
+const channels = [
+  { icon: '🤝', name: 'LinkedIn', desc: 'Remote full-time & contract roles', href: identity.linkedin, external: true },
+  { icon: '📧', name: 'Email', desc: identity.email, href: `mailto:${identity.email}`, external: false },
 ];
 
-const aiTools = ['Cursor AI', 'GitHub Copilot', 'Claude', 'OpenAI Codex', 'LLM-Assisted Dev'];
+const engagements = ['Freelance contract', 'Part-time remote', 'Full-time remote'];
 
 export function HireMe() {
   return (
     <SectionWrapper id="hire" className="px-6 py-32 md:px-10">
       <div className="mx-auto max-w-[1100px]">
-        <div className="section-label mb-4">Freelance & Remote</div>
+        <div className="section-label mb-4">Freelance &amp; Remote</div>
         <h2 className="mb-3 text-3xl text-ink md:text-4xl">
-          Hire a Senior React & AI-Native Engineer From India
+          Hire a Senior Full Stack &amp; AI Developer from India
         </h2>
         <p className="mb-10 max-w-2xl text-muted">
-          Looking to hire a freelance full stack developer or AI-native developer from India who
-          delivers enterprise-grade output? Abin PM is available for React developer remote roles,
-          MERN stack contracts, and LLM integration engagements globally.
+          Looking for a freelance full stack developer who delivers enterprise-grade output? Abin PM
+          is available for React and Next.js contracts, MERN stack projects, LLM integrations and
+          remote full-time roles — working with teams in the US, UK and Europe.
         </p>
 
         {/* Available badge */}
-        <div className="mb-12 inline-flex items-center gap-3 rounded-xl border border-border bg-surface px-6 py-4">
+        <div className="mb-10 inline-flex items-center gap-3 rounded-xl border border-border bg-surface px-6 py-4">
           <span className="h-2 w-2 animate-pulse rounded-full bg-sage" />
           <span className="text-ink">
-            <strong>Currently Available</strong> — Open for new projects & remote full-time roles
+            <strong>Currently available</strong> — open for new projects &amp; remote roles
           </span>
         </div>
 
-        {/* Platform cards */}
-        <div className="mb-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {platforms.map((p) => (
-            <div
-              key={p.name}
-              className="card p-6 text-center"
+        <div className="mb-10 flex flex-wrap gap-3" aria-label="Ways to work together">
+          {engagements.map((e) => (
+            <span key={e} className="tag-pill !px-4 !py-1.5 !text-sm">{e}</span>
+          ))}
+        </div>
+
+        {/* Contact channels */}
+        <div className="mb-12 grid max-w-2xl gap-4 sm:grid-cols-2">
+          {channels.map((c) => (
+            <a
+              key={c.name}
+              href={c.href}
+              {...(c.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+              className="card group flex items-center gap-4 p-6 no-underline"
             >
-              <div className="relative z-10">
-                <div className="mb-3 text-2xl">{p.icon}</div>
-                <div className="font-sans font-semibold text-ink">{p.name}</div>
-                {p.href ? (
-                  <a href={p.href} target="_blank" rel="noopener noreferrer" className="mt-1 block text-sm text-muted no-underline hover:text-sage-dark">
-                    {p.desc}
-                  </a>
-                ) : (
-                  <div className="mt-1 text-sm text-muted">{p.desc}</div>
-                )}
-              </div>
-            </div>
+              <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-sage-light text-xl" aria-hidden>
+                {c.icon}
+              </span>
+              <span className="min-w-0">
+                <span className="block font-semibold text-ink transition group-hover:text-sage-dark">{c.name}</span>
+                <span className="block truncate text-sm text-muted">{c.desc}</span>
+              </span>
+            </a>
           ))}
         </div>
 
-        {/* AI tools strip */}
-        <p className="mb-3 text-sm text-sage-dark">AI-Accelerated Development</p>
-        <p className="mb-6 max-w-lg text-sm text-muted">
-          Enterprise-grade output at freelance speed — using AI tools that multiply delivery
-          velocity without sacrificing code quality.
-        </p>
-        <div className="mb-12 flex flex-wrap gap-3">
-          {aiTools.map((t) => (
-            <span key={t} className="inline-flex items-center gap-2 rounded-full border border-border-strong bg-surface px-4 py-1.5 text-xs text-sage-dark">
-              <span className="h-1 w-1 rounded-full bg-sage" />
-              {t}
-            </span>
-          ))}
-        </div>
-
-        <Link
-          href="/hire-me"
-          className="btn-primary"
-        >
-          View Full Hire Page →
+        <Link href="/hire-me" className="btn-primary">
+          How to hire me <ArrowRight size={14} aria-hidden />
         </Link>
       </div>
     </SectionWrapper>

@@ -48,6 +48,8 @@ export function generateMetadata({ params }: Props): Metadata {
     description: meta.description,
     alternates: { canonical: `${SITE_URL}/experience/${job.slug}` },
     openGraph: {
+      // Pages that set openGraph drop the root file-based image, so reference it explicitly.
+      images: ['/opengraph-image'],
       title: meta.title,
       description: meta.description,
       url: `${SITE_URL}/experience/${job.slug}`,
@@ -145,7 +147,7 @@ export default function ExperienceDetailPage({ params }: Props) {
               </div>
               <p className="mt-4 text-sm text-muted">
                 Used Cursor AI, GitHub Copilot, and Claude daily in enterprise production to accelerate
-                development while maintaining Fortune 500 reliability standards — and to stabilize
+                development while maintaining enterprise reliability standards — and to stabilize
                 GenAI-generated code for production.
               </p>
             </div>

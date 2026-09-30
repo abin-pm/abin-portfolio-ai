@@ -1,6 +1,10 @@
 import type { Config } from 'tailwindcss';
 
+// A theme colour stored as RGB channels, so opacity modifiers like `bg-cream/95` keep working.
+const c = (name: string) => `rgb(var(--${name}) / <alpha-value>)`;
+
 const config: Config = {
+  darkMode: 'class',
   content: [
     './app/**/*.{js,ts,jsx,tsx,mdx}',
     './components/**/*.{js,ts,jsx,tsx,mdx}',
@@ -8,20 +12,22 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      // Values live in app/globals.css (:root and .dark) so the theme can switch.
       colors: {
-        cream: { DEFAULT: '#f7f6f3', alt: '#faf9f5' },
-        surface: '#ffffff',
-        ink: { DEFAULT: '#1c1c19', soft: '#33322c' },
-        muted: '#6b6a63',
-        subtle: '#9c9a8e',
+        cream: { DEFAULT: c('cream'), alt: c('cream-alt') },
+        surface: c('surface'),
+        ink: { DEFAULT: c('ink'), soft: c('ink-soft') },
+        muted: c('muted'),
+        subtle: c('subtle'),
         sage: {
-          DEFAULT: '#6f7f63',
-          dark: '#5a6951',
-          light: '#e7ebe0',
-          band: '#e9ede3',
-          border: 'rgba(111,127,99,0.25)',
+          DEFAULT: c('sage'),
+          dark: c('sage-dark'),
+          light: c('sage-light'),
+          band: c('sage-band'),
+          border: 'var(--sage-border)',
         },
-        border: { DEFAULT: '#e5e2d9', strong: '#d3cfc2' },
+        'on-sage': c('on-sage'),
+        border: { DEFAULT: c('border'), strong: c('border-strong') },
       },
       fontFamily: {
         sans: ['var(--font-geist-sans)', 'ui-sans-serif', 'system-ui'],
