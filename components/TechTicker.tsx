@@ -6,7 +6,7 @@ const ROW1 = [
   'React.js', 'Next.js', 'Node.js', 'TypeScript',
   'Microservices', 'AWS', 'GraphQL', 'MongoDB',
   'Docker', 'Kubernetes', 'PostgreSQL', 'GCP',
-  'Tailwind CSS', 'Redis', 'Elasticsearch', '.NET Core',
+  'Tailwind CSS', 'Redis', 'Elasticsearch', 'NestJS',
   'CI/CD', 'Socket.IO', 'RabbitMQ', 'Kafka',
 ];
 
@@ -47,11 +47,9 @@ export function TechTicker() {
           position: 'relative',
           overflow: 'hidden',
           paddingBlock: '10px',
-          background: 'rgba(6,6,20,0.6)',
-          backdropFilter: 'blur(4px)',
-          WebkitBackdropFilter: 'blur(4px)',
-          borderTop: '1px solid rgba(99,102,241,0.07)',
-          borderBottom: '1px solid rgba(99,102,241,0.07)',
+          background: 'var(--cream)',
+          borderTop: '1px solid var(--border)',
+          borderBottom: '1px solid var(--border)',
           display: 'flex',
           flexDirection: 'column',
           gap: '10px',
@@ -80,11 +78,11 @@ export function TechTicker() {
               >
                 <span
                   style={{
-                    fontFamily: 'var(--font-geist-mono), monospace',
+                    fontFamily: 'var(--font-geist-sans), ui-sans-serif, system-ui',
                     fontSize: '11px',
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    color: 'rgba(165,180,252,0.75)',
+                    color: 'var(--muted)',
                     paddingInline: '4px',
                   }}
                 >
@@ -94,7 +92,7 @@ export function TechTicker() {
                   style={{
                     fontSize: '7px',
                     marginInline: '16px',
-                    color: 'rgba(99,102,241,0.6)',
+                    color: 'var(--sage)',
                     lineHeight: 1,
                   }}
                 >
@@ -124,11 +122,11 @@ export function TechTicker() {
               >
                 <span
                   style={{
-                    fontFamily: 'var(--font-geist-mono), monospace',
+                    fontFamily: 'var(--font-geist-sans), ui-sans-serif, system-ui',
                     fontSize: '11px',
                     letterSpacing: '0.12em',
                     textTransform: 'uppercase',
-                    color: 'rgba(196,181,253,0.75)',
+                    color: 'var(--muted)',
                     paddingInline: '4px',
                   }}
                 >
@@ -138,7 +136,7 @@ export function TechTicker() {
                   style={{
                     fontSize: '7px',
                     marginInline: '16px',
-                    color: 'rgba(167,139,250,0.6)',
+                    color: 'var(--sage)',
                     lineHeight: 1,
                   }}
                 >

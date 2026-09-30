@@ -31,23 +31,23 @@ export default function SkillsPage() {
   return (
     <>
       <Navbar />
-      <main className="min-h-screen bg-[#080810] pt-28">
+      <main className="min-h-screen bg-cream pt-28">
         {/* Page hero */}
         <div className="mx-auto max-w-[1100px] px-6 pb-0 md:px-10">
-          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.06)] px-4 py-1.5">
-            <span className="font-mono text-xs text-[#6366f1]">Technical Arsenal</span>
+          <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5">
+            <span className="text-xs text-sage-dark">Technical Arsenal</span>
           </div>
-          <h1 className="mt-4 font-sans text-4xl font-bold tracking-tight text-[#f1f5f9] md:text-5xl">
+          <h1 className="mt-4 text-4xl text-ink md:text-5xl">
             Full-Spectrum Stack for Hire
           </h1>
-          <p className="mt-4 max-w-2xl text-lg text-[#94a3b8]">
-            9+ years building production systems across frontend, backend, cloud, and AI tooling —
+          <p className="mt-4 max-w-2xl text-lg text-muted">
+            10+ years building production systems across frontend, backend, cloud, and AI tooling —
             as a senior MERN stack developer and AI-native engineer for hire from India.
           </p>
-          <div className="mt-6 mb-2 flex flex-wrap gap-4 font-mono text-sm">
-            <span className="text-[#22d3ee]">React · Next.js · Node.js</span>
-            <span className="text-[#a78bfa]">Cursor AI · Copilot · Claude</span>
-            <span className="text-[#6366f1]">AWS · GCP · Azure</span>
+          <div className="mt-6 mb-2 flex flex-wrap gap-4 text-sm">
+            <span className="text-sage-dark">React · Next.js · Node.js</span>
+            <span className="text-sage-dark">Cursor AI · Copilot · Claude</span>
+            <span className="text-sage-dark">AWS · GCP · Azure</span>
           </div>
         </div>
 
@@ -55,21 +55,21 @@ export default function SkillsPage() {
         <Skills />
 
         {/* CTA strip */}
-        <div className="border-t border-[rgba(99,102,241,0.1)] py-20">
+        <div className="border-t border-border py-20">
           <div className="mx-auto max-w-[1100px] px-6 text-center md:px-10">
-            <p className="mb-6 font-sans text-xl font-semibold text-[#f1f5f9]">
+            <p className="mb-6 font-serif text-2xl text-ink">
               Need a senior MERN stack developer who also ships with AI?
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="/hire-me"
-                className="rounded-xl bg-[#6366f1] px-8 py-3.5 font-sans font-semibold text-white no-underline transition hover:opacity-90"
+                className="btn-primary"
               >
                 Hire Me Now
               </a>
               <a
                 href="/projects"
-                className="rounded-xl border border-[rgba(99,102,241,0.35)] px-8 py-3.5 font-sans font-semibold text-[#f1f5f9] no-underline transition hover:border-[rgba(99,102,241,0.6)]"
+                className="btn-secondary"
               >
                 View Projects →
               </a>

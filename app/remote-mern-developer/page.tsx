@@ -1,5 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import { Navbar } from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 import { identity, faq } from '@/lib/data';
 import { getPersonSchema, getBreadcrumbSchema } from '@/lib/json-ld';
 
@@ -8,7 +10,7 @@ const SITE_URL = 'https://www.abinaiengineer.com';
 export const metadata: Metadata = {
   title: 'Remote MERN Stack Developer for Hire | React, Node.js, MongoDB | Abin PM',
   description:
-    'Senior remote MERN stack developer with 9+ years experience. React, Node.js, MongoDB, Express. Proven track record with US & UK clients (IBM, Abercrombie & Fitch, National Grid). Available now.',
+    'Senior remote MERN stack developer with 10+ years experience. React, Node.js, MongoDB, Express. Proven track record with US & UK clients (IBM, Abercrombie & Fitch, National Grid). Available now.',
   keywords: [
     'remote MERN stack developer',
     'hire MERN developer remote',
@@ -23,9 +25,9 @@ export const metadata: Metadata = {
   openGraph: {
     title: 'Remote MERN Stack Developer for Hire | Abin PM',
     description:
-      '9+ years MERN stack development. IBM, Abercrombie & Fitch, National Grid, Paragon Energy. Async-first, US/UK timezone overlap. React, Node.js, MongoDB, AWS.',
+      '10+ years MERN stack development. IBM, Abercrombie & Fitch, National Grid, Paragon Energy. Async-first, US/UK timezone overlap. React, Node.js, MongoDB, AWS.',
     url: `${SITE_URL}/remote-mern-developer`,
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -60,89 +62,76 @@ export default function RemoteMernDeveloperPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
-      <div className="min-h-screen bg-[#080810] text-[#f1f5f9]">
-        {/* Nav */}
-        <nav className="sticky top-0 z-50 flex items-center justify-between border-b border-[rgba(99,102,241,0.1)] bg-[#080810]/95 px-6 py-4 backdrop-blur-md md:px-10">
-          <Link href="/" className="font-sans text-lg font-bold text-[#f1f5f9] no-underline">
-            abin<span className="text-[#6366f1]">.</span>dev
-          </Link>
-          <div className="flex items-center gap-6">
-            <Link href="/hire-me" className="font-mono text-sm text-[#94a3b8] no-underline hover:text-[#6366f1]">
-              Hire Me
-            </Link>
-            <Link href="/projects" className="font-mono text-sm text-[#94a3b8] no-underline hover:text-[#6366f1]">
-              Projects
-            </Link>
-          </div>
-        </nav>
+      <div className="min-h-screen bg-cream text-ink">
+        <Navbar />
 
-        <main className="mx-auto max-w-[1060px] px-6 py-20 md:px-10">
+        <main className="mx-auto max-w-[1060px] px-6 pt-32 pb-20 md:px-10">
 
           {/* Hero */}
-          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.06)] px-4 py-1.5">
-            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-500" />
-            <span className="font-mono text-xs text-[#6366f1]">Available for Remote Work</span>
+          <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5">
+            <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sage" />
+            <span className="text-xs text-sage-dark">Available for Remote Work</span>
           </div>
 
-          <h1 className="mb-6 font-sans text-4xl font-bold leading-tight tracking-tight md:text-5xl">
+          <h1 className="mb-6 text-4xl leading-tight md:text-5xl">
             Remote MERN Stack Developer<br />
-            <span className="text-[#6366f1]">for Hire — React, Node.js & MongoDB</span>
+            <span className="text-sage-dark">for Hire — React, Node.js & MongoDB</span>
           </h1>
 
-          <p className="mb-8 max-w-2xl text-lg text-[#94a3b8]">
-            9+ years building full-stack production systems with React, Node.js, MongoDB and cloud infrastructure.
+          <p className="mb-8 max-w-2xl text-lg text-muted">
+            10+ years building full-stack production systems with React, Node.js, MongoDB and cloud infrastructure.
             Trusted by IBM, Abercrombie &amp; Fitch, National Grid and Paragon Energy — entirely remote.
           </p>
 
           <div className="mb-12 flex flex-wrap gap-4">
             <a
               href={`mailto:${identity.email}`}
-              className="inline-flex rounded-xl bg-[#6366f1] px-7 py-3.5 font-sans font-semibold text-white no-underline transition hover:opacity-90"
+              className="btn-primary"
             >
               Get in touch →
             </a>
             <Link
               href="/projects"
-              className="inline-flex rounded-xl border border-[rgba(99,102,241,0.35)] px-7 py-3.5 font-sans font-semibold text-[#f1f5f9] no-underline transition hover:border-[rgba(99,102,241,0.6)]"
+              className="btn-secondary"
             >
               View case studies →
             </Link>
           </div>
 
           {/* Client logos */}
-          <div className="mb-20 flex flex-wrap gap-3 border-y border-[rgba(99,102,241,0.1)] py-6">
+          <div className="mb-20 flex flex-wrap gap-3 border-y border-border py-6">
             {['IBM', 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy'].map((c) => (
-              <span key={c} className="rounded-full bg-[rgba(99,102,241,0.06)] px-4 py-1.5 font-mono text-sm font-medium text-[#94a3b8]">
+              <span key={c} className="rounded-full bg-surface px-4 py-1.5 text-sm font-medium text-muted">
                 {c}
               </span>
             ))}
           </div>
 
           {/* Why remote works */}
-          <h2 className="mb-8 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <h2 className="mb-8 text-2xl text-ink">
             Why Hire a Remote MERN Developer from India?
           </h2>
           <div className="mb-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {remoteSignals.map((item) => (
-              <div key={item.title} className="rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-6">
+              <div key={item.title} className="rounded-xl border border-border bg-surface p-6">
                 <div className="mb-3 text-2xl">{item.icon}</div>
-                <h3 className="mb-1 font-sans font-semibold text-[#f1f5f9]">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-[#94a3b8]">{item.desc}</p>
+                <h3 className="mb-1 text-ink">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-muted">{item.desc}</p>
               </div>
             ))}
           </div>
 
           {/* MERN Stack */}
-          <h2 className="mb-8 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <h2 className="mb-8 text-2xl text-ink">
             Full MERN Stack Technical Depth
           </h2>
           <div className="mb-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {stack.map((group) => (
-              <div key={group.label} className="rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-6">
-                <div className="mb-3 font-mono text-xs uppercase tracking-widest text-[#6366f1]">{group.label}</div>
+              <div key={group.label} className="rounded-xl border border-border bg-surface p-6">
+                <div className="mb-3 text-xs uppercase tracking-widest text-sage-dark">{group.label}</div>
                 <ul className="space-y-1.5">
                   {group.items.map((item) => (
-                    <li key={item} className="font-mono text-sm text-[#94a3b8]">{item}</li>
+                    <li key={item} className="text-sm text-muted">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -150,7 +139,7 @@ export default function RemoteMernDeveloperPage() {
           </div>
 
           {/* Remote availability */}
-          <h2 className="mb-6 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <h2 className="mb-6 text-2xl text-ink">
             Remote Engagement Models
           </h2>
           <div className="mb-20 grid gap-4 sm:grid-cols-3">
@@ -159,41 +148,41 @@ export default function RemoteMernDeveloperPage() {
               { title: 'Part-Time Remote', desc: '10–20 hours/week. Structured sprints with async-first communication. Ideal for ongoing product work.' },
               { title: 'Full-Time Remote', desc: 'Embedded as a senior engineer in your team. Full sprint participation, PR reviews, stakeholder sync.' },
             ].map((model) => (
-              <div key={model.title} className="rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)] p-6">
-                <h3 className="mb-2 font-sans font-semibold text-[#f1f5f9]">{model.title}</h3>
-                <p className="text-sm leading-relaxed text-[#94a3b8]">{model.desc}</p>
+              <div key={model.title} className="rounded-xl border border-border bg-surface p-6">
+                <h3 className="mb-2 text-ink">{model.title}</h3>
+                <p className="text-sm leading-relaxed text-muted">{model.desc}</p>
               </div>
             ))}
           </div>
 
           {/* FAQ */}
-          <h2 className="mb-8 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <h2 className="mb-8 text-2xl text-ink">
             Common Questions About Hiring a Remote MERN Developer
           </h2>
           <div className="mb-20 space-y-4">
             {hireFaq.map((item) => (
-              <details key={item.q} className="group rounded-xl border border-[rgba(99,102,241,0.12)] bg-[rgba(99,102,241,0.04)]">
-                <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-4 font-sans font-semibold text-[#f1f5f9]">
+              <details key={item.q} className="group rounded-xl border border-border bg-surface">
+                <summary className="flex cursor-pointer list-none items-center justify-between px-6 py-4 font-sans font-semibold text-ink">
                   {item.q}
-                  <span className="ml-4 shrink-0 text-[#6366f1] transition group-open:rotate-45">+</span>
+                  <span className="ml-4 shrink-0 text-sage-dark transition group-open:rotate-45">+</span>
                 </summary>
-                <p className="px-6 pb-5 text-sm leading-relaxed text-[#94a3b8]">{item.a}</p>
+                <p className="px-6 pb-5 text-sm leading-relaxed text-muted">{item.a}</p>
               </details>
             ))}
           </div>
 
           {/* CTA */}
-          <div className="rounded-2xl border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.04)] p-10 text-center">
-            <h2 className="mb-3 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <div className="rounded-2xl border border-border bg-surface p-10 text-center">
+            <h2 className="mb-3 text-2xl text-ink">
               Hire a Senior Remote MERN Stack Developer
             </h2>
-            <p className="mb-8 text-[#94a3b8]">
+            <p className="mb-8 text-muted">
               Kochi, India (IST). Available for US/UK timezone overlap. Responds within 24 hours.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={`mailto:${identity.email}`}
-                className="inline-flex rounded-xl bg-[#6366f1] px-7 py-3.5 font-sans font-semibold text-white no-underline transition hover:opacity-90"
+                className="btn-primary"
               >
                 Email Abin
               </a>
@@ -201,13 +190,13 @@ export default function RemoteMernDeveloperPage() {
                 href={identity.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex rounded-xl border border-[rgba(99,102,241,0.35)] px-7 py-3.5 font-sans font-semibold text-[#f1f5f9] no-underline transition hover:border-[rgba(99,102,241,0.6)]"
+                className="btn-secondary"
               >
                 LinkedIn ↗
               </a>
               <Link
                 href="/hire-me"
-                className="inline-flex rounded-xl border border-[rgba(99,102,241,0.35)] px-7 py-3.5 font-sans font-semibold text-[#f1f5f9] no-underline transition hover:border-[rgba(99,102,241,0.6)]"
+                className="btn-secondary"
               >
                 Full hire page →
               </Link>
@@ -215,14 +204,15 @@ export default function RemoteMernDeveloperPage() {
           </div>
 
           {/* Footer links */}
-          <div className="mt-16 flex flex-wrap gap-6 border-t border-[rgba(99,102,241,0.1)] pt-10 font-mono text-sm">
-            <Link href="/ai-mern-stack-developer" className="text-[#475569] no-underline hover:text-[#94a3b8]">AI MERN Stack Developer →</Link>
-            <Link href="/skills" className="text-[#475569] no-underline hover:text-[#94a3b8]">Full Tech Stack →</Link>
-            <Link href="/experience" className="text-[#475569] no-underline hover:text-[#94a3b8]">Work Experience →</Link>
-            <Link href="/blog" className="text-[#475569] no-underline hover:text-[#94a3b8]">Engineering Blog →</Link>
+          <div className="mt-16 flex flex-wrap gap-6 border-t border-border pt-10 text-sm">
+            <Link href="/ai-mern-stack-developer" className="text-subtle no-underline hover:text-muted">AI MERN Stack Developer →</Link>
+            <Link href="/skills" className="text-subtle no-underline hover:text-muted">Full Tech Stack →</Link>
+            <Link href="/experience" className="text-subtle no-underline hover:text-muted">Work Experience →</Link>
+            <Link href="/blog" className="text-subtle no-underline hover:text-muted">Engineering Blog →</Link>
           </div>
 
         </main>
+        <Footer />
       </div>
     </>
   );

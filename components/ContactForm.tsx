@@ -51,8 +51,8 @@ export function ContactForm() {
   };
 
   const inputBase =
-    'w-full rounded-xl border bg-[rgba(99,102,241,0.04)] px-4 py-3 font-sans text-sm text-[#f1f5f9] placeholder-[#475569] outline-none transition focus:ring-2 focus:ring-[rgba(99,102,241,0.5)]';
-  const inputNormal = `${inputBase} border-[rgba(99,102,241,0.18)] focus:border-[rgba(99,102,241,0.45)]`;
+    'w-full rounded-xl border bg-surface px-4 py-3 font-sans text-sm text-ink placeholder-subtle outline-none transition focus:ring-2 focus:ring-sage/50';
+  const inputNormal = `${inputBase} border-border focus:border-sage`;
   const inputError  = `${inputBase} border-[rgba(239,68,68,0.5)] focus:ring-[rgba(239,68,68,0.3)]`;
 
   if (state === 'success') {
@@ -63,17 +63,17 @@ export function ContactForm() {
       >
         <div className="relative z-10">
           <div className="mb-3 text-3xl">✅</div>
-          <p className="font-sans text-lg font-semibold text-[#f1f5f9]">Message received.</p>
-          <p className="mt-2 text-sm text-[#94a3b8]">
+          <p className="font-serif text-2xl text-ink">Message received.</p>
+          <p className="mt-2 text-sm text-muted">
             Expect a reply within 24 hours. You can also reach Abin directly at{' '}
-            <a href="mailto:abinpm92@gmail.com" className="text-[#6366f1] hover:underline">
+            <a href="mailto:abinpm92@gmail.com" className="text-sage-dark hover:underline">
               abinpm92@gmail.com
             </a>
             .
           </p>
           <button
             onClick={() => setState('idle')}
-            className="mt-6 rounded-lg border border-[rgba(99,102,241,0.3)] px-5 py-2 font-mono text-xs text-[#6366f1] transition hover:border-[rgba(99,102,241,0.6)]"
+            className="mt-6 rounded-lg border border-border-strong px-5 py-2 text-xs text-sage-dark transition hover:border-sage"
           >
             Send another message
           </button>
@@ -93,7 +93,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor={`${id}-name`}
-          className="mb-1.5 block font-mono text-xs uppercase tracking-widest text-[#475569]"
+          className="mb-1.5 block text-xs uppercase tracking-widest text-subtle"
         >
           Your name
         </label>
@@ -108,7 +108,7 @@ export function ContactForm() {
           className={fieldErrors.name ? inputError : inputNormal}
         />
         {fieldErrors.name && (
-          <p id={`${id}-name-error`} role="alert" className="mt-1 font-mono text-[10px] text-red-400">
+          <p id={`${id}-name-error`} role="alert" className="mt-1 text-[10px] text-red-700">
             {fieldErrors.name}
           </p>
         )}
@@ -118,7 +118,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor={`${id}-email`}
-          className="mb-1.5 block font-mono text-xs uppercase tracking-widest text-[#475569]"
+          className="mb-1.5 block text-xs uppercase tracking-widest text-subtle"
         >
           Work email
         </label>
@@ -133,7 +133,7 @@ export function ContactForm() {
           className={fieldErrors.email ? inputError : inputNormal}
         />
         {fieldErrors.email && (
-          <p id={`${id}-email-error`} role="alert" className="mt-1 font-mono text-[10px] text-red-400">
+          <p id={`${id}-email-error`} role="alert" className="mt-1 text-[10px] text-red-700">
             {fieldErrors.email}
           </p>
         )}
@@ -143,7 +143,7 @@ export function ContactForm() {
       <div>
         <label
           htmlFor={`${id}-message`}
-          className="mb-1.5 block font-mono text-xs uppercase tracking-widest text-[#475569]"
+          className="mb-1.5 block text-xs uppercase tracking-widest text-subtle"
         >
           Project or enquiry
         </label>
@@ -157,7 +157,7 @@ export function ContactForm() {
           className={`resize-none ${fieldErrors.message ? inputError : inputNormal}`}
         />
         {fieldErrors.message && (
-          <p id={`${id}-message-error`} role="alert" className="mt-1 font-mono text-[10px] text-red-400">
+          <p id={`${id}-message-error`} role="alert" className="mt-1 text-[10px] text-red-700">
             {fieldErrors.message}
           </p>
         )}
@@ -165,7 +165,7 @@ export function ContactForm() {
 
       {/* API error */}
       {state === 'error' && (
-        <p role="alert" className="rounded-lg border border-[rgba(239,68,68,0.3)] bg-[rgba(239,68,68,0.05)] px-4 py-3 font-mono text-xs text-red-400">
+        <p role="alert" className="rounded-lg border border-[rgba(239,68,68,0.3)] bg-[rgba(239,68,68,0.05)] px-4 py-3 text-xs text-red-700">
           {errorMsg}
         </p>
       )}
@@ -174,7 +174,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={state === 'submitting'}
-        className="mt-1 flex w-full items-center justify-center gap-2 rounded-xl bg-[#6366f1] px-6 py-3.5 font-sans font-semibold text-white shadow-[0_0_30px_rgba(99,102,241,0.25)] transition hover:opacity-90 hover:shadow-[0_0_45px_rgba(99,102,241,0.4)] disabled:cursor-not-allowed disabled:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6366f1]"
+        className="btn-primary mt-1 flex w-full justify-center disabled:cursor-not-allowed disabled:opacity-60"
         aria-label={state === 'submitting' ? 'Sending your message…' : 'Send message to Abin PM'}
       >
         {state === 'submitting' ? (
@@ -190,7 +190,7 @@ export function ContactForm() {
         )}
       </button>
 
-      <p className="text-center font-mono text-[10px] text-[#475569]">
+      <p className="text-center text-[10px] text-subtle">
         Contact details are used only to respond to this enquiry.
       </p>
     </form>

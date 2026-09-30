@@ -25,7 +25,7 @@ export const metadata: Metadata = {
     description:
       'Common questions about hiring a senior React, Node.js & MERN stack developer from India — rates, remote availability, AI workflow, and engagement models.',
     url: `${SITE_URL}/faq`,
-    images: [{ url: '/og-image.png', width: 1200, height: 630 }],
+    images: [{ url: '/og-image.jpg', width: 1200, height: 630 }],
   },
   twitter: { card: 'summary_large_image' },
 };
@@ -42,20 +42,20 @@ export default function FAQPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       <Navbar />
-      <main className="min-h-screen bg-[#080810] pt-28">
+      <main className="min-h-screen bg-cream pt-28">
 
         {/* Page hero */}
         <div className="mx-auto max-w-[720px] px-6 pb-4 md:px-10">
-          <nav className="mb-6 flex items-center gap-2 font-mono text-xs text-[#475569]">
-            <Link href="/" className="no-underline hover:text-[#94a3b8]">Home</Link>
+          <nav className="mb-6 flex items-center gap-2 text-xs text-subtle">
+            <Link href="/" className="no-underline hover:text-muted">Home</Link>
             <span>/</span>
-            <span className="text-[#94a3b8]">FAQ</span>
+            <span className="text-muted">FAQ</span>
           </nav>
           <div className="section-label mb-4">FAQ</div>
-          <h1 className="mb-4 font-sans text-4xl font-bold tracking-tight text-[#f1f5f9] md:text-5xl">
+          <h1 className="mb-4 text-4xl text-ink md:text-5xl">
             Frequently Asked Questions
           </h1>
-          <p className="mb-2 text-lg text-[#94a3b8]">
+          <p className="mb-2 text-lg text-muted">
             Everything hiring managers, recruiters and clients ask about working with Abin PM —
             a senior React, Node.js & MERN stack developer from India.
           </p>
@@ -66,23 +66,23 @@ export default function FAQPage() {
 
         {/* CTA */}
         <div className="mx-auto max-w-[720px] px-6 pb-32 md:px-10">
-          <div className="rounded-2xl border border-[rgba(99,102,241,0.2)] bg-[rgba(99,102,241,0.04)] p-10 text-center">
-            <h2 className="mb-3 font-sans text-2xl font-bold text-[#f1f5f9]">
+          <div className="rounded-2xl border border-border bg-surface p-10 text-center">
+            <h2 className="mb-3 text-2xl text-ink">
               Still have questions?
             </h2>
-            <p className="mb-8 text-[#94a3b8]">
+            <p className="mb-8 text-muted">
               Reach out directly — Abin responds within 24 hours.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link
                 href="/hire-me"
-                className="inline-flex rounded-xl bg-[#6366f1] px-7 py-3.5 font-sans font-semibold text-white no-underline transition hover:opacity-90"
+                className="btn-primary"
               >
                 Hire Me →
               </Link>
               <Link
                 href="/projects"
-                className="inline-flex rounded-xl border border-[rgba(99,102,241,0.35)] px-7 py-3.5 font-sans font-semibold text-[#f1f5f9] no-underline transition hover:border-[rgba(99,102,241,0.6)]"
+                className="btn-secondary"
               >
                 View Projects →
               </Link>

@@ -9,10 +9,10 @@ export function Skills() {
     <SectionWrapper id="skills" className="px-6 py-32 md:px-10">
       <div className="mx-auto max-w-[1100px]">
         <div className="section-label mb-4">Technical Arsenal</div>
-        <h2 className="mb-3 font-sans text-3xl font-bold tracking-tight text-[#f1f5f9] md:text-4xl">
+        <h2 className="mb-3 text-3xl text-ink md:text-4xl">
           Full-spectrum stack
         </h2>
-        <p className="mb-16 max-w-xl text-[#94a3b8]">
+        <p className="mb-16 max-w-xl text-muted">
           From pixel-perfect UIs to cloud-native distributed backends — every layer covered.
         </p>
 
@@ -27,13 +27,15 @@ export function Skills() {
               className={`card p-7 ${group.highlight ? 'card-violet-hover' : ''}`}
             >
               {group.highlightLabel && (
-                <span className="absolute right-4 top-4 z-10 rounded-full border border-[rgba(167,139,250,0.3)] bg-[rgba(167,139,250,0.1)] px-2.5 py-0.5 font-mono text-[10px] text-[#a78bfa]">
+                <span className="absolute right-4 top-4 z-10 rounded-full border border-border-strong bg-sage-light px-2.5 py-0.5 text-[10px] text-sage-dark">
                   {group.highlightLabel}
                 </span>
               )}
               <div className="relative z-10">
-                <div className="mb-3 text-2xl">{group.icon}</div>
-                <h3 className="mb-5 font-sans text-sm font-semibold uppercase tracking-wider text-[#94a3b8]">
+                <div className="mb-4 flex h-11 w-11 items-center justify-center rounded-full bg-sage-light text-xl" aria-hidden>
+                  {group.icon}
+                </div>
+                <h3 className="mb-5 text-sm uppercase tracking-wider text-muted">
                   {group.title}
                 </h3>
                 <div className="flex flex-wrap gap-2">

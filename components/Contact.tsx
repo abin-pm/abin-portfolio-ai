@@ -43,19 +43,19 @@ export function Contact() {
           {/* Left — copy + direct links */}
           <div className="flex flex-col justify-center">
             <div className="section-label mb-4">Let&apos;s Work Together</div>
-            <h2 className="mb-5 font-sans text-3xl font-bold tracking-tight text-[#f1f5f9] md:text-4xl">
+            <h2 className="mb-5 text-3xl text-ink md:text-4xl">
               Let&apos;s Build Something Exceptional
             </h2>
 
             {/* Availability badge */}
-            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-[rgba(34,211,238,0.3)] bg-[rgba(34,211,238,0.05)] px-4 py-1.5">
-              <span className="h-2 w-2 animate-pulse rounded-full bg-emerald-400" />
-              <span className="font-mono text-xs text-[#22d3ee]">
+            <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-border-strong bg-surface px-4 py-1.5">
+              <span className="h-2 w-2 animate-pulse rounded-full bg-sage" />
+              <span className="text-xs text-sage-dark">
                 Available now — can start within days
               </span>
             </div>
 
-            <p className="mb-8 max-w-lg text-[#94a3b8]">
+            <p className="mb-8 max-w-lg text-muted">
               Looking to hire a React developer in India, need a freelance full stack
               engineer, or want an AI-native developer to accelerate your build? Drop a
               message — fastest response is via email.
@@ -73,11 +73,11 @@ export function Contact() {
                   >
                     <span className="relative z-10 flex w-full items-center gap-3">
                       <span className="text-lg">{item.icon}</span>
-                      <span className="font-mono text-sm text-[#94a3b8] transition-colors group-hover:text-[#f1f5f9]">
+                      <span className="text-sm text-muted transition-colors group-hover:text-ink">
                         {item.label}
                       </span>
                       {item.external && (
-                        <span className="ml-auto font-mono text-[10px] text-[#475569] transition-colors group-hover:text-[#94a3b8]">↗</span>
+                        <span className="ml-auto text-[10px] text-subtle transition-colors group-hover:text-muted">↗</span>
                       )}
                     </span>
                   </a>
@@ -87,7 +87,7 @@ export function Contact() {
 
             <Link
               href="/hire-me"
-              className="inline-flex w-fit items-center gap-2 rounded-xl bg-[#6366f1] px-7 py-3.5 font-sans font-semibold text-white shadow-[0_0_30px_rgba(99,102,241,0.25)] transition hover:opacity-90 hover:shadow-[0_0_45px_rgba(99,102,241,0.4)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#6366f1]"
+              className="btn-primary w-fit"
               aria-label="View full hire page for Abin PM"
             >
               View Full Hire Page
@@ -99,7 +99,7 @@ export function Contact() {
 
           {/* Right — contact form */}
           <div>
-            <p className="mb-5 font-sans text-lg font-semibold text-[#f1f5f9]">
+            <p className="mb-5 font-serif text-2xl text-ink">
               Send a message
             </p>
             <ContactForm />

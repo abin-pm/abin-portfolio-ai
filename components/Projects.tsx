@@ -20,44 +20,60 @@ function ProjectCard({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ delay: index * 0.08, duration: 0.5 }}
-      className={`card relative ${project.aiAssisted ? 'card-violet' : ''} ${large ? 'p-8' : 'p-6'}`}
+      className={`card relative flex flex-col ${project.aiAssisted ? 'card-violet' : ''}`}
     >
-      {project.aiAssisted && (
-        <span className="absolute right-4 top-4 z-10 rounded-full border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.1)] px-3 py-1 font-mono text-[10px] text-[#a78bfa]">
-          🤖 AI-Assisted
-        </span>
-      )}
-      <div className="relative z-10">
-      <div className="mb-3 flex flex-wrap items-center gap-2">
-        <span className="text-xl">{project.flag}</span>
-        <span className="font-mono text-xs text-[#6366f1]">{project.client}</span>
-        <span className="rounded bg-[rgba(99,102,241,0.1)] px-2 py-0.5 font-mono text-[10px] text-[#475569]">
-          {project.category}
-        </span>
+      {/* Flat cover block — stands in for a project screenshot */}
+      <div className={`relative flex flex-col justify-between border-b border-border bg-sage-light ${large ? 'h-40 p-6' : 'h-28 p-5'}`}>
+        <div className="flex items-start justify-between gap-3">
+          <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-sage-dark">
+            {project.category}
+          </span>
+          {project.aiAssisted && (
+            <span className="rounded-full border border-sage-border bg-surface px-3 py-1 text-[10px] text-sage-dark">
+              🤖 AI-Assisted
+            </span>
+          )}
+        </div>
+        <div className="flex items-end justify-between gap-3">
+          <span className={`font-serif text-ink ${large ? 'text-3xl' : 'text-2xl'}`}>{project.client}</span>
+          <span className="text-2xl" aria-hidden>{project.flag}</span>
+        </div>
       </div>
-      <h3 className={`mb-3 font-sans font-bold text-[#f1f5f9] ${large ? 'text-xl' : 'text-base'}`}>
+      <div className={`flex flex-1 flex-col ${large ? 'p-7' : 'p-5'}`}>
+      {(project.period || project.company) && (
+        <p className="mb-2 text-[11px] uppercase tracking-[0.14em] text-subtle">
+          {[project.company, project.period].filter(Boolean).join(' · ')}
+        </p>
+      )}
+      <h3 className={`mb-3 text-ink ${large ? 'text-xl' : 'text-base'}`}>
         {project.title}
       </h3>
-      <p className={`mb-4 text-[#94a3b8] ${large ? 'text-sm' : 'line-clamp-3 text-sm'}`}>
+      <p className={`mb-4 text-muted ${large ? 'text-sm' : 'line-clamp-3 text-sm'}`}>
         {project.description}
       </p>
       <ul className="mb-4 space-y-1">
         {project.impact.map((item) => (
-          <li key={item} className="flex items-start gap-2 text-xs text-[#22d3ee]">
+          <li key={item} className="flex items-start gap-2 text-xs text-sage-dark">
             <span className="mt-px shrink-0">✓</span>
             {item}
           </li>
         ))}
       </ul>
       {project.aiNote && (
-        <p className="mb-3 font-mono text-xs text-[#a78bfa]">{project.aiNote}</p>
+        <p className="mb-3 text-xs text-sage-dark">{project.aiNote}</p>
       )}
-      <div className="flex flex-wrap gap-2">
+      <div className="mt-auto flex flex-wrap gap-2">
         {project.tags.map((tag) => (
           <span key={tag} className="tag-pill">{tag}</span>
         ))}
       </div>
-      </div>{/* end z-10 */}
+      <Link
+        href={`/projects/${project.id}`}
+        className="mt-5 flex items-center justify-between border-t border-border pt-4 text-xs font-semibold uppercase tracking-[0.12em] text-ink no-underline transition hover:text-sage-dark"
+      >
+        Read case study <span aria-hidden>→</span>
+      </Link>
+      </div>
     </motion.article>
   );
 }
@@ -70,11 +86,11 @@ export function Projects() {
     <SectionWrapper id="projects" className="px-6 py-32 md:px-10">
       <div className="mx-auto max-w-[1100px]">
         <div className="section-label mb-4">Selected Work</div>
-        <h2 className="mb-3 font-sans text-3xl font-bold tracking-tight text-[#f1f5f9] md:text-4xl">
+        <h2 className="mb-3 text-3xl text-ink md:text-4xl">
           Enterprise Projects Delivered Globally
         </h2>
-        <p className="mb-16 max-w-xl text-[#94a3b8]">
-          6 production platforms across retail, energy, events, and civic tech.
+        <p className="mb-16 max-w-xl text-muted">
+          {projects.length} production platforms across retail, energy, events, and civic tech.
         </p>
 
         {/* Featured — larger cards */}
@@ -85,7 +101,7 @@ export function Projects() {
         </div>
 
         {/* More projects */}
-        <h3 className="mb-6 mt-12 font-sans text-lg font-semibold text-[#94a3b8]">More Projects</h3>
+        <h3 className="mb-6 mt-12 text-lg text-muted">More Projects</h3>
         <div className="grid gap-4 md:grid-cols-3">
           {rest.map((project, i) => (
             <ProjectCard key={project.id} project={project} index={i} />
@@ -95,9 +111,9 @@ export function Projects() {
         <div className="mt-12 text-center">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 rounded-md border border-[rgba(99,102,241,0.35)] bg-transparent px-6 py-3 font-mono text-sm text-[#94a3b8] transition hover:border-[rgba(99,102,241,0.6)] hover:text-[#f1f5f9]"
+            className="btn-secondary"
           >
-            View all 6 projects in detail →
+            View all {projects.length} projects in detail →
           </Link>
         </div>
       </div>

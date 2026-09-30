@@ -9,17 +9,17 @@ export function AIEngineer() {
   return (
     <SectionWrapper
       id="ai-engineer"
-      className="border-y border-[rgba(167,139,250,0.15)] bg-[rgba(167,139,250,0.03)] px-6 py-32 md:px-10"
+      className="border-y border-border bg-surface px-6 py-32 md:px-10"
     >
       <div className="mx-auto max-w-[1100px]">
-        <span className="mb-4 inline-block rounded-full border border-[rgba(167,139,250,0.3)] bg-[rgba(167,139,250,0.1)] px-3 py-1 font-mono text-xs text-[#a78bfa]">
+        <span className="mb-4 inline-block rounded-full border border-border-strong bg-sage-light px-3 py-1 text-xs text-sage-dark">
           Core Differentiator
         </span>
 
-        <h2 className="mb-3 font-sans text-3xl font-bold tracking-tight text-[#f1f5f9] md:text-4xl">
+        <h2 className="mb-3 text-3xl text-ink md:text-4xl">
           AI-Native Development
         </h2>
-        <p className="mb-12 text-lg text-[#94a3b8]">
+        <p className="mb-12 text-lg text-muted">
           Not just a developer who uses AI — an engineer who makes AI production-ready.
         </p>
 
@@ -48,15 +48,15 @@ export function AIEngineer() {
               className="card card-violet p-7"
             >
               <div className="relative z-10">
-                <h3 className="mb-3 font-sans text-base font-semibold text-[#a78bfa]">{item.title}</h3>
-                <p className="text-sm leading-relaxed text-[#94a3b8]">{item.body}</p>
+                <h3 className="mb-3 text-base text-sage-dark">{item.title}</h3>
+                <p className="text-sm leading-relaxed text-muted">{item.body}</p>
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* AI Tools Grid */}
-        <h3 className="mb-6 font-sans text-xl font-semibold text-[#f1f5f9]">AI Tools I Use Daily</h3>
+        <h3 className="mb-6 text-xl text-ink">AI Tools I Use Daily</h3>
         <div className="mb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {aiTools.map((tool, i) => (
             <motion.div
@@ -68,11 +68,11 @@ export function AIEngineer() {
               className="card card-violet p-6"
             >
               <div className="relative z-10">
-                <div className="mb-1 font-mono text-sm font-semibold text-[#a78bfa]">{tool.name}</div>
-                <span className="mb-3 inline-block rounded-full bg-[rgba(167,139,250,0.12)] px-2.5 py-0.5 font-mono text-[10px] text-[#a78bfa]">
+                <div className="mb-1 text-sm font-semibold text-sage-dark">{tool.name}</div>
+                <span className="mb-3 inline-block rounded-full bg-sage-light px-2.5 py-0.5 text-[10px] text-sage-dark">
                   {tool.role}
                 </span>
-                <p className="text-sm leading-relaxed text-[#94a3b8]">{tool.description}</p>
+                <p className="text-sm leading-relaxed text-muted">{tool.description}</p>
               </div>
             </motion.div>
           ))}
@@ -89,14 +89,14 @@ export function AIEngineer() {
               transition={{ delay: i * 0.06, duration: 0.4 }}
               className="card-stat p-6 text-center"
             >
-              <div className="mb-1 font-sans text-3xl font-bold text-gradient">{stat.value}</div>
-              <div className="font-mono text-xs uppercase tracking-widest text-[#94a3b8]">{stat.label}</div>
+              <div className="mb-1 font-serif text-4xl text-sage-dark">{stat.value}</div>
+              <div className="text-xs uppercase tracking-widest text-muted">{stat.label}</div>
             </motion.div>
           ))}
         </div>
 
         {/* What I can build */}
-        <h3 className="mb-6 font-sans text-xl font-semibold text-[#f1f5f9]">What I can build for you</h3>
+        <h3 className="mb-6 text-xl text-ink">What I can build for you</h3>
         <div className="mb-12 grid gap-5 md:grid-cols-3">
           {[
             { icon: '🔗', title: 'AI-Powered Features', desc: 'LLM APIs, semantic search, chatbots, and AI-driven UX built directly into your product.' },
@@ -113,8 +113,8 @@ export function AIEngineer() {
             >
               <div className="relative z-10">
                 <div className="mb-3 text-2xl">{item.icon}</div>
-                <h4 className="mb-2 font-sans font-semibold text-[#f1f5f9]">{item.title}</h4>
-                <p className="text-sm text-[#94a3b8]">{item.desc}</p>
+                <h4 className="mb-2 font-sans font-semibold text-ink">{item.title}</h4>
+                <p className="text-sm text-muted">{item.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -122,7 +122,7 @@ export function AIEngineer() {
 
         <Link
           href="/ai-engineer"
-          className="inline-flex items-center gap-2 rounded-xl border border-[rgba(167,139,250,0.4)] bg-[rgba(167,139,250,0.08)] px-6 py-3 font-mono text-sm text-[#a78bfa] transition hover:border-[rgba(167,139,250,0.7)] hover:shadow-[0_0_30px_rgba(167,139,250,0.2)]"
+          className="btn-secondary"
         >
           Hire an AI-Native Engineer →
         </Link>

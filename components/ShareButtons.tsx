@@ -26,13 +26,13 @@ export function ShareButtons({ title, slug }: Props) {
 
   return (
     <div className="flex items-center gap-3">
-      <span className="font-mono text-xs text-[#475569]">Share:</span>
+      <span className="text-xs text-subtle">Share:</span>
       <a
         href={twitterHref}
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Share on X (Twitter)"
-        className="flex h-8 w-8 items-center justify-center rounded-lg border border-[rgba(99,102,241,0.15)] bg-[rgba(99,102,241,0.04)] font-mono text-xs text-[#94a3b8] no-underline transition hover:border-[rgba(99,102,241,0.4)] hover:text-[#6366f1]"
+        className="flex h-8 w-8 items-center justify-center rounded-lg border border-border bg-surface text-xs text-muted no-underline transition hover:border-sage hover:text-sage-dark"
       >
         𝕏
       </a>
@@ -41,14 +41,14 @@ export function ShareButtons({ title, slug }: Props) {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Share on LinkedIn"
-        className="flex h-8 items-center justify-center rounded-lg border border-[rgba(99,102,241,0.15)] bg-[rgba(99,102,241,0.04)] px-3 font-mono text-xs text-[#94a3b8] no-underline transition hover:border-[rgba(99,102,241,0.4)] hover:text-[#6366f1]"
+        className="flex h-8 items-center justify-center rounded-lg border border-border bg-surface px-3 text-xs text-muted no-underline transition hover:border-sage hover:text-sage-dark"
       >
         in
       </a>
       <button
         onClick={handleCopy}
         aria-label="Copy link"
-        className="flex h-8 items-center justify-center rounded-lg border border-[rgba(99,102,241,0.15)] bg-[rgba(99,102,241,0.04)] px-3 font-mono text-xs text-[#94a3b8] transition hover:border-[rgba(99,102,241,0.4)] hover:text-[#6366f1]"
+        className="flex h-8 items-center justify-center rounded-lg border border-border bg-surface px-3 text-xs text-muted transition hover:border-sage hover:text-sage-dark"
       >
         {copied ? '✓ Copied' : 'Copy link'}
       </button>
