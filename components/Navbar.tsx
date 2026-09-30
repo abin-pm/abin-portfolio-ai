@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowRight, Menu, X } from 'lucide-react';
+import { ThemeToggle } from './ThemeToggle';
 
 const links = [
   { href: '/',            label: 'Home' },
@@ -69,19 +70,23 @@ export function Navbar() {
           })}
         </ul>
 
-        <Link href="/hire-me" className="btn-primary hidden !py-2.5 md:inline-flex">
-          Hire Me <ArrowRight size={14} aria-hidden />
-        </Link>
+        <div className="flex items-center gap-3">
+          <ThemeToggle />
 
-        {/* Mobile hamburger */}
-        <button
-          className="flex items-center justify-center rounded p-2 text-muted transition hover:text-ink md:hidden"
-          onClick={() => setOpen(!open)}
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-        >
-          {open ? <X size={20} /> : <Menu size={20} />}
-        </button>
+          <Link href="/hire-me" className="btn-primary hidden !py-2.5 md:inline-flex">
+            Hire Me <ArrowRight size={14} aria-hidden />
+          </Link>
+
+          {/* Mobile hamburger */}
+          <button
+            className="flex items-center justify-center rounded p-2 text-muted transition hover:text-ink md:hidden"
+            onClick={() => setOpen(!open)}
+            aria-label={open ? 'Close menu' : 'Open menu'}
+            aria-expanded={open}
+          >
+            {open ? <X size={20} /> : <Menu size={20} />}
+          </button>
+        </div>
       </nav>
 
       {/* Mobile drawer */}

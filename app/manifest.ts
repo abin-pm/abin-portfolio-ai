@@ -8,30 +8,11 @@ export default function manifest(): MetadataRoute.Manifest {
       'Senior Full Stack Developer portfolio for Abin PM featuring React, Next.js, Node.js, and AI-powered web engineering projects.',
     start_url: '/',
     display: 'standalone',
-    background_color: '#0b1020',
-    theme_color: '#0ea5e9',
+    background_color: '#f7f6f3',
+    theme_color: '#6f7f63',
     icons: [
-      {
-        src: '/favicon.png',
-        sizes: '192x192',
-        type: 'image/png',
-      },
-      {
-        src: '/favicon.png',
-        sizes: '512x512',
-        type: 'image/png',
-      },
-      {
-        src: '/favicon.svg',
-        sizes: 'any',
-        type: 'image/svg+xml',
-      },
-      {
-        src: '/logo.svg',
-        sizes: '512x512',
-        type: 'image/svg+xml',
-        purpose: 'any',
-      },
+      { src: '/icons/icon-192.png', sizes: '192x192', type: 'image/png' },
+      { src: '/icons/icon-512.png', sizes: '512x512', type: 'image/png' },
     ],
   };
 }

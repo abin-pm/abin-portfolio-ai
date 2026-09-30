@@ -28,6 +28,14 @@ const PHOTO_EDGE_FADE = {
   maskComposite: 'intersect',
 } as const;
 
+// Dark mode (sage page): the dark photo cropped just outside its glowing outer ring
+// (centre ≈ 49.5% / 49.4%, radius ≈ 93% of half the width), so it reads as a round
+// medallion instead of a dark square.
+const RING = 'radial-gradient(circle closest-side at 49.5% 49.4%, #000 93.3%, transparent 94.1%)';
+const PHOTO_RING = { WebkitMaskImage: RING, maskImage: RING } as const;
+
+const PHOTO_SIZES = '(min-width: 1280px) 520px, (min-width: 640px) 460px, 380px';
+
 function HeroPortrait({ className = '' }: { className?: string }) {
   return (
     <motion.div
@@ -36,16 +44,27 @@ function HeroPortrait({ className = '' }: { className?: string }) {
       transition={{ duration: 0.7, ease: 'easeOut', delay: 0.15 }}
       className={`relative mx-auto w-full max-w-[380px] sm:max-w-[460px] xl:max-w-[520px] ${className}`}
     >
-      {/* The photo carries its own sage disc and line-art on a cream ground, so no frame. */}
+      {/* Light: photo on a cream ground matched to the page, edges faded. Dark: the dark
+          photo, cropped to its outer ring. Swapped by CSS so SSR never needs the theme. */}
       <Image
         src="/images/abin-hero.png"
         alt="Abin PM, senior full stack and AI developer in Kochi, Kerala"
         width={1254}
         height={1254}
         priority
-        sizes="(min-width: 1280px) 520px, (min-width: 640px) 460px, 380px"
-        className="h-auto w-full"
+        sizes={PHOTO_SIZES}
+        className="h-auto w-full dark:hidden"
         style={PHOTO_EDGE_FADE}
+      />
+      <Image
+        src="/images/abin-hero-dark.png"
+        alt="Abin PM, senior full stack and AI developer in Kochi, Kerala"
+        width={1254}
+        height={1254}
+        loading="eager"
+        sizes={PHOTO_SIZES}
+        className="hidden h-auto w-full dark:block"
+        style={PHOTO_RING}
       />
     </motion.div>
   );

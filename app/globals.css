@@ -2,19 +2,49 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Colour tokens are RGB channels so Tailwind opacity modifiers (bg-cream/95) work.
+   Keep in sync with tailwind.config.ts. `.dark` is set on <html> by the script in
+   app/layout.tsx; its cream matches the dark hero photo's background. */
 :root {
-  --cream: #f7f6f3;
-  --surface: #ffffff;
-  --sage-band: #e9ede3;
-  --ink: #1c1c19;
-  --muted: #6b6a63;
-  --subtle: #9c9a8e;
-  --sage: #6f7f63;
-  --sage-dark: #5a6951;
-  --sage-light: #e7ebe0;
+  --cream: 247 246 243;
+  --cream-alt: 250 249 245;
+  --surface: 255 255 255;
+  --sage-band: 233 237 227;
+  --ink: 28 28 25;
+  --ink-soft: 51 50 44;
+  --muted: 107 106 99;
+  --subtle: 156 154 142;
+  --sage: 111 127 99;
+  --sage-dark: 90 105 81;
+  --sage-light: 231 235 224;
   --sage-border: rgba(111, 127, 99, 0.25);
-  --border: #e5e2d9;
-  --border-strong: #d3cfc2;
+  --on-sage: 255 255 255;
+  --border: 229 226 217;
+  --border-strong: 211 207 194;
+  --shadow: 28 28 25;
+  color-scheme: light;
+}
+
+.dark {
+  /* Inverse of light: #6f7f63 sage is the page, #f7f6f3 cream is text + accent. No black.
+     Cards/chips are a deeper sage so cream text on them stays readable. */
+  --cream: 111 127 99;          /* #6f7f63 page background */
+  --cream-alt: 118 134 106;
+  --surface: 95 110 84;         /* #5f6e54 cards, inputs */
+  --sage-band: 101 117 89;      /* #65755a stats band */
+  --ink: 247 246 243;           /* #f7f6f3 headings & body text */
+  --ink-soft: 238 237 232;
+  --muted: 234 236 228;
+  --subtle: 216 221 208;
+  --sage: 247 246 243;          /* accent = cream: primary buttons, eyebrows, dots */
+  --sage-dark: 255 255 255;     /* accent text + primary-button hover */
+  --sage-light: 86 100 76;      /* #56644c tag/chip & icon-disc fill */
+  --sage-border: rgba(247, 246, 243, 0.3);
+  --on-sage: 86 100 76;         /* sage-coloured text on cream buttons */
+  --border: 133 148 121;        /* #859479 */
+  --border-strong: 160 173 148;
+  --shadow: 45 54 39;
+  color-scheme: dark;
 }
 
 *,
@@ -30,8 +60,8 @@ html {
 }
 
 body {
-  background: var(--cream);
-  color: var(--ink);
+  background: rgb(var(--cream));
+  color: rgb(var(--ink));
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -44,12 +74,12 @@ body {
     font-family: var(--font-newsreader), Georgia, ui-serif, serif;
     font-weight: 500;
     letter-spacing: -0.01em;
-    color: var(--ink);
+    color: rgb(var(--ink));
   }
 
   ::selection {
-    background: var(--sage-light);
-    color: var(--ink);
+    background: rgb(var(--sage-light));
+    color: rgb(var(--ink));
   }
 }
 
@@ -60,18 +90,18 @@ body {
     align-items: center;
     gap: 0.6rem;
     border-radius: 0.375rem;
-    background: var(--sage);
+    background: rgb(var(--sage));
     padding: 0.85rem 1.5rem;
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: #fff;
+    color: rgb(var(--on-sage));
     transition: background 0.2s ease;
   }
 
   .btn-primary:hover {
-    background: var(--sage-dark);
+    background: rgb(var(--sage-dark));
   }
 
   .btn-secondary {
@@ -79,25 +109,25 @@ body {
     align-items: center;
     gap: 0.6rem;
     border-radius: 0.375rem;
-    border: 1px solid var(--border-strong);
-    background: var(--surface);
+    border: 1px solid rgb(var(--border-strong));
+    background: rgb(var(--surface));
     padding: 0.85rem 1.5rem;
     font-size: 0.75rem;
     font-weight: 600;
     letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: var(--ink);
+    color: rgb(var(--ink));
     transition: border-color 0.2s ease, color 0.2s ease;
   }
 
   .btn-secondary:hover {
-    border-color: var(--sage);
-    color: var(--sage-dark);
+    border-color: rgb(var(--sage));
+    color: rgb(var(--sage-dark));
   }
 
   .btn-primary:focus-visible,
   .btn-secondary:focus-visible {
-    outline: 2px solid var(--sage);
+    outline: 2px solid rgb(var(--sage));
     outline-offset: 2px;
   }
 }
@@ -106,8 +136,8 @@ body {
   /* Flat surface — replaces the old glassmorphism panels */
   .glass,
   .glass-violet {
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: rgb(var(--surface));
+    border: 1px solid rgb(var(--border));
   }
 
   .tag-pill,
@@ -116,12 +146,12 @@ body {
     align-items: center;
     padding: 0.25rem 0.75rem;
     border-radius: 9999px;
-    background: var(--sage-light);
+    background: rgb(var(--sage-light));
     border: 1px solid var(--sage-border);
     font-family: var(--font-geist-sans), ui-sans-serif, system-ui;
     font-size: 0.72rem;
     font-weight: 500;
-    color: var(--sage-dark);
+    color: rgb(var(--sage-dark));
     white-space: nowrap;
   }
 
@@ -135,7 +165,7 @@ body {
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.18em;
-    color: var(--sage);
+    color: rgb(var(--sage));
   }
 
   .section-label::before {
@@ -143,7 +173,7 @@ body {
     display: block;
     width: 1.5rem;
     height: 1px;
-    background: var(--sage);
+    background: rgb(var(--sage));
     flex-shrink: 0;
   }
 
@@ -154,10 +184,10 @@ body {
   .card-violet-hover {
     position: relative;
     overflow: hidden;
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: rgb(var(--surface));
+    border: 1px solid rgb(var(--border));
     border-radius: 0.75rem;
-    box-shadow: 0 1px 2px rgba(28, 28, 25, 0.04);
+    box-shadow: 0 1px 2px rgb(var(--shadow) / 0.04);
     transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
   }
 
@@ -165,27 +195,27 @@ body {
   .card-violet:hover,
   .card-cyan:hover,
   .card-violet-hover:hover {
-    border-color: var(--border-strong);
-    box-shadow: 0 8px 24px rgba(28, 28, 25, 0.07);
+    border-color: rgb(var(--border-strong));
+    box-shadow: 0 8px 24px rgb(var(--shadow) / 0.07);
     transform: translateY(-2px);
   }
 
   .card-stat {
     position: relative;
     overflow: hidden;
-    background: var(--surface);
-    border: 1px solid var(--border);
+    background: rgb(var(--surface));
+    border: 1px solid rgb(var(--border));
     border-radius: 0.75rem;
     transition: border-color 0.25s ease;
   }
 
   .card-stat:hover {
-    border-color: var(--border-strong);
+    border-color: rgb(var(--border-strong));
   }
 
   /* Scrollbar */
   ::-webkit-scrollbar { width: 8px; }
-  ::-webkit-scrollbar-track { background: var(--cream); }
-  ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 4px; }
-  ::-webkit-scrollbar-thumb:hover { background: var(--sage); }
+  ::-webkit-scrollbar-track { background: rgb(var(--cream)); }
+  ::-webkit-scrollbar-thumb { background: rgb(var(--border-strong)); border-radius: 4px; }
+  ::-webkit-scrollbar-thumb:hover { background: rgb(var(--sage)); }
 }

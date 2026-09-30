@@ -452,7 +452,7 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
                 </p>
                 <a
                   href="/hire-me"
-                  className="block rounded-lg bg-sage px-4 py-2.5 text-center text-xs font-semibold text-white no-underline transition hover:opacity-90"
+                  className="block rounded-lg bg-sage px-4 py-2.5 text-center text-xs font-semibold text-on-sage no-underline transition hover:opacity-90"
                 >
                   Hire Abin →
                 </a>

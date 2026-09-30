@@ -115,7 +115,7 @@ export function ContactForm() {
           className={fieldErrors.name ? inputError : inputNormal}
         />
         {fieldErrors.name && (
-          <p id={`${id}-name-error`} role="alert" className="mt-1 text-[10px] text-red-700">
+          <p id={`${id}-name-error`} role="alert" className="mt-1 text-[10px] text-red-700 dark:text-red-100">
             {fieldErrors.name}
           </p>
         )}
@@ -140,7 +140,7 @@ export function ContactForm() {
           className={fieldErrors.email ? inputError : inputNormal}
         />
         {fieldErrors.email && (
-          <p id={`${id}-email-error`} role="alert" className="mt-1 text-[10px] text-red-700">
+          <p id={`${id}-email-error`} role="alert" className="mt-1 text-[10px] text-red-700 dark:text-red-100">
             {fieldErrors.email}
           </p>
         )}
@@ -164,7 +164,7 @@ export function ContactForm() {
           className={`resize-none ${fieldErrors.message ? inputError : inputNormal}`}
         />
         {fieldErrors.message && (
-          <p id={`${id}-message-error`} role="alert" className="mt-1 text-[10px] text-red-700">
+          <p id={`${id}-message-error`} role="alert" className="mt-1 text-[10px] text-red-700 dark:text-red-100">
             {fieldErrors.message}
           </p>
         )}
@@ -172,7 +172,7 @@ export function ContactForm() {
 
       {/* API error */}
       {state === 'error' && (
-        <p role="alert" className="rounded-lg border border-[rgba(239,68,68,0.3)] bg-[rgba(239,68,68,0.05)] px-4 py-3 text-xs text-red-700">
+        <p role="alert" className="rounded-lg border border-[rgba(239,68,68,0.3)] bg-[rgba(239,68,68,0.05)] px-4 py-3 text-xs text-red-700 dark:text-red-100">
           {errorMsg}
         </p>
       )}
