@@ -15,6 +15,7 @@ pnpm-debug.log*
 # Personal documents (kept local; source of truth for lib/data.ts)
 .claude/Abin_PM_Resume.md
 .claude/abin_pm_full_project_details.md
+.claude/abin-portfolio-content.md
 
 # Claude Code per-machine settings
 .claude/settings.local.json

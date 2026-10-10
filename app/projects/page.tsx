@@ -6,7 +6,7 @@ import { ProjectsClient } from '@/components/ProjectsClient';
 export const metadata: Metadata = {
   title: 'Projects | Abin PM — Full Stack & AI Engineer',
   description:
-    '8 production platforms by Abin PM across retail analytics, e-commerce, energy, events and civic tech — L\'Oréal, Abercrombie & Fitch, National Grid, Paragon Energy, Go Lyv, Refinu and more.',
+    '11 production projects by Abin PM across retail analytics, e-commerce, energy, events, civic tech and web portals — L\'Oréal, Abercrombie & Fitch, National Grid, Paragon Energy, Go Lyv, Refinu and more.',
   alternates: { canonical: '/projects' },
 };
 

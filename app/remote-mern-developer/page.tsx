@@ -10,7 +10,7 @@ const SITE_URL = 'https://www.abinaiengineer.com';
 export const metadata: Metadata = {
   title: 'Remote MERN Stack Developer for Hire | React, Node.js, MongoDB | Abin PM',
   description:
-    'Senior remote MERN stack developer with 10+ years experience. React, Node.js, MongoDB, Express. Proven track record with US & UK clients (IBM, Abercrombie & Fitch, National Grid). Available now.',
+    'Senior remote MERN stack developer with 10+ years experience. React, Node.js, MongoDB, Express. Proven track record with US, UK and Dubai clients (Abercrombie & Fitch, National Grid, Paragon Energy). Available now.',
   keywords: [
     'remote MERN stack developer',
     'hire MERN developer remote',

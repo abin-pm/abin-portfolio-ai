@@ -17,22 +17,22 @@ const metaMap: Record<string, { title: string; description: string }> = {
   ibm: {
     title: 'IBM India — Senior Application Developer & AI-Native Engineer | Abin PM',
     description:
-      'Abin PM at IBM India Pvt Ltd — Senior Application Developer (Full Stack & Cloud) since Sep 2024. React Micro-Frontend, Node.js, GraphQL BFF, AI-native development with Cursor AI, GitHub Copilot & Claude for National Grid USA.',
+      "Abin PM at IBM India Pvt Ltd — Senior Application Developer (Full Stack & Cloud) since Sep 2024. React Micro Frontends, GraphQL BFF, React + .NET Core and AI-native development for L'Oréal, Abercrombie & Fitch and National Grid USA.",
   },
   emvigo: {
     title: 'Emvigo Technologies — Team Lead & Senior Software Engineer | Abin PM',
     description:
-      'Abin PM at Emvigo Technologies (2020–2024) as Team Lead / Senior Software Engineer. Led full stack delivery of Paragon Energy, Go Lyv, and Refinu platforms using React, Node.js, AWS, GCP, and microservices.',
+      'Abin PM at Emvigo Technologies (2020–2024) as Team Lead / Senior Software Engineer. Led delivery of Paragon, Go Lyv, Refinu and SuperSonic Imagine using React, Next.js, Node.js, AWS and GCP.',
   },
   luminescent: {
-    title: 'Luminescent Software — Full Stack Software Engineer | Abin PM',
+    title: 'Luminescent Software — Software Engineer | Abin PM',
     description:
-      'Abin PM at Luminescent Software Pvt Ltd (2018–2020) as Full Stack Software Engineer. Built the Villager civic platform using React, Node.js, Socket.IO and Elasticsearch.',
+      'Abin PM at Luminescent Software Pvt Ltd (2018–2020) as Software Engineer. Built the Villager civic platform with React, Node.js, Socket.IO and Elasticsearch, and C#/.NET portals for a Dubai client.',
   },
-  ocuiz: {
-    title: 'Ocuiz Technologies — Software Engineer | Abin PM',
+  ociuz: {
+    title: 'Ociuz Technologies — Software Engineer | Abin PM',
     description:
-      'Abin PM at Ocuiz Technologies (2016–2017) as Software Engineer. MVC web applications using C#, ASP.NET, .NET MVC and SQL.',
+      'Abin PM at Ociuz Technologies (2016–2017) as Software Engineer. ASP.NET MVC5 web applications in C# with Entity Framework, SQL Server and PayU payments.',
   },
 };
 
@@ -59,10 +59,10 @@ export function generateMetadata({ params }: Props): Metadata {
 
 // Projects worked on per company slug
 const projectsByCompany: Record<string, string[]> = {
-  ibm:         ['national-grid'],
-  emvigo:      ['paragon', 'golyv', 'refinu', 'abercrombie'],
-  luminescent: ['villager'],
-  ocuiz:       [],
+  ibm:         ['loreal', 'abercrombie', 'national-grid'],
+  emvigo:      ['supersonic-imagine', 'paragon', 'refinu', 'golyv'],
+  luminescent: ['villager', 'first-group'],
+  ociuz:       ['we-are-fresh', 'best-holidays'],
 };
 
 export default function ExperienceDetailPage({ params }: Props) {

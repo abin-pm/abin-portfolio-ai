@@ -88,7 +88,7 @@ export function getPersonSchema() {
       'React.js', 'Next.js', 'Node.js', 'NestJS', 'TypeScript', 'GraphQL',
       'Micro Frontends', 'Microservices', 'MERN Stack', 'PostgreSQL', 'MongoDB',
       'AWS', 'Google Cloud', 'Azure', 'AI-Assisted Development', 'Cursor AI',
-      'LLM Integration', 'GenAI Engineering', 'Full Stack Development',
+      '.NET Core', 'GenAI Engineering', 'Full Stack Development',
     ],
     alumniOf: {
       '@type': 'CollegeOrUniversity',

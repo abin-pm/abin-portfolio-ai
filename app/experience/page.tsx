@@ -32,9 +32,9 @@ export const metadata: Metadata = {
 
 const PROOF_CARDS = [
   {
-    metric: '96h → 2h',
-    label: 'Operational turnaround cut',
-    context: 'Paragon Energy · 200k+ smart meters · UK energy sector',
+    metric: '96h → <2h',
+    label: 'Reporting time cut',
+    context: 'Paragon Energy · 200k+ smart meter assets · UK energy sector',
     href: '/projects/paragon',
     cta: 'See Paragon case study →',
     accent: 'indigo' as const,
@@ -42,7 +42,7 @@ const PROOF_CARDS = [
   {
     metric: 'SAS → Web',
     label: 'Legacy platform modernised',
-    context: 'National Grid USA · React + Node.js · AI-assisted migration',
+    context: 'National Grid USA · React + .NET Core · AI-assisted migration',
     href: '/projects/national-grid',
     cta: 'See National Grid case study →',
     accent: 'violet' as const,
