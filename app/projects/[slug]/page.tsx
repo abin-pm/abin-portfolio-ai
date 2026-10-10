@@ -16,80 +16,108 @@ type Props = { params: { slug: string } };
 
 // Company that delivered each project
 const deliveredBy: Record<string, string> = {
-  'loreal':        'ibm',
-  'national-grid': 'ibm',
-  'abercrombie':   'ibm',
-  'paragon':       'emvigo',
-  'golyv':         'emvigo',
-  'refinu':        'emvigo',
-  'villager':      'luminescent',
+  'loreal':              'ibm',
+  'national-grid':       'ibm',
+  'abercrombie':         'ibm',
+  'supersonic-imagine':  'emvigo',
+  'paragon':             'emvigo',
+  'golyv':               'emvigo',
+  'refinu':              'emvigo',
+  'villager':            'luminescent',
+  'first-group':         'luminescent',
+  'we-are-fresh':        'ociuz',
+  'best-holidays':       'ociuz',
 };
 
 // Expanded case study content per project
 const caseStudyContent: Record<string, { challenge: string; approach: string; outcome: string }> = {
   loreal: {
     challenge:
-      "L'Oréal's retail teams — from global HQ down to individual stores — relied on fragmented, manual reporting to track sales, traffic, product, brand, service and CRM performance. They needed one near-real-time analytics platform that works across countries, languages and very large data volumes.",
+      "L'Oréal's Retail Gold SalesApp is used by thousands of retail users to track sales, traffic, products, services, CRM and brand performance. The Version 2 release needed a redesigned, consistent UI across all eight modules without disrupting the data people rely on daily.",
     approach:
-      "Working at IBM, built full-stack features for the Retail Gold SalesApp in a modular monorepo: Next.js, React 18, TypeScript, MUI and React Query on the frontend, NestJS/Node.js APIs with GraphQL and REST integrations, and BigQuery, Firestore and GCS on Google Cloud (App Engine with autoscaling). Designed KPI dashboards (Sales, Transactions, ATV, UPT, Traffic, services; WTD/MTD/QTD/YTD and historical comparisons), Global → Country → Area → Store drill-down, and reusable Nivo, Highcharts and D3 visualizations including heatmaps and treemaps. Implemented Azure AD and Retail API authentication, SSR/CSR rendering decisions, parameterized SQL with caching, virtual scrolling for large sales lists, Playwright tests and Storybook components, plus a Google Sheets → country-specific JSON localization pipeline.",
+      "Working at IBM in a frontend team of 4, focused solely on the V2 UI/UX update. Built reusable KPI cards, dashboards, charts and filters with Next.js, React, TypeScript, Material UI and React Query, with Nivo, Highcharts and D3 visualizations and responsive layouts across Sales, Business Analytics, Products, Services, Traffic, CRM, Control and Brand. Validated KPIs with stakeholders, traced and fixed discrepancies between non-production and production data, and managed React and UI library version compatibility through the V2 migration.",
     outcome:
-      'A global retail analytics platform used by thousands of users across regions, replacing manual reporting with centralized, near-real-time dashboards that support merchandising, staffing and operational decisions — with multi-country localization and multiple deployment environments.',
+      'A consistent V2 interface across eight modules built from shared, reusable components, with KPIs validated against production data for thousands of retail users.',
   },
-  'ultrasonic-imagine': {
+  'supersonic-imagine': {
     challenge:
-      'Ultrasonic Imagine needed a fast, responsive website whose content and media the team could manage themselves without developer involvement.',
+      'SuperSonic Imagine needed a fast, responsive corporate website whose content and media their team could manage without developer involvement.',
     approach:
-      'Built responsive Next.js pages from reusable React components and integrated Strapi as a headless CMS, so all content and media are API-driven and editable in the CMS. Focused on frontend performance, responsive layouts and UX across devices over a roughly six-month engagement.',
+      'Built responsive Next.js pages from reusable React components and integrated Strapi as a headless CMS, so all content and media are API-driven and editable in the CMS. Focused on frontend performance, responsive layouts and UX across devices.',
     outcome:
-      'A CMS-driven marketing website the client team can update independently, with a reusable component library and responsive, performance-focused pages.',
+      'A CMS-driven corporate website the client team can update independently, with a reusable component library and responsive, performance-focused pages.',
   },
   'national-grid': {
     challenge:
-      'National Grid USA required a modernization of its legacy SAS-based MDS Consolidation EPO Tracking desktop system into a scalable, accessible web application. The system had significant complexity in its existing business logic and needed to maintain enterprise reliability during transition.',
+      'National Grid USA needed its legacy SAS-based MDS Consolidation EPO Tracking desktop application rebuilt as a scalable, accessible web platform. The existing business logic was complex and had to be preserved exactly while maintaining enterprise reliability through the transition.',
     approach:
-      'Working at IBM India, GenAI-assisted code generation was used to scaffold the initial React.js frontend and Node.js/Express API baseline over PostgreSQL from the SAS system specifications. The core engineering effort then focused on stabilizing and hardening the AI-generated code — identifying business logic discrepancies, resolving architectural misalignments, applying enterprise coding standards, and ensuring production-grade error handling and test coverage across the full stack.',
+      'Working at IBM India in a team of 6, GenAI-assisted code generation provided the initial baseline for a React.js frontend and .NET Core backend over PostgreSQL. The core engineering effort was stabilizing that generated code — finding business-logic discrepancies, applying enterprise coding standards and hardening it for production — with code reviews and deployments running through Azure CI/CD.',
     outcome:
-      'Delivered a modern web platform on Azure replacing the legacy SAS system. The AI-assisted + senior engineering approach reduced overall development time while maintaining the enterprise reliability standards required by a US utility company. The React.js frontend improved accessibility and user experience; the Node.js/Express APIs over PostgreSQL provided scalable, maintainable backend services.',
+      'A modern web platform on Azure replacing the legacy SAS application, with existing business rules preserved and AI-generated code brought up to the enterprise standards a US utility requires.',
   },
   abercrombie: {
     challenge:
-      "Abercrombie & Fitch Co.'s e-commerce frontend was a legacy Java-based monolith causing deployment friction, inconsistent UI, and difficulty scaling across multiple product teams working in parallel.",
+      "Abercrombie & Fitch Co.'s storefront ran on a legacy Java frontend shared by three brands, making UI changes slow and hard to scale across teams.",
     approach:
-      'Migrated the legacy frontend to a React.js Micro-Frontend architecture using Module Federation, enabling independent deployments per product domain. Standardized component library by migrating the Global Configuration Hub to PrimeReact. Delivered Catalog, Product Details, Checkout and My List (Wishlist) micro-frontends across Abercrombie & Fitch, Hollister and Abercrombie Kids, integrated through a GraphQL Backend-for-Frontend (BFF) and containerized with Docker. Added analytics tracking, WCAG accessibility, A/B testing, Jest unit tests and Playwright end-to-end tests.',
+      'Migrated the storefront to React.js Micro Frontends across Abercrombie & Fitch, Hollister and Abercrombie Kids. Built the Product Catalog, Product Details and Wishlist micro frontends integrated through a GraphQL Backend-for-Frontend (BFF), with reusable React components, analytics tracking, WCAG accessibility, A/B testing, Jest unit tests and Playwright end-to-end tests.',
     outcome:
-      'Enabled parallel deployments across independent product teams — eliminating the release coordination overhead of a monolithic frontend. Significantly reduced release friction, improved UI scalability and consistency across the enterprise e-commerce platform in a production enterprise environment.',
+      'Core shopping journeys for three brands moved off the legacy Java frontend onto independently deployable React micro frontends with accessibility, analytics and automated test coverage built in.',
   },
   paragon: {
     challenge:
-      "Paragon Energy needed a large-scale industry-wide asset management platform to manage 200,000+ smart meters across the UK energy sector. Existing manual workflows were taking up to 96 hours per operational cycle.",
+      'Paragon needed an asset management platform for the UK energy sector covering 200,000+ smart meter assets. Producing reports took up to 96 hours.',
     approach:
-      'Built a full stack platform using React.js, Node.js microservices, PostgreSQL, Elasticsearch, Redis and AWS (including S3). Optimized PostgreSQL queries and reporting pipelines for finance, inventory and asset-lifecycle workflows. Led a frontend engineering team of 3. Designed workflow automation that dramatically reduced manual processing time. Integrated ELK stack for operational monitoring and Elasticsearch for fast asset search and filtering at scale.',
+      'Built REST APIs and Node.js microservices over PostgreSQL, integrated Elasticsearch, Logstash and Kibana for search and monitoring, used AWS S3 for storage and set up CI/CD. Led the frontend team of 3.',
     outcome:
-      'Reduced operational turnaround time from 96 hours to 2 hours — a measurable, quantified business impact. Platform successfully deployed across the UK energy sector, managing 200,000+ smart meters in production.',
+      'Reporting time dropped from 96 hours to under 2 hours across 200,000+ smart meter assets in the UK energy sector.',
   },
   golyv: {
     challenge:
-      'Go Lyv needed a comprehensive event management platform for the UK market — covering event creation, multi-tier ticket management, seamless purchase flows, and organizer tooling — with a serverless architecture for cost-effective scaling.',
+      'Go Lyv needed an event booking platform for the UK market — event creation, ticketing and purchase flows — on a serverless architecture for cost-effective scaling.',
     approach:
-      'Built the full platform end-to-end handling both frontend and backend, maintaining direct client relationships throughout. Used Next.js for the frontend, GraphQL via AWS AppSync for the API layer, Node.js for business logic, and AWS Serverless infrastructure for scalable event-driven backend services.',
+      'Led the frontend team and handled requirement analysis, planning and estimation. Built on Next.js with GraphQL and Apollo Client over AWS AppSync, serverless backend services, MySQL and Firebase.',
     outcome:
-      'Delivered a production-ready event booking platform for the UK market with full-stack ownership from requirements through deployment. The serverless AWS architecture enabled elastic scaling without fixed infrastructure cost, supporting real-time ticket management and purchase flows.',
+      'A production event booking platform for the UK market whose serverless AWS architecture scales without fixed infrastructure cost.',
   },
   refinu: {
     challenge:
-      'Refinu required a scalable, cloud-native HR technology platform for personality assessment workflows with push notification engagement and end-to-end ownership from product design through production deployment.',
+      'Refinu needed a scalable platform for personalized growth journeys, with push notifications to keep users engaged.',
     approach:
-      'Architected a serverless microservices platform on Google Cloud Platform using Cloud Functions, Firestore for real-time data, React for the frontend, and Redux for state management. Led end-to-end — from requirements and solution design through delivery, testing (Jest), and deployment.',
+      'Built a serverless platform on Google Cloud: React.js and TypeScript on the frontend, Node.js on GCP Cloud Functions, Firestore and Firebase for data and authentication, and push notifications for engagement.',
     outcome:
-      'Delivered a fully operational personality assessment platform with personalized workflows and a push notification system to drive engagement. GCP serverless architecture provided scalability without operational overhead. Full ownership model reduced coordination cost and accelerated time to delivery.',
+      'A personalized growth platform with push-notification engagement, running serverless on GCP without infrastructure to manage.',
   },
   villager: {
     challenge:
-      'Villager needed a civic engagement platform enabling community members to raise, discuss, and prioritize local issues for government attention — with real-time communication and location-based search as core features.',
+      'Villager needed a civic platform where community members raise, discuss and prioritize local issues for government attention — with real-time communication and location-based search at its core.',
     approach:
-      'Built a full stack React/Redux frontend with a Node.js/Express backend. Integrated Socket.IO for real-time chat features enabling live community discussion. Used Elasticsearch and ELK stack for location-based issue search and filtering — matching issues to geographic proximity.',
+      'Built a React.js/Redux frontend on a Node.js/Express and MongoDB backend. Added real-time chat over Socket.IO, location-based issue search with Elasticsearch and Keycloak authentication, and shipped it with Docker and Kubernetes.',
     outcome:
-      'Shipped a production community issue resolution platform with real-time chat and location-aware search. The platform enabled civic engagement at a grassroots level with stable, performant delivery maintained through systematic debugging and performance tuning.',
+      'A production community issue platform with real-time chat and location-aware search, kept stable through systematic debugging and performance tuning.',
+  },
+  'first-group': {
+    challenge:
+      "A Dubai client needed an owners' portal and a content-managed website its team could maintain.",
+    approach:
+      "Built the owners' portal on NopCommerce and the CMS portal on Umbraco 7, both in C# with ASP.NET MVC5, Entity Framework and MS SQL Server.",
+    outcome:
+      "Two production portals for the client: a NopCommerce owners' portal and an Umbraco CMS site their team can update independently.",
+  },
+  'we-are-fresh': {
+    challenge:
+      'We Are Fresh needed a web application with online payments.',
+    approach:
+      'Built it as an ASP.NET MVC5 application in C# with Entity Framework and MS SQL Server, with jQuery and Bootstrap on the frontend and PayU for payments.',
+    outcome:
+      'A production web application with integrated PayU payments, built across UI, server and database.',
+  },
+  'best-holidays': {
+    challenge:
+      'Best Holidays needed a web application with online payments.',
+    approach:
+      'Built it as an ASP.NET MVC5 application in C# with Entity Framework and MS SQL Server, with jQuery and Bootstrap on the frontend and PayU for payments.',
+    outcome:
+      'A production web application with integrated PayU payments, built across UI, server and database.',
   },
 };
 
@@ -97,7 +125,7 @@ const caseStudyContent: Record<string, { challenge: string; approach: string; ou
 const seoTitles: Record<string, string> = {
   abercrombie: 'React Micro-Frontend Migration: Abercrombie & Fitch Case Study',
   'national-grid': 'SAS to React Modernization: National Grid USA — GenAI Case Study',
-  paragon: 'Smart Meter Asset Management Platform: 96hrs → 2hrs — Paragon Energy',
+  paragon: 'Energy Asset Management Platform: 96hrs → Under 2hrs Reporting — Paragon Energy',
 };
 
 export function generateMetadata({ params }: Props): Metadata {

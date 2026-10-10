@@ -34,35 +34,36 @@ export default function AboutPage() {
             first generation of senior engineers to adopt AI-assisted development in enterprise
             production. At IBM, he was assigned to the National Grid MDS Consolidation project —
             where he took a GenAI-generated codebase, identified and corrected its discrepancies,
-            enforced enterprise coding standards, and shipped a production-ready React.js, Node.js
-            and PostgreSQL platform. That work — GenAI stabilization — is a rare combination of deep
+            enforced enterprise coding standards, and shipped a production-ready React.js, .NET Core
+            and PostgreSQL platform on Azure. That work — GenAI stabilization — is a rare combination of deep
             full stack experience and AI fluency that most engineers do not have. He went on to
             modernize Abercrombie &amp; Fitch Co.&apos;s e-commerce frontend into React.js
-            Micro-Frontends with a GraphQL BFF, and now builds L&apos;Oréal&apos;s global Retail Gold
-            analytics platform on Next.js, NestJS and BigQuery.
+            Micro Frontends with a GraphQL BFF, and now works on the Version 2 UI of
+            L&apos;Oréal&apos;s Retail Gold analytics app in Next.js, React and TypeScript.
           </p>
 
           <p className="mb-6 leading-relaxed text-muted">
             Before IBM, Abin served as Team Lead and Senior Software Engineer at Emvigo Technologies
             in Kochi for four years. During that period, he led full stack development for several
-            international clients: Paragon Energy (a UK smart meter asset
-            management platform handling 200,000+ devices, reducing turnaround from 96 hours to
+            international clients: Paragon Energy (a UK energy asset management platform
+            covering 200,000+ smart meter assets, cutting reporting time from 96 hours to under
             2 hours), Go Lyv (a serverless event booking platform for the UK market built on AWS
-            AppSync and GraphQL), and Refinu (a serverless personality assessment platform on
-            Google Cloud Platform).
+            AppSync and GraphQL), Refinu (a serverless personalized growth platform on Google
+            Cloud Platform), and SuperSonic Imagine (a Next.js corporate website on Strapi).
           </p>
 
           <p className="mb-6 leading-relaxed text-muted">
             Earlier in his career, at Luminescent Software in Thiruvananthapuram, Abin built
             full stack SPAs and implemented real-time features with Socket.IO and location-based
             search with Elasticsearch — including work on Villager, a civic tech platform for
-            community issue resolution. At Ocuiz Technologies in Thrissur, he developed .NET MVC
-            and ASP.NET applications and honed his debugging and production stability skills.
+            community issue resolution — and built NopCommerce and Umbraco portals in C# for a Dubai
+            client. At Ociuz Technologies in Thrissur, he developed ASP.NET MVC applications with
+            PayU payments and honed his debugging and production stability skills.
           </p>
 
           <p className="mb-6 leading-relaxed text-muted">
             Abin&apos;s technical depth spans the full stack: React.js, Next.js, TypeScript, Node.js,
-            Express, microservices, PostgreSQL, MongoDB, MySQL, Firestore, AWS, GCP, Azure, Docker,
+            Express, .NET Core, microservices, PostgreSQL, MongoDB, MySQL, Firestore, AWS, GCP, Azure, Docker,
             Kubernetes, and CI/CD pipelines. He is equally comfortable writing business logic,
             designing APIs, structuring cloud infrastructure, and reviewing AI-generated output
             against enterprise reliability standards.

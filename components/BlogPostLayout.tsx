@@ -185,7 +185,7 @@ const articleBodies: Record<string, React.ReactNode> = {
         The National Grid MDS Consolidation EPO Tracking Application was built on SAS — a
         legacy desktop system that had served its purpose but no longer met the scalability,
         accessibility, or user experience requirements of a modern enterprise. The project
-        goal was to migrate it to a React.js + Node.js web platform backed by PostgreSQL. What made this
+        goal was to migrate it to a React.js + .NET Core web platform backed by PostgreSQL. What made this
         different from a typical modernization was the use of GenAI-assisted code generation
         as the initial development baseline.
       </p>
@@ -208,8 +208,8 @@ const articleBodies: Record<string, React.ReactNode> = {
       </p>
       <h3>Phase 3 — Integration and deployment</h3>
       <p>
-        The React.js frontend was integrated with the Node.js/Express API backend and deployed
-        to Azure. Cross-functional collaboration with US-based National Grid stakeholders
+        The React.js frontend was integrated with the .NET Core backend and deployed to Azure
+        through CI/CD, with code reviews gating every production deployment. Cross-functional collaboration with US-based National Grid stakeholders
         ensured the final product met user needs and performance standards.
       </p>
       <h2 id="results">Results</h2>
@@ -374,17 +374,18 @@ const articleBodies: Record<string, React.ReactNode> = {
       </p>
       <h3>Technology choices</h3>
       <p>
-        We used Module Federation (Webpack 5) to wire the host shell to remote applications.
-        Each remote owned its routing, state, and dependencies. PrimeReact was standardized
-        as the component library across remotes to ensure visual consistency without tight
-        coupling.
+        The storefront was split into domain micro frontends — Product Catalog, Product
+        Details and Wishlist among them — each owning its routing, state, and dependencies.
+        A GraphQL Backend-for-Frontend (BFF) gave each one a tailored API instead of calling
+        legacy services directly, and shared reusable React components kept Abercrombie &amp;
+        Fitch, Hollister and Abercrombie Kids visually consistent without tight coupling.
       </p>
       <h2 id="what-worked">What Worked</h2>
       <p>
         Parallel deployments. Once the contract between host and remotes was established,
         each team could ship independently without coordination meetings or release windows.
-        The Global Configuration Hub migration to PrimeReact gave us a single source of
-        truth for shared UI patterns. See the full{' '}
+        Shared, reusable React components gave all three brands a single source of truth
+        for UI patterns. See the full{' '}
         <a href="/projects/abercrombie" className="text-sage-dark hover:underline">Abercrombie &amp; Fitch case study</a>
         {' '}for more detail on the architecture choices.
       </p>
@@ -403,7 +404,7 @@ const articleBodies: Record<string, React.ReactNode> = {
         <li>Team independence is the primary business driver — not technical elegance.</li>
         <li>Standardize component libraries early to avoid visual fragmentation.</li>
         <li>Avoid shared state across remotes — use the API as the source of truth.</li>
-        <li>Module Federation works in production; plan for version management from day one.</li>
+        <li>Plan for dependency and version management across micro frontends from day one.</li>
       </ul>
       <h2 id="conclusion">Conclusion</h2>
       <p>

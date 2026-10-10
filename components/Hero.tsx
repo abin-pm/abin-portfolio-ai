@@ -13,7 +13,7 @@ const fadeUp = (delay = 0) => ({
 });
 
 const KPI_STRIP = [
-  { metric: '96h → 2h',    label: 'Ops cycle cut for Paragon Energy (200k+ smart meters)' },
+  { metric: '96h → <2h',   label: 'Reporting time cut for Paragon Energy (200k+ smart meters)' },
   { metric: 'Global brands', label: "L'Oréal, Abercrombie & Fitch, National Grid" },
   { metric: '1000s',       label: "of L'Oréal retail users on analytics I build" },
 ];
