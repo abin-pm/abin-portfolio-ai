@@ -3,14 +3,14 @@ import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { identity, faq } from '@/lib/data';
-import { getPersonSchema, getBreadcrumbSchema } from '@/lib/json-ld';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 const SITE_URL = 'https://www.abinaiengineer.com';
 
 export const metadata: Metadata = {
   title: 'Remote MERN Stack Developer for Hire | React, Node.js, MongoDB | Abin PM',
   description:
-    'Senior remote MERN stack developer with 10+ years experience. React, Node.js, MongoDB, Express. Proven track record with US, UK and Dubai clients (Abercrombie & Fitch, National Grid, Paragon Energy). Available now.',
+    'Senior remote MERN stack developer with 10+ years of React and Node.js work for US, UK, European and Dubai clients. Freelance or full-time remote, open to relocation.',
   keywords: [
     'remote MERN stack developer',
     'hire MERN developer remote',
@@ -20,6 +20,8 @@ export const metadata: Metadata = {
     'freelance MERN developer',
     'remote full stack developer India',
     'hire React Node MongoDB developer',
+    'remote React developer Europe',
+    'remote full stack developer Dubai',
   ],
   alternates: { canonical: `${SITE_URL}/remote-mern-developer` },
   openGraph: {
@@ -27,7 +29,7 @@ export const metadata: Metadata = {
     images: ['/opengraph-image'],
     title: 'Remote MERN Stack Developer for Hire | Abin PM',
     description:
-      '10+ years MERN stack development. IBM, Abercrombie & Fitch, National Grid, Paragon Energy. Async-first, US/UK timezone overlap. React, Node.js, MongoDB, AWS.',
+      'React, Node.js, MongoDB and AWS, 10+ years. Remote work for US, UK, European and Dubai clients, with good time zone overlap.',
     url: `${SITE_URL}/remote-mern-developer`,
   },
   twitter: { card: 'summary_large_image' },
@@ -41,18 +43,17 @@ const stack = [
 ];
 
 const remoteSignals = [
-  { icon: '🌍', title: 'US & UK client history', desc: 'IBM (US), Abercrombie & Fitch (US), National Grid (US), Paragon Energy (UK) — all delivered remotely across time zones.' },
-  { icon: '⏱️', title: 'Async-first workflow', desc: 'Written communication, Jira/Scrum, Slack — designed for distributed teams where no response doesn\'t mean no progress.' },
-  { icon: '🕐', title: 'Flexible timezone', desc: 'Based in Kochi, India (IST). Regular US EST/PST overlap available. UK BST morning sync included.' },
-  { icon: '⚡', title: 'AI-accelerated delivery', desc: 'Cursor AI + GitHub Copilot + Claude used daily — output per sprint is materially higher than a traditional developer working the same hours.' },
-  { icon: '💬', title: 'Communication-first', desc: 'Proactive updates, detailed PRs, stakeholder-friendly English. No radio silence until the PR is merged.' },
-  { icon: '🔒', title: 'Enterprise reliability', desc: 'Every deployment meets the same standards as enterprise production — not portfolio-grade code.' },
+  { icon: '🌍', title: 'Clients in the US, Europe and the UAE', desc: "Abercrombie & Fitch and National Grid in the US, L'Oréal and SuperSonic Imagine in France, Paragon Energy and Go Lyv in the UK, The First Group in Dubai. All from India." },
+  { icon: '⏱️', title: 'Comfortable working async', desc: 'Clear written updates, Jira tickets that say what changed, and pull requests that explain themselves.' },
+  { icon: '🕐', title: 'Good time zone overlap', desc: 'India (IST) is 1.5 hours ahead of Dubai and 3.5 to 4.5 hours ahead of Central Europe. I have also worked with US teams on their mornings.' },
+  { icon: '⚡', title: 'AI tools on routine work', desc: 'Cursor, Copilot and Claude for drafting and refactoring, with every change still reviewed and tested.' },
+  { icon: '💬', title: 'Regular communication', desc: 'I flag problems early and tell you what I am working on, so you are not left guessing.' },
+  { icon: '✈️', title: 'Remote now, relocation possible', desc: 'For a full-time role I am open to moving to Dubai/UAE or Europe.' },
 ];
 
 const hireFaq = faq.filter((_, i) => i < 4);
 
 export default function RemoteMernDeveloperPage() {
-  const personSchema = getPersonSchema();
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: 'Home', url: SITE_URL },
     { name: 'Remote MERN Stack Developer', url: `${SITE_URL}/remote-mern-developer` },
@@ -60,7 +61,6 @@ export default function RemoteMernDeveloperPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <div className="min-h-screen bg-cream text-ink">
@@ -71,17 +71,18 @@ export default function RemoteMernDeveloperPage() {
           {/* Hero */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sage" />
-            <span className="text-xs text-sage-dark">Available for Remote Work</span>
+            <span className="text-xs text-sage-dark">Available for remote work</span>
           </div>
 
           <h1 className="mb-6 text-4xl leading-tight md:text-5xl">
             Remote MERN Stack Developer<br />
-            <span className="text-sage-dark">for Hire — React, Node.js & MongoDB</span>
+            <span className="text-sage-dark">React, Node.js &amp; MongoDB</span>
           </h1>
 
           <p className="mb-8 max-w-2xl text-lg text-muted">
-            10+ years building full-stack production systems with React, Node.js, MongoDB and cloud infrastructure.
-            Trusted by IBM, Abercrombie &amp; Fitch, National Grid and Paragon Energy — entirely remote.
+            I&apos;ve spent 10+ years building React and Node.js apps for companies in the US, the UK,
+            France and Dubai, nearly all of it remotely from India. I take freelance projects and
+            full-time remote roles.
           </p>
 
           <div className="mb-12 flex flex-wrap gap-4">
@@ -101,7 +102,7 @@ export default function RemoteMernDeveloperPage() {
 
           {/* Client logos */}
           <div className="mb-20 flex flex-wrap gap-3 border-y border-border py-6">
-            {['IBM', 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy'].map((c) => (
+            {['IBM', "L'Oréal", 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy', 'Go Lyv'].map((c) => (
               <span key={c} className="rounded-full bg-surface px-4 py-1.5 text-sm font-medium text-muted">
                 {c}
               </span>
@@ -110,7 +111,7 @@ export default function RemoteMernDeveloperPage() {
 
           {/* Why remote works */}
           <h2 className="mb-8 text-2xl text-ink">
-            Why Hire a Remote MERN Developer from India?
+            What working with me remotely is like
           </h2>
           <div className="mb-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {remoteSignals.map((item) => (
@@ -124,7 +125,7 @@ export default function RemoteMernDeveloperPage() {
 
           {/* MERN Stack */}
           <h2 className="mb-8 text-2xl text-ink">
-            Full MERN Stack Technical Depth
+            The MERN stack and what sits around it
           </h2>
           <div className="mb-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
             {stack.map((group) => (
@@ -141,13 +142,13 @@ export default function RemoteMernDeveloperPage() {
 
           {/* Remote availability */}
           <h2 className="mb-6 text-2xl text-ink">
-            Remote Engagement Models
+            Ways to work together
           </h2>
           <div className="mb-20 grid gap-4 sm:grid-cols-3">
             {[
-              { title: 'Freelance Contract', desc: 'Per-project or hourly. Scope → quote → build → ship. Clear deliverables and weekly updates.' },
-              { title: 'Part-Time Remote', desc: '10–20 hours/week. Structured sprints with async-first communication. Ideal for ongoing product work.' },
-              { title: 'Full-Time Remote', desc: 'Embedded as a senior engineer in your team. Full sprint participation, PR reviews, stakeholder sync.' },
+              { title: 'Freelance contract', desc: 'Fixed price or hourly. We agree the scope, I send a quote, then build and ship with weekly updates.' },
+              { title: 'Part-time remote', desc: '10 to 20 hours a week on an ongoing product, working in your sprints.' },
+              { title: 'Full-time remote', desc: 'I join your team as a senior engineer: sprints, code reviews and stakeholder calls.' },
             ].map((model) => (
               <div key={model.title} className="rounded-xl border border-border bg-surface p-6">
                 <h3 className="mb-2 text-ink">{model.title}</h3>
@@ -158,7 +159,7 @@ export default function RemoteMernDeveloperPage() {
 
           {/* FAQ */}
           <h2 className="mb-8 text-2xl text-ink">
-            Common Questions About Hiring a Remote MERN Developer
+            Questions about hiring a remote MERN developer
           </h2>
           <div className="mb-20 space-y-4">
             {hireFaq.map((item) => (
@@ -178,14 +179,14 @@ export default function RemoteMernDeveloperPage() {
               Hire a Senior Remote MERN Stack Developer
             </h2>
             <p className="mb-8 text-muted">
-              Kochi, India (IST). Available for US/UK timezone overlap. Responds within 24 hours.
+              Kochi, India (IST, UTC+5:30). I work with Dubai, European, UK and US hours, and reply within 24 hours.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={`mailto:${identity.email}`}
                 className="btn-primary"
               >
-                Email Abin
+                Email me
               </a>
               <a
                 href={identity.linkedin}
@@ -209,7 +210,7 @@ export default function RemoteMernDeveloperPage() {
             <Link href="/ai-mern-stack-developer" className="text-subtle no-underline hover:text-muted">AI MERN Stack Developer →</Link>
             <Link href="/skills" className="text-subtle no-underline hover:text-muted">Full Tech Stack →</Link>
             <Link href="/experience" className="text-subtle no-underline hover:text-muted">Work Experience →</Link>
-            <Link href="/blog" className="text-subtle no-underline hover:text-muted">Engineering Blog →</Link>
+            <Link href="/blog" className="text-subtle no-underline hover:text-muted">Blog →</Link>
           </div>
 
         </main>

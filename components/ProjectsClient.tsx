@@ -28,8 +28,8 @@ export function ProjectsClient() {
         Projects
       </h1>
       <p className="mb-10 max-w-xl text-muted">
-        {projects.length} production platforms across retail, energy, events, civic tech, and SaaS — shipped for
-        clients in the USA, UK, and India.
+        {projects.length} projects across retail, energy, events, civic tech and SaaS, for clients in
+        the US, the UK, France, Dubai and India.
       </p>
 
       {/* Filter tabs */}
@@ -109,7 +109,7 @@ export function ProjectsClient() {
               <Link
                 href={`/projects/${project.id}`}
                 className="mt-auto flex items-center justify-between border-t border-border pt-4 text-xs font-semibold uppercase tracking-[0.12em] text-ink no-underline transition hover:text-sage-dark"
-                aria-label={`See ${project.client} case study — ${project.title}`}
+                aria-label={`See ${project.client} case study: ${project.title}`}
               >
                 See {project.client} case study <span aria-hidden>→</span>
               </Link>

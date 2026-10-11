@@ -7,7 +7,7 @@ import { SectionWrapper } from '@/components/SectionWrapper';
 
 const MAX_TAGS = 6;
 
-// Homepage card: kept short on purpose — the full story lives on /projects/<id>.
+// Homepage card: kept short on purpose; the full story lives on /projects/<id>.
 function ProjectCard({ project, index = 0 }: { project: (typeof projects)[0]; index?: number }) {
   const extraTags = project.tags.length - MAX_TAGS;
   return (
@@ -18,7 +18,7 @@ function ProjectCard({ project, index = 0 }: { project: (typeof projects)[0]; in
       transition={{ delay: index * 0.08, duration: 0.5 }}
       className={`card relative flex flex-col ${project.aiAssisted ? 'card-violet' : ''}`}
     >
-      {/* Flat cover block — stands in for a project screenshot */}
+      {/* Flat cover block, standing in for a project screenshot */}
       <div className={`relative flex flex-col justify-between border-b border-border bg-sage-light h-40 p-6`}>
         <div className="flex items-start justify-between gap-3">
           <span className="text-[10px] font-semibold uppercase tracking-[0.16em] text-sage-dark">
@@ -83,11 +83,11 @@ export function Projects() {
       <div className="mx-auto max-w-[1100px]">
         <div className="section-label mb-4">Selected Work</div>
         <h2 className="mb-3 text-3xl text-ink md:text-4xl">
-          Enterprise Projects Delivered Globally
+          React, Node.js and .NET projects for clients in the US, UK and Europe
         </h2>
         <p className="mb-16 max-w-xl text-muted">
-          Featured work for L&apos;Oréal, Abercrombie &amp; Fitch, National Grid and Paragon Energy —
-          {' '}{projects.length} production platforms in total across retail, e-commerce, energy and SaaS.
+          Four projects I&apos;m most often asked about. There are {projects.length} in total, across
+          retail, e-commerce, energy, events and SaaS.
         </p>
 
         {/* Featured — larger cards */}

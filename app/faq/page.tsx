@@ -11,21 +11,22 @@ const SITE_URL = 'https://www.abinaiengineer.com';
 export const metadata: Metadata = {
   title: 'FAQ | Hiring a Senior React & MERN Stack Developer | Abin PM',
   description:
-    'Answers to common questions about hiring Abin PM — senior React, Node.js & MERN stack developer from India. Freelance rates, remote availability, AI-native workflow, engagement models and more.',
+    'Questions about hiring Abin PM, a senior React and Node.js developer: pricing, time zones, remote work, relocation to Dubai or Europe, and how he uses AI tools.',
   keywords: [
     'hire React developer FAQ',
     'MERN stack developer questions',
     'freelance developer India FAQ',
     'remote developer hire questions',
-    'AI-native developer FAQ',
+    'hire developer Dubai FAQ',
+    'remote developer Europe questions',
   ],
   alternates: { canonical: `${SITE_URL}/faq` },
   openGraph: {
     // Pages that set openGraph drop the root file-based image, so reference it explicitly.
     images: ['/opengraph-image'],
-    title: 'FAQ — Hiring Abin PM | Senior React & MERN Stack Developer',
+    title: 'FAQ: Hiring Abin PM | Senior React & Full Stack Developer',
     description:
-      'Common questions about hiring a senior React, Node.js & MERN stack developer from India — rates, remote availability, AI workflow, and engagement models.',
+      'Pricing, time zones, remote work, relocation and AI tools: common questions about hiring a senior React and Node.js developer.',
     url: `${SITE_URL}/faq`,
   },
   twitter: { card: 'summary_large_image' },
@@ -57,8 +58,8 @@ export default function FAQPage() {
             Frequently Asked Questions
           </h1>
           <p className="mb-2 text-lg text-muted">
-            Everything hiring managers, recruiters and clients ask about working with Abin PM —
-            a senior React, Node.js & MERN stack developer from India.
+            What recruiters, hiring managers and freelance clients usually ask me before we work
+            together.
           </p>
         </div>
 
@@ -72,7 +73,7 @@ export default function FAQPage() {
               Still have questions?
             </h2>
             <p className="mb-8 text-muted">
-              Reach out directly — Abin responds within 24 hours.
+              Email me. I reply within 24 hours.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <Link

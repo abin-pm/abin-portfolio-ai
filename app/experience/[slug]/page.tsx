@@ -11,26 +11,39 @@ export function generateStaticParams() {
   return experience.map((e) => ({ slug: e.slug }));
 }
 
+// Render **bold** segments in experience bullets.
+function BulletText({ text }: { text: string }) {
+  return (
+    <>
+      {text.split(/(\*\*[^*]+\*\*)/g).map((part, i) =>
+        part.startsWith('**') && part.endsWith('**')
+          ? <strong key={i} className="font-semibold text-ink">{part.slice(2, -2)}</strong>
+          : <span key={i}>{part}</span>,
+      )}
+    </>
+  );
+}
+
 type Props = { params: { slug: string } };
 
 const metaMap: Record<string, { title: string; description: string }> = {
   ibm: {
-    title: 'IBM India — Senior Application Developer & AI-Native Engineer | Abin PM',
+    title: 'IBM India: Senior Application Developer (Full Stack & Cloud) | Abin PM',
     description:
-      "Abin PM at IBM India Pvt Ltd — Senior Application Developer (Full Stack & Cloud) since Sep 2024. React Micro Frontends, GraphQL BFF, React + .NET Core and AI-native development for L'Oréal, Abercrombie & Fitch and National Grid USA.",
+      "Abin PM has been a Senior Application Developer (Full Stack & Cloud) at IBM India since Sep 2024: React micro frontends, GraphQL BFF, React and .NET Core, and AI-assisted development for L'Oréal, Abercrombie & Fitch and National Grid USA.",
   },
   emvigo: {
-    title: 'Emvigo Technologies — Team Lead & Senior Software Engineer | Abin PM',
+    title: 'Emvigo Technologies: Team Lead & Senior Software Engineer | Abin PM',
     description:
       'Abin PM at Emvigo Technologies (2020–2024) as Team Lead / Senior Software Engineer. Led delivery of Paragon, Go Lyv, Refinu and SuperSonic Imagine using React, Next.js, Node.js, AWS and GCP.',
   },
   luminescent: {
-    title: 'Luminescent Software — Software Engineer | Abin PM',
+    title: 'Luminescent Software: Software Engineer | Abin PM',
     description:
       'Abin PM at Luminescent Software Pvt Ltd (2018–2020) as Software Engineer. Built the Villager civic platform with React, Node.js, Socket.IO and Elasticsearch, and C#/.NET portals for a Dubai client.',
   },
   ociuz: {
-    title: 'Ociuz Technologies — Software Engineer | Abin PM',
+    title: 'Ociuz Technologies: Software Engineer | Abin PM',
     description:
       'Abin PM at Ociuz Technologies (2016–2017) as Software Engineer. ASP.NET MVC5 web applications in C# with Entity Framework, SQL Server and PayU payments.',
   },
@@ -97,7 +110,7 @@ export default function ExperienceDetailPage({ params }: Props) {
               )}
               {job.aiRole && (
                 <span className="rounded-full border border-border-strong bg-sage-light px-3 py-0.5 text-[10px] text-sage-dark">
-                  AI-Native
+                  AI-assisted
                 </span>
               )}
             </div>
@@ -130,7 +143,7 @@ export default function ExperienceDetailPage({ params }: Props) {
               {job.bullets.map((b, i) => (
                 <li key={i} className="flex items-start gap-3 rounded-lg border border-border bg-surface px-5 py-4 text-sm leading-relaxed text-muted">
                   <span className="mt-0.5 shrink-0 text-sage-dark">▸</span>
-                  {b}
+                  <span><BulletText text={b} /></span>
                 </li>
               ))}
             </ul>
@@ -141,14 +154,14 @@ export default function ExperienceDetailPage({ params }: Props) {
             <div className="mb-10 card card-violet px-7 py-6">
               <div className="mb-3 text-xs uppercase tracking-widest text-sage-dark">AI Tools Used Daily</div>
               <div className="flex flex-wrap gap-2">
-                {['Cursor AI', 'GitHub Copilot', 'Claude', 'OpenAI Codex'].map((t) => (
+                {['Cursor', 'GitHub Copilot', 'Claude', 'OpenAI Codex'].map((t) => (
                   <span key={t} className="tag-pill-violet">{t}</span>
                 ))}
               </div>
               <p className="mt-4 text-sm text-muted">
-                Used Cursor AI, GitHub Copilot, and Claude daily in enterprise production to accelerate
-                development while maintaining enterprise reliability standards — and to stabilize
-                GenAI-generated code for production.
+                I use these every day on client work for drafting, refactoring and tests. On National
+                Grid, a lot of the job was fixing code that GenAI tools had generated before it could
+                go to production.
               </p>
             </div>
           )}

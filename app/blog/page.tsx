@@ -5,15 +5,15 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 
 export const metadata: Metadata = {
-  title: 'Blog & Case Studies | React, Next.js & AI-Native Development | Abin PM',
+  title: 'Blog | React, Micro Frontends & AI-Assisted Development | Abin PM',
   description:
-    'Insights on React, Next.js, Node.js, cloud, AI-native development, LLM integration, and GenAI stabilization from real enterprise work at IBM, National Grid, Abercrombie & Fitch.',
+    'Write-ups from client work at IBM and before: React micro frontends, legacy modernization, LLM integration and reviewing AI-generated code.',
   alternates: { canonical: '/blog' },
 };
 
-type Category = 'All' | 'React' | 'AI-Native' | 'LLMs' | 'Case Study' | 'Hiring';
+type Category = 'All' | 'React' | 'AI-Assisted' | 'LLMs' | 'Case Study' | 'Hiring';
 
-const CATEGORIES: Category[] = ['All', 'React', 'AI-Native', 'LLMs', 'Case Study', 'Hiring'];
+const CATEGORIES: Category[] = ['All', 'React', 'AI-Assisted', 'LLMs', 'Case Study', 'Hiring'];
 
 function formatDate(iso: string) {
   return new Date(iso).toLocaleDateString('en-US', {
@@ -35,15 +35,13 @@ export default function BlogPage() {
               <span className="text-xs text-sage-dark">Blog & Case Studies</span>
             </div>
             <h1 className="mb-4 text-3xl leading-tight text-ink md:text-4xl">
-              Blog & Case Studies on React, Next.js &amp; AI-Native Development
+              Notes from client work: React, micro frontends and AI-generated code
             </h1>
             <p className="leading-relaxed text-muted">
-              These posts are written for founders, product leaders, and engineering managers who
-              want to understand how to hire, work with, and get the most from a senior React and
-              AI-native full stack developer. Topics span React architecture, Next.js patterns,
-              Node.js microservices, cloud deployment, AI-native workflows with Cursor AI and
-              GitHub Copilot, LLM integration, and GenAI stabilization for enterprise teams —
-              all drawn from real production work.
+              I write these for founders, engineering managers and other developers. Each one comes
+              from a real project: moving a SAS tool to React for National Grid, splitting a Java
+              storefront into micro frontends for Abercrombie &amp; Fitch, or working out which
+              AI-generated code is safe to ship. Where I&apos;m unsure or something went badly, I say so.
             </p>
           </div>
 

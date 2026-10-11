@@ -4,9 +4,9 @@ import { Footer } from '@/components/Footer';
 import { ProjectsClient } from '@/components/ProjectsClient';
 
 export const metadata: Metadata = {
-  title: 'Projects | Abin PM — Full Stack & AI Engineer',
+  title: 'Projects & Case Studies | Abin PM, Senior Full Stack Engineer',
   description:
-    '11 production projects by Abin PM across retail analytics, e-commerce, energy, events, civic tech and web portals — L\'Oréal, Abercrombie & Fitch, National Grid, Paragon Energy, Go Lyv, Refinu and more.',
+    'Case studies from 11 projects: L’Oréal, Abercrombie & Fitch, National Grid, Paragon Energy, Go Lyv, SuperSonic Imagine and The First Group in Dubai. React, Node.js and .NET.',
   alternates: { canonical: '/projects' },
 };
 

@@ -2,7 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import { Newsreader } from 'next/font/google';
 import { GeistSans } from 'geist/font/sans';
 import { GeistMono } from 'geist/font/mono';
-import { getPersonSchema, getProfessionalServiceSchema, getFAQPageSchema } from '@/lib/json-ld';
+import { getPersonSchema, getProfessionalServiceSchema } from '@/lib/json-ld';
 import { identity } from '@/lib/data';
 import './globals.css';
 
@@ -19,30 +19,32 @@ const newsreader = Newsreader({
 
 export const metadata: Metadata = {
   metadataBase: new URL(identity.site),
-  title: 'Abin PM – Senior Full Stack & AI Developer (React, Node.js)',
+  title: 'Abin PM – Senior Full Stack Developer (React, Node.js)',
   description:
-    'Senior Full Stack Engineer with 10+ years building React, Next.js, Node.js and AI-assisted enterprise platforms for L’Oréal, Abercrombie & Fitch and National Grid.',
+    'Senior full stack engineer, 10+ years of React, Next.js and Node.js for L’Oréal, Abercrombie & Fitch and National Grid. Freelance, remote or relocation.',
   applicationName: 'Abin PM Portfolio',
   keywords: [
     'Senior Full Stack Developer',
     'React Developer',
     'Node.js Developer',
-    'AI-assisted development',
-    'Freelance Full Stack Developer India',
+    'Freelance Full Stack Developer',
+    'Remote React Developer',
+    'Full Stack Developer Dubai',
+    'Remote Developer Europe',
   ],
   openGraph: {
-    title: 'Abin PM – Senior Full Stack & AI Developer',
+    title: 'Abin PM – Senior Full Stack Developer for Hire',
     description:
-      'React, Next.js, Node.js and AI-assisted engineering for enterprise and startup web platforms.',
+      'React, Next.js and Node.js for enterprise and startup teams. Freelance, remote, or on-site in Dubai or Europe.',
     url: '/',
     type: 'website',
     siteName: 'Abin PM Portfolio',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Abin PM – Senior Full Stack & AI Developer',
+    title: 'Abin PM – Senior Full Stack Developer for Hire',
     description:
-      'React, Next.js, Node.js and AI-assisted engineering for enterprise and startup web platforms.',
+      'React, Next.js and Node.js for enterprise and startup teams. Freelance, remote, or on-site in Dubai or Europe.',
   },
   alternates: { canonical: '/' },
   manifest: '/manifest.webmanifest',
@@ -80,10 +82,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(getProfessionalServiceSchema()) }}
-        />
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(getFAQPageSchema()) }}
         />
       </body>
     </html>

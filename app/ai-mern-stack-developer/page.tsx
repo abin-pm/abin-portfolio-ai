@@ -3,32 +3,30 @@ import Link from 'next/link';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { identity } from '@/lib/data';
-import { getPersonSchema, getBreadcrumbSchema } from '@/lib/json-ld';
+import { getBreadcrumbSchema } from '@/lib/json-ld';
 
 const SITE_URL = 'https://www.abinaiengineer.com';
 
 export const metadata: Metadata = {
-  title: 'AI-Powered MERN Stack Developer | React, Node.js & LLM Integration | Abin PM',
+  title: 'MERN Stack Developer with AI Tools & LLM Integration | Abin PM',
   description:
-    'Senior AI-native MERN stack developer — React, Node.js, MongoDB + Cursor AI, GitHub Copilot & Claude in production. LLM integration, GenAI-assisted development, 10+ years enterprise experience.',
+    'Senior MERN stack developer (React, Node.js, MongoDB) who uses Cursor, Copilot and Claude on enterprise work and can add LLM features to your app. Freelance or remote.',
   keywords: [
     'AI MERN stack developer',
-    'AI-powered React developer',
-    'AI-native full stack developer',
-    'LLM integration developer',
-    'GenAI developer for hire',
-    'Cursor AI developer',
-    'AI-assisted React Node.js development',
-    'hire AI engineer India',
-    'MERN stack AI developer remote',
+    'MERN stack developer for hire',
+    'LLM integration React Node.js',
+    'freelance MERN developer',
+    'AI-assisted React developer',
+    'remote MERN developer Europe',
+    'MERN developer Dubai',
   ],
   alternates: { canonical: `${SITE_URL}/ai-mern-stack-developer` },
   openGraph: {
     // Pages that set openGraph drop the root file-based image, so reference it explicitly.
     images: ['/opengraph-image'],
-    title: 'AI-Powered MERN Stack Developer | Abin PM',
+    title: 'MERN Stack Developer with AI Tools | Abin PM',
     description:
-      'MERN stack + AI-native workflow. Cursor AI, Copilot & Claude in production at IBM. LLM integration, GenAI stabilization, React, Node.js. 10+ years enterprise.',
+      'React, Node.js and MongoDB, built faster with AI tools and reviewed by a senior engineer. LLM features for existing apps. Freelance or remote.',
     url: `${SITE_URL}/ai-mern-stack-developer`,
   },
   twitter: { card: 'summary_large_image' },
@@ -36,45 +34,44 @@ export const metadata: Metadata = {
 
 const aiTools = [
   {
-    name: 'Cursor AI',
-    role: 'Primary IDE',
-    desc: 'In-context architectural reasoning, refactoring, and accelerated delivery across enterprise React and Node.js codebases at IBM since 2024.',
+    name: 'Cursor',
+    role: 'Editor',
+    desc: 'Refactors that touch many files and first drafts of new modules, which I then rewrite to fit the project.',
   },
   {
     name: 'GitHub Copilot',
-    role: 'Inline Completion',
-    desc: 'Typed boilerplate, test scaffolding, and repetitive API patterns — accepted with minimal review when TypeScript types are tight.',
+    role: 'Completion',
+    desc: 'Boilerplate, typed API calls and test setup. Most useful when the TypeScript types are strict.',
   },
   {
     name: 'Claude',
-    role: 'Architecture & Review',
-    desc: 'Pre-PR diff review for edge cases, race conditions, and missing error boundaries — a senior second opinion before code goes to production.',
+    role: 'Review',
+    desc: 'A read of the diff before I open a pull request, looking for missed edge cases and error handling.',
   },
   {
-    name: 'OpenAI API',
-    role: 'LLM Integration',
-    desc: 'API integration and AI-powered feature development — streaming endpoints, RAG pipelines, semantic search — built into client products.',
+    name: 'OpenAI and Claude APIs',
+    role: 'LLM features',
+    desc: 'What I would use to add a chat assistant, search or summaries to your Node.js backend.',
   },
 ];
 
-const aiCapabilities = [
-  { label: 'AI-Accelerated MERN Development', desc: 'Faster delivery with Cursor AI + Copilot on routine work — up to 3–5× on boilerplate and scaffolding — without sacrificing production-grade quality.' },
-  { label: 'GenAI Code Stabilization', desc: 'Takes AI-generated code baselines and hardens them to enterprise architecture standards — the skill most AI tools skip.' },
-  { label: 'LLM Feature Integration', desc: 'Adds OpenAI, Anthropic, or open-source LLM capabilities to existing React + Node.js products incrementally.' },
-  { label: 'Prompt Engineering & RAG', desc: 'Context-aware prompting, retrieval-augmented generation, and AI workflow design for production-grade reliability.' },
-  { label: 'AI-Assisted Code Review', desc: 'Uses Claude for systematic pre-merge review — catches failure modes and edge cases that automated tests miss.' },
-  { label: 'Microservices + AI Architecture', desc: 'Designs AI feature layers as independent services — isolating latency, cost, and failure modes from core application logic.' },
+const capabilities = [
+  { label: 'MERN builds, delivered faster', desc: 'React, Node.js, Express and MongoDB, with AI tools on the repetitive parts and a senior review on all of it.' },
+  { label: 'Reviewing AI-generated code', desc: 'I did this at IBM on National Grid: finding logic gaps and architectural drift in generated code and fixing them.' },
+  { label: 'LLM features in an existing app', desc: 'A server-side endpoint calling the OpenAI or Claude API, streaming to the React UI, with cost and failure limits.' },
+  { label: 'Real-time features', desc: 'Socket.IO chat and notifications, which I built on Villager, alongside REST and GraphQL APIs.' },
+  { label: 'Search', desc: 'Elasticsearch for location and full-text search, used on Villager and on Paragon Energy.' },
+  { label: 'Cloud deployment', desc: 'Docker, Kubernetes and serverless on AWS, GCP or Azure, with CI/CD pipelines.' },
 ];
 
-const comparison = [
-  { label: 'Delivery speed', traditional: 'Standard sprint velocity', ai: 'Faster sprints with AI tooling' },
-  { label: 'Code quality', traditional: 'Depends on discipline', ai: 'AI-reviewed before every PR' },
-  { label: 'AI features', traditional: 'Separate specialist needed', ai: 'Built-in — React + Node.js + LLM' },
-  { label: 'GenAI code', traditional: 'Ships as-is or not at all', ai: 'Stabilized to enterprise standard' },
+const posts = [
+  { href: '/blog/ai-native-workflow-cursor-copilot-claude', title: 'How I Actually Use Cursor, Copilot and Claude on Client Work', cat: 'AI-Assisted' },
+  { href: '/blog/genai-code-stabilization-enterprise', title: 'When (and When Not) to Use GenAI for Production Code', cat: 'GenAI' },
+  { href: '/blog/llm-integration-existing-react-app', title: 'Integrating LLMs into an Existing React + Node.js Application', cat: 'LLMs' },
+  { href: '/blog/sas-to-react-national-grid-modernization', title: 'From SAS to React: the National Grid modernization', cat: 'Case Study' },
 ];
 
 export default function AiMernStackDeveloperPage() {
-  const personSchema = getPersonSchema();
   const breadcrumbSchema = getBreadcrumbSchema([
     { name: 'Home', url: SITE_URL },
     { name: 'AI MERN Stack Developer', url: `${SITE_URL}/ai-mern-stack-developer` },
@@ -82,7 +79,6 @@ export default function AiMernStackDeveloperPage() {
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
 
       <div className="min-h-screen bg-cream text-ink">
@@ -92,18 +88,18 @@ export default function AiMernStackDeveloperPage() {
 
           {/* Hero */}
           <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-border-strong bg-sage-light px-4 py-1.5">
-            <span className="text-xs text-sage-dark">🤖 AI-Native since 2024</span>
+            <span className="text-xs text-sage-dark">🤖 Using AI tools on client work since 2024</span>
           </div>
 
           <h1 className="mb-6 text-4xl leading-tight md:text-5xl">
-            AI-Powered MERN Stack Developer<br />
-            <span className="text-sage-dark">React, Node.js &amp; LLM Integration</span>
+            MERN Stack Developer<br />
+            <span className="text-sage-dark">with AI tools and LLM integration</span>
           </h1>
 
           <p className="mb-8 max-w-2xl text-lg text-muted">
-            Senior MERN stack developer with a genuine AI-native workflow — Cursor AI, GitHub Copilot
-            and Claude used daily in enterprise production at IBM since 2024. 10+ years full-stack
-            experience. Available for AI feature builds, GenAI stabilization, and LLM integrations.
+            I&apos;ve built React and Node.js apps for over ten years, and I&apos;ve used Cursor, GitHub
+            Copilot and Claude on IBM client work since 2024. I can build your MERN app faster with
+            those tools, add an LLM feature to an app you already have, or review code an AI wrote.
           </p>
 
           <div className="mb-12 flex flex-wrap gap-4">
@@ -111,19 +107,19 @@ export default function AiMernStackDeveloperPage() {
               href={`mailto:${identity.email}`}
               className="btn-primary"
             >
-              Hire for AI project →
+              Tell me about your project →
             </a>
             <Link
               href="/ai-engineer"
               className="btn-secondary"
             >
-              AI Engineer page →
+              How I use AI →
             </Link>
           </div>
 
           {/* Client logos */}
           <div className="mb-20 flex flex-wrap gap-3 border-y border-border py-6">
-            {['IBM', 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy'].map((c) => (
+            {['IBM', "L'Oréal", 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy'].map((c) => (
               <span key={c} className="rounded-full bg-surface px-4 py-1.5 text-sm font-medium text-muted">
                 {c}
               </span>
@@ -132,7 +128,7 @@ export default function AiMernStackDeveloperPage() {
 
           {/* AI Tools */}
           <h2 className="mb-8 text-2xl text-ink">
-            AI Tools Used Daily in Enterprise Production
+            The AI tools I use, and for what
           </h2>
           <div className="mb-20 grid gap-5 sm:grid-cols-2">
             {aiTools.map((tool) => (
@@ -148,10 +144,10 @@ export default function AiMernStackDeveloperPage() {
 
           {/* Capabilities */}
           <h2 className="mb-8 text-2xl text-ink">
-            AI + MERN Stack Capabilities
+            What I can do on a MERN project
           </h2>
           <div className="mb-20 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {aiCapabilities.map((cap) => (
+            {capabilities.map((cap) => (
               <div key={cap.label} className="rounded-xl border border-border bg-surface p-6">
                 <h3 className="mb-2 text-ink">{cap.label}</h3>
                 <p className="text-sm leading-relaxed text-muted">{cap.desc}</p>
@@ -159,42 +155,12 @@ export default function AiMernStackDeveloperPage() {
             ))}
           </div>
 
-          {/* Comparison */}
-          <h2 className="mb-8 text-2xl text-ink">
-            AI-Native vs Traditional MERN Development
-          </h2>
-          <div className="mb-20 overflow-x-auto rounded-xl border border-border">
-            <table className="w-full text-sm">
-              <thead>
-                <tr className="border-b border-border bg-surface">
-                  <th className="px-6 py-4 text-left text-xs uppercase tracking-widest text-subtle">Dimension</th>
-                  <th className="px-6 py-4 text-left text-xs uppercase tracking-widest text-subtle">Traditional developer</th>
-                  <th className="px-6 py-4 text-left text-xs uppercase tracking-widest text-sage-dark">AI-native (Abin)</th>
-                </tr>
-              </thead>
-              <tbody className="divide-y divide-border">
-                {comparison.map((row) => (
-                  <tr key={row.label} className="bg-surface">
-                    <td className="px-6 py-4 font-sans font-semibold text-ink">{row.label}</td>
-                    <td className="px-6 py-4 text-muted">{row.traditional}</td>
-                    <td className="px-6 py-4 font-medium text-sage-dark">{row.ai}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
-
           {/* Blog links */}
           <h2 className="mb-6 text-2xl text-ink">
-            Read: AI Engineering in Practice
+            Further reading
           </h2>
           <div className="mb-20 grid gap-4 sm:grid-cols-2">
-            {[
-              { href: '/blog/ai-native-workflow-cursor-copilot-claude', title: 'Inside an AI-Native Workflow: Cursor AI, Copilot & Claude at IBM', cat: 'AI-Native' },
-              { href: '/blog/genai-code-stabilization-enterprise', title: 'When (and When Not) to Use GenAI for Production Code', cat: 'GenAI' },
-              { href: '/blog/llm-integration-existing-react-app', title: 'Integrating LLMs into an Existing React + Node.js Application', cat: 'LLMs' },
-              { href: '/blog/sas-to-react-national-grid-modernization', title: 'From SAS to React: National Grid Modernization with GenAI', cat: 'Case Study' },
-            ].map((post) => (
+            {posts.map((post) => (
               <Link
                 key={post.href}
                 href={post.href}
@@ -211,20 +177,20 @@ export default function AiMernStackDeveloperPage() {
           {/* CTA */}
           <div className="rounded-2xl border border-border bg-surface p-10 text-center">
             <h2 className="mb-3 text-2xl text-ink">
-              Hire an AI-Powered MERN Stack Developer
+              Hire a MERN stack developer who uses AI carefully
             </h2>
             <p className="mb-2 text-muted">
-              React, Node.js, MongoDB — accelerated by Cursor AI, Copilot &amp; Claude.
+              Freelance, remote full-time, or on-site in Dubai or Europe.
             </p>
             <p className="mb-8 text-sm text-subtle">
-              Available remote. Kochi, India. Responds within 24 hours.
+              Based in Kochi, India. I reply within 24 hours.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={`mailto:${identity.email}`}
                 className="btn-primary"
               >
-                Email Abin
+                Email me
               </a>
               <a
                 href={identity.linkedin}
@@ -238,7 +204,7 @@ export default function AiMernStackDeveloperPage() {
                 href="/hire-me"
                 className="btn-secondary"
               >
-                Full hire page →
+                How hiring me works →
               </Link>
             </div>
           </div>
@@ -248,7 +214,7 @@ export default function AiMernStackDeveloperPage() {
             <Link href="/remote-mern-developer" className="text-subtle no-underline hover:text-muted">Remote MERN Developer →</Link>
             <Link href="/skills" className="text-subtle no-underline hover:text-muted">Full Tech Stack →</Link>
             <Link href="/projects" className="text-subtle no-underline hover:text-muted">Case Studies →</Link>
-            <Link href="/blog" className="text-subtle no-underline hover:text-muted">Engineering Blog →</Link>
+            <Link href="/blog" className="text-subtle no-underline hover:text-muted">Blog →</Link>
           </div>
 
         </main>

@@ -6,14 +6,14 @@ import { Footer } from '@/components/Footer';
 export const metadata: Metadata = {
   title: 'Skills | Senior MERN Stack Developer for Hire | Abin PM',
   description:
-    'Full technical arsenal of Abin PM — Senior MERN Stack Developer & AI-Native Engineer from India. React, Next.js, Node.js, TypeScript, AWS, GCP, Cursor AI, LLM Integration, and more.',
+    'Skills of Abin PM, senior full stack engineer: React, Next.js, TypeScript, Node.js, NestJS, .NET Core, GraphQL, PostgreSQL, MongoDB, AWS, Azure, GCP and AI-assisted development.',
   keywords: [
     'senior MERN stack developer for hire',
     'Node.js microservices developer',
     'React developer skills',
     'full stack developer tech stack',
-    'AI-native developer India',
-    'Cursor AI developer',
+    'Next.js and .NET Core developer',
+    'remote React developer skills',
     'LLM integration developer',
   ],
   alternates: {
@@ -22,9 +22,9 @@ export const metadata: Metadata = {
   openGraph: {
     // Pages that set openGraph drop the root file-based image, so reference it explicitly.
     images: ['/opengraph-image'],
-    title: 'Technical Skills | Abin PM — Senior MERN Stack & AI-Native Engineer',
+    title: 'Technical Skills | Abin PM, Senior Full Stack Engineer',
     description:
-      'React, Next.js, Node.js, TypeScript, AWS, GCP, Cursor AI, LLM Integration, GenAI — full spectrum stack by Abin PM, Senior Full Stack Developer from India.',
+      'React, Next.js, Node.js, .NET Core, GraphQL, PostgreSQL, AWS, Azure and GCP: what Abin PM has used in production.',
     url: 'https://www.abinaiengineer.com/skills',
   },
 };
@@ -37,18 +37,18 @@ export default function SkillsPage() {
         {/* Page hero */}
         <div className="mx-auto max-w-[1100px] px-6 pb-0 md:px-10">
           <div className="mb-2 inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5">
-            <span className="text-xs text-sage-dark">Technical Arsenal</span>
+            <span className="text-xs text-sage-dark">Skills</span>
           </div>
           <h1 className="mt-4 text-4xl text-ink md:text-5xl">
-            Full-Spectrum Stack for Hire
+            Full stack skills, from React to the cloud
           </h1>
           <p className="mt-4 max-w-2xl text-lg text-muted">
-            10+ years building production systems across frontend, backend, cloud, and AI tooling —
-            as a senior MERN stack developer and AI-native engineer for hire from India.
+            Everything here I&apos;ve used on real client projects over the last ten years. If you
+            need something that isn&apos;t listed, ask; I&apos;ll tell you honestly how close it is.
           </p>
           <div className="mt-6 mb-2 flex flex-wrap gap-4 text-sm">
             <span className="text-sage-dark">React · Next.js · Node.js</span>
-            <span className="text-sage-dark">Cursor AI · Copilot · Claude</span>
+            <span className="text-sage-dark">.NET Core · GraphQL · PostgreSQL</span>
             <span className="text-sage-dark">AWS · GCP · Azure</span>
           </div>
         </div>
@@ -60,14 +60,14 @@ export default function SkillsPage() {
         <div className="border-t border-border py-20">
           <div className="mx-auto max-w-[1100px] px-6 text-center md:px-10">
             <p className="mb-6 font-serif text-2xl text-ink">
-              Need a senior MERN stack developer who also ships with AI?
+              Need a senior full stack developer for a project or a role?
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href="/hire-me"
                 className="btn-primary"
               >
-                Hire Me Now
+                Hire me
               </a>
               <a
                 href="/projects"

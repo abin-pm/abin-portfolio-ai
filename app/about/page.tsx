@@ -5,9 +5,9 @@ import { Footer } from '@/components/Footer';
 import { identity, experience, education } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'About Abin PM | Senior Full Stack Developer & AI-Native Engineer India',
+  title: 'About Abin PM | Senior Full Stack Engineer, Remote & Open to Relocation',
   description:
-    'Abin PM is a Senior Full Stack Developer & AI-Native Engineer from Kochi, India. 10+ years building enterprise React, Node.js, MERN systems for IBM, Abercrombie & Fitch, National Grid, Paragon Energy, Go Lyv, and Refinu.',
+    'Abin PM is a senior full stack engineer from Kochi, India with 10+ years of React, Node.js and .NET work for clients in the US, UK, France and Dubai. Freelance, remote or relocation.',
   alternates: { canonical: '/about' },
 };
 
@@ -22,57 +22,50 @@ export default function AboutPage() {
           </h1>
 
           <p className="mb-6 leading-relaxed text-muted">
-            Abin PM is a Senior Full Stack Developer and AI-Native Engineer based in Kochi, Kerala,
-            India. He currently works at IBM India as a Senior Application Developer (Full Stack &
-            Cloud), where he modernizes enterprise frontends, stabilizes AI-generated code, and
-            uses Cursor AI, GitHub Copilot, and Claude every day as core production instruments —
-            not as experiments.
+            I&apos;m Abin, a senior full stack engineer from Kochi in Kerala, India. Since 2024 I&apos;ve
+            worked at IBM India as a Senior Application Developer (Full Stack &amp; Cloud), on
+            modernization projects for clients in retail, e-commerce and utilities.
           </p>
 
           <p className="mb-6 leading-relaxed text-muted">
-            With over 10 years of professional software engineering experience, Abin is among the
-            first generation of senior engineers to adopt AI-assisted development in enterprise
-            production. At IBM, he was assigned to the National Grid MDS Consolidation project —
-            where he took a GenAI-generated codebase, identified and corrected its discrepancies,
-            enforced enterprise coding standards, and shipped a production-ready React.js, .NET Core
-            and PostgreSQL platform on Azure. That work — GenAI stabilization — is a rare combination of deep
-            full stack experience and AI fluency that most engineers do not have. He went on to
-            modernize Abercrombie &amp; Fitch Co.&apos;s e-commerce frontend into React.js
-            Micro Frontends with a GraphQL BFF, and now works on the Version 2 UI of
-            L&apos;Oréal&apos;s Retail Gold analytics app in Next.js, React and TypeScript.
+            My first IBM project was for National Grid USA. A team of six of us replaced a legacy SAS
+            desktop application with a web platform built on React.js, .NET Core and PostgreSQL,
+            hosted on Azure. GenAI tools wrote a lot of the first draft, and much of my job was
+            reading that code closely, fixing logic that didn&apos;t match the business rules, and
+            getting it to a standard a US utility would accept. After that I moved Abercrombie
+            &amp; Fitch&apos;s product pages from a legacy Java storefront to React micro frontends
+            with a GraphQL BFF. Now I&apos;m one of four frontend engineers on Version 2 of
+            L&apos;Oréal&apos;s Retail Gold analytics app, in Next.js, React and TypeScript.
           </p>
 
           <p className="mb-6 leading-relaxed text-muted">
-            Before IBM, Abin served as Team Lead and Senior Software Engineer at Emvigo Technologies
-            in Kochi for four years. During that period, he led full stack development for several
-            international clients: Paragon Energy (a UK energy asset management platform
-            covering 200,000+ smart meter assets, cutting reporting time from 96 hours to under
-            2 hours), Go Lyv (a serverless event booking platform for the UK market built on AWS
-            AppSync and GraphQL), Refinu (a serverless personalized growth platform on Google
-            Cloud Platform), and SuperSonic Imagine (a Next.js corporate website on Strapi).
+            Before IBM I spent four years at Emvigo Technologies in Kochi, first as a senior engineer
+            and then as a team lead running teams of four to six. Most of our clients were in the UK.
+            The project with the clearest result was Paragon, an asset platform for 200,000+ smart meters,
+            where reports that used to take 96 hours now take under two. I also worked on Go Lyv, a
+            UK event ticketing platform on AWS AppSync and GraphQL; Refinu, a serverless
+            behavioural-science app on Google Cloud; and SuperSonic Imagine&apos;s corporate site on
+            Next.js and Strapi.
           </p>
 
           <p className="mb-6 leading-relaxed text-muted">
-            Earlier in his career, at Luminescent Software in Thiruvananthapuram, Abin built
-            full stack SPAs and implemented real-time features with Socket.IO and location-based
-            search with Elasticsearch — including work on Villager, a civic tech platform for
-            community issue resolution — and built NopCommerce and Umbraco portals in C# for a Dubai
-            client. At Ociuz Technologies in Thrissur, he developed ASP.NET MVC applications with
-            PayU payments and honed his debugging and production stability skills.
+            I started out at Ociuz Technologies in Thrissur, building ASP.NET MVC sites with PayU
+            payments, then moved to Luminescent Software in Thiruvananthapuram. There I built
+            Villager, a civic platform with Socket.IO chat and Elasticsearch location search, and
+            two .NET portals for The First Group in Dubai.
           </p>
 
           <p className="mb-6 leading-relaxed text-muted">
-            Abin&apos;s technical depth spans the full stack: React.js, Next.js, TypeScript, Node.js,
-            Express, .NET Core, microservices, PostgreSQL, MongoDB, MySQL, Firestore, AWS, GCP, Azure, Docker,
-            Kubernetes, and CI/CD pipelines. He is equally comfortable writing business logic,
-            designing APIs, structuring cloud infrastructure, and reviewing AI-generated output
-            against enterprise reliability standards.
+            Day to day I work across React, Next.js, TypeScript, Node.js, NestJS, .NET Core,
+            PostgreSQL, MongoDB, MySQL, Firestore, AWS, Azure, GCP, Docker, Kubernetes and CI/CD.
+            I use Cursor, GitHub Copilot and Claude every day, and I review what they produce the
+            same way I&apos;d review a colleague&apos;s pull request.
           </p>
 
           <p className="mb-12 leading-relaxed text-muted">
-            His philosophy is simple: senior engineering judgment multiplied by AI velocity. He is
-            available as a freelance developer, remote contractor, or remote full-time engineer for
-            global clients who need enterprise-grade output without enterprise team overhead.
+            I&apos;m available for freelance projects and remote full-time roles, and I&apos;m open to
+            relocating to Dubai/UAE or Europe for the right job. The quickest way to reach me is
+            email.
           </p>
 
           {/* Experience summary */}

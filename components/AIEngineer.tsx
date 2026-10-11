@@ -13,30 +13,30 @@ export function AIEngineer() {
     >
       <div className="mx-auto max-w-[1100px]">
         <span className="mb-4 inline-block rounded-full border border-border-strong bg-sage-light px-3 py-1 text-xs text-sage-dark">
-          Core Differentiator
+          How I work
         </span>
 
         <h2 className="mb-3 text-3xl text-ink md:text-4xl">
-          AI-Native Development
+          AI-assisted development, checked by a senior engineer
         </h2>
         <p className="mb-12 text-lg text-muted">
-          Not just a developer who uses AI — an engineer who makes AI production-ready.
+          AI tools make me faster. Ten years of shipping production code is how I know when they&apos;re wrong.
         </p>
 
         {/* Narrative cards */}
         <div className="mb-16 grid gap-5 md:grid-cols-3">
           {[
             {
-              title: 'Adopted Early, Used Daily',
-              body: 'While most developers were still experimenting, I integrated Cursor AI, GitHub Copilot, and Claude into enterprise production workflows at IBM from day one in 2024. These are not productivity shortcuts — they are core instruments I wield with senior engineering judgment to multiply output without compromising standards.',
+              title: 'Part of my normal day',
+              body: 'I have used Cursor, GitHub Copilot and Claude on IBM client work since 2024. They draft boilerplate, suggest refactors and give me a second read on a diff. I decide what stays, and the same code review and tests apply whoever wrote the first version.',
             },
             {
-              title: 'The Rare Skill: GenAI Stabilization',
-              body: 'On the National Grid MDS Consolidation project at IBM, I took a GenAI-generated codebase — full of discrepancies, architectural drift, and reliability gaps — and hardened it to enterprise production standards. Reviewing AI output critically, correcting misaligned logic, enforcing enterprise coding standards, and ensuring every component is maintainable and production-reliable.',
+              title: 'Fixing code an AI wrote',
+              body: 'On National Grid at IBM, GenAI tools wrote much of the first draft of a React and .NET Core app. Some of its logic did not match the business rules and parts had drifted from the architecture. I went through it module by module, corrected what was wrong and brought it up to the standard the client needed.',
             },
             {
-              title: 'What This Means for Your Project',
-              body: 'You get the speed of a team, the accountability of a single senior engineer, and output that does not need a second pass. Whether building a feature from scratch or reviewing AI-generated code you already have, the result meets the same production standard: robust, tested, maintainable, and ready to ship.',
+              title: 'What you get',
+              body: 'Routine work goes faster, and you still have one senior engineer who is accountable for every line. If your team already has AI-generated code it is unsure about, I can review it, tell you plainly what is risky, and fix it.',
             },
           ].map((item, i) => (
             <motion.div
@@ -56,7 +56,7 @@ export function AIEngineer() {
         </div>
 
         {/* AI Tools Grid */}
-        <h3 className="mb-6 text-xl text-ink">AI Tools I Use Daily</h3>
+        <h3 className="mb-6 text-xl text-ink">The tools, and what I use each one for</h3>
         <div className="mb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {aiTools.map((tool, i) => (
             <motion.div
@@ -82,9 +82,9 @@ export function AIEngineer() {
         <h3 className="mb-6 text-xl text-ink">What I can build for you</h3>
         <div className="mb-12 grid gap-5 md:grid-cols-3">
           {[
-            { icon: '🔗', title: 'AI-Powered Features', desc: 'LLM APIs, semantic search, chatbots, and AI-driven UX built directly into your product.' },
-            { icon: '⚙️', title: 'AI-Accelerated Delivery', desc: 'Shorter delivery cycles with AI-assisted development — every change still reviewed, tested and production-ready.' },
-            { icon: '🛡️', title: 'GenAI Code Stabilization', desc: 'Review and harden AI-generated codebases to production standards — architecture, logic, and edge cases included.' },
+            { icon: '🔗', title: 'LLM features in your app', desc: 'A chat assistant, search or summaries added to an existing React and Node.js product through the OpenAI or Claude API.' },
+            { icon: '⚙️', title: 'Faster delivery', desc: 'AI tools on the repetitive parts of a build, with every change still reviewed and tested before release.' },
+            { icon: '🛡️', title: 'AI-generated code review', desc: 'A review of code your team or a tool generated: logic, architecture and edge cases, with fixes.' },
           ].map((item, i) => (
             <motion.div
               key={item.title}
@@ -107,7 +107,7 @@ export function AIEngineer() {
           href="/ai-engineer"
           className="btn-secondary"
         >
-          Hire an AI-Native Engineer →
+          More on how I use AI →
         </Link>
       </div>
     </SectionWrapper>
