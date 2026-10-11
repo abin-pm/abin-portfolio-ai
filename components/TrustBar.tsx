@@ -2,13 +2,13 @@
 
 import { SectionWrapper } from '@/components/SectionWrapper';
 
-const clients = ['IBM', "L'Oréal", 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy', 'Go Lyv', 'Refinu'];
+const clients = ['IBM', "L'Oréal", 'Abercrombie & Fitch', 'National Grid', 'Paragon Energy', 'SuperSonic Imagine', 'The First Group'];
 
 const props = [
-  { icon: '🏢', text: 'Enterprise-Proven — 10+ years with global brands' },
-  { icon: '🤖', text: 'AI-Assisted — faster delivery, human-reviewed code' },
-  { icon: '🌍', text: 'Remote-Ready — US/UK timezone flexible' },
-  { icon: '🧩', text: 'Full Stack — React to cloud backend' },
+  { icon: '🏢', text: '10+ years|Enterprise work for global brands' },
+  { icon: '🌍', text: 'Remote or on-site|US, UK, Europe and UAE clients' },
+  { icon: '🧩', text: 'Full stack|React frontends to cloud backends' },
+  { icon: '🤖', text: 'AI-assisted|Faster drafts, code I still review' },
 ];
 
 export function TrustBar() {
@@ -17,7 +17,7 @@ export function TrustBar() {
       <div className="mx-auto max-w-[1100px]">
         <div className="grid grid-cols-2 gap-y-10 md:grid-cols-4 md:divide-x md:divide-sage-border">
           {props.map(({ icon, text }) => {
-            const [label, caption] = text.split(' — ');
+            const [label, caption] = text.split('|');
             return (
               <div key={text} className="flex flex-col items-center px-4 text-center">
                 <span className="mb-3 text-2xl grayscale" aria-hidden>{icon}</span>

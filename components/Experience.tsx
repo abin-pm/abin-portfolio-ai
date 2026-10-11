@@ -38,8 +38,8 @@ export function Experience({ compact = false }: { compact?: boolean }) {
             <div className="section-label mb-4">Experience</div>
             <h2 className="mb-3 text-3xl text-ink md:text-4xl">10+ Years of Enterprise Delivery</h2>
             <p className="mb-14 max-w-xl text-muted">
-              From team lead to senior engineer at IBM — building and modernizing platforms for
-              global retail, e-commerce and energy clients.
+              From my first ASP.NET job to team lead to IBM, building and modernizing platforms for
+              retail, e-commerce and energy clients.
             </p>
           </>
         )}
@@ -125,7 +125,7 @@ export function Experience({ compact = false }: { compact?: boolean }) {
               {!compact && job.aiRole && (
                 <div className="mb-4 flex flex-wrap items-center gap-2 text-xs">
                   <span className="text-subtle">AI stack:</span>
-                  {['Cursor AI', 'GitHub Copilot', 'Claude'].map((t) => (
+                  {['Cursor', 'GitHub Copilot', 'Claude'].map((t) => (
                     <span
                       key={t}
                       className="rounded-full border border-border-strong bg-surface px-2.5 py-0.5 text-sage-dark"
@@ -146,11 +146,11 @@ export function Experience({ compact = false }: { compact?: boolean }) {
                   {compact
                     ? 'Full role details →'
                     : job.slug === 'ibm'
-                    ? 'IBM role — GenAI stabilization & enterprise delivery →'
+                    ? 'IBM: National Grid, A&F and L’Oréal →'
                     : job.slug === 'emvigo'
-                    ? 'Emvigo role — Paragon, Go Lyv, UK clients →'
+                    ? 'Emvigo: Paragon, Go Lyv and other UK clients →'
                     : job.slug === 'luminescent'
-                    ? 'Luminescent role — real-time platform delivery →'
+                    ? 'Luminescent: Villager and The First Group →'
                     : `${job.company.split(' ')[0]} role details →`}
                 </Link>
 

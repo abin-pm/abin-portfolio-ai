@@ -35,6 +35,7 @@ export function generateMetadata({ params }: Props): Metadata {
       title,
       description,
       publishedTime: post.date,
+      modifiedTime: post.updated ?? post.date,
       authors: ['Abin PM'],
     },
     twitter: { card: 'summary_large_image', title, description },

@@ -13,9 +13,9 @@ const fadeUp = (delay = 0) => ({
 });
 
 const KPI_STRIP = [
-  { metric: '96h → <2h',   label: 'Reporting time cut for Paragon Energy (200k+ smart meters)' },
-  { metric: 'Global brands', label: "L'Oréal, Abercrombie & Fitch, National Grid" },
-  { metric: '1000s',       label: "of L'Oréal retail users on analytics I build" },
+  { metric: '96h → <2h',   label: 'Paragon Energy reporting time, across 200k+ smart meters' },
+  { metric: 'US · UK · EU · UAE', label: 'Clients I have delivered for, mostly remotely from India' },
+  { metric: '4–6',         label: 'Engineers I have led as a team lead' },
 ];
 
 // Fade the photo's outer edge into the page: image optimisation shifts its
@@ -48,7 +48,7 @@ function HeroPortrait({ className = '' }: { className?: string }) {
           photo, cropped to its outer ring. Swapped by CSS so SSR never needs the theme. */}
       <Image
         src="/images/abin-hero.png"
-        alt="Abin PM, senior full stack and AI developer in Kochi, Kerala"
+        alt="Abin PM, senior full stack developer, available for remote and freelance work"
         width={1254}
         height={1254}
         priority
@@ -58,7 +58,7 @@ function HeroPortrait({ className = '' }: { className?: string }) {
       />
       <Image
         src="/images/abin-hero-dark.png"
-        alt="Abin PM, senior full stack and AI developer in Kochi, Kerala"
+        alt="Abin PM, senior full stack developer, available for remote and freelance work"
         width={1254}
         height={1254}
         loading="eager"
@@ -81,10 +81,10 @@ export function Hero() {
         <motion.div {...fadeUp(0)} className="mb-7 flex flex-wrap items-center gap-3">
           <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-4 py-1.5 text-xs font-medium text-ink">
             <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-sage" />
-            Available now — open to new projects
+            Available for new work
           </span>
           <span className="inline-flex items-center gap-2 rounded-full border border-sage-border bg-sage-light px-4 py-1.5 text-xs font-medium text-sage-dark">
-            📍 Kochi, Kerala · Remote worldwide
+            📍 Kochi, India · Remote · Open to Dubai &amp; Europe
           </span>
         </motion.div>
 
@@ -93,8 +93,8 @@ export function Hero() {
           {...fadeUp(0.1)}
           className="mb-6 text-4xl leading-[1.08] text-ink sm:text-5xl md:text-6xl xl:text-[3.4rem]"
         >
-          Senior Full Stack &amp;<br />
-          AI Developer for Hire
+          Senior Full Stack Developer{' '}<br />
+          for Hire: React &amp; Node.js
         </motion.h1>
 
         {/* Subheading */}
@@ -102,26 +102,26 @@ export function Hero() {
           {...fadeUp(0.15)}
           className="mb-8 max-w-2xl text-base leading-relaxed text-muted md:text-lg"
         >
-          Freelance React, Next.js &amp; Node.js developer with 10+ years building enterprise
-          platforms for L&apos;Oréal, Abercrombie &amp; Fitch and National Grid — now at IBM.
-          AI-assisted delivery, production-grade engineering.
+          I&apos;m Abin, a full stack engineer at IBM with 10+ years of React, Next.js, Node.js
+          and .NET work for L&apos;Oréal, Abercrombie &amp; Fitch and National Grid. I take freelance
+          projects and remote roles, and I&apos;m open to relocating to Dubai or Europe.
         </motion.p>
 
         {/* ── Primary CTA + secondary ── */}
         <motion.div {...fadeUp(0.25)} className="mb-10 flex flex-wrap items-center gap-4">
-          <Link href="/hire-me" className="btn-primary" aria-label="Hire Abin PM — go to hire page">
-            Hire Me Now <ArrowRight size={14} aria-hidden />
+          <Link href="/hire-me" className="btn-primary" aria-label="Hire Abin PM">
+            Hire me <ArrowRight size={14} aria-hidden />
           </Link>
 
           <Link href="/projects" className="btn-secondary">
-            View Case Studies <ArrowRight size={14} aria-hidden />
+            See my work <ArrowRight size={14} aria-hidden />
           </Link>
 
           <Link
             href="/ai-engineer"
             className="text-sm font-medium text-sage-dark underline-offset-4 hover:underline"
           >
-            AI Engineer page ↗
+            How I use AI ↗
           </Link>
         </motion.div>
 

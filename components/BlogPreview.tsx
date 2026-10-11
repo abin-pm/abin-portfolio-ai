@@ -18,10 +18,10 @@ export function BlogPreview() {
       <div className="mx-auto max-w-[1100px]">
         <div className="section-label mb-4">From the Blog</div>
         <h2 className="mb-3 text-3xl text-ink md:text-4xl">
-          Latest from the Blog
+          Notes from client work
         </h2>
         <p className="mb-16 max-w-xl text-muted">
-          Insights on React, Next.js, AI-native development, and building enterprise-grade systems.
+          Write-ups on React, micro frontends, legacy modernization and working with AI-generated code.
         </p>
 
         <div className="grid gap-5 md:grid-cols-3">

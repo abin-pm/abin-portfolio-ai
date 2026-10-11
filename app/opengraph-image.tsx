@@ -3,7 +3,7 @@ import { identity } from '@/lib/data';
 
 // Social share card (LinkedIn, WhatsApp, Slack, X). As a file-based metadata route it
 // applies to every page and overrides any `openGraph.images` set in page metadata.
-export const alt = `${identity.name} – Senior Full Stack & AI Developer`;
+export const alt = `${identity.name} – Senior Full Stack Developer, available for freelance, remote and relocation roles`;
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
@@ -42,14 +42,14 @@ export default async function OpengraphImage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
           <div style={{ width: 14, height: 14, borderRadius: 999, background: COLORS.sage }} />
           <div style={{ fontSize: 24, letterSpacing: 3, textTransform: 'uppercase', color: COLORS.sage }}>
-            Available for freelance &amp; remote
+            Freelance · Remote · Dubai &amp; Europe
           </div>
         </div>
 
         <div style={{ display: 'flex', flexDirection: 'column' }}>
           <div style={{ fontSize: 96, lineHeight: 1.05, ...serifStyle }}>{identity.name}</div>
           <div style={{ fontSize: 48, color: COLORS.sage, marginTop: 8, ...serifStyle }}>
-            Senior Full Stack &amp; AI Developer
+            Senior Full Stack Developer
           </div>
           <div style={{ fontSize: 28, color: COLORS.muted, marginTop: 20 }}>
             10+ years · React · Next.js · Node.js · TypeScript · Cloud

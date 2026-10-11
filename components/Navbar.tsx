@@ -38,7 +38,7 @@ export function Navbar() {
           scrolled ? 'border-b border-border bg-cream/95' : 'border-b border-transparent bg-cream'
         }`}
       >
-        <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Abin PM — Home">
+        <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Abin PM, home">
           <span className="flex h-9 w-9 items-center justify-center rounded-md border border-sage/40 font-serif text-lg text-sage">
             A
           </span>

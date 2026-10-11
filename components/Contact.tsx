@@ -40,25 +40,24 @@ export function Contact() {
       <div className="mx-auto max-w-[1100px]">
         <div className="grid gap-16 lg:grid-cols-2 lg:gap-20">
 
-          {/* Left — copy + direct links */}
+          {/* Left: copy + direct links */}
           <div className="flex flex-col justify-center">
             <div className="section-label mb-4">Let&apos;s Work Together</div>
             <h2 className="mb-5 text-3xl text-ink md:text-4xl">
-              Let&apos;s Build Something Exceptional
+              Tell me about your project or role
             </h2>
 
             {/* Availability badge */}
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-border-strong bg-surface px-4 py-1.5">
               <span className="h-2 w-2 animate-pulse rounded-full bg-sage" />
               <span className="text-xs text-sage-dark">
-                Available now — can start within days
+                Usually reply within 24 hours
               </span>
             </div>
 
             <p className="mb-8 max-w-lg text-muted">
-              Looking to hire a React developer in India, need a freelance full stack
-              engineer, or want an AI-native developer to accelerate your build? Drop a
-              message — fastest response is via email.
+              A freelance build, a remote contract, or a full-time role in Dubai or Europe:
+              send a few lines about what you need. Email gets the fastest reply.
             </p>
 
             <ul className="mb-8 flex flex-col gap-3" aria-label="Direct contact options">
@@ -90,14 +89,14 @@ export function Contact() {
               className="btn-primary w-fit"
               aria-label="View full hire page for Abin PM"
             >
-              View Full Hire Page
+              How hiring me works
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden>
                 <path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
             </Link>
           </div>
 
-          {/* Right — contact form */}
+          {/* Right: contact form */}
           <div>
             <p className="mb-5 font-serif text-2xl text-ink">
               Send a message

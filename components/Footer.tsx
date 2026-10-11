@@ -15,7 +15,9 @@ const columns = [
     title: 'Services',
     links: [
       { label: 'Skills', href: '/skills' },
-      { label: 'AI Engineer', href: '/ai-engineer' },
+      { label: 'AI-Assisted Development', href: '/ai-engineer' },
+      { label: 'Developer for Dubai & UAE', href: '/full-stack-developer-dubai' },
+      { label: 'Remote Developer for Europe', href: '/remote-developer-europe' },
       { label: 'AI MERN Stack Developer', href: '/ai-mern-stack-developer' },
       { label: 'Remote MERN Developer', href: '/remote-mern-developer' },
     ],
@@ -44,13 +46,13 @@ export function Footer() {
       <div className="mx-auto max-w-[1180px]">
         <div className="grid gap-10 md:grid-cols-[1.2fr_repeat(4,1fr)]">
           <div>
-            <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Abin PM — Home">
+            <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Abin PM, home">
               <span className="flex h-10 w-10 items-center justify-center rounded-md border border-sage/40 font-serif text-xl text-sage">
                 A
               </span>
               <span className="leading-tight">
                 <span className="block text-sm font-semibold uppercase tracking-[0.14em] text-ink">Abin PM</span>
-                <span className="block text-[0.62rem] uppercase tracking-[0.18em] text-subtle">Full Stack &amp; AI Engineer</span>
+                <span className="block text-[0.62rem] uppercase tracking-[0.18em] text-subtle">Senior Full Stack Engineer</span>
               </span>
             </Link>
           </div>
@@ -88,8 +90,8 @@ export function Footer() {
         </div>
 
         <p className="mt-12 border-t border-border pt-6 text-xs text-subtle">
-          © {new Date().getFullYear()} Abin PM · Senior Full Stack Developer &amp; AI-Native Engineer ·
-          Kochi, Kerala, India
+          © {new Date().getFullYear()} Abin PM · Senior Full Stack Engineer · Kochi, India · Remote,
+          freelance and relocation (Dubai, Europe)
         </p>
       </div>
     </footer>

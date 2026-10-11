@@ -5,54 +5,51 @@ import { Footer } from '@/components/Footer';
 import { aiTools, identity } from '@/lib/data';
 
 export const metadata: Metadata = {
-  title: 'Hire an AI-Native Full Stack Developer from India | Abin PM',
+  title: 'AI-Assisted Full Stack Developer for Hire | GenAI Code Review | Abin PM',
   description:
-    'Hire Abin PM — AI-native full stack developer from India using Cursor AI, GitHub Copilot, and Claude in enterprise production at IBM. LLM integration, GenAI stabilization. Freelance & remote.',
+    'Senior full stack developer who uses Cursor, GitHub Copilot and Claude on enterprise work at IBM, reviews AI-generated code to production standard and adds LLM features to React apps.',
   keywords: [
-    'AI-native developer India',
-    'AI Engineer full stack',
-    'hire AI developer India',
-    'developer with Cursor AI experience',
-    'LLM integration developer',
-    'GenAI developer for hire',
     'AI-assisted full stack developer',
-    'agentic developer',
-    'vibe coding developer',
-    'Cursor AI developer',
+    'GenAI code review',
+    'AI-generated code stabilization',
+    'hire AI developer remote',
+    'LLM integration React Node.js',
+    'Cursor developer',
+    'freelance AI developer',
   ],
   alternates: { canonical: '/ai-engineer' },
 };
 
-const whatItMeans = [
-  { before: 'Feature development: weeks', after: 'Days, using AI scaffolding + senior review' },
-  { before: 'Debugging: manual trace', after: 'AI-assisted root cause in minutes' },
-  { before: 'Code review: manual pass', after: 'AI-assisted analysis + human judgment' },
-  { before: 'Architecture: blank page', after: 'AI scaffold refined with enterprise patterns' },
+const inPractice = [
+  { task: 'Boilerplate and scaffolding', how: 'Drafted by Copilot or Codex, then trimmed and rewritten to match the codebase' },
+  { task: 'Debugging', how: 'I trace the bug myself and use Claude to test my theory or suggest what I missed' },
+  { task: 'Code review', how: 'An AI read of the diff first, then my own review against the requirement' },
+  { task: 'Refactoring', how: 'Cursor for the mechanical edits across files, tests to prove nothing changed' },
 ];
 
 const whoFor = [
-  { icon: '🚀', title: 'Startups needing speed', desc: 'Ship faster without burning budget on a large team.' },
-  { icon: '🏢', title: 'Enterprises exploring AI', desc: 'Get a proven AI-native engineer who understands compliance and scale.' },
-  { icon: '🤖', title: 'Companies building LLM features', desc: 'Integrate AI APIs, chatbots, and semantic search into your product.' },
-  { icon: '🛡️', title: 'Teams needing GenAI hardened', desc: 'Review, refactor, and productionize AI-generated codebases.' },
+  { icon: '🚀', title: 'Startups that need to move quickly', desc: 'One senior engineer who can cover frontend, backend and deployment, with AI tools taking the repetitive work.' },
+  { icon: '🏢', title: 'Companies trying AI tools for the first time', desc: 'Someone who has used them on enterprise client work and can set sensible review rules.' },
+  { icon: '🤖', title: 'Products adding an LLM feature', desc: 'A chat assistant, search or summaries added to an existing React and Node.js app.' },
+  { icon: '🛡️', title: 'Teams unsure about AI-generated code', desc: 'A review of what was generated, a plain list of risks, and the fixes.' },
 ];
 
 const aiFaq = [
   {
-    q: 'Is AI-generated code safe for production?',
-    a: 'Not by default. AI-generated code requires senior review, architectural alignment, edge case handling, and testing before it is production-ready. This is exactly what I do — I take AI-generated baselines and harden them to enterprise standards.',
+    q: 'Is AI-generated code safe to put in production?',
+    a: "Not without review. Generated code often looks right and still gets a business rule wrong, skips an edge case or ignores the project's architecture. On National Grid I spent a lot of time on exactly that. It is fine as a first draft if a senior engineer reads it, tests it and fixes it.",
   },
   {
-    q: 'Can you build LLM features into my existing app?',
-    a: 'Yes. I have hands-on experience integrating LLM APIs (OpenAI, Claude) into production applications — chat interfaces, semantic search, AI-powered workflows, and more.',
+    q: 'Can you add LLM features to my existing app?',
+    a: 'Yes. For a React and Node.js app it usually means a server-side endpoint that calls the OpenAI or Claude API, streaming the response to the UI, and limits on cost and failures. My production AI experience is AI-assisted development and reviewing generated code, and I will say so plainly when scoping your project.',
   },
   {
-    q: 'How do you ensure quality when using AI tools?',
-    a: 'AI accelerates drafting and iteration. I apply senior engineering judgment to validate correctness, enforce coding standards, write tests, and ensure the output is maintainable and production-reliable. AI is the accelerator; I am the quality gate.',
+    q: 'How do you keep quality up when using AI tools?',
+    a: 'The tools draft and I decide. Everything goes through the same checks as hand-written code: type checks, tests, code review and a read against the actual requirement.',
   },
   {
-    q: 'What is GenAI stabilization?',
-    a: 'GenAI stabilization is the process of taking AI-generated code and correcting its discrepancies, aligning it with business logic, enforcing architecture standards, and ensuring it meets production reliability thresholds. I did this at IBM for the National Grid MDS project.',
+    q: 'What do you mean by GenAI code stabilization?',
+    a: 'Taking code that an AI tool generated and making it production-ready: fixing logic gaps, bringing it back in line with the architecture, adding the edge cases it missed and the tests that prove it works. I did this at IBM on the National Grid EPO Tracking platform.',
   },
 ];
 
@@ -63,49 +60,48 @@ export default function AIEngineerPage() {
       <main className="min-h-screen bg-cream pt-28">
         <section className="mx-auto max-w-[1100px] px-6 py-20 md:px-10">
           <span className="mb-4 inline-block rounded-full border border-border-strong bg-sage-light px-3 py-1 text-xs text-sage-dark">
-            AI Engineer
+            AI-assisted development
           </span>
           <h1 className="mb-6 text-4xl text-ink md:text-5xl">
-            AI-Native Full Stack Engineer for Hire
+            A full stack developer who uses AI tools and checks their work
           </h1>
           <p className="mb-16 max-w-3xl text-lg leading-relaxed text-muted">
-            Abin PM is an AI-native full stack developer based in Kochi, India — among the first
-            generation of senior engineers to adopt AI-assisted development tools in enterprise
-            production. Since 2024, he has used Cursor AI, GitHub Copilot, and Claude as core
-            instruments in his daily workflow at IBM India, delivering React and Node.js systems
-            for National Grid faster than traditional development cycles allow. He doesn&apos;t just
-            use AI — he stabilizes AI-generated code for enterprise production standards.
+            I&apos;ve used Cursor, GitHub Copilot and Claude on IBM client work since 2024. They save
+            me time on routine code. They also make mistakes that are easy to miss, and a lot of my
+            work on National Grid was finding and fixing those mistakes in code GenAI had written.
+            If you want AI speed without shipping AI bugs, that&apos;s the experience I bring.
           </p>
 
-          <h2 className="mb-8 text-2xl text-ink">What AI-native means in practice</h2>
+          <h2 className="mb-8 text-2xl text-ink">Where AI fits in my day</h2>
           <div className="mb-16 grid gap-4 md:grid-cols-2">
-            {whatItMeans.map((item) => (
-              <div key={item.before} className="glass rounded-xl p-6">
-                <div className="mb-2 text-sm text-muted">{item.before}</div>
-                <div className="text-sm text-sage-dark">→ {item.after}</div>
+            {inPractice.map((item) => (
+              <div key={item.task} className="glass rounded-xl p-6">
+                <div className="mb-2 text-sm font-semibold text-ink">{item.task}</div>
+                <div className="text-sm text-muted">{item.how}</div>
               </div>
             ))}
           </div>
 
-          <h2 className="mb-6 text-2xl text-ink">The rare skill — GenAI stabilization</h2>
+          <h2 className="mb-6 text-2xl text-ink">Fixing GenAI-generated code: the National Grid project</h2>
           <div className="mb-16 rounded-xl border border-border bg-surface p-8">
             <p className="mb-4 leading-relaxed text-muted">
-              At IBM, I was assigned to the National Grid MDS Consolidation EPO Tracking project.
-              The initial codebase was generated by AI tools — and it was a mess of subtle bugs,
-              architectural misalignments, and enterprise anti-patterns. My job was to take that
-              GenAI baseline, review every module, correct discrepancies, enforce enterprise standards across
-              the React.js frontend and .NET Core backend, and ship a production-ready
-              application that met National Grid&apos;s reliability requirements.
+              At IBM I joined the National Grid MDS Consolidation EPO Tracking project, which was
+              replacing a legacy SAS desktop app with a React.js and .NET Core web platform. GenAI
+              tools had produced much of the starting code. Some of its logic didn&apos;t match the
+              business rules, and parts of it had drifted from the agreed architecture.
             </p>
             <p className="leading-relaxed text-muted">
-              That process — critically reviewing AI output, applying senior engineering judgment,
-              hardening to enterprise standards — is what I call GenAI stabilization. It is a skill
-              that requires deep full stack experience AND AI fluency. Most engineers have one or
-              the other. I have both.
+              I went through it module by module, corrected the logic, brought it back in line with
+              the architecture and the client&apos;s coding standards, and kept the old SAS rules
+              intact. It&apos;s slow, careful work, and it&apos;s the part of AI-assisted development
+              that tends to get skipped.{' '}
+              <Link href="/projects/national-grid" className="text-sage-dark underline-offset-4 hover:underline">
+                Read the case study
+              </Link>.
             </p>
           </div>
 
-          <h2 className="mb-6 text-2xl text-ink">AI tools I use</h2>
+          <h2 className="mb-6 text-2xl text-ink">The tools I use</h2>
           <div className="mb-16 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {aiTools.map((tool) => (
               <div key={tool.name} className="glass-violet rounded-xl p-6">
@@ -118,7 +114,7 @@ export default function AIEngineerPage() {
             ))}
           </div>
 
-          <h2 className="mb-8 text-2xl text-ink">Who this is for</h2>
+          <h2 className="mb-8 text-2xl text-ink">Who this is useful for</h2>
           <div className="mb-16 grid gap-5 md:grid-cols-2">
             {whoFor.map((item) => (
               <div key={item.title} className="glass rounded-xl p-6">
@@ -129,7 +125,7 @@ export default function AIEngineerPage() {
             ))}
           </div>
 
-          <h2 className="mb-8 text-2xl text-ink">AI engineering FAQ</h2>
+          <h2 className="mb-8 text-2xl text-ink">Questions about AI-assisted development</h2>
           <div className="mb-16 space-y-4">
             {aiFaq.map((item) => (
               <div key={item.q} className="glass rounded-xl p-6">
@@ -141,20 +137,20 @@ export default function AIEngineerPage() {
 
           <div className="text-center">
             <p className="mb-6 text-lg text-muted">
-              Ready to work with an AI-native engineer who can build fast AND stabilize AI-generated code?
+              Want a second opinion on AI-generated code, or help shipping a feature quickly?
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a
                 href={`mailto:${identity.email}`}
                 className="btn-secondary"
               >
-                Hire an AI-Native Engineer
+                Email me
               </a>
               <Link
                 href="/hire-me"
                 className="btn-secondary"
               >
-                Full Hire Page →
+                How hiring me works →
               </Link>
             </div>
           </div>

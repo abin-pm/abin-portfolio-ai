@@ -60,60 +60,57 @@ const articleBodies: Record<string, React.ReactNode> = {
     <>
       <h2 id="introduction">Introduction</h2>
       <p>
-        Hiring a senior React developer from India sounds straightforward until you&apos;ve done it
-        wrong twice. The talent pool is enormous, the rates look attractive, and many profiles
-        claim 5–8 years of React experience. But the quality gap between candidates is just as
-        large. Here are the mistakes companies make — and how to avoid them.
+        I&apos;ve been through a lot of React interviews in ten years, and as a team lead I&apos;ve
+        reviewed and mentored the developers who got hired. The same three mistakes come up when
+        companies in the US, UK, Europe or the Gulf hire React developers from India. None of
+        them are about India. They&apos;re about how the hiring is done.
       </p>
       <h2 id="the-3-most-common-hiring-mistakes">The 3 Most Common Hiring Mistakes</h2>
-      <h3>1. Optimizing for hourly rate, not value per hour</h3>
+      <h3>1. Comparing hourly rates instead of cost per feature</h3>
       <p>
-        A developer at $25/hour who takes three weeks to deliver a feature that a $50/hour
-        developer ships in four days is not a bargain. Add the back-and-forth review cycles,
-        QA fixes, and rework cost, and the cheaper option ends up costing more. Look for
-        senior engineers who have delivered production systems at scale — not just built
-        side projects.
+        A cheaper developer who needs three rounds of review on every pull request isn&apos;t
+        cheaper. Count the time your own team spends checking, fixing and re-explaining. Ask
+        candidates about something they shipped that real users depend on, and what broke
+        after it went live. People who have done it answer quickly and in detail.
       </p>
-      <h3>2. Skipping the architecture conversation</h3>
+      <h3>2. Testing syntax instead of design</h3>
       <p>
-        Most hiring processes test syntax and algorithms but skip the only question that matters
-        for senior roles: &ldquo;How would you architect this feature given these constraints?&rdquo;
-        A senior React developer should be able to talk about micro-frontend trade-offs, state
-        management strategies, API design, and performance budgets — not just write a hook
-        from memory.
+        Plenty of interviews ask for a hook from memory and never ask how the candidate would
+        structure a feature. For a senior role, the useful questions are about trade-offs:
+        where state should live, when to split a frontend into micro frontends, what the API
+        should look like, and what they would leave out to ship on time.
       </p>
-      <h3>3. Ignoring client communication track record</h3>
+      <h3>3. Not checking how they communicate</h3>
       <p>
-        Technical skill alone does not ship products. Ask for evidence of async collaboration
-        with US or UK stakeholders, Agile/Scrum participation, and written communication quality.
-        Working across time zones requires over-communication by default — not silence until
-        the PR is ready.
+        Remote work across time zones runs on writing. Look at how the candidate writes a
+        status update or describes a pull request. Ask how they handled a requirement that
+        changed halfway through a sprint. Someone who goes quiet until the work is &ldquo;done&rdquo;
+        will cost you more than any technical gap.
       </p>
       <h2 id="what-to-actually-look-for">What to Actually Look For</h2>
       <p>
-        The best senior React developers from India combine deep React and Node.js experience
-        with cloud exposure (AWS or GCP), microservices familiarity, and increasingly — genuine
-        AI tooling fluency. The combination of enterprise track record, AI-native workflow,
-        and timezone flexibility is rare and worth paying for.
+        Someone who has worked on production systems with real users, can talk through design
+        decisions and their downsides, has worked directly with clients abroad, and writes
+        clearly. Experience with AI coding tools is useful now too, but only if they can tell
+        you when the tool was wrong and how they noticed.
       </p>
       <p>
-        If you&apos;re actively evaluating candidates,{' '}
-        <a href="/hire-me" className="text-sage-dark hover:underline">see what a senior React developer from India with enterprise + AI credentials looks like</a>
-        {' '}before making your decision.
+        If you&apos;re hiring now,{' '}
+        <a href="/hire-me" className="text-sage-dark hover:underline">here is how I work and what I&apos;ve built</a>
+        , so you can judge me by the same checklist.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
-        <li>Evaluate value per hour, not hourly rate in isolation.</li>
-        <li>Test architecture thinking, not just coding ability.</li>
-        <li>Verify async communication and real client collaboration history.</li>
-        <li>Prefer engineers with AI tooling experience — it multiplies delivery speed.</li>
+        <li>Compare cost per shipped feature, not hourly rate.</li>
+        <li>Ask senior candidates design questions, not trivia.</li>
+        <li>Check written communication before you check algorithms.</li>
+        <li>Value AI tool experience only when it comes with judgement about the output.</li>
       </ul>
       <h2 id="conclusion">Conclusion</h2>
       <p>
-        India produces world-class React developers who have built production systems for Fortune
-        500 companies. The key is knowing how to find them. Focus on verified enterprise
-        experience, architecture reasoning, and communication quality — and you&apos;ll find an
-        engineer who delivers at the same standard as anyone in the US or UK.
+        There are very good senior React developers in India. Finding one is mostly about
+        asking better questions: what have you shipped, how did you decide, and how do you
+        keep people informed.
       </p>
     </>
   ),
@@ -121,60 +118,55 @@ const articleBodies: Record<string, React.ReactNode> = {
     <>
       <h2 id="introduction">Introduction</h2>
       <p>
-        The term &ldquo;AI-assisted development&rdquo; gets thrown around a lot in 2024–2025.
-        What it actually looks like in enterprise production is rarely described in detail.
-        This is a first-person account of using Cursor AI, GitHub Copilot, and Claude daily
-        at IBM while working on production React and Node.js systems for a major US utility client
-        in the US.
+        Most writing about AI coding tools is either a demo or a warning. This is neither. It&apos;s
+        how I use Cursor, GitHub Copilot and Claude on IBM client work in React, Next.js and
+        .NET, and where each one helps or gets in the way.
       </p>
       <h2 id="how-each-tool-fits-into-the-workflow">How Each Tool Fits into the Workflow</h2>
-      <h3>Cursor AI — Primary IDE</h3>
+      <h3>Cursor</h3>
       <p>
-        Cursor replaced VS Code as my primary development environment in September 2024.
-        The main advantage is not autocomplete — it is the ability to ask architectural
-        questions directly in context. &ldquo;What is the best way to refactor this service to
-        use a repository pattern?&rdquo; or &ldquo;Identify the bug in this async flow&rdquo; with
-        the actual code selected. The answers are immediately actionable because Cursor has
-        the full file and project context.
+        Cursor is my main editor. Its value for me isn&apos;t autocomplete. It&apos;s being able to
+        select some code and ask a question about it with the rest of the project in view:
+        &ldquo;where else is this function called?&rdquo; or &ldquo;why does this effect run twice?&rdquo;.
+        It&apos;s also good at mechanical refactors across many files. I read every change before
+        accepting it, because it will happily rename something it shouldn&apos;t.
       </p>
-      <h3>GitHub Copilot — Inline Completion</h3>
+      <h3>GitHub Copilot</h3>
       <p>
-        Copilot handles the mechanical parts: boilerplate, test scaffolding, repetitive
-        API call patterns. Where it shines is completing well-typed TypeScript — when the
-        types are tight, Copilot&apos;s suggestions are accurate enough to accept with minimal
-        review. Where it fails: anything that requires understanding across multiple files
-        or business domain knowledge.
+        Copilot does the dull parts: boilerplate, test setup, repetitive API calls. With strict
+        TypeScript types its suggestions are often right. Without them, or when the logic
+        depends on business rules it can&apos;t see, it guesses, and the guesses look plausible.
+        That&apos;s the dangerous part.
       </p>
-      <h3>Claude — Architecture and Review</h3>
+      <h3>Claude</h3>
       <p>
-        Claude is my second set of eyes on anything complex. Before submitting a PR that
-        touches shared infrastructure, I run the diff through Claude with the question:
-        &ldquo;What are the edge cases and failure modes in this change?&rdquo; It catches things
-        that unit tests miss — race conditions, implicit coupling, missing error boundaries.
+        Before I open a pull request on anything non-trivial, I paste the diff into Claude and
+        ask what could go wrong. It sometimes points out an edge case, a missing error path or a
+        loading state I forgot. It also suggests problems that aren&apos;t real, so I treat it like
+        a colleague&apos;s review comments: worth reading, not automatically right.
       </p>
       <h2 id="what-ai-tools-cannot-do">What AI Tools Cannot Do</h2>
       <p>
-        They cannot replace senior engineering judgment. Every AI suggestion requires
-        evaluation against business requirements, architectural constraints, and production
-        reliability standards. The skill is not prompting — it is knowing when to accept,
-        reject, or refactor what the tool generates.
+        They don&apos;t know your business. On National Grid, much of my work was fixing
+        GenAI-generated code that looked fine but didn&apos;t follow the rules the old SAS system
+        enforced. No tool flagged that. Reading the requirement and comparing it with the code
+        did. The skill isn&apos;t writing prompts. It&apos;s knowing what correct looks like.
       </p>
       <p>
-        Looking for an engineer who uses these tools in real production?{' '}
-        <a href="/hire-me" className="text-sage-dark hover:underline">See what an AI-native React &amp; Node.js developer from India delivers</a>.
+        Need someone who works this way on your project?{' '}
+        <a href="/hire-me" className="text-sage-dark hover:underline">See how hiring me works</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
-        <li>Cursor AI is most powerful for in-context architectural reasoning.</li>
-        <li>Copilot excels at typed boilerplate — not cross-file logic.</li>
-        <li>Claude is a senior reviewer for complex changes.</li>
-        <li>AI tools multiply output; senior judgment determines quality.</li>
+        <li>Cursor is most useful for questions and refactors with the whole project in view.</li>
+        <li>Copilot is good with strict types and weak on business logic.</li>
+        <li>Claude is a useful second reviewer, not a final one.</li>
+        <li>The tools make you faster; your review decides whether the result is correct.</li>
       </ul>
       <h2 id="conclusion">Conclusion</h2>
       <p>
-        An AI-native developer is not someone who lets AI write their code. It is someone
-        who uses AI as a force multiplier while applying the same enterprise-grade engineering
-        judgment that ensures the output meets production standards.
+        Using AI well doesn&apos;t mean letting it write your code. It means letting it do the
+        repetitive work and keeping your own judgement for everything that matters.
       </p>
     </>
   ),
@@ -182,60 +174,55 @@ const articleBodies: Record<string, React.ReactNode> = {
     <>
       <h2 id="introduction">Introduction</h2>
       <p>
-        The National Grid MDS Consolidation EPO Tracking Application was built on SAS — a
-        legacy desktop system that had served its purpose but no longer met the scalability,
-        accessibility, or user experience requirements of a modern enterprise. The project
-        goal was to migrate it to a React.js + .NET Core web platform backed by PostgreSQL. What made this
-        different from a typical modernization was the use of GenAI-assisted code generation
-        as the initial development baseline.
+        At IBM I worked on National Grid USA&apos;s MDS Consolidation EPO Tracking application, a
+        legacy SAS desktop tool that the business relied on. Six of us replaced it with a web
+        platform: React.js on the frontend, .NET Core and PostgreSQL behind it, hosted on Azure.
+        The unusual part was that GenAI tools generated much of the starting code.
       </p>
       <h2 id="the-migration-approach">The Migration Approach</h2>
-      <h3>Phase 1 — GenAI baseline generation</h3>
+      <h3>The generated starting point</h3>
       <p>
-        Using AI-assisted code generation tools, an initial codebase was scaffolded from
-        the SAS system specifications and business logic documentation. This accelerated
-        the starting point significantly compared to writing from scratch. The generated
-        code covered the primary data models, API contracts, and frontend component
-        structures.
+        Having a large first draft early on was useful. Screens, data models and API shapes
+        existed from the start instead of being typed out by hand. The catch was that a draft
+        is all it was.
       </p>
-      <h3>Phase 2 — Stabilization and hardening</h3>
+      <h3>Making the generated code correct</h3>
       <p>
-        This is where the real work happens — and where most AI-generated code fails in
-        enterprise contexts. The generated baseline contained architectural misalignments,
-        performance anti-patterns, incomplete error handling, and business logic
-        discrepancies. Each module was reviewed, corrected, and refactored to meet
-        enterprise coding standards and production reliability thresholds.
+        This is where most of my time went. Some of the logic didn&apos;t match the business
+        rules the SAS tool enforced, and parts had drifted from the architecture the team had
+        agreed on. I went through it module by module, compared it with the actual
+        requirements, fixed what was wrong and brought it up to the client&apos;s coding
+        standards. I also worked on React performance problems and on making screens usable
+        on smaller devices.
       </p>
-      <h3>Phase 3 — Integration and deployment</h3>
+      <h3>Reviews and deployment</h3>
       <p>
-        The React.js frontend was integrated with the .NET Core backend and deployed to Azure
-        through CI/CD, with code reviews gating every production deployment. Cross-functional collaboration with US-based National Grid stakeholders
-        ensured the final product met user needs and performance standards.
+        Everything went through code review before release, and deployments ran through
+        Azure CI/CD. We worked with National Grid stakeholders in the US throughout, which
+        mostly meant my evenings overlapped with their mornings.
       </p>
       <h2 id="results">Results</h2>
       <p>
-        The platform replaced the legacy SAS system with a modern, accessible web
-        application that improved user experience, scalability, and maintainability.
-        The AI-assisted approach reduced initial development time while the stabilization
-        process ensured the output was production-ready.
+        The web platform replaced the SAS desktop tool, and the business rules came across
+        unchanged. The generated draft saved time at the start, but only because the team was
+        willing to spend real effort checking it afterwards.
       </p>
       <p>
-        Need a similar legacy modernization for your enterprise?{' '}
-        <a href="/hire-me" className="text-sage-dark hover:underline">Hire a senior React developer who combines AI acceleration with enterprise engineering standards</a>.
+        Planning a legacy modernization?{' '}
+        <a href="/hire-me" className="text-sage-dark hover:underline">Tell me about it</a>, or read the{' '}
+        <a href="/projects/national-grid" className="text-sage-dark hover:underline">National Grid case study</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
-        <li>GenAI can dramatically accelerate initial scaffolding.</li>
-        <li>Stabilization requires senior engineering judgment — it is not optional.</li>
-        <li>The combination of AI speed + senior review = faster AND reliable delivery.</li>
-        <li>Legacy modernization is an ideal use case for AI-assisted development.</li>
+        <li>GenAI gives you a fast first draft, not a finished system.</li>
+        <li>Budget real time for checking generated code against the business rules.</li>
+        <li>Old systems hide rules that nobody wrote down; the generated code won&apos;t know them.</li>
+        <li>Code review and CI/CD matter more, not less, when a tool wrote the first version.</li>
       </ul>
       <h2 id="conclusion">Conclusion</h2>
       <p>
-        The National Grid project demonstrated that GenAI-assisted development is not
-        about replacing engineers — it is about using AI to handle the scaffolding while
-        senior engineers focus on the judgment-intensive work: architecture, edge cases,
-        integration, and production reliability.
+        AI didn&apos;t replace anyone on this project. It moved the work. Less typing at the
+        start, more careful reading in the middle.
       </p>
     </>
   ),
@@ -243,56 +230,49 @@ const articleBodies: Record<string, React.ReactNode> = {
     <>
       <h2 id="introduction">Introduction</h2>
       <p>
-        GenAI writes code faster than any human. That is not in question. The question
-        is: fast toward what? Production-ready code has requirements that go beyond
-        &ldquo;compiles and passes the happy path tests.&rdquo; Understanding when GenAI output
-        is safe to ship — and what needs to happen before it is — is one of the most
-        valuable skills in enterprise software right now.
+        GenAI produces code quickly. Some of it is fine to ship, and some of it is wrong in ways
+        you won&apos;t notice until production. After working through a large amount of generated
+        code on the National Grid project at IBM, these are the checks I use before I trust any
+        of it.
       </p>
       <h2 id="the-stabilization-process">The Stabilization Process</h2>
-      <h3>Step 1 — Architecture review</h3>
+      <h3>1. Does it fit the architecture?</h3>
       <p>
-        Before touching individual lines, evaluate whether the AI-generated structure
-        matches your system&apos;s architecture. Does it follow the same patterns as the
-        surrounding codebase? Does it respect service boundaries? Is state managed
-        consistently? Architecture mismatches at this stage compound into maintenance
-        problems later.
+        Before reading line by line, look at the shape. Does it follow the patterns the rest of
+        the codebase uses? Does it call services it shouldn&apos;t? Is state handled the way the
+        team agreed? Fixing structure later costs far more than fixing it now.
       </p>
-      <h3>Step 2 — Business logic verification</h3>
+      <h3>2. Does it follow the real business rules?</h3>
       <p>
-        AI tools generate code against specifications — and specifications are often
-        incomplete. Walk through the business logic against the actual requirements,
-        not just the prompt you gave the AI. Edge cases, error states, and data
-        validation often need to be added manually.
+        The tool only knew what was in the prompt, and the prompt never covers everything.
+        Check the logic against the actual requirements and the system you&apos;re replacing.
+        Edge cases and validation are usually where it falls short.
       </p>
-      <h3>Step 3 — Security and error handling</h3>
+      <h3>3. What happens when things go wrong?</h3>
       <p>
-        AI-generated code frequently omits input validation, error boundaries, and
-        security controls. In an enterprise context, this is not optional. Review
-        every API boundary, every data transformation, every external call.
+        Generated code often skips input validation, error handling and security checks. Look
+        at every API boundary, every external call and every place user data comes in.
       </p>
-      <h3>Step 4 — Testing</h3>
+      <h3>4. What do the tests actually prove?</h3>
       <p>
-        Write tests that the AI did not generate — specifically for the edge cases and
-        failure modes identified in the previous steps. AI-generated tests tend to test
-        the happy path only.
+        Generated tests tend to cover the happy path. Write your own for the edge cases and
+        failures you found in the steps above.
       </p>
       <p>
-        Need an engineer who has done this at enterprise scale (IBM, global enterprise clients)?{' '}
-        <a href="/hire-me" className="text-sage-dark hover:underline">Hire Abin PM — AI-native full stack developer from India</a>.
+        Have AI-generated code you&apos;re not sure about?{' '}
+        <a href="/hire-me" className="text-sage-dark hover:underline">I can review it with you</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
-        <li>GenAI code always needs architecture and business logic review before production.</li>
-        <li>Security and error handling are consistently undergenerated.</li>
-        <li>The goal of stabilization is matching the quality of hand-written enterprise code.</li>
-        <li>This process is a skill — it takes senior engineering experience to do well.</li>
+        <li>Review the structure before the details.</li>
+        <li>Check the logic against requirements, not against the prompt.</li>
+        <li>Expect missing validation, error handling and security checks.</li>
+        <li>Hold generated code to the same standard as code a person wrote.</li>
       </ul>
       <h2 id="conclusion">Conclusion</h2>
       <p>
-        GenAI is a powerful tool. Stabilization is the process that makes it safe for
-        production. The engineers who can do both — use AI for velocity and apply senior
-        judgment for reliability — are the ones who deliver the most value in 2025 and beyond.
+        GenAI is a fast way to get a draft. Whether that draft can ship depends on someone who
+        knows the system reading it carefully.
       </p>
     </>
   ),
@@ -300,57 +280,51 @@ const articleBodies: Record<string, React.ReactNode> = {
     <>
       <h2 id="introduction">Introduction</h2>
       <p>
-        Adding LLM capabilities to an existing React + Node.js application does not require
-        a ground-up rewrite. Most production applications can add AI features incrementally,
-        starting with low-risk surfaces and expanding from there. This guide covers the
-        integration patterns that work in practice — not the ones that look clean in demos.
+        You don&apos;t need to rebuild a React and Node.js app to add an LLM feature. Under the
+        hood it is mostly ordinary backend and frontend work. These are the patterns I would use,
+        and the ones I&apos;d push back on.
       </p>
       <h2 id="backend-integration-patterns">Backend Integration Patterns</h2>
-      <h3>API abstraction layer</h3>
+      <h3>Keep the API call on the server</h3>
       <p>
-        Never call the LLM API directly from your frontend. Create a Node.js service layer
-        that handles authentication, rate limiting, prompt construction, and response
-        transformation. This keeps your API keys secure, gives you a single place to switch
-        providers, and lets you log and monitor AI interactions independently.
+        Never call the LLM provider straight from the browser. Put a small Node.js service in
+        between that holds the API key, builds the prompt, applies rate limits and logs each
+        request. It also gives you one place to switch providers later.
       </p>
-      <h3>Streaming responses</h3>
+      <h3>Stream the response</h3>
       <p>
-        For chat and generation features, use streaming from the start. Users expect instant
-        feedback — a 10-second wait for a full response before anything appears feels broken.
-        Node.js handles SSE (Server-Sent Events) or WebSocket streaming cleanly, and the
-        React frontend can consume streams with minimal added complexity.
+        For anything that generates text, stream it. Waiting ten seconds for a full answer
+        feels broken; seeing words appear doesn&apos;t. Node.js handles Server-Sent Events or
+        WebSockets well, and React can render a stream without much extra code.
       </p>
       <h2 id="frontend-integration-patterns">Frontend Integration Patterns</h2>
-      <h3>Progressive enhancement</h3>
+      <h3>Add to what already works</h3>
       <p>
-        Add AI features as enhancements to existing workflows, not replacements. A search
-        box that gains semantic understanding alongside its existing keyword search is much
-        safer to ship than a wholesale replacement. This also gives you a fallback when the
-        AI call fails or times out.
+        Introduce the AI feature next to an existing workflow, not instead of it. If smarter
+        search sits alongside the old keyword search, users still have something that works
+        when the AI call is slow or fails.
       </p>
-      <h3>State and UX</h3>
+      <h3>Plan for slow and wrong</h3>
       <p>
-        AI responses are async, slow, and sometimes wrong. Design your state management to
-        handle loading, error, and retry states explicitly. Do not block the UI waiting for
-        AI — use optimistic updates and graceful degradation.
+        LLM responses are slow, sometimes fail and are sometimes wrong. Handle loading, error
+        and retry states on purpose, never block the rest of the UI while waiting, and make it
+        easy for users to tell when an answer came from the model.
       </p>
       <p>
-        Want this built into your product?{' '}
-        <a href="/hire-me" className="text-sage-dark hover:underline">Hire a full stack React &amp; Node.js developer with hands-on LLM integration experience</a>.
+        Want an LLM feature added to your app?{' '}
+        <a href="/hire-me" className="text-sage-dark hover:underline">Tell me what you have in mind</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
-        <li>Always proxy LLM calls through a backend service — never call directly from the client.</li>
-        <li>Implement streaming from the start for any generation feature.</li>
-        <li>Use progressive enhancement to reduce risk and maintain fallbacks.</li>
-        <li>Design for async, failure, and retry states explicitly in your React components.</li>
+        <li>Route every LLM call through your own backend.</li>
+        <li>Stream generated text from the start.</li>
+        <li>Add AI beside existing features so there&apos;s always a fallback.</li>
+        <li>Design for slow, failed and wrong responses.</li>
       </ul>
       <h2 id="conclusion">Conclusion</h2>
       <p>
-        LLM integration is a standard engineering problem now. The tools are mature, the
-        patterns are established, and the risk is manageable with the right architecture.
-        The teams that get the most value are the ones who integrate incrementally, instrument
-        everything, and treat AI as one capability among many — not a magic solution.
+        Adding an LLM to an app is now a normal engineering task. Start small, measure cost and
+        quality, and treat it as one feature among many.
       </p>
     </>
   ),
@@ -358,60 +332,57 @@ const articleBodies: Record<string, React.ReactNode> = {
     <>
       <h2 id="introduction">Introduction</h2>
       <p>
-        Abercrombie & Fitch&apos;s frontend was a legacy Java-based monolith. Multiple teams needed
-        to deploy independently, the release process was fragile, and the UI was inconsistent
-        across different parts of the platform. The decision was made to migrate to React
-        Micro-Frontends — and here is what we learned from doing it in production for one of
-        the world&apos;s largest fashion retailers.
+        At IBM I worked on moving Abercrombie &amp; Fitch&apos;s storefront off a legacy Java
+        frontend shared by three brands: Abercrombie &amp; Fitch, Hollister and Abercrombie Kids.
+        The new frontend is a set of React micro frontends. I built the Product Catalog, Product
+        Details and Wishlist pieces. This is what I took away from it.
       </p>
       <h2 id="the-architecture-decision">The Architecture Decision</h2>
-      <h3>Why Micro-Frontends?</h3>
+      <h3>Why micro frontends</h3>
       <p>
-        The primary driver was team independence. With multiple squads working on overlapping
-        UI surfaces, a monolithic frontend meant constant merge conflicts and release
-        coordination overhead. Micro-Frontends let each team own their domain completely —
-        from component to deployment.
+        The main reason was team independence. With one shared frontend, every change touched
+        everyone and releases had to be coordinated. With micro frontends, each part of the
+        store can be built, tested and deployed on its own.
       </p>
-      <h3>Technology choices</h3>
+      <h3>How the pieces fit</h3>
       <p>
-        The storefront was split into domain micro frontends — Product Catalog, Product
-        Details and Wishlist among them — each owning its routing, state, and dependencies.
-        A GraphQL Backend-for-Frontend (BFF) gave each one a tailored API instead of calling
-        legacy services directly, and shared reusable React components kept Abercrombie &amp;
-        Fitch, Hollister and Abercrombie Kids visually consistent without tight coupling.
+        Each micro frontend owns one area of the store. They get data through a GraphQL
+        Backend-for-Frontend (BFF), so the React code asks for exactly what a page needs
+        instead of calling older services directly. Shared React components keep the three
+        brands consistent without tying the micro frontends to each other.
       </p>
       <h2 id="what-worked">What Worked</h2>
       <p>
-        Parallel deployments. Once the contract between host and remotes was established,
-        each team could ship independently without coordination meetings or release windows.
-        Shared, reusable React components gave all three brands a single source of truth
-        for UI patterns. See the full{' '}
-        <a href="/projects/abercrombie" className="text-sage-dark hover:underline">Abercrombie &amp; Fitch case study</a>
-        {' '}for more detail on the architecture choices.
+        Independent deployment worked as hoped. The BFF kept the frontends simpler, and the
+        shared components saved a lot of repeated work across brands. Building accessibility,
+        analytics, A/B tests, Jest unit tests and Playwright end-to-end tests into each micro
+        frontend from the start meant they never became a separate project later. There&apos;s
+        more in the{' '}
+        <a href="/projects/abercrombie" className="text-sage-dark hover:underline">Abercrombie &amp; Fitch case study</a>.
       </p>
       <h2 id="what-did-not-work-initially">What Did Not Work (Initially)</h2>
       <p>
-        Shared state across remotes is harder than it looks. The initial approach of using
-        a shared event bus created invisible coupling. The solution was to push shared state
-        to the API layer and treat remotes as truly independent consumers.
+        Independence has a cost. Keeping React and shared library versions in step across
+        separately deployed pieces takes deliberate effort, and anything one micro frontend
+        needs from another is easy to wire up badly. My rule now is to share data through the
+        API layer, not through the frontends.
       </p>
       <p>
-        Planning a micro-frontend migration?{' '}
-        <a href="/hire-me" className="text-sage-dark hover:underline">Hire a senior React developer who has shipped this in production at enterprise scale</a>.
+        Planning a micro frontend migration?{' '}
+        <a href="/hire-me" className="text-sage-dark hover:underline">Let&apos;s talk about it</a>.
       </p>
       <h2 id="key-takeaways">Key Takeaways</h2>
       <ul>
-        <li>Team independence is the primary business driver — not technical elegance.</li>
-        <li>Standardize component libraries early to avoid visual fragmentation.</li>
-        <li>Avoid shared state across remotes — use the API as the source of truth.</li>
-        <li>Plan for dependency and version management across micro frontends from day one.</li>
+        <li>Do it for team independence, not because the architecture looks elegant.</li>
+        <li>Agree on shared components early so brands and teams stay consistent.</li>
+        <li>Share data through the API layer rather than between micro frontends.</li>
+        <li>Plan dependency and version management from day one.</li>
       </ul>
       <h2 id="conclusion">Conclusion</h2>
       <p>
-        Micro-Frontend architecture solved the right problem for Abercrombie & Fitch: team
-        autonomy and independent deployments at scale. The migration was complex but the
-        outcome — parallel releases without coordination friction — was exactly what the
-        business needed.
+        Micro frontends fit this problem: several brands, several teams, and a frontend that
+        made everyone wait for everyone else. They add coordination work of their own, so
+        they&apos;re worth it only when that independence is what you actually need.
       </p>
     </>
   ),
@@ -449,13 +420,13 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
               </nav>
               <div className="mt-8 rounded-xl border border-border bg-surface p-5">
                 <p className="mb-3 text-xs text-muted">
-                  Evaluating React developers from India?
+                  Hiring for a project or a role?
                 </p>
                 <a
                   href="/hire-me"
                   className="block rounded-lg bg-sage px-4 py-2.5 text-center text-xs font-semibold text-on-sage no-underline transition hover:opacity-90"
                 >
-                  Hire Abin →
+                  Work with me →
                 </a>
               </div>
             </div>
@@ -475,9 +446,8 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
               {post.title}
             </h1>
             <div className="mb-6 text-sm text-subtle">
-              {new Date(post.date).toLocaleDateString('en-US', {
-                year: 'numeric', month: 'long', day: 'numeric',
-              })}
+              Published {formatDate(post.date)}
+              {post.updated && post.updated !== post.date && <> · Updated {formatDate(post.updated)}</>}
             </div>
             <div className="flex flex-wrap items-center justify-between gap-4 rounded-xl border border-border bg-surface px-5 py-4">
               <div className="flex items-center gap-4">
@@ -550,14 +520,14 @@ export function BlogPostLayout({ post, relatedPosts }: Props) {
               Working on something similar?
             </p>
             <p className="mb-6 text-sm text-muted">
-              Let&apos;s talk about your project — React, Node.js, cloud architecture, or AI integration.
+              Tell me about your project or role. I reply within 24 hours.
             </p>
             <div className="flex flex-wrap justify-center gap-3">
               <a
                 href="/hire-me"
                 className="btn-primary"
               >
-                Let&apos;s talk →
+                Get in touch →
               </a>
               <Link
                 href="/projects"

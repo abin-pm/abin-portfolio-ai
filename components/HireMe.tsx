@@ -6,31 +6,31 @@ import { SectionWrapper } from '@/components/SectionWrapper';
 import { identity } from '@/lib/data';
 
 const channels = [
-  { icon: '🤝', name: 'LinkedIn', desc: 'Remote full-time & contract roles', href: identity.linkedin, external: true },
+  { icon: '🤝', name: 'LinkedIn', desc: 'Remote, contract and relocation roles', href: identity.linkedin, external: true },
   { icon: '📧', name: 'Email', desc: identity.email, href: `mailto:${identity.email}`, external: false },
 ];
 
-const engagements = ['Freelance contract', 'Part-time remote', 'Full-time remote'];
+const engagements = ['Freelance contract', 'Part-time remote', 'Full-time remote', 'Relocation to Dubai or Europe'];
 
 export function HireMe() {
   return (
     <SectionWrapper id="hire" className="px-6 py-32 md:px-10">
       <div className="mx-auto max-w-[1100px]">
-        <div className="section-label mb-4">Freelance &amp; Remote</div>
+        <div className="section-label mb-4">Freelance, remote or relocation</div>
         <h2 className="mb-3 text-3xl text-ink md:text-4xl">
-          Hire a Senior Full Stack &amp; AI Developer from India
+          Hire a senior full stack developer for freelance or remote work
         </h2>
         <p className="mb-10 max-w-2xl text-muted">
-          Looking for a freelance full stack developer who delivers enterprise-grade output? Abin PM
-          is available for React and Next.js contracts, MERN stack projects, LLM integrations and
-          remote full-time roles — working with teams in the US, UK and Europe.
+          I take freelance React and Next.js contracts, Node.js and MERN projects, and remote
+          full-time roles. I&apos;ve worked with teams in the US, the UK, France and Dubai, and I&apos;m
+          open to relocating to the UAE or Europe for the right job.
         </p>
 
         {/* Available badge */}
         <div className="mb-10 inline-flex items-center gap-3 rounded-xl border border-border bg-surface px-6 py-4">
           <span className="h-2 w-2 animate-pulse rounded-full bg-sage" />
           <span className="text-ink">
-            <strong>Currently available</strong> — open for new projects &amp; remote roles
+            <strong>Available now</strong> for new projects and roles
           </span>
         </div>
 

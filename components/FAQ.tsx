@@ -28,10 +28,10 @@ export function FAQ() {
       <div className="mx-auto max-w-[720px]">
         <div className="section-label mb-4">FAQ</div>
         <h2 className="mb-3 text-3xl text-ink md:text-4xl">
-          Frequently Asked Questions
+          Questions about hiring me
         </h2>
         <p className="mb-12 text-muted">
-          Everything hiring managers and clients need to know.
+          Rates, time zones, relocation and how I work.
         </p>
         <div className="space-y-3">
           {faq.map((item) => (

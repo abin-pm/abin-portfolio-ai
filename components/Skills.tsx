@@ -8,12 +8,12 @@ export function Skills() {
   return (
     <SectionWrapper id="skills" className="px-6 py-32 md:px-10">
       <div className="mx-auto max-w-[1100px]">
-        <div className="section-label mb-4">Technical Arsenal</div>
+        <div className="section-label mb-4">Skills</div>
         <h2 className="mb-3 text-3xl text-ink md:text-4xl">
-          Full-spectrum stack
+          React, Next.js, Node.js, .NET and cloud skills
         </h2>
         <p className="mb-16 max-w-xl text-muted">
-          From pixel-perfect UIs to cloud-native distributed backends — every layer covered.
+          What I&apos;ve used in production, grouped by where it sits in the stack.
         </p>
 
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">

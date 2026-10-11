@@ -17,22 +17,25 @@ export function getArticleSchema(post: {
   title: string;
   excerpt: string;
   date: string;
+  updated?: string;
   slug: string;
 }) {
   const url = `${identity.site}/blog/${post.slug}`;
   return {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    dateModified: post.date,
+    dateModified: post.updated ?? post.date,
     url,
     mainEntityOfPage: { '@type': 'WebPage', '@id': url },
+    image: `${identity.site}/opengraph-image`,
     author: {
       '@type': 'Person',
       name: identity.name,
       url: identity.site,
+      sameAs: [identity.linkedin, identity.github],
     },
     publisher: {
       '@type': 'Person',
@@ -71,6 +74,8 @@ export function getPersonSchema() {
     '@context': 'https://schema.org',
     '@type': 'Person',
     name: identity.name,
+    // LinkedIn's URL uses "abin-p-m"; listing both spellings ties them to one entity.
+    alternateName: 'Abin P M',
     jobTitle: identity.title,
     url: identity.site,
     image: `${identity.site}/images/abin-hero.png`,
@@ -107,11 +112,17 @@ export function getProfessionalServiceSchema() {
   return {
     '@context': 'https://schema.org',
     '@type': 'ProfessionalService',
-    name: 'Abin PM — Full Stack Developer & AI Engineer',
+    name: 'Abin PM, Senior Full Stack Developer',
     description:
-      'Senior freelance React, MERN stack, and AI-native developer available for hire from India. 10+ years enterprise experience. AI-accelerated delivery.',
+      'Freelance and remote React, Next.js, Node.js and .NET development by a senior engineer with 10+ years of enterprise experience. Open to relocation to Dubai or Europe.',
     url: identity.site,
-    areaServed: 'Worldwide',
+    areaServed: [
+      { '@type': 'Country', name: 'United Arab Emirates' },
+      { '@type': 'Place', name: 'Europe' },
+      { '@type': 'Country', name: 'United Kingdom' },
+      { '@type': 'Country', name: 'United States' },
+      { '@type': 'Country', name: 'India' },
+    ],
     availableLanguage: 'English',
     provider: {
       '@type': 'Person',
