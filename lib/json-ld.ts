@@ -114,7 +114,7 @@ export function getProfessionalServiceSchema() {
     '@type': 'ProfessionalService',
     name: 'Abin PM, Senior Full Stack Developer',
     description:
-      'Freelance and remote React, Next.js, Node.js and .NET development by a senior engineer with 10+ years of enterprise experience. Open to relocation to Dubai or Europe.',
+      'Freelance and remote React, Next.js, Node.js and .NET development by a senior engineer with 10+ years of enterprise experience. Open to relocation worldwide.',
     url: identity.site,
     areaServed: [
       { '@type': 'Country', name: 'United Arab Emirates' },
@@ -122,6 +122,12 @@ export function getProfessionalServiceSchema() {
       { '@type': 'Country', name: 'United Kingdom' },
       { '@type': 'Country', name: 'United States' },
       { '@type': 'Country', name: 'India' },
+      { '@type': 'Place', name: 'Africa' },
+      { '@type': 'Country', name: 'Australia' },
+      { '@type': 'Country', name: 'New Zealand' },
+      { '@type': 'Country', name: 'Singapore' },
+      { '@type': 'Country', name: 'Malaysia' },
+      { '@type': 'Country', name: 'Japan' },
     ],
     availableLanguage: 'English',
     provider: {

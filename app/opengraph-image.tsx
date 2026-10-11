@@ -42,7 +42,7 @@ export default async function OpengraphImage() {
         <div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
           <div style={{ width: 14, height: 14, borderRadius: 999, background: COLORS.sage }} />
           <div style={{ fontSize: 24, letterSpacing: 3, textTransform: 'uppercase', color: COLORS.sage }}>
-            Freelance · Remote · Dubai &amp; Europe
+            Freelance · Remote · Open to relocation
           </div>
         </div>
 

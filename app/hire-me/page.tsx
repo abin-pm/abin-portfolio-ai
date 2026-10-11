@@ -10,13 +10,16 @@ const SITE_URL = 'https://www.abinaiengineer.com';
 export const metadata: Metadata = {
   title: 'Hire a Senior Full Stack Developer: Freelance, Remote or Relocation | Abin PM',
   description:
-    'Hire Abin PM, a senior React, Next.js and Node.js developer with 10+ years of enterprise work. Freelance, remote full-time, or relocation to Dubai or Europe.',
+    'Hire Abin PM, a senior React, Next.js and Node.js developer with 10+ years of enterprise work. Freelance, remote full-time, or relocation worldwide.',
   keywords: [
     'hire senior full stack developer',
     'freelance React developer',
     'remote full stack developer',
     'hire React developer Dubai',
     'remote developer Europe',
+    'remote developer USA',
+    'remote developer Australia Singapore',
+    'developer open to relocation',
     'freelance Next.js developer',
     'Node.js contractor',
   ],
@@ -27,7 +30,7 @@ const whyHire = [
   { icon: '🏆', title: '10+ years of enterprise work', desc: "L'Oréal, Abercrombie & Fitch and National Grid through IBM, and UK clients before that." },
   { icon: '🧭', title: 'Team lead experience', desc: 'Led teams of 4 to 6 engineers: design, estimates, sprint planning and code review.' },
   { icon: '🌍', title: 'Used to remote work', desc: 'Delivered for US, UK, French and Dubai clients, mostly from India over video calls and Jira.' },
-  { icon: '✈️', title: 'Open to relocation', desc: 'Happy to move to Dubai/UAE or Europe for the right full-time role.' },
+  { icon: '✈️', title: 'Open to relocation', desc: 'Happy to move for the right full-time role: the US, Europe, Dubai, Africa, Australia, New Zealand, Singapore, Malaysia or Japan.' },
   { icon: '⚡', title: 'Frontend to cloud', desc: 'React and Next.js, Node.js or .NET Core APIs, and deployment on AWS, Azure or GCP.' },
   { icon: '🤖', title: 'AI-assisted, human-checked', desc: 'Cursor, Copilot and Claude for speed. Every line still reviewed and tested.' },
 ];
@@ -37,6 +40,9 @@ const timezones = [
   { region: 'Central Europe', diff: 'India is 3.5 to 4.5 hours ahead', overlap: 'Your morning to late afternoon' },
   { region: 'UK', diff: 'India is 4.5 to 5.5 hours ahead', overlap: 'Your morning and early afternoon' },
   { region: 'US East Coast', diff: 'India is 9.5 to 10.5 hours ahead', overlap: 'Your morning, my evening' },
+  { region: 'South Africa / Kenya', diff: 'India is 2.5 to 3.5 hours ahead', overlap: 'Most of your day' },
+  { region: 'Singapore / Malaysia', diff: '2.5 hours ahead of India', overlap: 'Almost your whole day' },
+  { region: 'Sydney / Melbourne', diff: '4.5 to 5.5 hours ahead of India', overlap: 'Your afternoon, my morning' },
 ];
 
 const services = [
@@ -76,8 +82,8 @@ export default function HireMePage() {
           </h1>
           <p className="mb-10 max-w-2xl text-lg text-muted">
             I&apos;m a senior full stack engineer at IBM with 10+ years of React, Next.js, Node.js and .NET
-            work. I take freelance projects and remote full-time roles, and I&apos;m open to relocating to
-            Dubai or Europe.
+            work. I take freelance projects and remote full-time roles with teams anywhere, and I&apos;m
+            open to relocating abroad for the right job.
           </p>
 
           {/* Trust strip */}
@@ -104,7 +110,7 @@ export default function HireMePage() {
           </div>
 
           {/* Time zones */}
-          <h2 className="mb-3 text-2xl">Working hours for Dubai, Europe, the UK and the US</h2>
+          <h2 className="mb-3 text-2xl">Working hours around the world</h2>
           <p className="mb-6 max-w-2xl text-sm text-muted">
             I&apos;m in Kochi, India (IST, UTC+5:30). This is how my day lines up with yours.
           </p>
@@ -145,13 +151,17 @@ export default function HireMePage() {
             <span className="rounded-lg border border-border px-4 py-2">📋 Freelance Contract</span>
             <span className="rounded-lg border border-border px-4 py-2">🕐 Part-Time Remote</span>
             <span className="rounded-lg border border-border px-4 py-2">💼 Full-Time Remote</span>
-            <span className="rounded-lg border border-border px-4 py-2">✈️ Relocation to Dubai or Europe</span>
+            <span className="rounded-lg border border-border px-4 py-2">✈️ Relocation abroad</span>
           </div>
           <p className="mb-16 text-sm text-muted">
             Freelance work can be a few hours a week or full time, billed hourly, monthly or at a fixed
-            price. For full-time roles I can work remotely or move to Dubai or Europe. See the{' '}
-            <Link href="/full-stack-developer-dubai" className="text-sage-dark underline-offset-4 hover:underline">Dubai page</Link> and the{' '}
-            <Link href="/remote-developer-europe" className="text-sage-dark underline-offset-4 hover:underline">Europe page</Link> for details.
+            price. For full-time roles I can work remotely or relocate. There are details for the{' '}
+            <Link href="/remote-developer-usa" className="text-sage-dark underline-offset-4 hover:underline">US</Link>,{' '}
+            <Link href="/remote-developer-europe" className="text-sage-dark underline-offset-4 hover:underline">Europe</Link>,{' '}
+            <Link href="/full-stack-developer-dubai" className="text-sage-dark underline-offset-4 hover:underline">Dubai</Link>,{' '}
+            <Link href="/remote-developer-asia-pacific" className="text-sage-dark underline-offset-4 hover:underline">Asia-Pacific</Link>{' '}
+            and{' '}
+            <Link href="/remote-developer-relocation" className="text-sage-dark underline-offset-4 hover:underline">everywhere else, including Africa</Link>.
           </p>
 
           {/* Process */}

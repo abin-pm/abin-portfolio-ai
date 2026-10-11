@@ -470,8 +470,12 @@ export const faq: FAQItem[] = [
     a: "Yes, remotely or by relocating. I've worked with European clients including L'Oréal and SuperSonic Imagine in France and Paragon Energy and Go Lyv in the UK. India is 3.5 to 4.5 hours ahead of Central Europe, so my afternoon is your morning and we overlap for most of your working day.",
   },
   {
+    q: 'Can US, Australian or Asian companies hire Abin PM remotely?',
+    a: "Yes. I worked with US stakeholders on Abercrombie & Fitch and National Grid through IBM, using an evening overlap window and written handovers. Singapore and Malaysia are only 2.5 hours ahead of India, Japan 3.5 and Sydney 4.5 to 5.5, so Asia-Pacific teams share a good part of the day with me.",
+  },
+  {
     q: 'Is Abin PM open to relocation?',
-    a: "Yes, to Dubai/UAE and to Europe, for a full-time role that's a good fit. On-site roles would go through the employer's normal work-permit process. If you'd rather start remote and decide on relocation later, that works too.",
+    a: "Yes, for a full-time role that's a good fit: the US, the UK and Europe, Dubai and the UAE, Africa, Australia, New Zealand, Singapore, Malaysia and Japan. On-site roles would go through the employer's normal work visa or permit process. If you'd rather start remote and decide on relocation later, that works too.",
   },
   {
     q: 'How much does it cost to hire Abin PM?',
@@ -585,5 +589,5 @@ export const identity = {
   linkedin: 'https://www.linkedin.com/in/abin-p-m-/',
   github: 'https://github.com/abin-pm',
   site: 'https://www.abinaiengineer.com',
-  status: 'Available for freelance, remote and relocation roles (Dubai, Europe)',
+  status: 'Available for freelance, remote and relocation roles worldwide',
 };

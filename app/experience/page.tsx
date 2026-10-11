@@ -175,7 +175,7 @@ export default function ExperiencePage() {
                 </p>
                 <p className="mb-6 text-muted">
                   I take freelance contracts and remote full-time roles, and I&apos;m open to relocating
-                  to Dubai or Europe. Send me a message and I&apos;ll reply within 24 hours.
+                  abroad. Send me a message and I&apos;ll reply within 24 hours.
                 </p>
                 <div className="flex flex-wrap gap-3">
                   <Link

@@ -180,7 +180,7 @@ export default function AiMernStackDeveloperPage() {
               Hire a MERN stack developer who uses AI carefully
             </h2>
             <p className="mb-2 text-muted">
-              Freelance, remote full-time, or on-site in Dubai or Europe.
+              Freelance, remote full-time, or a full-time role abroad.
             </p>
             <p className="mb-8 text-sm text-subtle">
               Based in Kochi, India. I reply within 24 hours.
