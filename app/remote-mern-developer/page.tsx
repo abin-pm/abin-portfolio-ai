@@ -48,7 +48,7 @@ const remoteSignals = [
   { icon: '🕐', title: 'Good time zone overlap', desc: 'India (IST) is 1.5 hours ahead of Dubai and 3.5 to 4.5 hours ahead of Central Europe. I have also worked with US teams on their mornings.' },
   { icon: '⚡', title: 'AI tools on routine work', desc: 'Cursor, Copilot and Claude for drafting and refactoring, with every change still reviewed and tested.' },
   { icon: '💬', title: 'Regular communication', desc: 'I flag problems early and tell you what I am working on, so you are not left guessing.' },
-  { icon: '✈️', title: 'Remote now, relocation possible', desc: 'For a full-time role I am open to moving to Dubai/UAE or Europe.' },
+  { icon: '✈️', title: 'Remote now, relocation possible', desc: 'For a full-time role I am open to moving abroad: the US, Europe, Dubai, Africa or Asia-Pacific.' },
 ];
 
 const hireFaq = faq.filter((_, i) => i < 4);
@@ -179,7 +179,7 @@ export default function RemoteMernDeveloperPage() {
               Hire a Senior Remote MERN Stack Developer
             </h2>
             <p className="mb-8 text-muted">
-              Kochi, India (IST, UTC+5:30). I work with Dubai, European, UK and US hours, and reply within 24 hours.
+              Kochi, India (IST, UTC+5:30). I work with teams from the US to Australia, and reply within 24 hours.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <a

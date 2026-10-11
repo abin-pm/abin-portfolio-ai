@@ -16,10 +16,18 @@ const columns = [
     links: [
       { label: 'Skills', href: '/skills' },
       { label: 'AI-Assisted Development', href: '/ai-engineer' },
-      { label: 'Developer for Dubai & UAE', href: '/full-stack-developer-dubai' },
-      { label: 'Remote Developer for Europe', href: '/remote-developer-europe' },
       { label: 'AI MERN Stack Developer', href: '/ai-mern-stack-developer' },
       { label: 'Remote MERN Developer', href: '/remote-mern-developer' },
+    ],
+  },
+  {
+    title: 'Where I Work',
+    links: [
+      { label: 'Remote & Relocation', href: '/remote-developer-relocation' },
+      { label: 'United States', href: '/remote-developer-usa' },
+      { label: 'Europe & UK', href: '/remote-developer-europe' },
+      { label: 'Dubai & UAE', href: '/full-stack-developer-dubai' },
+      { label: 'Asia-Pacific', href: '/remote-developer-asia-pacific' },
     ],
   },
   {
@@ -44,7 +52,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-cream px-6 pt-14 pb-8 md:px-10">
       <div className="mx-auto max-w-[1180px]">
-        <div className="grid gap-10 md:grid-cols-[1.2fr_repeat(4,1fr)]">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-[1.2fr_repeat(5,1fr)]">
           <div>
             <Link href="/" className="flex items-center gap-3 no-underline" aria-label="Abin PM, home">
               <span className="flex h-10 w-10 items-center justify-center rounded-md border border-sage/40 font-serif text-xl text-sage">
@@ -91,7 +99,7 @@ export function Footer() {
 
         <p className="mt-12 border-t border-border pt-6 text-xs text-subtle">
           © {new Date().getFullYear()} Abin PM · Senior Full Stack Engineer · Kochi, India · Remote,
-          freelance and relocation (Dubai, Europe)
+          freelance and open to relocation
         </p>
       </div>
     </footer>

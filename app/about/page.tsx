@@ -64,8 +64,8 @@ export default function AboutPage() {
 
           <p className="mb-12 leading-relaxed text-muted">
             I&apos;m available for freelance projects and remote full-time roles, and I&apos;m open to
-            relocating to Dubai/UAE or Europe for the right job. The quickest way to reach me is
-            email.
+            relocating abroad for the right job: the US, Europe, Dubai, Africa, Australia, New
+            Zealand, Singapore, Malaysia or Japan. The quickest way to reach me is email.
           </p>
 
           {/* Experience summary */}

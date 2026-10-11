@@ -31,11 +31,13 @@ export const metadata: Metadata = {
     'Remote React Developer',
     'Full Stack Developer Dubai',
     'Remote Developer Europe',
+    'Remote Developer USA',
+    'Developer Open to Relocation',
   ],
   openGraph: {
     title: 'Abin PM – Senior Full Stack Developer for Hire',
     description:
-      'React, Next.js and Node.js for enterprise and startup teams. Freelance, remote, or on-site in Dubai or Europe.',
+      'React, Next.js and Node.js for enterprise and startup teams. Freelance, remote, or relocation worldwide.',
     url: '/',
     type: 'website',
     siteName: 'Abin PM Portfolio',
@@ -44,7 +46,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Abin PM – Senior Full Stack Developer for Hire',
     description:
-      'React, Next.js and Node.js for enterprise and startup teams. Freelance, remote, or on-site in Dubai or Europe.',
+      'React, Next.js and Node.js for enterprise and startup teams. Freelance, remote, or relocation worldwide.',
   },
   alternates: { canonical: '/' },
   manifest: '/manifest.webmanifest',

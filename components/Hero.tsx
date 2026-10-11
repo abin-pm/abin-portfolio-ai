@@ -84,7 +84,7 @@ export function Hero() {
             Available for new work
           </span>
           <span className="inline-flex items-center gap-2 rounded-full border border-sage-border bg-sage-light px-4 py-1.5 text-xs font-medium text-sage-dark">
-            📍 Kochi, India · Remote · Open to Dubai &amp; Europe
+            📍 Kochi, India · Remote worldwide · Open to relocation
           </span>
         </motion.div>
 
@@ -104,7 +104,7 @@ export function Hero() {
         >
           I&apos;m Abin, a full stack engineer at IBM with 10+ years of React, Next.js, Node.js
           and .NET work for L&apos;Oréal, Abercrombie &amp; Fitch and National Grid. I take freelance
-          projects and remote roles, and I&apos;m open to relocating to Dubai or Europe.
+          projects and remote roles anywhere, and I&apos;m open to relocating abroad.
         </motion.p>
 
         {/* ── Primary CTA + secondary ── */}

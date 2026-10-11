@@ -11,7 +11,7 @@ const SITE_URL = 'https://www.abinaiengineer.com';
 export const metadata: Metadata = {
   title: 'FAQ | Hiring a Senior React & MERN Stack Developer | Abin PM',
   description:
-    'Questions about hiring Abin PM, a senior React and Node.js developer: pricing, time zones, remote work, relocation to Dubai or Europe, and how he uses AI tools.',
+    'Questions about hiring Abin PM, a senior React and Node.js developer: pricing, time zones, remote work, relocation abroad, and how he uses AI tools.',
   keywords: [
     'hire React developer FAQ',
     'MERN stack developer questions',

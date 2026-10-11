@@ -10,7 +10,7 @@ const channels = [
   { icon: '📧', name: 'Email', desc: identity.email, href: `mailto:${identity.email}`, external: false },
 ];
 
-const engagements = ['Freelance contract', 'Part-time remote', 'Full-time remote', 'Relocation to Dubai or Europe'];
+const engagements = ['Freelance contract', 'Part-time remote', 'Full-time remote', 'Relocation abroad'];
 
 export function HireMe() {
   return (
@@ -23,7 +23,8 @@ export function HireMe() {
         <p className="mb-10 max-w-2xl text-muted">
           I take freelance React and Next.js contracts, Node.js and MERN projects, and remote
           full-time roles. I&apos;ve worked with teams in the US, the UK, France and Dubai, and I&apos;m
-          open to relocating to the UAE or Europe for the right job.
+          open to relocating for the right job, from the US and Europe to Dubai, Africa or Asia-Pacific.{' '}
+          <Link href="/remote-developer-relocation" className="text-sage-dark underline-offset-4 hover:underline">Where I can work</Link>.
         </p>
 
         {/* Available badge */}

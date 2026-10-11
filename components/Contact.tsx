@@ -56,7 +56,7 @@ export function Contact() {
             </div>
 
             <p className="mb-8 max-w-lg text-muted">
-              A freelance build, a remote contract, or a full-time role in Dubai or Europe:
+              A freelance build, a remote contract, or a full-time role abroad:
               send a few lines about what you need. Email gets the fastest reply.
             </p>
 
